@@ -13,10 +13,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Signature manquante' }, { status: 400 });
   }
 
+  const secret = process.env.STRIPE_WEBHOOK_SECRET;
+  if (!secret) {
+    console.error('[webhook] STRIPE_WEBHOOK_SECRET non défini');
+    return NextResponse.json({ error: 'Config manquante' }, { status: 500 });
+  }
+
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(body, sig, process.env.STRIPE_WEBHOOK_SECRET!);
-  } catch {
+    event = stripe.webhooks.constructEvent(body, sig, secret);
+  } catch (err) {
+    console.error('[webhook] constructEvent failed:', err);
     return NextResponse.json({ error: 'Signature invalide' }, { status: 400 });
   }
 
