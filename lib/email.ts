@@ -53,7 +53,7 @@ export async function sendLicenseEmail({ name, email, licenseKey }: SendLicenseE
       <!-- Steps -->
       <h3 style="color:#1e293b;font-size:15px;margin-bottom:12px;">Comment activer :</h3>
       <table style="border-collapse:collapse;width:100%;">
-        ${['Ouvrez l'application <strong>Kyber</strong> sur votre ordinateur',
+        ${["Ouvrez l'application <strong>Kyber</strong> sur votre ordinateur",
           'Allez dans <strong>Paramètres</strong> (icône ⚙️)',
           'Cliquez sur <strong>Activer la licence</strong>',
           'Copiez-collez la clé ci-dessus et confirmez']

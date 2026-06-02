@@ -69,7 +69,7 @@ export default function Home() {
     {
       icon: '⚡',
       title: 'Auto-remplissage',
-      desc: 'Détection automatique des champs de mot de passe. Injectez vos identifiants en un clic dans n'importe quelle application.',
+      desc: "Détection automatique des champs de mot de passe. Injectez vos identifiants en un clic dans n'importe quelle application.",
     },
     {
       icon: '📊',
