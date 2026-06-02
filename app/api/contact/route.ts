@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
   await resend.emails.send({
     from: 'Kyber Contact <noreply@kyber-security.fr>',
     to: [process.env.ADMIN_EMAIL!],
-    reply_to: email,
+    replyTo: email,
     subject: `[Kyber Entreprise] ${firstName} ${lastName} — ${company}`,
     html: `
       <h2 style="font-family:sans-serif;">Nouvelle demande entreprise</h2>

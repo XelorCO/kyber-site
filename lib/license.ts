@@ -2,7 +2,7 @@ import * as ed from '@noble/ed25519';
 import { sha512 } from '@noble/hashes/sha512';
 
 // Configure SHA-512 synchrone requis par @noble/ed25519 v2
-ed.etc.sha512Sync = (...m) => sha512(...m);
+ed.etc.sha512Sync = (msg: Uint8Array) => sha512(msg);
 
 export interface LicensePayload {
   name: string;
