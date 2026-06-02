@@ -130,7 +130,7 @@ export default function Home() {
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
             Protégez vos mots de passe contre{' '}
             <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              les ordinateurs quantiques
+              les quantiques
             </span>
           </h1>
 
