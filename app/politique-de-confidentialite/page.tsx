@@ -19,8 +19,10 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">1. Responsable du traitement</h2>
             <p>
-              Le site <strong className="text-white">kyber-security.fr</strong> est édité par Kyber Security,
-              joignable à l'adresse <a href="mailto:contact@kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">contact@kyber-security.fr</a>.
+              Le site <strong className="text-white">kyber-security.fr</strong> est édité par :<br />
+              <strong className="text-white">Kyber Security</strong> — Enzo Paccard<br />
+              SIRET : 94467475300016<br />
+              Contact : <a href="mailto:contact@kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">contact@kyber-security.fr</a>
             </p>
           </section>
 

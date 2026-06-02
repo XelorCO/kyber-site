@@ -20,6 +20,8 @@ export default function CGV() {
             <h2 className="text-xl font-semibold text-white mb-3">1. Vendeur</h2>
             <p>
               <strong className="text-white">Kyber Security</strong><br />
+              Responsable : Enzo Paccard<br />
+              SIRET : 94467475300016<br />
               Site web : <a href="https://kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">kyber-security.fr</a><br />
               Email : <a href="mailto:contact@kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">contact@kyber-security.fr</a>
             </p>
