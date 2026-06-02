@@ -2,6 +2,97 @@
 
 import { useState } from 'react';
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Kyber',
+      applicationCategory: 'SecurityApplication',
+      operatingSystem: 'Windows 10, Windows 11, macOS 12, Linux',
+      description: 'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id.',
+      url: 'https://kyber-security.fr',
+      inLanguage: 'fr-FR',
+      offers: [
+        {
+          '@type': 'Offer',
+          name: 'Kyber Gratuit',
+          price: '0',
+          priceCurrency: 'EUR',
+          description: "Version gratuite — jusqu'à 3 mots de passe",
+        },
+        {
+          '@type': 'Offer',
+          name: 'Kyber Pro',
+          price: '15.00',
+          priceCurrency: 'EUR',
+          description: 'Licence perpétuelle — mots de passe illimités',
+        },
+      ],
+      featureList: [
+        'Chiffrement post-quantique Kyber1024',
+        'AES-256-GCM',
+        'Argon2id key derivation',
+        'Auto-remplissage des mots de passe',
+        'Analyse de sécurité du coffre',
+        'Import Bitwarden / 1Password',
+        'Fonctionnement 100% local',
+      ],
+    },
+    {
+      '@type': 'Organization',
+      name: 'Kyber Security',
+      url: 'https://kyber-security.fr',
+      logo: 'https://kyber-security.fr/opengraph-image',
+      founder: { '@type': 'Person', name: 'Enzo Paccard' },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'contact@kyber-security.fr',
+        contactType: 'customer support',
+        availableLanguage: 'French',
+      },
+      address: { '@type': 'PostalAddress', addressCountry: 'FR' },
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: "Qu'est-ce que le chiffrement post-quantique ?",
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Le chiffrement post-quantique utilise des algorithmes résistants aux ordinateurs quantiques. Kyber utilise Kyber1024, sélectionné par le NIST comme standard post-quantique, combiné à AES-256-GCM.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Kyber est-il gratuit ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Oui, Kyber est gratuit jusqu'à 3 mots de passe. La licence Pro à 15€ (paiement unique, perpétuelle) débloque les mots de passe illimités.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Sur quels systèmes Kyber fonctionne-t-il ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Kyber est compatible Windows 10 et 11, macOS 12 (Monterey) et supérieur, et Linux (Debian, Ubuntu).',
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Mes mots de passe sont-ils envoyés sur internet ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Non. Kyber fonctionne entièrement en local. Vos mots de passe sont chiffrés et stockés sur votre appareil uniquement. Aucune donnée n'est transmise à nos serveurs.",
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [buyerName, setBuyerName] = useState('');
@@ -85,6 +176,10 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#070711]/80 backdrop-blur-md border-b border-white/5">
