@@ -432,12 +432,23 @@ export default function Home() {
       {/* ── FOOTER ──────────────────────────────────────────────────────── */}
       <footer className="border-t border-white/5 py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
-          <div>
-            <span className="font-bold text-white">Kyber</span> — © 2026 Kyber Security. Made in France 🇫🇷
+          <div className="flex flex-col items-center md:items-start gap-1">
+            <span><span className="font-bold text-white">Kyber</span> — © 2026 Kyber Security. Made in France 🇫🇷</span>
+            <span>
+              Créé avec ❤️ par{' '}
+              <a
+                href="https://softpac.fr"
+                target="_blank"
+                rel="noopener"
+                className="text-blue-400 hover:text-blue-300 transition-colors"
+              >
+                Softpac.fr
+              </a>
+            </span>
           </div>
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">Politique de confidentialité</a>
-            <a href="#" className="hover:text-white transition-colors">CGV</a>
+          <div className="flex flex-wrap justify-center gap-6">
+            <a href="/politique-de-confidentialite" className="hover:text-white transition-colors">Confidentialité</a>
+            <a href="/cgv" className="hover:text-white transition-colors">CGV</a>
             <a
               href="mailto:contact@kyber-security.fr"
               className="hover:text-white transition-colors"
