@@ -473,25 +473,28 @@ export default function Home() {
                 icon: '🪟',
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                ext: 'setup.exe',
+                href: '/downloads/Kyber_1.0.0_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
+                available: true,
               },
               {
                 icon: '🍎',
                 platform: 'macOS',
                 versions: '12 Monterey et supérieur',
-                ext: 'macos.dmg',
-                label: 'Télécharger .dmg',
+                href: null,
+                label: 'Bientôt disponible',
                 note: 'Apple Silicon & Intel',
+                available: false,
               },
               {
                 icon: '🐧',
                 platform: 'Linux',
                 versions: 'Debian / Ubuntu',
-                ext: 'linux.AppImage',
-                label: 'Télécharger .AppImage',
+                href: null,
+                label: 'Bientôt disponible',
                 note: 'Compatible Debian & Ubuntu',
+                available: false,
               },
             ].map((p) => (
               <div
@@ -502,12 +505,19 @@ export default function Home() {
                 <h3 className="font-semibold text-lg">{p.platform}</h3>
                 <p className="text-slate-500 text-xs mb-1">{p.versions}</p>
                 <p className="text-slate-600 text-xs mb-5">{p.note}</p>
-                <a
-                  href={`https://github.com/kyber-security/kyber/releases/latest/download/Kyber_${p.ext}`}
-                  className="inline-block text-blue-400 hover:text-blue-300 text-sm font-medium border border-blue-500/30 hover:border-blue-500/60 px-5 py-2 rounded-lg transition-all"
-                >
-                  {p.label}
-                </a>
+                {p.available ? (
+                  <a
+                    href={p.href!}
+                    download
+                    className="inline-block text-blue-400 hover:text-blue-300 text-sm font-medium border border-blue-500/30 hover:border-blue-500/60 px-5 py-2 rounded-lg transition-all"
+                  >
+                    {p.label}
+                  </a>
+                ) : (
+                  <span className="inline-block text-slate-600 text-sm font-medium border border-white/10 px-5 py-2 rounded-lg cursor-not-allowed">
+                    {p.label}
+                  </span>
+                )}
               </div>
             ))}
           </div>
