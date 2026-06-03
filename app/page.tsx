@@ -323,10 +323,10 @@ export default function Home() {
                   {/* Entries */}
                   <div className="px-4 pb-4 space-y-2 mt-1">
                     {[
-                      { name: 'Google', user: 'enzo@gmail.com', color: 'from-red-500 to-yellow-500' },
-                      { name: 'GitHub', user: 'XelorCO', color: 'from-slate-400 to-slate-600' },
-                      { name: 'Stripe', user: 'contact@kyber-security.fr', color: 'from-purple-500 to-indigo-500' },
-                      { name: 'Vercel', user: 'kyber-security.fr', color: 'from-white to-slate-300' },
+                      { name: 'Crédit Agricole', user: 'jean.dupont@gmail.com', color: 'from-green-600 to-green-400' },
+                      { name: 'Google', user: 'jean.dupont@gmail.com', color: 'from-red-500 to-yellow-400' },
+                      { name: 'Facebook', user: 'jean.dupont@gmail.com', color: 'from-blue-600 to-blue-400' },
+                      { name: 'Discord', user: 'JeanDupont#4271', color: 'from-indigo-500 to-purple-500' },
                     ].map((e) => (
                       <div key={e.name} className="flex items-center gap-3 bg-white/[0.03] hover:bg-white/[0.06] border border-white/5 rounded-xl px-3 py-2.5 transition-colors cursor-default">
                         <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${e.color} flex items-center justify-center flex-shrink-0`}>
