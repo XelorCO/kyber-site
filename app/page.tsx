@@ -143,32 +143,56 @@ export default function Home() {
 
   const features = [
     {
-      icon: '🔷',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 1 1 9 0v3.75M3.75 21.75h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H3.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+        </svg>
+      ),
       title: 'Kyber1024 Post-Quantique',
       desc: "Algorithme sélectionné par le NIST comme standard post-quantique. Résistant aux attaques des ordinateurs quantiques aujourd'hui et dans 20 ans.",
     },
     {
-      icon: '🔐',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+        </svg>
+      ),
       title: 'AES-256-GCM',
       desc: 'Chiffrement symétrique authentifié de niveau militaire. Vos données sont protégées contre toute lecture ou modification non autorisée.',
     },
     {
-      icon: '🛡️',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+        </svg>
+      ),
       title: 'Argon2id',
       desc: 'Dérivation de clé primée, paramétrable à 64 MB de mémoire. Résistant aux attaques GPU, ASIC et par force brute.',
     },
     {
-      icon: '⚡',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+        </svg>
+      ),
       title: 'Auto-remplissage',
       desc: "Détection automatique des champs de mot de passe. Injectez vos identifiants en un clic dans n'importe quelle application.",
     },
     {
-      icon: '📊',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+        </svg>
+      ),
       title: 'Analyse de sécurité',
       desc: 'Détectez les mots de passe faibles, réutilisés ou trop anciens. Tableau de bord de santé complet pour votre coffre.',
     },
     {
-      icon: '💾',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+        </svg>
+      ),
       title: 'Import universel',
       desc: 'Migrez depuis Bitwarden, 1Password ou tout gestionnaire supportant le CSV. Migration en quelques secondes.',
     },
@@ -277,7 +301,7 @@ export default function Home() {
                 key={f.title}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all"
               >
-                <div className="text-4xl mb-4">{f.icon}</div>
+                <div className="mb-4">{f.icon}</div>
                 <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
                 <p className="text-slate-400 text-sm leading-relaxed">{f.desc}</p>
               </div>
@@ -376,7 +400,7 @@ export default function Home() {
 
           {contactStatus === 'sent' ? (
             <div className="bg-green-500/10 border border-green-500/30 rounded-2xl p-8 text-center">
-              <div className="text-4xl mb-4">✅</div>
+              <div className="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></div>
               <h3 className="font-semibold text-xl mb-2">Message envoyé !</h3>
               <p className="text-slate-400">Nous vous répondrons dans les 24 heures.</p>
             </div>
@@ -470,7 +494,11 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               {
-                icon: '🪟',
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-blue-400" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+                  </svg>
+                ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
                 href: '/downloads/Kyber_1.0.0_x64-setup.exe',
@@ -479,16 +507,24 @@ export default function Home() {
                 available: true,
               },
               {
-                icon: '🍎',
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-slate-300" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
+                  </svg>
+                ),
                 platform: 'macOS',
                 versions: '12 Monterey et supérieur',
                 href: null,
-                label: 'Bientôt disponible',
+                label: 'Disponible bientôt',
                 note: 'Apple Silicon & Intel',
                 available: false,
               },
               {
-                icon: '🐧',
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                  </svg>
+                ),
                 platform: 'Linux',
                 versions: 'Debian / Ubuntu',
                 href: null,
@@ -501,7 +537,7 @@ export default function Home() {
                 key={p.platform}
                 className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all"
               >
-                <div className="text-5xl mb-3">{p.icon}</div>
+                <div className="mb-3">{p.icon}</div>
                 <h3 className="font-semibold text-lg">{p.platform}</h3>
                 <p className="text-slate-500 text-xs mb-1">{p.versions}</p>
                 <p className="text-slate-600 text-xs mb-5">{p.note}</p>
@@ -610,7 +646,7 @@ export default function Home() {
               </div>
 
               <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 text-xs text-blue-300">
-                📧 Votre clé de licence sera envoyée à cet email immédiatement après le paiement.
+                Votre clé de licence sera envoyée à cet email immédiatement après le paiement.
               </div>
 
               <button
@@ -622,7 +658,7 @@ export default function Home() {
               </button>
 
               <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
-                <span>🔒</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
                 <span>Paiement sécurisé via Stripe · Visa, Mastercard, CB</span>
               </div>
             </form>
