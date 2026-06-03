@@ -612,10 +612,10 @@ export default function Home() {
                 ),
                 platform: 'Linux',
                 versions: 'Debian / Ubuntu',
-                href: null,
-                label: 'Bientôt disponible',
-                note: 'Compatible Debian & Ubuntu',
-                available: false,
+                href: '/downloads/Kyber_1.0.0_amd64.AppImage',
+                label: 'Télécharger .AppImage',
+                note: 'Debian, Ubuntu, Kali & Red Hat',
+                available: true,
               },
             ].map((p, i) => (
               <div
