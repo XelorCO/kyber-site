@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -108,6 +108,15 @@ export default function Home() {
     message: '',
   });
   const [contactStatus, setContactStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }),
+      { threshold: 0.12 }
+    );
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -232,54 +241,119 @@ export default function Home() {
       </header>
 
       {/* ── HERO ────────────────────────────────────────────────────────── */}
-      <section id="home" className="relative pt-36 pb-24 px-6">
+      <section id="home" className="relative pt-36 pb-24 px-6 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="glow-blob absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl" />
-          <div className="glow-blob-2 absolute top-1/3 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl" />
-          <div className="absolute inset-0 opacity-[0.03]"
+          <div className="glow-blob absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl" />
+          <div className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 opacity-[0.025]"
             style={{ backgroundImage: 'radial-gradient(circle, #fff 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
 
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-500/10 text-blue-400 px-4 py-2 rounded-full text-sm mb-8">
-            <span>🇫🇷</span>
-            <span>Premier gestionnaire de mots de passe post-quantique français</span>
-          </div>
+        <div className="relative max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
-            Protégez vos mots de passe contre{' '}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              les quantiques
-            </span>
-          </h1>
+            {/* ── Texte ── */}
+            <div>
+              <div className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-sm mb-8 font-medium">
+                <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                Premier gestionnaire post-quantique français
+              </div>
 
-          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Kyber combine le chiffrement{' '}
-            <strong className="text-white">Kyber1024</strong> post-quantique avec{' '}
-            <strong className="text-white">AES-256-GCM</strong> pour une protection inégalée,
-            aujourd'hui et pour les 20 prochaines années.
-          </p>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+                Vos mots de passe{' '}
+                <span className="gradient-shimmer">
+                  résistants au quantique
+                </span>
+              </h1>
 
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="#download"
-              className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-blue-500/25"
-            >
-              Télécharger gratuitement
-            </a>
-            <a
-              href="#pricing"
-              className="border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 px-8 py-3.5 rounded-xl font-semibold transition-all"
-            >
-              Voir les tarifs →
-            </a>
-          </div>
+              <p className="text-lg text-slate-400 mb-10 max-w-lg leading-relaxed">
+                Kyber combine{' '}
+                <strong className="text-white">Kyber1024</strong> post-quantique avec{' '}
+                <strong className="text-white">AES-256-GCM</strong> pour une protection inégalée,
+                aujourd&apos;hui et pour les 20 prochaines années.
+              </p>
 
-          <div className="flex flex-wrap justify-center gap-6 mt-12 text-sm text-slate-500">
-            <span>✓ Windows 10 / 11</span>
-            <span>✓ macOS 12+</span>
-            <span>✓ Linux Debian / Ubuntu</span>
-            <span>✓ Open Source</span>
+              <div className="flex flex-wrap gap-4 mb-10">
+                <a
+                  href="#download"
+                  className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-blue-500/25 text-sm"
+                >
+                  Télécharger gratuitement
+                </a>
+                <a
+                  href="#pricing"
+                  className="border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm"
+                >
+                  Voir les tarifs →
+                </a>
+              </div>
+
+              <div className="flex flex-wrap gap-5 text-sm text-slate-500">
+                {['Windows 10/11', 'macOS 12+', 'Linux', 'Open Source'].map((t) => (
+                  <span key={t} className="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* ── Mockup app ── */}
+            <div className="hidden lg:flex justify-center items-center">
+              <div className="app-mockup w-full max-w-md">
+                <div className="bg-[#0d0d1a] border border-white/10 rounded-2xl shadow-2xl shadow-blue-500/10 overflow-hidden">
+                  {/* Title bar */}
+                  <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-white/[0.03]">
+                    <div className="flex gap-1.5">
+                      <span className="w-3 h-3 rounded-full bg-red-500/60" />
+                      <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
+                      <span className="w-3 h-3 rounded-full bg-green-500/60" />
+                    </div>
+                    <span className="text-xs text-slate-500 mx-auto pr-6">Kyber — Coffre-Fort</span>
+                  </div>
+                  {/* Search */}
+                  <div className="px-4 pt-4 pb-2">
+                    <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-lg px-3 py-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                      <span className="text-xs text-slate-600">Rechercher un mot de passe…</span>
+                    </div>
+                  </div>
+                  {/* Entries */}
+                  <div className="px-4 pb-4 space-y-2 mt-1">
+                    {[
+                      { name: 'Google', user: 'enzo@gmail.com', color: 'from-red-500 to-yellow-500' },
+                      { name: 'GitHub', user: 'XelorCO', color: 'from-slate-400 to-slate-600' },
+                      { name: 'Stripe', user: 'contact@kyber-security.fr', color: 'from-purple-500 to-indigo-500' },
+                      { name: 'Vercel', user: 'kyber-security.fr', color: 'from-white to-slate-300' },
+                    ].map((e) => (
+                      <div key={e.name} className="flex items-center gap-3 bg-white/[0.03] hover:bg-white/[0.06] border border-white/5 rounded-xl px-3 py-2.5 transition-colors cursor-default">
+                        <div className={`w-8 h-8 rounded-lg bg-gradient-to-br ${e.color} flex items-center justify-center flex-shrink-0`}>
+                          <span className="text-xs font-bold text-white/90">{e.name[0]}</span>
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-xs font-medium text-white">{e.name}</p>
+                          <p className="text-xs text-slate-500 truncate">{e.user}</p>
+                        </div>
+                        <div className="text-xs text-slate-600 font-mono tracking-widest">••••••••</div>
+                      </div>
+                    ))}
+                  </div>
+                  {/* Footer badge */}
+                  <div className="px-4 pb-4">
+                    <div className="flex items-center justify-between bg-blue-500/10 border border-blue-500/20 rounded-xl px-3 py-2">
+                      <span className="text-xs text-blue-400 font-medium">Chiffrement Kyber1024</span>
+                      <span className="text-xs text-green-400 font-medium flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                        Actif
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
@@ -296,10 +370,10 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((f) => (
+            {features.map((f, i) => (
               <div
                 key={f.title}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all"
+                className={`reveal reveal-delay-${i + 1} bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all`}
               >
                 <div className="mb-4">{f.icon}</div>
                 <h3 className="font-semibold text-lg mb-2">{f.title}</h3>
@@ -521,8 +595,19 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-yellow-400" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" viewBox="0 0 64 80" fill="none">
+                    <ellipse cx="32" cy="48" rx="15" ry="18" fill="#2d2d3d"/>
+                    <ellipse cx="32" cy="50" rx="9" ry="12" fill="#e8e8f0"/>
+                    <circle cx="32" cy="22" r="13" fill="#2d2d3d"/>
+                    <circle cx="27" cy="18" r="3.5" fill="white"/>
+                    <circle cx="37" cy="18" r="3.5" fill="white"/>
+                    <circle cx="28" cy="19" r="1.8" fill="#111827"/>
+                    <circle cx="38" cy="19" r="1.8" fill="#111827"/>
+                    <ellipse cx="32" cy="27" rx="4.5" ry="3" fill="#f59e0b"/>
+                    <ellipse cx="23" cy="72" rx="7" ry="3" fill="#f59e0b"/>
+                    <ellipse cx="41" cy="72" rx="7" ry="3" fill="#f59e0b"/>
+                    <ellipse cx="16" cy="46" rx="5" ry="11" fill="#2d2d3d" transform="rotate(-15 16 46)"/>
+                    <ellipse cx="48" cy="46" rx="5" ry="11" fill="#2d2d3d" transform="rotate(15 48 46)"/>
                   </svg>
                 ),
                 platform: 'Linux',
@@ -532,10 +617,10 @@ export default function Home() {
                 note: 'Compatible Debian & Ubuntu',
                 available: false,
               },
-            ].map((p) => (
+            ].map((p, i) => (
               <div
                 key={p.platform}
-                className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all"
+                className={`reveal reveal-delay-${i + 1} bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-blue-500/30 hover:bg-white/[0.07] transition-all`}
               >
                 <div className="mb-3">{p.icon}</div>
                 <h3 className="font-semibold text-lg">{p.platform}</h3>
