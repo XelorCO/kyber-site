@@ -17,19 +17,19 @@ export default function SuccessPage() {
           <ol className="space-y-3 text-slate-400 text-sm">
             <li className="flex gap-3">
               <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
-              <span>Ouvrez l'application <strong className="text-white">Kyber</strong> sur votre ordinateur</span>
+              <span>Ouvrez l&apos;application <strong className="text-white">Kyber</strong> sur votre ordinateur</span>
             </li>
             <li className="flex gap-3">
               <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
-              <span>Allez dans <strong className="text-white">Paramètres</strong> (icône ⚙️ dans la barre latérale)</span>
+              <span>Dans la barre latérale gauche, cliquez sur <strong className="text-white">⚙️ Paramètres</strong></span>
             </li>
             <li className="flex gap-3">
               <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
-              <span>Cliquez sur <strong className="text-white">Activer la licence</strong></span>
+              <span>Faites défiler jusqu&apos;à la section <strong className="text-white">Licence Kyber</strong></span>
             </li>
             <li className="flex gap-3">
               <span className="w-6 h-6 rounded-full bg-blue-600 text-white text-xs flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
-              <span>Copiez-collez la clé reçue par email et confirmez</span>
+              <span>Collez votre clé reçue par email dans le champ et cliquez sur <strong className="text-white">Activer la licence</strong></span>
             </li>
           </ol>
         </div>

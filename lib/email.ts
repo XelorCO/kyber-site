@@ -51,18 +51,19 @@ export async function sendLicenseEmail({ name, email, licenseKey }: SendLicenseE
       </div>
 
       <!-- Steps -->
-      <h3 style="color:#1e293b;font-size:15px;margin-bottom:12px;">Comment activer :</h3>
+      <h3 style="color:#1e293b;font-size:15px;margin-bottom:12px;">Comment activer votre licence :</h3>
       <table style="border-collapse:collapse;width:100%;">
-        ${["Ouvrez l'application <strong>Kyber</strong> sur votre ordinateur",
-          'Allez dans <strong>Paramètres</strong> (icône ⚙️)',
-          'Cliquez sur <strong>Activer la licence</strong>',
-          'Copiez-collez la clé ci-dessus et confirmez']
+        ${[
+          "Ouvrez l'application <strong>Kyber</strong> sur votre ordinateur",
+          'Dans la barre latérale gauche, cliquez sur <strong>⚙️ Paramètres</strong>',
+          'Faites défiler jusqu\'à la section <strong>Licence Kyber</strong>',
+          'Copiez votre clé ci-dessus, collez-la dans le champ et cliquez sur <strong>Activer la licence</strong>']
           .map((step, i) => `
           <tr>
-            <td style="padding:6px 12px 6px 0;vertical-align:top;width:28px;">
+            <td style="padding:8px 12px 8px 0;vertical-align:top;width:28px;">
               <span style="display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;background:#3b82f6;color:white;border-radius:50%;font-size:12px;font-weight:bold;">${i + 1}</span>
             </td>
-            <td style="padding:6px 0;color:#475569;font-size:14px;">${step}</td>
+            <td style="padding:8px 0;color:#475569;font-size:14px;line-height:1.5;">${step}</td>
           </tr>`).join('')}
       </table>
 
