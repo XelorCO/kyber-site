@@ -3,27 +3,70 @@ import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
+const pageJsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'SoftwareApplication',
+      name: 'Kyber',
+      applicationCategory: 'SecurityApplication',
+      operatingSystem: 'Windows 10, Windows 11, Linux',
+      url: 'https://kyber-security.fr',
+      inLanguage: 'fr-FR',
+      offers: [
+        { '@type': 'Offer', name: 'Kyber Gratuit', price: '0', priceCurrency: 'EUR', description: "Jusqu'à 3 mots de passe" },
+        { '@type': 'Offer', name: 'Kyber Pro', price: '15.00', priceCurrency: 'EUR', description: 'Mots de passe illimités, licence perpétuelle' },
+      ],
+      featureList: ['Chiffrement post-quantique Kyber1024', 'AES-256-GCM', 'Argon2id', 'Auto-remplissage', '100% local, zéro cloud'],
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Mes mots de passe sont-ils envoyés sur internet ?', acceptedAnswer: { '@type': 'Answer', text: "Non. Kyber fonctionne entièrement en local. Vos mots de passe sont chiffrés et stockés sur votre appareil uniquement. Aucune donnée ne transite par nos serveurs." } },
+        { '@type': 'Question', name: 'Que se passe-t-il si je perds ma passphrase ?', acceptedAnswer: { '@type': 'Answer', text: "La passphrase est la seule clé de votre coffre. Si vous la perdez, personne ne peut récupérer vos données. Notez-la dans un endroit physique sécurisé." } },
+        { '@type': 'Question', name: 'Puis-je migrer depuis Bitwarden ou 1Password ?', acceptedAnswer: { '@type': 'Answer', text: "Oui. Exportez votre coffre en CSV depuis votre gestionnaire actuel, puis utilisez la fonction d'import CSV de Kyber. La migration prend moins d'une minute." } },
+        { '@type': 'Question', name: 'Est-ce que Kyber est open source ?', acceptedAnswer: { '@type': 'Answer', text: "Oui. Le code source de l'application Kyber est disponible sur GitHub. Vous pouvez auditer le code et vérifier les algorithmes." } },
+        { '@type': 'Question', name: 'Kyber fonctionne-t-il sur Mac ?', acceptedAnswer: { '@type': 'Answer', text: "Le support macOS est en cours de développement. Kyber est actuellement disponible sur Windows 10/11 et Linux (Debian, Ubuntu, Fedora, Kali)." } },
+      ],
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Gestionnaire de mots de passe post-quantique 100% local | Kyber',
+  title: { absolute: 'Gestionnaire mots de passe post-quantique | Kyber' },
   description:
-    'Kyber est le premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. 100% local, zéro cloud, open source. Gratuit jusqu\'à 3 mots de passe.',
+    'Premier gestionnaire mots de passe post-quantique français. Kyber1024 + AES-256-GCM + Argon2id. 100% local, zéro cloud, open source. Gratuit.',
   keywords: [
     'gestionnaire mots de passe post-quantique',
     'gestionnaire mots de passe local',
     'gestionnaire mots de passe français',
+    'coffre-fort numérique',
     'logiciel sécurité mots de passe',
     'kyber1024 gestionnaire',
     'password manager post quantum',
     'alternative bitwarden locale',
     'gestionnaire mots de passe sans cloud',
+    'souveraineté numérique',
+    'gestionnaire mots de passe RGPD',
+    'gestionnaire mots de passe open source',
+    'logiciel sécurité français',
+    'ANSSI post-quantique',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/gestionnaire-mots-de-passe-post-quantique',
   },
   openGraph: {
-    title: 'Gestionnaire de mots de passe post-quantique 100% local | Kyber',
-    description: 'Chiffrement Kyber1024 + AES-256-GCM. 100% local, zéro cloud. Premier gestionnaire post-quantique français.',
+    title: 'Gestionnaire mots de passe post-quantique | Kyber',
+    description: 'Kyber1024 + AES-256-GCM. 100% local, zéro cloud. Premier gestionnaire post-quantique français. Gratuit.',
     url: 'https://kyber-security.fr/gestionnaire-mots-de-passe-post-quantique',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber — Gestionnaire de mots de passe post-quantique' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Gestionnaire mots de passe post-quantique | Kyber',
+    description: 'Kyber1024 + AES-256-GCM. 100% local, zéro cloud. Premier gestionnaire post-quantique français.',
+    images: ['/opengraph-image'],
   },
 };
 
@@ -87,6 +130,7 @@ const features = [
 export default function PageGestionnaire() {
   return (
     <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
       <NavHeader />
 
       <main className="pt-24">

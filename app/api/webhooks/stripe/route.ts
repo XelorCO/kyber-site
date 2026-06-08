@@ -5,6 +5,9 @@ import { sendLicenseEmail } from '@/lib/email';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
+// In-memory dedup — prevents double emails on Stripe retries within the same instance lifetime
+const processedSessions = new Set<string>();
+
 export async function POST(req: NextRequest) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature');
@@ -33,6 +36,12 @@ export async function POST(req: NextRequest) {
     if (session.payment_status !== 'paid') {
       return NextResponse.json({ received: true });
     }
+
+    if (processedSessions.has(session.id)) {
+      console.log(`[webhook] Session ${session.id} déjà traitée — ignorée`);
+      return NextResponse.json({ received: true });
+    }
+    processedSessions.add(session.id);
 
     const name = session.metadata?.name ?? 'Client Kyber';
     const email = session.metadata?.email ?? session.customer_email ?? '';

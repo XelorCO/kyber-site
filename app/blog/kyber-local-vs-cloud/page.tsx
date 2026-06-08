@@ -4,27 +4,39 @@ import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
 export const metadata: Metadata = {
-  title: 'Kyber local vs Kyber cloud : lequel vous protège vraiment ? | Blog Kyber',
+  title: { absolute: 'Kyber local vs cloud : lequel vous protège vraiment ?' },
   description:
-    'Keeper Security a intégré Kyber1024 dans son cloud. Mais le chiffrement post-quantique dans le cloud protège-t-il vraiment vos mots de passe ? Analyse complète du modèle local vs cloud.',
+    'Keeper Security a intégré Kyber dans son cloud. Mais le PQC cloud suffit-il ? Analyse : local vs cloud, RGPD, ANSSI, LastPass breach 2022.',
   keywords: [
     'kyber local cloud',
     'gestionnaire mots de passe local cloud',
     'keeper kyber chiffrement',
     'chiffrement post-quantique cloud',
     'harvest now decrypt later',
-    'lastpass brèche sécurité',
+    'lastpass brèche sécurité 2022',
     'gestionnaire mots de passe sécurisé france',
     'zero knowledge cloud',
+    'souveraineté numérique mots de passe',
+    'ANSSI post-quantique',
+    'RGPD gestionnaire mots de passe',
+    'gestionnaire mots de passe local france',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/blog/kyber-local-vs-cloud',
   },
   openGraph: {
     type: 'article',
-    title: 'Kyber local vs Kyber cloud : lequel vous protège vraiment ?',
-    description: 'Le chiffrement post-quantique dans le cloud est-il suffisant ? Analyse des modèles local vs cloud après les incidents LastPass et l\'annonce Keeper.',
+    title: 'Kyber local vs cloud : lequel vous protège vraiment ?',
+    description: 'PQC dans le cloud vs local : analyse complète après l\'incident LastPass 2022 et l\'annonce Keeper mars 2026.',
     url: 'https://kyber-security.fr/blog/kyber-local-vs-cloud',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber local vs cloud' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kyber local vs cloud : lequel vous protège vraiment ?',
+    description: 'PQC dans le cloud suffit-il ? Analyse après LastPass 2022 et l\'annonce Keeper (mars 2026).',
+    images: ['/opengraph-image'],
   },
 };
 

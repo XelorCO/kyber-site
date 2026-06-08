@@ -4,23 +4,34 @@ import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
 export const metadata: Metadata = {
-  title: 'Blog Kyber Security — Cryptographie post-quantique et sécurité des mots de passe',
+  title: { absolute: 'Blog Kyber | Cryptographie post-quantique' },
   description:
-    'Articles et analyses sur la cryptographie post-quantique, la sécurité des mots de passe, et la protection des données en 2026. Par Kyber Security.',
+    'Analyses sur la cryptographie post-quantique, la sécurité des mots de passe et la souveraineté numérique. Par Kyber Security, logiciel français.',
   keywords: [
     'blog cryptographie post-quantique',
     'sécurité mots de passe',
     'kyber security blog',
     'ordinateur quantique données',
     'protection données personnelles',
+    'souveraineté numérique',
+    'ANSSI post-quantique',
+    'harvest now decrypt later',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/blog',
   },
   openGraph: {
-    title: 'Blog Kyber Security — Cryptographie post-quantique',
-    description: 'Articles sur la cryptographie post-quantique, la sécurité des mots de passe et la souveraineté numérique.',
+    title: 'Blog Kyber | Cryptographie post-quantique',
+    description: 'Analyses sur la cryptographie post-quantique, sécurité des mots de passe et souveraineté numérique. Par Kyber Security.',
     url: 'https://kyber-security.fr/blog',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Blog Kyber Security' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Blog Kyber | Cryptographie post-quantique',
+    description: 'Analyses sur la cryptographie post-quantique, sécurité des mots de passe et souveraineté numérique.',
+    images: ['/opengraph-image'],
   },
 };
 

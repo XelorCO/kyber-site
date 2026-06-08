@@ -3,10 +3,37 @@ import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
+const comparatifJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Quelle est la meilleure alternative à Bitwarden en France ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Kyber est une alternative 100% locale et open source à Bitwarden. Contrairement à Bitwarden qui stocke les coffres dans le cloud, Kyber garde vos mots de passe uniquement sur votre disque. Il est également le seul à intégrer le chiffrement post-quantique Kyber1024 (ML-KEM NIST 2024)." },
+    },
+    {
+      '@type': 'Question',
+      name: 'Quelle est la différence entre un gestionnaire local et cloud ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Un gestionnaire local (Kyber, KeePass) stocke vos mots de passe chiffrés sur votre appareil. Un gestionnaire cloud (Bitwarden, 1Password, Dashlane, LastPass) les stocke sur des serveurs distants. Le local offre une meilleure protection contre les brèches serveur — comme l'a prouvé l'incident LastPass 2022." },
+    },
+    {
+      '@type': 'Question',
+      name: 'LastPass est-il encore sécurisé en 2026 ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Après la brèche de 2022 où des millions de coffres chiffrés ont été volés depuis leurs serveurs, LastPass n'est plus recommandé. La plupart des experts conseillent de migrer vers Bitwarden, 1Password, KeePass, ou Kyber." },
+    },
+    {
+      '@type': 'Question',
+      name: 'Dashlane est-il une bonne alternative en France ?',
+      acceptedAnswer: { '@type': 'Answer', text: "Dashlane est une entreprise française (Paris) avec des serveurs en Europe, ce qui le rend mieux positionné pour le RGPD que les alternatives américaines. Cependant, il reste un gestionnaire cloud (pas de stockage local) et ne propose pas de chiffrement post-quantique." },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Comparatif gestionnaires de mots de passe 2026 : Kyber vs Bitwarden vs 1Password | Kyber',
+  title: { absolute: 'Comparatif gestionnaires mots de passe 2026 | Kyber' },
   description:
-    'Comparatif complet 2026 : Kyber, Bitwarden, 1Password, KeePass, LastPass. Stockage local vs cloud, chiffrement post-quantique, RGPD, open source. Lequel choisir en France ?',
+    'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass — comparatif 2026. Local vs cloud, PQC, RGPD, open source. Lequel choisir en France ?',
   keywords: [
     'comparatif gestionnaire mots de passe',
     'alternative bitwarden locale',
@@ -15,16 +42,27 @@ export const metadata: Metadata = {
     'gestionnaire mots de passe local cloud',
     'keepass alternative',
     'lastpass alternative',
+    'dashlane alternative',
     'gestionnaire mots de passe open source',
     'gestionnaire mots de passe RGPD',
+    'gestionnaire mots de passe souveraineté',
+    'comparatif logiciel mots de passe france',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/comparatif-bitwarden-1password-kyber',
   },
   openGraph: {
-    title: 'Comparatif gestionnaires de mots de passe 2026 | Kyber vs Bitwarden vs 1Password',
-    description: 'Tableau comparatif : local vs cloud, PQC, RGPD, open source. Quel gestionnaire choisir en 2026 ?',
+    title: 'Comparatif gestionnaires mots de passe 2026 | Kyber',
+    description: 'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass — tableau comparatif : local vs cloud, PQC, RGPD.',
     url: 'https://kyber-security.fr/comparatif-bitwarden-1password-kyber',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Comparatif gestionnaires mots de passe 2026' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Comparatif gestionnaires mots de passe 2026 | Kyber',
+    description: 'Kyber vs Bitwarden vs 1Password vs Dashlane vs KeePass. Tableau comparatif local/cloud, PQC, RGPD.',
+    images: ['/opengraph-image'],
   },
 };
 
@@ -76,6 +114,17 @@ const products = [
     highlight: false,
   },
   {
+    name: 'Dashlane',
+    local: false,
+    pqc: false,
+    openSource: false,
+    prix: '4€/mois',
+    rgpd: 'Bonne (entreprise FR)',
+    incidents: 'Aucun majeur',
+    argon2: false,
+    highlight: false,
+  },
+  {
     name: 'LastPass',
     local: false,
     pqc: false,
@@ -99,6 +148,7 @@ function Check({ ok }: { ok: boolean }) {
 export default function PageComparatif() {
   return (
     <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(comparatifJsonLd) }} />
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -107,7 +157,7 @@ export default function PageComparatif() {
           {/* ── HERO ── */}
           <div className="py-16 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Kyber vs Bitwarden vs 1Password vs KeePass{' '}
+              Kyber vs Bitwarden vs 1Password vs Dashlane vs KeePass{' '}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 2026
               </span>
@@ -245,6 +295,17 @@ export default function PageComparatif() {
                   Ses faiblesses : une interface des années 2000, pas de chiffrement post-quantique, pas d&apos;auto-remplissage
                   natif moderne, et un écosystème de plugins peu maintenus. Il reste une bonne option pour les
                   utilisateurs techniques qui veulent du local, mais sans la protection PQC.
+                </p>
+              </div>
+
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-6">
+                <h3 className="font-bold text-lg mb-2 text-slate-300">Dashlane — Le meilleur choix cloud européen</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">
+                  Dashlane est une entreprise fondée à Paris, avec des serveurs en Europe — un avantage RGPD réel
+                  par rapport aux alternatives américaines. Son interface est excellente et son modèle de sécurité
+                  solide. Ses limites : pas de chiffrement post-quantique, pas de stockage local, pas d&apos;open source,
+                  et un tarif élevé (4€/mois). Pour une équipe française cherchant un gestionnaire cloud conforme RGPD,
+                  c&apos;est la meilleure option dans cette catégorie — mais sans la protection PQC.
                 </p>
               </div>
 

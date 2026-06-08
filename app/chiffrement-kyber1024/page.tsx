@@ -4,27 +4,39 @@ import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
 export const metadata: Metadata = {
-  title: 'Chiffrement Kyber1024 : le standard post-quantique du NIST | Kyber',
+  title: { absolute: 'Kyber1024 : chiffrement post-quantique NIST | Kyber' },
   description:
-    'Tout comprendre sur Kyber1024 (ML-KEM), AES-256-GCM et Argon2id : les trois piliers cryptographiques de Kyber. Pourquoi RSA ne suffit plus face aux ordinateurs quantiques.',
+    'Comprendre Kyber1024 (ML-KEM FIPS 203), AES-256-GCM et Argon2id. Pourquoi RSA ne suffit plus, et comment Kyber résiste aux ordinateurs quantiques.',
   keywords: [
     'kyber1024',
     'ML-KEM',
+    'FIPS 203',
     'chiffrement post-quantique',
     'algorithme post-quantique NIST',
+    'cryptographie post-quantique explication',
     'AES-256-GCM explication',
     'argon2id dérivation clé',
-    'ordinateur quantique mots de passe',
+    'ordinateur quantique mots de passe danger',
     'résistance quantique chiffrement',
     'kyber1024 vs aes-256',
+    'lattice cryptography',
+    'ANSSI chiffrement post-quantique',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/chiffrement-kyber1024',
   },
   openGraph: {
-    title: 'Chiffrement Kyber1024 : le standard post-quantique du NIST | Kyber',
-    description: 'Kyber1024, AES-256-GCM, Argon2id : comment fonctionne le chiffrement hybride post-quantique de Kyber.',
+    title: 'Kyber1024 : chiffrement post-quantique NIST | Kyber',
+    description: 'Kyber1024, AES-256-GCM, Argon2id : comment fonctionne le chiffrement hybride post-quantique de Kyber. Guide technique complet.',
     url: 'https://kyber-security.fr/chiffrement-kyber1024',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber1024 — Chiffrement post-quantique' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kyber1024 : chiffrement post-quantique NIST | Kyber',
+    description: 'ML-KEM FIPS 203 + AES-256-GCM + Argon2id. Guide complet sur la cryptographie post-quantique.',
+    images: ['/opengraph-image'],
   },
 };
 

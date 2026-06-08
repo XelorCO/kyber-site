@@ -3,31 +3,66 @@ import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
+const downloadJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Kyber',
+  applicationCategory: 'SecurityApplication',
+  operatingSystem: ['Windows 10', 'Windows 11', 'Linux'],
+  downloadUrl: [
+    'https://kyber-security.fr/downloads/Kyber_1.0.0_x64-setup.exe',
+    'https://kyber-security.fr/downloads/Kyber_1.0.0_x64_en-US.msi',
+    'https://kyber-security.fr/downloads/Kyber_1.0.0_amd64.AppImage',
+    'https://kyber-security.fr/downloads/Kyber_1.0.0_amd64.deb',
+    'https://kyber-security.fr/downloads/Kyber-1.0.0-1.x86_64.rpm',
+  ],
+  softwareVersion: '1.0.0',
+  releaseNotes: 'Chiffrement Kyber1024 (ML-KEM) + AES-256-GCM + Argon2id. Support Windows et Linux.',
+  url: 'https://kyber-security.fr',
+  inLanguage: 'fr-FR',
+  offers: [
+    { '@type': 'Offer', price: '0', priceCurrency: 'EUR', name: 'Kyber Gratuit', description: "Jusqu'à 3 mots de passe" },
+    { '@type': 'Offer', price: '15.00', priceCurrency: 'EUR', name: 'Kyber Pro', description: 'Mots de passe illimités, licence perpétuelle' },
+  ],
+};
+
 export const metadata: Metadata = {
-  title: 'Télécharger Kyber — Gestionnaire de mots de passe post-quantique | Kyber',
+  title: { absolute: 'Télécharger Kyber | Gestionnaire post-quantique gratuit' },
   description:
-    'Télécharger Kyber gratuitement sur Windows 10/11 et Linux (Debian, Ubuntu, Fedora). Installateur NSIS, MSI, AppImage, .deb, .rpm disponibles.',
+    'Télécharger Kyber gratuitement sur Windows 10/11 et Linux. Installateur NSIS, MSI, AppImage, .deb, .rpm. Chiffrement Kyber1024 post-quantique.',
   keywords: [
     'télécharger kyber',
     'télécharger gestionnaire mots de passe',
-    'kyber windows',
-    'kyber linux',
+    'kyber windows télécharger',
+    'kyber linux télécharger',
     'gestionnaire mots de passe gratuit windows',
     'gestionnaire mots de passe ubuntu',
+    'gestionnaire mots de passe gratuit linux',
+    'logiciel sécurité gratuit windows',
+    'télécharger coffre-fort numérique',
   ],
   alternates: {
     canonical: 'https://kyber-security.fr/telechargement',
   },
   openGraph: {
-    title: 'Télécharger Kyber | Gestionnaire de mots de passe post-quantique',
-    description: 'Disponible sur Windows 10/11 et Linux. Gratuit jusqu\'à 3 mots de passe.',
+    title: 'Télécharger Kyber | Gestionnaire post-quantique gratuit',
+    description: 'Disponible sur Windows 10/11 et Linux. Gratuit jusqu\'à 3 mots de passe. Chiffrement Kyber1024.',
     url: 'https://kyber-security.fr/telechargement',
+    siteName: 'Kyber Security',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Télécharger Kyber Security' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Télécharger Kyber | Gestionnaire post-quantique gratuit',
+    description: 'Windows & Linux. Gratuit jusqu\'à 3 mots de passe. Kyber1024 + AES-256-GCM.',
+    images: ['/opengraph-image'],
   },
 };
 
 export default function PageTelechargement() {
   return (
     <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(downloadJsonLd) }} />
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -39,12 +74,13 @@ export default function PageTelechargement() {
               Télécharger{' '}
               <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 Kyber
-              </span>
+              </span>{' '}
+              gratuitement
             </h1>
-            <p className="text-lg text-slate-400 mb-4">
-              Gratuit. Open source. Disponible sur Windows et Linux.
+            <p className="text-lg text-slate-400 mb-2">
+              Gestionnaire de mots de passe post-quantique. Open source. Windows &amp; Linux.
             </p>
-            <p className="text-sm text-slate-500">Version 1.0.0 · Juin 2026</p>
+            <p className="text-sm text-slate-500">Version 1.0.0 · Juin 2026 · Chiffrement Kyber1024 (ML-KEM)</p>
           </div>
 
           {/* ── PLATEFORMES ── */}
