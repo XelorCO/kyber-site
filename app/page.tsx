@@ -2,99 +2,6 @@
 
 import { useState, useEffect } from 'react';
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@graph': [
-    {
-      '@type': 'SoftwareApplication',
-      name: 'Kyber',
-      applicationCategory: 'SecurityApplication',
-      operatingSystem: 'Windows 10, Windows 11, macOS 12, Linux',
-      description: 'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id.',
-      url: 'https://kyber-security.fr',
-      inLanguage: 'fr-FR',
-      offers: [
-        {
-          '@type': 'Offer',
-          name: 'Kyber Gratuit',
-          price: '0',
-          priceCurrency: 'EUR',
-          description: "Version gratuite — jusqu'à 3 mots de passe",
-        },
-        {
-          '@type': 'Offer',
-          name: 'Kyber Pro',
-          price: '15.00',
-          priceCurrency: 'EUR',
-          description: 'Licence perpétuelle — mots de passe illimités',
-        },
-      ],
-      featureList: [
-        'Chiffrement post-quantique Kyber1024',
-        'AES-256-GCM',
-        'Argon2id key derivation',
-        'Auto-remplissage des mots de passe',
-        'Analyse de sécurité du coffre',
-        'Import Bitwarden / 1Password',
-        'Chiffrement de fichiers et dossiers',
-        'Générateur de mots de passe fort',
-        'Fonctionnement 100% local, zéro cloud',
-      ],
-    },
-    {
-      '@type': 'Organization',
-      name: 'Kyber Security',
-      url: 'https://kyber-security.fr',
-      logo: 'https://kyber-security.fr/opengraph-image',
-      founder: { '@type': 'Person', name: 'Enzo Paccard' },
-      contactPoint: {
-        '@type': 'ContactPoint',
-        email: 'contact@kyber-security.fr',
-        contactType: 'customer support',
-        availableLanguage: 'French',
-      },
-      address: { '@type': 'PostalAddress', addressCountry: 'FR' },
-    },
-    {
-      '@type': 'FAQPage',
-      mainEntity: [
-        {
-          '@type': 'Question',
-          name: "Qu'est-ce que le chiffrement post-quantique ?",
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: "Le chiffrement post-quantique utilise des algorithmes résistants aux ordinateurs quantiques. Kyber utilise Kyber1024, sélectionné par le NIST comme standard post-quantique, combiné à AES-256-GCM.",
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Kyber est-il gratuit ?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: "Oui, Kyber est gratuit jusqu'à 3 mots de passe. La licence Pro à 15€ (paiement unique, perpétuelle) débloque les mots de passe illimités.",
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Sur quels systèmes Kyber fonctionne-t-il ?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: 'Kyber est compatible Windows 10 et 11, macOS 12 (Monterey) et supérieur, et Linux (Debian, Ubuntu).',
-          },
-        },
-        {
-          '@type': 'Question',
-          name: 'Mes mots de passe sont-ils envoyés sur internet ?',
-          acceptedAnswer: {
-            '@type': 'Answer',
-            text: "Non. Kyber fonctionne entièrement en local. Vos mots de passe sont chiffrés et stockés sur votre appareil uniquement. Aucune donnée n'est transmise à nos serveurs.",
-          },
-        },
-      ],
-    },
-  ],
-};
-
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [buyerName, setBuyerName] = useState('');
@@ -238,10 +145,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
 
       {/* ── HEADER ─────────────────────────────────────────────────────── */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-[#070711]/80 backdrop-blur-md border-b border-white/5">
@@ -255,13 +158,13 @@ export default function Home() {
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm text-slate-400">
-            <a href="#features" className="hover:text-white transition-colors">Fonctionnalités</a>
+            <a href="/gestionnaire-mots-de-passe-post-quantique" className="hover:text-white transition-colors">Fonctionnalités</a>
             <a href="#pricing" className="hover:text-white transition-colors">Tarifs</a>
             <a href="#enterprise" className="hover:text-white transition-colors">Entreprises</a>
-            <a href="#download" className="hover:text-white transition-colors">Télécharger</a>
+            <a href="/blog" className="hover:text-white transition-colors">Blog</a>
           </nav>
           <a
-            href="#download"
+            href="/telechargement"
             className="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             Télécharger
@@ -304,7 +207,7 @@ export default function Home() {
 
               <div className="flex flex-wrap gap-4 mb-10">
                 <a
-                  href="#download"
+                  href="/telechargement"
                   className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-blue-500/25 text-sm"
                 >
                   Télécharger gratuitement
@@ -318,7 +221,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap gap-5 text-sm text-slate-500">
-                {['Windows 10/11', 'macOS 12+', 'Linux', 'Open Source'].map((t) => (
+                {['Windows 10/11', 'macOS 12+', 'Linux'].map((t) => (
                   <span key={t} className="flex items-center gap-1.5">
                     <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
@@ -674,19 +577,36 @@ export default function Home() {
             ))}
           </div>
 
-          <p className="text-slate-600 text-xs mt-10">
-            Version 1.0.0 ·{' '}
-            <a
-              href="https://github.com/kyber-security/kyber"
-              className="hover:text-slate-400 transition-colors underline"
-            >
-              Code source sur GitHub
-            </a>
-          </p>
+          <p className="text-slate-600 text-xs mt-10">Version 1.0.0</p>
         </div>
       </section>
 
       {/* ── FOOTER ──────────────────────────────────────────────────────── */}
+      {/* BLOG TEASER */}
+      <section className="py-16 px-6 border-t border-white/5">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-blue-400 bg-blue-500/10 border-blue-500/20 mb-3 inline-block">
+                Nouveau sur le blog
+              </span>
+              <h2 className="text-xl font-bold mb-2">
+                Kyber local vs Kyber cloud : lequel vous protège vraiment ?
+              </h2>
+              <p className="text-slate-400 text-sm max-w-lg">
+                Keeper a intégré Kyber1024 dans son cloud. Mais le PQC dans le cloud suffit-il après l&apos;incident LastPass ?
+              </p>
+            </div>
+            <a
+              href="/blog/kyber-local-vs-cloud"
+              className="flex-shrink-0 border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-xl font-semibold transition-all text-sm whitespace-nowrap"
+            >
+              Lire l&apos;article →
+            </a>
+          </div>
+        </div>
+      </section>
+
       <footer className="border-t border-white/5 py-12 px-6">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-500">
           <div className="flex flex-col items-center md:items-start gap-1">
@@ -704,6 +624,9 @@ export default function Home() {
             </span>
           </div>
           <div className="flex flex-wrap justify-center gap-6">
+            <a href="/blog" className="hover:text-white transition-colors">Blog</a>
+            <a href="/gestionnaire-mots-de-passe-post-quantique" className="hover:text-white transition-colors">Fonctionnalités</a>
+            <a href="/comparatif-bitwarden-1password-kyber" className="hover:text-white transition-colors">Comparatif</a>
             <a href="/politique-de-confidentialite" className="hover:text-white transition-colors">Confidentialité</a>
             <a href="/cgv" className="hover:text-white transition-colors">CGV</a>
             <a
