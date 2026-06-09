@@ -47,25 +47,42 @@ const articles = [
     categoryColor: 'text-blue-400 bg-blue-500/10 border-blue-500/20',
     featured: true,
   },
+  {
+    slug: 'cryptographie-post-quantique',
+    title: "Qu'est-ce que la cryptographie post-quantique ?",
+    excerpt:
+      "Algorithme de Shor, menace quantique sur RSA et ECDSA, standards NIST 2024 (ML-KEM, Dilithium). Tout comprendre sur la cryptographie post-quantique en 10 minutes.",
+    date: '9 juin 2026',
+    readTime: '10 min',
+    category: 'Éducation',
+    categoryColor: 'text-purple-400 bg-purple-500/10 border-purple-500/20',
+    featured: false,
+  },
+  {
+    slug: 'argon2id-vs-pbkdf2',
+    title: 'Argon2id vs PBKDF2 vs bcrypt : quel est le meilleur KDF ?',
+    excerpt:
+      "Analyse comparative des algorithmes de dérivation de clé les plus utilisés. Résistance GPU, ASIC, recommandations OWASP 2026 — et pourquoi Argon2id gagne.",
+    date: '9 juin 2026',
+    readTime: '9 min',
+    category: 'Technique',
+    categoryColor: 'text-cyan-400 bg-cyan-500/10 border-cyan-500/20',
+    featured: false,
+  },
+  {
+    slug: 'ordinateurs-quantiques-mots-de-passe',
+    title: 'Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?',
+    excerpt:
+      "Timeline réaliste du Q-day, menace harvest-now-decrypt-later déjà active, et ce que vous pouvez faire dès aujourd'hui. Réponses aux objections courantes.",
+    date: '9 juin 2026',
+    readTime: '8 min',
+    category: 'Sécurité',
+    categoryColor: 'text-red-400 bg-red-500/10 border-red-500/20',
+    featured: false,
+  },
 ];
 
-const comingSoon = [
-  {
-    title: "Qu'est-ce que la cryptographie post-quantique ?",
-    desc: 'Une explication accessible du problème, de l\'algorithme de Shor, et des solutions standardisées par le NIST.',
-    category: 'Éducation',
-  },
-  {
-    title: 'Argon2id vs PBKDF2 vs bcrypt : quel est le meilleur KDF ?',
-    desc: 'Analyse comparative des trois algorithmes de dérivation de clé les plus utilisés en 2026.',
-    category: 'Technique',
-  },
-  {
-    title: 'Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?',
-    desc: "Timeline réaliste du Q-day et ce que vous pouvez faire dès aujourd'hui pour vous préparer.",
-    category: 'Sécurité',
-  },
-];
+const comingSoon: { title: string; desc: string; category: string }[] = [];
 
 export default function BlogPage() {
   return (
@@ -97,7 +114,7 @@ export default function BlogPage() {
                     <span className={`text-xs font-medium px-3 py-1 rounded-full border ${article.categoryColor}`}>
                       {article.category}
                     </span>
-                    <span className="text-slate-500 text-xs">Nouveau</span>
+                    <span className="text-slate-500 text-xs">À la une</span>
                   </div>
                   <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-blue-300 transition-colors">
                     {article.title}
@@ -120,26 +137,62 @@ export default function BlogPage() {
             </section>
           ))}
 
-          {/* ── ARTICLES À VENIR ── */}
-          <section>
-            <h2 className="text-xl font-semibold mb-6 text-slate-300">Prochains articles</h2>
-            <div className="space-y-4">
-              {comingSoon.map((a) => (
-                <div key={a.title} className="bg-white/5 border border-white/10 rounded-xl p-5 opacity-60">
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <span className="text-xs text-slate-500 border border-white/10 px-2 py-0.5 rounded-full mb-2 inline-block">
-                        {a.category}
-                      </span>
-                      <h3 className="font-semibold mb-1">{a.title}</h3>
-                      <p className="text-slate-500 text-sm">{a.desc}</p>
+          {/* ── AUTRES ARTICLES ── */}
+          {articles.filter((a) => !a.featured).length > 0 && (
+            <section className="mb-12">
+              <h2 className="text-xl font-semibold mb-6 text-slate-300">Tous les articles</h2>
+              <div className="space-y-4">
+                {articles.filter((a) => !a.featured).map((article) => (
+                  <Link key={article.slug} href={`/blog/${article.slug}`} className="group block">
+                    <div className="bg-white/5 border border-white/10 rounded-xl p-5 hover:border-white/20 hover:bg-white/[0.07] transition-all">
+                      <div className="flex items-start justify-between gap-4">
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${article.categoryColor}`}>
+                              {article.category}
+                            </span>
+                          </div>
+                          <h3 className="font-semibold mb-1 group-hover:text-blue-300 transition-colors">
+                            {article.title}
+                          </h3>
+                          <p className="text-slate-500 text-sm line-clamp-2">{article.excerpt}</p>
+                          <div className="flex items-center gap-3 mt-2 text-xs text-slate-600">
+                            <span>{article.date}</span>
+                            <span>·</span>
+                            <span>{article.readTime} de lecture</span>
+                          </div>
+                        </div>
+                        <span className="text-slate-600 group-hover:text-blue-400 transition-colors flex-shrink-0 mt-1 text-sm">→</span>
+                      </div>
                     </div>
-                    <span className="text-xs text-slate-600 flex-shrink-0 mt-1">À venir</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* ── ARTICLES À VENIR ── */}
+          {comingSoon.length > 0 && (
+            <section>
+              <h2 className="text-xl font-semibold mb-6 text-slate-300">Prochains articles</h2>
+              <div className="space-y-4">
+                {comingSoon.map((a) => (
+                  <div key={a.title} className="bg-white/5 border border-white/10 rounded-xl p-5 opacity-60">
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <span className="text-xs text-slate-500 border border-white/10 px-2 py-0.5 rounded-full mb-2 inline-block">
+                          {a.category}
+                        </span>
+                        <h3 className="font-semibold mb-1">{a.title}</h3>
+                        <p className="text-slate-500 text-sm">{a.desc}</p>
+                      </div>
+                      <span className="text-xs text-slate-600 flex-shrink-0 mt-1">À venir</span>
+                    </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* ── CTA NEWSLETTER ── */}
           <section className="mt-16 bg-white/5 border border-white/10 rounded-2xl p-8 text-center">
