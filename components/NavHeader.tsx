@@ -13,7 +13,7 @@ const navLinks = [
 export default function NavHeader() {
   const pathname = usePathname();
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f6]/90 backdrop-blur-md border-b border-stone-200">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f6]/90 backdrop-blur-md border-b border-stone-300">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2.5">
           <svg viewBox="0 0 190 190" className="w-8 h-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

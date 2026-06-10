@@ -257,7 +257,7 @@ export default function ArticlePQC() {
                   <strong className="text-stone-900"> Module Learning With Errors (M-LWE)</strong>. Sans entrer dans
                   les détails mathématiques, l&apos;idée est la suivante :
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-200 rounded-xl p-6">
+                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
                   <p className="text-sm font-mono text-stone-700 mb-3">
                     Étant donné un système d&apos;équations linéaires <span className="text-blue-700">A·s + e = b</span>
                     <br />où <span className="text-rose-600">s</span> est le secret et{' '}
@@ -311,7 +311,7 @@ export default function ArticlePQC() {
                   est utilisé non pas pour sécuriser un canal réseau, mais pour chiffrer le fichier coffre
                   lui-même. Le flux complet :
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-200 rounded-xl p-6 space-y-3">
+                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6 space-y-3">
                   {[
                     { step: '① Passphrase → Argon2id', detail: 'Dérivation résistante aux GPU/ASIC, 64 MB RAM', color: 'text-cyan-700' },
                     { step: '② Seed → ML-KEM-1024 keygen', detail: 'Génération déterministe des clés post-quantiques', color: 'text-blue-700' },
@@ -354,7 +354,7 @@ export default function ArticlePQC() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-stone-200">
+          <div className="mt-12 pt-8 border-t border-stone-300">
             <p className="text-stone-500 text-sm mb-6">
               Prêt à protéger vos mots de passe avec une cryptographie post-quantique réelle ? Kyber est gratuit jusqu&apos;à 3 mots de passe.
             </p>
@@ -374,7 +374,7 @@ export default function ArticlePQC() {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-stone-200 flex justify-between items-center text-sm">
+          <div className="mt-8 pt-6 border-t border-stone-300 flex justify-between items-center text-sm">
             <Link href="/blog" className="text-stone-500 hover:text-stone-900 transition-colors">
               ← Retour au blog
             </Link>

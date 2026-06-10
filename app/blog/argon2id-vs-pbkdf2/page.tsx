@@ -177,7 +177,7 @@ export default function ArticleKDF() {
                   que du CPU et de la bande passante mémoire classique, un attaquant peut lancer des milliers
                   de tentatives simultanées.
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-200 rounded-xl p-6">
+                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
                   <p className="text-sm text-stone-500 mb-4">Comparaison de la résistance aux attaques GPU :</p>
                   <div className="space-y-3">
                     {[
@@ -256,7 +256,7 @@ export default function ArticleKDF() {
                 <p className="mt-4">
                   Les trois paramètres clés à configurer :
                 </p>
-                <div className="mt-4 bg-stone-50 border border-stone-200 rounded-xl p-5 space-y-3">
+                <div className="mt-4 bg-stone-50 border border-stone-300 rounded-xl p-5 space-y-3">
                   {[
                     { param: 'm_cost (mémoire)', val: '64 MB minimum', note: 'Plus c\'est élevé, plus la parallélisation GPU est difficile. Kyber utilise 64 MB.' },
                     { param: 't_cost (itérations)', val: '3 minimum', note: 'Nombre de passes sur la mémoire. Augmente le temps sans réduire la mémoire.' },
@@ -319,7 +319,7 @@ export default function ArticleKDF() {
                     Pour tout nouveau système en 2026, <strong className="text-stone-900">utilisez Argon2id</strong> avec au
                     minimum :
                   </p>
-                  <div className="bg-white border border-stone-200 rounded-lg p-4 font-mono text-sm">
+                  <div className="bg-white border border-stone-300 rounded-lg p-4 font-mono text-sm">
                     <span className="text-green-700">m_cost</span>
                     <span className="text-stone-400"> = </span>
                     <span className="text-blue-700">65536</span>
@@ -345,7 +345,7 @@ export default function ArticleKDF() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-stone-200">
+          <div className="mt-12 pt-8 border-t border-stone-300">
             <p className="text-stone-500 text-sm mb-6">
               Kyber combine Argon2id + Kyber1024 pour une protection maximale de vos mots de passe.
             </p>
@@ -365,7 +365,7 @@ export default function ArticleKDF() {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-stone-200 flex justify-between items-center text-sm">
+          <div className="mt-8 pt-6 border-t border-stone-300 flex justify-between items-center text-sm">
             <Link href="/blog/cryptographie-post-quantique" className="text-stone-500 hover:text-stone-900 transition-colors">
               ← C&apos;est quoi la PQC ?
             </Link>

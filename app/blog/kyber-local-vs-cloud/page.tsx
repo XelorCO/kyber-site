@@ -234,7 +234,7 @@ export default function ArticleKyberLocalCloud() {
                   Dans Kyber, Kyber1024 ne protège pas seulement le transport — il protège le fichier coffre
                   lui-même. Le flux complet :
                 </p>
-                <div className="mt-6 bg-stone-100 border border-stone-200 rounded-xl p-6 space-y-3">
+                <div className="mt-6 bg-stone-100 border border-stone-300 rounded-xl p-6 space-y-3">
                   {[
                     { step: 'Votre passphrase', color: 'text-stone-700' },
                     { step: '↓ Argon2id (64 MB RAM) → seed cryptographique', color: 'text-cyan-700' },
@@ -274,7 +274,7 @@ export default function ArticleKyberLocalCloud() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
-                      <tr className="border-b border-stone-200">
+                      <tr className="border-b border-stone-300">
                         <th className="text-left py-2 pr-4 text-stone-500 font-medium"></th>
                         <th className="text-center py-2 px-4 text-stone-700 font-medium">Cloud PQC<br/><span className="text-xs font-normal text-stone-400">(Keeper, etc.)</span></th>
                         <th className="text-center py-2 px-4 text-blue-600 font-medium">Local PQC<br/><span className="text-xs font-normal text-blue-600">(Kyber)</span></th>
@@ -319,7 +319,7 @@ export default function ArticleKyberLocalCloud() {
           </article>
 
           {/* ── CTA ARTICLE ── */}
-          <div className="mt-12 pt-8 border-t border-stone-200">
+          <div className="mt-12 pt-8 border-t border-stone-300">
             <p className="text-stone-500 text-sm mb-6">
               Vous voulez passer au chiffrement post-quantique local ? Kyber est gratuit jusqu&apos;à 3 mots de passe.
             </p>
@@ -340,7 +340,7 @@ export default function ArticleKyberLocalCloud() {
           </div>
 
           {/* ── NAVIGATION ARTICLES ── */}
-          <div className="mt-8 pt-6 border-t border-stone-200">
+          <div className="mt-8 pt-6 border-t border-stone-300">
             <Link href="/blog" className="text-stone-400 hover:text-stone-700 text-sm transition-colors">
               ← Retour au blog
             </Link>

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function NavFooter() {
   return (
-    <footer className="border-t border-stone-200 py-12 px-6 mt-12 bg-stone-50">
+    <footer className="border-t border-stone-300 py-12 px-6 mt-12 bg-stone-100">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-stone-500">
         <div className="flex flex-col items-center md:items-start gap-1">
           <span>

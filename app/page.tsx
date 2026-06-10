@@ -109,7 +109,7 @@ function VizAES() {
     <div className="flex flex-col items-center justify-center h-full gap-5 py-4">
       <p className="text-xs text-stone-500 text-center">AES-256-GCM chiffre et authentifie chaque octet du coffre</p>
       <div className="w-full max-w-xs space-y-3">
-        <div className="bg-stone-100 border border-stone-200 rounded-lg p-3">
+        <div className="bg-stone-100 border border-stone-300 rounded-lg p-3">
           <div className="text-xs text-stone-500 mb-2">Données brutes :</div>
           <div className="font-mono text-xs text-stone-700">
             {`{ "url":"banque.fr", "pass":"secret" }`}
@@ -276,7 +276,7 @@ export default function Home() {
     <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
 
       {/* ── HEADER ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f6]/90 backdrop-blur-md border-b border-stone-200">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f6]/90 backdrop-blur-md border-b border-stone-300">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
             <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
@@ -377,7 +377,7 @@ export default function Home() {
                     className={`relative flex flex-col items-center gap-2 px-4 py-4 rounded-xl border transition-all flex-1 text-center ${
                       activeStep === i
                         ? `${colorMap[step.color]} shadow-sm`
-                        : 'border-stone-200 bg-white text-stone-500 hover:border-stone-300 hover:bg-stone-50 shadow-sm'
+                        : 'border-stone-300 bg-white text-stone-500 hover:border-stone-300 hover:bg-stone-50 shadow-sm'
                     }`}
                   >
                     <span className={`text-xs font-mono font-bold ${activeStep === i ? '' : 'text-stone-300'}`}>
@@ -466,7 +466,7 @@ export default function Home() {
       </section>
 
       {/* ── LOCAL VS CLOUD ── */}
-      <section className="py-24 px-6 bg-stone-50 border-y border-stone-200">
+      <section className="py-24 px-6 bg-stone-100 border-y border-stone-300">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">
@@ -497,7 +497,7 @@ export default function Home() {
                   { icon: '⚠️', label: 'Exposition', sub: 'Brèche possible (cf. LastPass 2022)', color: 'red' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
-                    <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-100 border border-red-200' : 'bg-white border border-stone-200'} rounded-xl px-4 py-3`}>
+                    <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-100 border border-red-200' : 'bg-white border border-stone-300'} rounded-xl px-4 py-3`}>
                       <span className="text-lg">{icon}</span>
                       <div>
                         <div className={`text-sm font-medium ${color === 'red' ? 'text-red-700' : 'text-stone-700'}`}>{label}</div>
@@ -532,7 +532,7 @@ export default function Home() {
                   { icon: '✓', label: 'Aucun serveur à attaquer', sub: 'Inatteignable depuis internet', color: 'green' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
-                    <div className={`flex items-center gap-3 ${color === 'green' ? 'bg-green-100 border border-green-200' : 'bg-white border border-stone-200'} rounded-xl px-4 py-3`}>
+                    <div className={`flex items-center gap-3 ${color === 'green' ? 'bg-green-100 border border-green-200' : 'bg-white border border-stone-300'} rounded-xl px-4 py-3`}>
                       <span className="text-lg">{icon}</span>
                       <div>
                         <div className={`text-sm font-medium ${color === 'green' ? 'text-green-700' : 'text-stone-700'}`}>{label}</div>
@@ -613,14 +613,14 @@ export default function Home() {
             ].map((f, i) => (
               <div
                 key={f.title}
-                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-200 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
+                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 bg-stone-100 rounded-xl p-2.5">{f.icon}</div>
                   <div>
                     <div className="flex items-center gap-2 mb-2">
                       <h3 className="font-semibold text-stone-900">{f.title}</h3>
-                      <span className="text-xs text-stone-400 border border-stone-200 px-2 py-0.5 rounded-full">{f.tag}</span>
+                      <span className="text-xs text-stone-400 border border-stone-300 px-2 py-0.5 rounded-full">{f.tag}</span>
                     </div>
                     <p className="text-stone-500 text-sm leading-relaxed">{f.desc}</p>
                   </div>
@@ -632,7 +632,7 @@ export default function Home() {
       </section>
 
       {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 px-6 bg-stone-50 border-y border-stone-200">
+      <section id="pricing" className="py-24 px-6 bg-stone-100 border-y border-stone-300">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-14 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">Simple et transparent</h2>
@@ -641,7 +641,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Free */}
-            <div className="bg-white border border-stone-200 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
+            <div className="bg-white border border-stone-300 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
               <div className="mb-6">
                 <span className="text-stone-500 text-sm font-medium uppercase tracking-wider">Gratuit</span>
                 <div className="text-5xl font-bold mt-2 text-stone-900">0 €</div>
@@ -771,7 +771,7 @@ export default function Home() {
             ].map((p, i) => (
               <div
                 key={p.platform}
-                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-200 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
+                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
               >
                 <div className="mb-3">{p.icon}</div>
                 <h3 className="font-semibold text-lg text-stone-900">{p.platform}</h3>
@@ -786,7 +786,7 @@ export default function Home() {
                     {p.label}
                   </a>
                 ) : (
-                  <span className="inline-block text-stone-400 text-sm font-medium border border-stone-200 px-5 py-2 rounded-lg cursor-not-allowed">
+                  <span className="inline-block text-stone-400 text-sm font-medium border border-stone-300 px-5 py-2 rounded-lg cursor-not-allowed">
                     {p.label}
                   </span>
                 )}
@@ -798,7 +798,7 @@ export default function Home() {
       </section>
 
       {/* ── ENTERPRISE ── */}
-      <section id="enterprise" className="py-24 px-6 bg-stone-50 border-y border-stone-200">
+      <section id="enterprise" className="py-24 px-6 bg-stone-100 border-y border-stone-300">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-10 reveal">
             <h2 className="text-3xl font-bold mb-3 text-stone-900">Solution entreprise</h2>
@@ -812,33 +812,33 @@ export default function Home() {
               <p className="text-stone-500">Nous vous répondrons dans les 24 heures.</p>
             </div>
           ) : (
-            <form onSubmit={handleContact} className="bg-white border border-stone-200 rounded-2xl p-8 space-y-4 reveal reveal-delay-1 shadow-sm">
+            <form onSubmit={handleContact} className="bg-white border border-stone-300 rounded-2xl p-8 space-y-4 reveal reveal-delay-1 shadow-sm">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm text-stone-600 mb-1.5 block">Prénom *</label>
                   <input required value={contact.firstName} onChange={(e) => setContact({ ...contact, firstName: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
                 </div>
                 <div>
                   <label className="text-sm text-stone-600 mb-1.5 block">Nom *</label>
                   <input required value={contact.lastName} onChange={(e) => setContact({ ...contact, lastName: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
                 </div>
               </div>
               <div>
                 <label className="text-sm text-stone-600 mb-1.5 block">Société *</label>
                 <input required value={contact.company} onChange={(e) => setContact({ ...contact, company: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
               </div>
               <div>
                 <label className="text-sm text-stone-600 mb-1.5 block">Email professionnel *</label>
                 <input required type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
               </div>
               <div>
                 <label className="text-sm text-stone-600 mb-1.5 block">Taille de l&apos;équipe</label>
                 <select value={contact.teamSize} onChange={(e) => setContact({ ...contact, teamSize: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900">
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900">
                   <option value="1-10">1 – 10 personnes</option>
                   <option value="11-50">11 – 50 personnes</option>
                   <option value="51-200">51 – 200 personnes</option>
@@ -849,7 +849,7 @@ export default function Home() {
                 <label className="text-sm text-stone-600 mb-1.5 block">Message</label>
                 <textarea rows={4} value={contact.message} onChange={(e) => setContact({ ...contact, message: e.target.value })}
                   placeholder="Décrivez votre besoin, vos contraintes, vos questions…"
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-900 placeholder:text-stone-400" />
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-900 placeholder:text-stone-400" />
               </div>
               <button type="submit" disabled={contactStatus === 'sending'}
                 className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
@@ -907,7 +907,7 @@ export default function Home() {
                 read: '9 min',
               },
             ].map((a) => (
-              <Link key={a.href} href={a.href} className="group block bg-white border border-stone-200 rounded-xl p-5 hover:border-stone-300 hover:shadow-md transition-all shadow-sm">
+              <Link key={a.href} href={a.href} className="group block bg-white border border-stone-300 rounded-xl p-5 hover:border-stone-300 hover:shadow-md transition-all shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${a.catColor}`}>{a.cat}</span>
                   <span className="text-xs text-stone-400">{a.date} · {a.read}</span>
@@ -922,7 +922,7 @@ export default function Home() {
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-stone-200 py-12 px-6 bg-stone-50">
+      <footer className="border-t border-stone-300 py-12 px-6 bg-stone-50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-stone-500">
           <div className="flex flex-col items-center md:items-start gap-1">
             <span><span className="font-bold text-stone-900">Kyber</span> — © 2026 Kyber Security. Made in France 🇫🇷</span>
@@ -951,7 +951,7 @@ export default function Home() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setShowModal(false)}
         >
-          <div className="bg-white border border-stone-200 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+          <div className="bg-white border border-stone-300 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 15 €</h3>
@@ -964,12 +964,12 @@ export default function Home() {
               <div>
                 <label className="text-sm text-stone-600 mb-1.5 block">Prénom et Nom *</label>
                 <input required value={buyerName} onChange={(e) => setBuyerName(e.target.value)} placeholder="Prénom, Nom"
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900 placeholder:text-stone-400" />
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900 placeholder:text-stone-400" />
               </div>
               <div>
                 <label className="text-sm text-stone-600 mb-1.5 block">Email * (pour recevoir la licence)</label>
                 <input required type="email" value={buyerEmail} onChange={(e) => setBuyerEmail(e.target.value)} placeholder="vous@exemple.fr"
-                  className="w-full bg-stone-50 border border-stone-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900 placeholder:text-stone-400" />
+                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900 placeholder:text-stone-400" />
               </div>
               <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 text-xs text-blue-700">
                 Votre clé de licence sera envoyée à cet email immédiatement après le paiement.

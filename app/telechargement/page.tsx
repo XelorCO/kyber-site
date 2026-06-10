@@ -108,7 +108,7 @@ export default function PageTelechargement() {
                   <a
                     href="/downloads/Kyber_1.0.0_x64_en-US.msi"
                     download
-                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-200 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
+                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
                   >
                     <span>Télécharger .msi</span>
                     <span className="text-xs text-stone-400">Microsoft Installer</span>
@@ -117,7 +117,7 @@ export default function PageTelechargement() {
               </div>
 
               {/* macOS */}
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 opacity-60 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 opacity-60 shadow-sm">
                 <div className="mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-stone-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
@@ -125,14 +125,14 @@ export default function PageTelechargement() {
                 </div>
                 <h2 className="font-bold text-lg mb-1 text-stone-900">macOS</h2>
                 <p className="text-stone-400 text-xs mb-4">macOS 12 Monterey et supérieur</p>
-                <span className="inline-block w-full text-center text-stone-400 text-sm border border-stone-200 px-4 py-2.5 rounded-xl cursor-not-allowed">
+                <span className="inline-block w-full text-center text-stone-400 text-sm border border-stone-300 px-4 py-2.5 rounded-xl cursor-not-allowed">
                   Disponible bientôt
                 </span>
                 <p className="text-xs text-stone-400 mt-2 text-center">Apple Silicon &amp; Intel</p>
               </div>
 
               {/* Linux */}
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 hover:border-blue-200 hover:shadow-md transition-all shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-200 hover:shadow-md transition-all shadow-sm">
                 <div className="mb-4">
                   <svg className="w-10 h-10" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse cx="32" cy="48" rx="15" ry="18" fill="#78716c"/>
@@ -163,7 +163,7 @@ export default function PageTelechargement() {
                   <a
                     href="/downloads/Kyber_1.0.0_amd64.deb"
                     download
-                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-200 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
+                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
                   >
                     <span>Télécharger .deb</span>
                     <span className="text-xs text-stone-400">Debian / Ubuntu</span>
@@ -171,7 +171,7 @@ export default function PageTelechargement() {
                   <a
                     href="/downloads/Kyber-1.0.0-1.x86_64.rpm"
                     download
-                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-200 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
+                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
                   >
                     <span>Télécharger .rpm</span>
                     <span className="text-xs text-stone-400">Fedora / Red Hat</span>
@@ -187,7 +187,7 @@ export default function PageTelechargement() {
             <h2 className="text-2xl font-bold mb-6 text-stone-900">Installation</h2>
             <div className="grid md:grid-cols-2 gap-6">
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-semibold mb-4 flex items-center gap-2">
                   <span className="text-blue-600">Windows</span>
                 </h3>
@@ -211,7 +211,7 @@ export default function PageTelechargement() {
                 </ol>
               </div>
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-semibold mb-4">
                   <span className="text-stone-700">Linux (Debian / Ubuntu)</span>
                 </h3>
@@ -223,13 +223,13 @@ export default function PageTelechargement() {
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">2.</span>
                     <span>Pour le .deb :<br />
-                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-200">sudo dpkg -i Kyber_1.0.0_amd64.deb</code>
+                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-300">sudo dpkg -i Kyber_1.0.0_amd64.deb</code>
                     </span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">3.</span>
                     <span>Pour l&apos;AppImage :<br />
-                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-200">chmod +x Kyber*.AppImage && ./Kyber*.AppImage</code>
+                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-300">chmod +x Kyber*.AppImage && ./Kyber*.AppImage</code>
                     </span>
                   </li>
                 </ol>
@@ -248,7 +248,7 @@ export default function PageTelechargement() {
                 { os: 'RAM', req: '512 MB minimum (recommandé : 1 GB+)' },
                 { os: 'Processeur', req: 'x86-64 (Intel / AMD) — pas de ARM pour l\'instant' },
               ].map(({ os, req }) => (
-                <div key={os} className="bg-white border border-stone-200 rounded-xl px-5 py-4 shadow-sm">
+                <div key={os} className="bg-white border border-stone-300 rounded-xl px-5 py-4 shadow-sm">
                   <span className="text-stone-600 font-medium">{os} :</span>
                   <span className="text-stone-700 ml-2">{req}</span>
                 </div>

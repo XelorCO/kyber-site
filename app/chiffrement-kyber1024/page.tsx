@@ -160,7 +160,7 @@ export default function PageChiffrement() {
           {/* ── FLUX COMPLET ── */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-6 text-stone-900">Le flux complet de chiffrement</h2>
-            <div className="bg-white border border-stone-200 rounded-2xl p-8 shadow-sm">
+            <div className="bg-white border border-stone-300 rounded-2xl p-8 shadow-sm">
               <div className="space-y-3">
                 {[
                   {
@@ -224,7 +224,7 @@ export default function PageChiffrement() {
                   a: "Kyber1024 est un KEM — il établit une clé partagée post-quantique. AES-256-GCM est un algorithme de chiffrement symétrique authentifié — il chiffre les données réelles. Les deux se complètent : Kyber apporte la résistance quantique, AES apporte la performance et l'authenticité.",
                 },
               ].map(({ q, a }) => (
-                <div key={q} className="bg-white border border-stone-200 rounded-xl p-6 shadow-sm">
+                <div key={q} className="bg-white border border-stone-300 rounded-xl p-6 shadow-sm">
                   <h3 className="font-semibold mb-3 text-sm text-stone-900">{q}</h3>
                   <p className="text-stone-500 text-sm leading-relaxed">{a}</p>
                 </div>
@@ -233,7 +233,7 @@ export default function PageChiffrement() {
           </section>
 
           {/* ── CTA ── */}
-          <div className="text-center py-8 border-t border-stone-200">
+          <div className="text-center py-8 border-t border-stone-300">
             <p className="text-stone-500 mb-6">
               Ces algorithmes protègent chacun de vos mots de passe dans Kyber.
             </p>

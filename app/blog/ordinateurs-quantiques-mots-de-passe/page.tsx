@@ -140,7 +140,7 @@ export default function ArticleQCMotsDePasse() {
                   migration post-quantique en précisant que &ldquo;les adversaires collectent des données
                   aujourd&apos;hui en anticipation des futurs ordinateurs quantiques&rdquo;.
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-200 rounded-xl p-6">
+                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
                   <p className="text-sm text-stone-500 mb-3">Qui est concerné par HNDL ?</p>
                   <ul className="space-y-2 text-sm">
                     {[
@@ -202,7 +202,7 @@ export default function ArticleQCMotsDePasse() {
                       <div className="flex-shrink-0 w-20">
                         <span className={`text-sm font-mono font-bold text-${couleur}-600`}>{periode}</span>
                       </div>
-                      <div className="bg-white border border-stone-200 rounded-xl p-4 flex-1 shadow-sm">
+                      <div className="bg-white border border-stone-300 rounded-xl p-4 flex-1 shadow-sm">
                         <h3 className="font-semibold text-stone-900 text-sm mb-1">{titre}</h3>
                         <p className="text-xs text-stone-500">{desc}</p>
                       </div>
@@ -310,7 +310,7 @@ export default function ArticleQCMotsDePasse() {
                       reponse: "ML-KEM (Kyber1024) a passé 8 ans d'évaluation académique mondiale avant d'être standardisé par le NIST en août 2024. C'est actuellement le standard de fait de la cryptographie post-quantique.",
                     },
                   ].map(({ objection, reponse }) => (
-                    <div key={objection} className="border border-stone-200 rounded-xl p-5 bg-white shadow-sm">
+                    <div key={objection} className="border border-stone-300 rounded-xl p-5 bg-white shadow-sm">
                       <p className="text-sm font-medium text-stone-700 italic mb-2">{objection}</p>
                       <p className="text-sm text-stone-500">{reponse}</p>
                     </div>
@@ -338,7 +338,7 @@ export default function ArticleQCMotsDePasse() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-stone-200">
+          <div className="mt-12 pt-8 border-t border-stone-300">
             <p className="text-stone-500 text-sm mb-6">
               Passez au chiffrement post-quantique local dès aujourd&apos;hui. Gratuit jusqu&apos;à 3 mots de passe.
             </p>
@@ -358,7 +358,7 @@ export default function ArticleQCMotsDePasse() {
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-stone-200 flex justify-between items-center text-sm">
+          <div className="mt-8 pt-6 border-t border-stone-300 flex justify-between items-center text-sm">
             <Link href="/blog/argon2id-vs-pbkdf2" className="text-stone-500 hover:text-stone-900 transition-colors">
               ← Argon2id vs PBKDF2
             </Link>

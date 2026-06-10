@@ -185,10 +185,10 @@ export default function PageComparatif() {
           {/* ── TABLEAU ── */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-6 text-stone-900">Tableau comparatif</h2>
-            <div className="overflow-x-auto bg-white rounded-2xl border border-stone-200 shadow-sm">
+            <div className="overflow-x-auto bg-white rounded-2xl border border-stone-300 shadow-sm">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="border-b border-stone-200">
+                  <tr className="border-b border-stone-300">
                     <th className="text-left py-3 pr-6 pl-6 text-stone-500 font-medium">Critère</th>
                     {products.map((p) => (
                       <th key={p.name} className={`text-center py-3 px-4 font-medium ${p.highlight ? 'text-blue-600' : 'text-stone-700'}`}>
@@ -267,7 +267,7 @@ export default function PageComparatif() {
             <h2 className="text-2xl font-bold mb-8 text-stone-900">Analyse produit par produit</h2>
             <div className="space-y-6">
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-green-700">Bitwarden — Le meilleur choix cloud open source</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Bitwarden est l&apos;alternative open source de référence aux solutions cloud propriétaires.
@@ -278,7 +278,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">1Password — Premium cloud, code fermé</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   1Password offre une excellente expérience utilisateur et un modèle de sécurité solide avec
@@ -288,7 +288,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">KeePass — Le précurseur local, sans PQC</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   KeePass est la référence historique des gestionnaires locaux. Open source, gratuit, aucun cloud.
@@ -298,7 +298,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">Dashlane — Le meilleur choix cloud européen</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Dashlane est une entreprise fondée à Paris, avec des serveurs en Europe — un avantage RGPD réel
@@ -342,7 +342,7 @@ export default function PageComparatif() {
           </section>
 
           {/* ── CTA ── */}
-          <section className="text-center py-8 border-t border-stone-200">
+          <section className="text-center py-8 border-t border-stone-300">
             <h2 className="text-2xl font-bold mb-4 text-stone-900">Essayer Kyber gratuitement</h2>
             <p className="text-stone-500 mb-8 max-w-md mx-auto">
               Gratuit jusqu&apos;à 3 mots de passe. Migration depuis Bitwarden ou 1Password en 1 minute via import CSV.

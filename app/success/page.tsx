@@ -10,7 +10,7 @@ export default function SuccessPage() {
           par email dans quelques minutes.
         </p>
 
-        <div className="bg-white border border-stone-200 rounded-2xl p-6 text-left mb-8 shadow-sm">
+        <div className="bg-white border border-stone-300 rounded-2xl p-6 text-left mb-8 shadow-sm">
           <p className="font-semibold mb-4 flex items-center gap-2 text-stone-900">
             <span>📋</span> Comment activer votre licence :
           </p>
