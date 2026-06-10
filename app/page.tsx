@@ -341,16 +341,6 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-5 text-sm text-stone-500">
-            {['Windows 10/11', 'macOS 12+', 'Linux'].map((t) => (
-              <span key={t} className="flex items-center gap-1.5">
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                {t}
-              </span>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -377,14 +367,14 @@ export default function Home() {
                     className={`relative flex flex-col items-center gap-2 px-4 py-4 rounded-xl border transition-all flex-1 text-center ${
                       activeStep === i
                         ? `${colorMap[step.color]} shadow-sm`
-                        : 'border-stone-300 bg-white text-stone-500 hover:border-stone-300 hover:bg-stone-50 shadow-sm'
+                        : 'border-[#c8c8c8] bg-white text-[#808080] hover:border-[#a0a0a0] hover:bg-stone-50 shadow-sm'
                     }`}
                   >
-                    <span className={`text-xs font-mono font-bold ${activeStep === i ? '' : 'text-stone-300'}`}>
+                    <span className={`text-xs font-mono font-bold ${activeStep === i ? '' : 'text-[#808080]'}`}>
                       {step.num}
                     </span>
                     <span className="font-semibold text-sm leading-tight">{step.title}</span>
-                    <span className={`text-xs leading-tight ${activeStep === i ? 'opacity-80' : 'text-stone-400'}`}>
+                    <span className={`text-xs leading-tight ${activeStep === i ? 'opacity-80' : 'text-[#808080]'}`}>
                       {step.subtitle}
                     </span>
                   </button>
@@ -395,7 +385,7 @@ export default function Home() {
                       <div className={`h-0.5 w-6 rounded-full transition-all duration-500 ${
                         activeStep > i
                           ? `bg-gradient-to-r ${connectorColorMap[step.color]}`
-                          : 'bg-stone-200'
+                          : 'bg-[#c0c0c0]'
                       }`} />
                     </div>
                   )}
