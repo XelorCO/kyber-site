@@ -60,7 +60,7 @@ const articleJsonLd = {
 
 export default function ArticleQCMotsDePasse() {
   return (
-    <div className="min-h-screen bg-[#070711] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -71,32 +71,32 @@ export default function ArticleQCMotsDePasse() {
         <div className="max-w-2xl mx-auto px-6">
 
           <div className="py-12">
-            <Link href="/blog" className="text-slate-500 hover:text-slate-300 text-sm transition-colors mb-8 inline-block">
+            <Link href="/blog" className="text-stone-500 hover:text-stone-900 text-sm transition-colors mb-8 inline-block">
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-400 bg-red-500/10 border-red-500/20">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-700 bg-red-50 border-red-200">
                 Sécurité
               </span>
-              <span className="text-slate-500 text-xs">9 juin 2026</span>
-              <span className="text-slate-600 text-xs">·</span>
-              <span className="text-slate-500 text-xs">8 min de lecture</span>
+              <span className="text-stone-500 text-xs">9 juin 2026</span>
+              <span className="text-stone-400 text-xs">·</span>
+              <span className="text-stone-500 text-xs">8 min de lecture</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?
             </h1>
-            <p className="text-slate-400 text-lg leading-relaxed">
+            <p className="text-stone-500 text-lg leading-relaxed">
               &ldquo;Les ordinateurs quantiques sont encore loin.&rdquo; Cette phrase revient souvent pour justifier
               l&apos;inaction. Mais la vraie question n&apos;est pas &ldquo;quand le Q-day arrivera-t-il ?&rdquo;
               — c&apos;est &ldquo;depuis quand vos données sont-elles déjà collectées ?&rdquo;
             </p>
           </div>
 
-          <article className="prose prose-invert prose-slate max-w-none">
-            <div className="space-y-8 text-slate-300 leading-relaxed">
+          <article className="prose prose-stone max-w-none">
+            <div className="space-y-8 text-stone-700 leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   La réponse courte : oui, et pas pour les raisons que vous pensez
                 </h2>
                 <p>
@@ -108,15 +108,15 @@ export default function ArticleQCMotsDePasse() {
                   Il y a deux scénarios d&apos;attaque distincts, avec des horizons temporels très différents :
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-4">
-                  <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl p-5">
-                    <h3 className="font-semibold text-yellow-300 mb-2">Scénario A — Attaque directe sur le coffre (futur)</h3>
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+                    <h3 className="font-semibold text-amber-700 mb-2">Scénario A — Attaque directe sur le coffre (futur)</h3>
                     <p className="text-sm">
                       Un QC casse le chiffrement AES-256 ou attaque la dérivation de clé. Horizon : <strong>2030–2040</strong>.
                       Si vous utilisez Argon2id + AES-256, vous êtes protégé même contre ça.
                     </p>
                   </div>
-                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-5">
-                    <h3 className="font-semibold text-red-300 mb-2">Scénario B — Harvest now, decrypt later (maintenant)</h3>
+                  <div className="bg-red-50 border border-red-200 rounded-xl p-5">
+                    <h3 className="font-semibold text-red-700 mb-2">Scénario B — Harvest now, decrypt later (maintenant)</h3>
                     <p className="text-sm">
                       Un adversaire vole votre coffre <em>aujourd&apos;hui</em> — chiffré — et attend d&apos;avoir les capacités
                       quantiques pour le déchiffrer. Si votre coffre est sur un cloud, ce risque est <strong>immédiat</strong>.
@@ -126,7 +126,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   Harvest now, decrypt later : la menace silencieuse déjà en cours
                 </h2>
                 <p>
@@ -140,8 +140,8 @@ export default function ArticleQCMotsDePasse() {
                   migration post-quantique en précisant que &ldquo;les adversaires collectent des données
                   aujourd&apos;hui en anticipation des futurs ordinateurs quantiques&rdquo;.
                 </p>
-                <div className="mt-6 bg-[#0d0d1a] border border-white/10 rounded-xl p-6">
-                  <p className="text-sm text-slate-400 mb-3">Qui est concerné par HNDL ?</p>
+                <div className="mt-6 bg-stone-50 border border-stone-200 rounded-xl p-6">
+                  <p className="text-sm text-stone-500 mb-3">Qui est concerné par HNDL ?</p>
                   <ul className="space-y-2 text-sm">
                     {[
                       { icon: '🔴', text: 'Données devant rester confidentielles 10+ ans (secrets d\'entreprise, propriété intellectuelle, informations médicales)' },
@@ -152,7 +152,7 @@ export default function ArticleQCMotsDePasse() {
                     ].map(({ icon, text }) => (
                       <li key={text} className="flex gap-3 items-start">
                         <span className="flex-shrink-0">{icon}</span>
-                        <span className="text-slate-300">{text}</span>
+                        <span className="text-stone-700">{text}</span>
                       </li>
                     ))}
                   </ul>
@@ -164,7 +164,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   Timeline réaliste du Q-day
                 </h2>
                 <p>
@@ -177,7 +177,7 @@ export default function ArticleQCMotsDePasse() {
                       periode: '2019',
                       titre: 'Suprématie quantique Google',
                       desc: "Google annonce avoir accompli en 200 secondes un calcul qu'un supercalculateur classique ne pourrait résoudre en 10 000 ans. Problème très spécifique, non applicable à la cryptographie — mais preuve que la progression est réelle.",
-                      couleur: 'slate',
+                      couleur: 'stone',
                     },
                     {
                       periode: '2023',
@@ -189,7 +189,7 @@ export default function ArticleQCMotsDePasse() {
                       periode: '2025–2026',
                       titre: 'Google Willow & progrès correction d\'erreur',
                       desc: "Google annonce des percées en correction d'erreurs quantiques avec Willow. Les experts estiment que la correction d'erreur à grande échelle est désormais une question d'ingénierie, non de physique fondamentale.",
-                      couleur: 'yellow',
+                      couleur: 'amber',
                     },
                     {
                       periode: '2030–2035',
@@ -200,11 +200,11 @@ export default function ArticleQCMotsDePasse() {
                   ].map(({ periode, titre, desc, couleur }) => (
                     <div key={periode} className="flex gap-4 items-start">
                       <div className="flex-shrink-0 w-20">
-                        <span className={`text-sm font-mono font-bold text-${couleur}-400`}>{periode}</span>
+                        <span className={`text-sm font-mono font-bold text-${couleur}-600`}>{periode}</span>
                       </div>
-                      <div className="bg-white/5 border border-white/10 rounded-xl p-4 flex-1">
-                        <h3 className="font-semibold text-white text-sm mb-1">{titre}</h3>
-                        <p className="text-xs text-slate-400">{desc}</p>
+                      <div className="bg-white border border-stone-200 rounded-xl p-4 flex-1 shadow-sm">
+                        <h3 className="font-semibold text-stone-900 text-sm mb-1">{titre}</h3>
+                        <p className="text-xs text-stone-500">{desc}</p>
                       </div>
                     </div>
                   ))}
@@ -212,7 +212,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   Pourquoi les gestionnaires cloud sont plus vulnérables
                 </h2>
                 <p>
@@ -220,19 +220,19 @@ export default function ArticleQCMotsDePasse() {
                   depuis l&apos;extérieur en ce moment ?
                 </p>
                 <p className="mt-4">
-                  Pour Bitwarden, 1Password, LastPass, Keeper et tous les gestionnaires cloud : <strong className="text-white">oui</strong>.
+                  Pour Bitwarden, 1Password, LastPass, Keeper et tous les gestionnaires cloud : <strong className="text-stone-900">oui</strong>.
                   Leurs serveurs sont accessibles depuis internet. Leurs bases de données chiffrées sont
                   des cibles. L&apos;incident LastPass de 2022 l&apos;a prouvé dramatiquement.
                 </p>
-                <div className="mt-6 bg-red-500/10 border border-red-500/20 rounded-xl p-5">
-                  <h3 className="font-semibold text-red-300 mb-2">L&apos;incident LastPass (décembre 2022)</h3>
+                <div className="mt-6 bg-red-50 border border-red-200 rounded-xl p-5">
+                  <h3 className="font-semibold text-red-700 mb-2">L&apos;incident LastPass (décembre 2022)</h3>
                   <p className="text-sm">
                     Des millions de coffres chiffrés ont été exfiltrés depuis les serveurs de LastPass.
                     Ces coffres existent quelque part, en possession d&apos;acteurs malveillants.
                     Si un ordinateur quantique suffisamment puissant arrive d&apos;ici 2035, ces coffres seront
                     potentiellement déchiffrables — 13 ans après le vol.
                   </p>
-                  <p className="text-sm mt-2 text-red-200">
+                  <p className="text-sm mt-2 text-red-600">
                     Les utilisateurs avec des mots de passe maîtres faibles ont déjà vu leurs comptes
                     compromis par force brute classique dans les mois suivants.
                   </p>
@@ -244,7 +244,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   Ce que vous pouvez faire dès aujourd&apos;hui
                 </h2>
                 <div className="space-y-4">
@@ -259,7 +259,7 @@ export default function ArticleQCMotsDePasse() {
                       priorite: 'Important',
                       action: 'Choisir un mot de passe maître fort (16+ caractères)',
                       detail: 'Même face aux QC, Argon2id avec un mot de passe de 16 caractères aléatoires rend la force brute infaisable. Le maillon faible reste l\'humain.',
-                      couleur: 'yellow',
+                      couleur: 'amber',
                     },
                     {
                       priorite: 'Conseillé',
@@ -274,21 +274,21 @@ export default function ArticleQCMotsDePasse() {
                       couleur: 'green',
                     },
                   ].map(({ priorite, action, detail, couleur }) => (
-                    <div key={action} className={`bg-${couleur}-500/10 border border-${couleur}-500/20 rounded-xl p-5`}>
+                    <div key={action} className={`bg-${couleur}-50 border border-${couleur}-200 rounded-xl p-5`}>
                       <div className="flex items-center gap-2 mb-2">
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full bg-${couleur}-500/20 text-${couleur}-300`}>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full bg-${couleur}-100 text-${couleur}-700`}>
                           {priorite}
                         </span>
                       </div>
-                      <h3 className="font-semibold text-white mb-1">{action}</h3>
-                      <p className="text-sm text-slate-400">{detail}</p>
+                      <h3 className="font-semibold text-stone-900 mb-1">{action}</h3>
+                      <p className="text-sm text-stone-500">{detail}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-white mb-4">
+                <h2 className="text-2xl font-bold text-stone-900 mb-4">
                   Les objections courantes répondues
                 </h2>
                 <div className="space-y-4">
@@ -310,24 +310,24 @@ export default function ArticleQCMotsDePasse() {
                       reponse: "ML-KEM (Kyber1024) a passé 8 ans d'évaluation académique mondiale avant d'être standardisé par le NIST en août 2024. C'est actuellement le standard de fait de la cryptographie post-quantique.",
                     },
                   ].map(({ objection, reponse }) => (
-                    <div key={objection} className="border border-white/10 rounded-xl p-5">
-                      <p className="text-sm font-medium text-slate-300 italic mb-2">{objection}</p>
-                      <p className="text-sm text-slate-400">{reponse}</p>
+                    <div key={objection} className="border border-stone-200 rounded-xl p-5 bg-white shadow-sm">
+                      <p className="text-sm font-medium text-stone-700 italic mb-2">{objection}</p>
+                      <p className="text-sm text-stone-500">{reponse}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <div className="bg-blue-500/10 border border-blue-500/20 rounded-xl p-6">
-                  <h2 className="text-xl font-bold text-white mb-3">Conclusion</h2>
+                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+                  <h2 className="text-xl font-bold text-stone-900 mb-3">Conclusion</h2>
                   <p className="text-sm mb-3">
                     Oui, il faut se préoccuper des ordinateurs quantiques pour ses mots de passe — mais
                     pas pour les raisons instinctives. La vraie menace n&apos;est pas un QC qui se &ldquo;connecte&rdquo;
                     à vos comptes demain : c&apos;est la collecte silencieuse de vos données chiffrées aujourd&apos;hui,
                     en vue d&apos;un déchiffrement futur.
                   </p>
-                  <p className="text-sm">
+                  <p className="text-sm text-stone-600">
                     La bonne nouvelle : le problème a une solution simple et disponible dès maintenant.
                     Stocker vos mots de passe localement avec un chiffrement post-quantique (Kyber1024 + Argon2id)
                     neutralise la menace HNDL complètement. Pas besoin d&apos;attendre le Q-day — ni de le craindre.
@@ -338,31 +338,31 @@ export default function ArticleQCMotsDePasse() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-white/5">
-            <p className="text-slate-400 text-sm mb-6">
+          <div className="mt-12 pt-8 border-t border-stone-200">
+            <p className="text-stone-500 text-sm mb-6">
               Passez au chiffrement post-quantique local dès aujourd&apos;hui. Gratuit jusqu&apos;à 3 mots de passe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 px-6 py-3 rounded-xl font-semibold transition-all text-sm"
+                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>
               <Link
                 href="/blog/kyber-local-vs-cloud"
-                className="border border-white/20 hover:border-white/40 bg-white/5 hover:bg-white/10 px-6 py-3 rounded-xl font-semibold transition-all text-sm"
+                className="border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-700 shadow-sm"
               >
                 Local vs cloud : analyse complète →
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-white/5 flex justify-between items-center text-sm">
-            <Link href="/blog/argon2id-vs-pbkdf2" className="text-slate-500 hover:text-slate-300 transition-colors">
+          <div className="mt-8 pt-6 border-t border-stone-200 flex justify-between items-center text-sm">
+            <Link href="/blog/argon2id-vs-pbkdf2" className="text-stone-500 hover:text-stone-900 transition-colors">
               ← Argon2id vs PBKDF2
             </Link>
-            <Link href="/blog" className="text-slate-500 hover:text-slate-300 transition-colors">
+            <Link href="/blog" className="text-stone-500 hover:text-stone-900 transition-colors">
               Tous les articles →
             </Link>
           </div>

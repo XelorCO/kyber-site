@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         kyber: {
-          bg: '#070711',
-          card: 'rgba(255,255,255,0.05)',
+          bg: '#faf8f6',
+          card: '#ffffff',
         },
       },
     },
