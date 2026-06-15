@@ -25,6 +25,9 @@ export default function NavFooter() {
           <Link href="/gestionnaire-mots-de-passe-post-quantique" className="hover:text-stone-900 transition-colors">Fonctionnalités</Link>
           <Link href="/chiffrement-kyber1024" className="hover:text-stone-900 transition-colors">Cryptographie</Link>
           <Link href="/comparatif-bitwarden-1password-kyber" className="hover:text-stone-900 transition-colors">Comparatif</Link>
+          <Link href="/roadmap" className="hover:text-stone-900 transition-colors">Roadmap</Link>
+          <Link href="/entreprise" className="hover:text-stone-900 transition-colors">Entreprise</Link>
+          <Link href="/a-propos" className="hover:text-stone-900 transition-colors">À propos</Link>
           <Link href="/politique-de-confidentialite" className="hover:text-stone-900 transition-colors">Confidentialité</Link>
           <Link href="/cgv" className="hover:text-stone-900 transition-colors">CGV</Link>
           <a href="mailto:contact@kyber-security.fr" className="hover:text-stone-900 transition-colors">

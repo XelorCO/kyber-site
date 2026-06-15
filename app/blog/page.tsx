@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
+import BlogNewsletterForm from '@/components/BlogNewsletterForm';
 
 export const metadata: Metadata = {
   title: { absolute: 'Blog Kyber | Cryptographie post-quantique' },
@@ -37,6 +38,28 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'meilleur-gestionnaire-mots-de-passe-rgpd-france-2026',
+    title: 'Meilleur gestionnaire de mots de passe RGPD France 2026',
+    excerpt:
+      'Comparatif complet des gestionnaires de mots de passe conformes RGPD en France : Kyber, KeePass, Bitwarden, 1Password. CLOUD Act, souveraineté numérique — lequel choisir ?',
+    date: '15 juin 2026',
+    readTime: '10 min',
+    category: 'Comparatif',
+    categoryColor: 'text-green-700 bg-green-50 border-green-200',
+    featured: true,
+  },
+  {
+    slug: 'keepass-alternative-post-quantique',
+    title: 'KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber',
+    excerpt:
+      "KeePass est solide mais AES-256 seul ne résiste pas aux attaques quantiques. Guide de migration KeePass → Kyber en 5 minutes avec import CSV.",
+    date: '15 juin 2026',
+    readTime: '9 min',
+    category: 'Comparatif',
+    categoryColor: 'text-cyan-700 bg-cyan-50 border-cyan-200',
+    featured: false,
+  },
+  {
     slug: 'kyber-local-vs-cloud',
     title: 'Kyber local vs Kyber cloud : lequel vous protège vraiment ?',
     excerpt:
@@ -45,7 +68,7 @@ const articles = [
     readTime: '8 min',
     category: 'Analyse',
     categoryColor: 'text-blue-700 bg-blue-50 border-blue-200',
-    featured: true,
+    featured: false,
   },
   {
     slug: 'cryptographie-post-quantique',
@@ -195,19 +218,7 @@ export default function BlogPage() {
           )}
 
           {/* ── CTA NEWSLETTER ── */}
-          <section className="mt-16 bg-white border border-stone-300 rounded-2xl p-8 text-center shadow-sm">
-            <h2 className="text-xl font-bold mb-3 text-stone-900">Rester informé</h2>
-            <p className="text-stone-500 text-sm mb-6">
-              Nouveaux articles sur la cryptographie post-quantique directement dans votre boîte mail.
-              Pas de spam — juste du contenu technique de qualité.
-            </p>
-            <a
-              href="mailto:contact@kyber-security.fr?subject=Newsletter Kyber Security"
-              className="inline-block bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3 rounded-xl font-semibold transition-all text-sm text-white"
-            >
-              S&apos;inscrire par email
-            </a>
-          </section>
+          <BlogNewsletterForm />
 
         </div>
       </main>

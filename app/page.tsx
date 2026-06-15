@@ -159,6 +159,74 @@ function VizVault() {
   );
 }
 
+// ── Section newsletter ─────────────────────────────────────────────────────
+function NewsletterSection() {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'homepage' }),
+      });
+      setStatus(res.ok ? 'done' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className="py-20 px-6 bg-gradient-to-b from-stone-900 to-stone-800">
+      <div className="max-w-xl mx-auto text-center">
+        <div className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
+          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+          Newsletter technique PQC
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
+          Restez au courant de la cryptographie post-quantique
+        </h2>
+        <p className="text-stone-400 mb-8 text-sm leading-relaxed">
+          1 email par mois sur la PQC, les avancées NIST et les nouvelles fonctionnalités Kyber.
+          Pas de spam, désinscription en un clic.
+        </p>
+        {status === 'done' ? (
+          <div className="bg-green-900/30 border border-green-500/30 rounded-xl p-5 text-green-400 font-medium">
+            Inscription confirmée — à bientôt dans votre boîte mail.
+          </div>
+        ) : (
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+            <input
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="votre@email.fr"
+              className="flex-1 bg-stone-800 border border-stone-600 hover:border-stone-500 focus:border-blue-500 rounded-xl px-4 py-3 text-sm text-white placeholder:text-stone-500 focus:outline-none transition-colors"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-50 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all whitespace-nowrap"
+            >
+              {status === 'loading' ? 'Inscription…' : "S'inscrire →"}
+            </button>
+          </form>
+        )}
+        {status === 'error' && (
+          <p className="mt-3 text-red-400 text-sm">Erreur, réessayez ou écrivez à contact@kyber-security.fr</p>
+        )}
+        <p className="text-stone-500 text-xs mt-4">
+          En vous inscrivant, vous acceptez de recevoir notre newsletter. Désinscription à tout moment.
+        </p>
+      </div>
+    </section>
+  );
+}
+
 // ── Page principale ────────────────────────────────────────────────────────
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -166,16 +234,6 @@ export default function Home() {
   const [buyerEmail, setBuyerEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
-
-  const [contact, setContact] = useState({
-    company: '',
-    firstName: '',
-    lastName: '',
-    email: '',
-    teamSize: '1-10',
-    message: '',
-  });
-  const [contactStatus, setContactStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -200,21 +258,6 @@ export default function Home() {
       else setCheckoutLoading(false);
     } catch {
       setCheckoutLoading(false);
-    }
-  };
-
-  const handleContact = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setContactStatus('sending');
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(contact),
-      });
-      setContactStatus(res.ok ? 'sent' : 'error');
-    } catch {
-      setContactStatus('error');
     }
   };
 
@@ -290,6 +333,7 @@ export default function Home() {
             <a href="#how-it-works" className="hover:text-stone-900 transition-colors">Comment ça marche</a>
             <a href="#pricing" className="hover:text-stone-900 transition-colors">Tarifs</a>
             <a href="/blog" className="hover:text-stone-900 transition-colors">Blog</a>
+            <a href="/a-propos" className="hover:text-stone-900 transition-colors">À propos</a>
           </nav>
           <a
             href="/telechargement"
@@ -669,7 +713,7 @@ export default function Home() {
               <div className="mb-6">
                 <span className="text-blue-600 text-sm font-medium uppercase tracking-wider">Kyber Pro</span>
                 <div className="flex items-end gap-2 mt-2">
-                  <span className="text-5xl font-bold text-stone-900">15 €</span>
+                  <span className="text-5xl font-bold text-stone-900">29 €</span>
                   <span className="text-stone-500 text-sm mb-1.5">paiement unique</span>
                 </div>
                 <p className="text-stone-500 text-sm mt-1">Licence perpétuelle — 1 utilisateur</p>
@@ -693,7 +737,7 @@ export default function Home() {
                 onClick={() => setShowModal(true)}
                 className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-rose-300/30 text-white"
               >
-                Acheter — 15 €
+                Acheter — 29 €
               </button>
             </div>
           </div>
@@ -789,67 +833,38 @@ export default function Home() {
 
       {/* ── ENTERPRISE ── */}
       <section id="enterprise" className="py-24 px-6 bg-stone-100 border-y border-stone-300">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10 reveal">
-            <h2 className="text-3xl font-bold mb-3 text-stone-900">Solution entreprise</h2>
-            <p className="text-stone-500">Besoin de licences pour une équipe ? Tarifs dégressifs disponibles.</p>
+        <div className="max-w-2xl mx-auto text-center reveal">
+          <h2 className="text-3xl font-bold mb-4 text-stone-900">Solution entreprise</h2>
+          <p className="text-stone-500 mb-8 max-w-xl mx-auto leading-relaxed">
+            Déployez Kyber dans votre équipe avec des tarifs dégressifs, une facturation entreprise,
+            et une conformité RGPD garantie par architecture. Aucun serveur centralisé.
+          </p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <a
+              href="/entreprise"
+              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+            >
+              Voir les offres entreprise →
+            </a>
+            <a
+              href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise — demande de devis"
+              className="border border-stone-300 hover:border-stone-400 px-8 py-3.5 rounded-xl font-semibold text-sm text-stone-700 transition-all"
+            >
+              contact@kyber-security.fr
+            </a>
           </div>
-
-          {contactStatus === 'sent' ? (
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
-              <div className="flex justify-center mb-4"><svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" /></svg></div>
-              <h3 className="font-semibold text-xl mb-2 text-stone-900">Message envoyé !</h3>
-              <p className="text-stone-500">Nous vous répondrons dans les 24 heures.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleContact} className="bg-white border border-stone-300 rounded-2xl p-8 space-y-4 reveal reveal-delay-1 shadow-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Prénom *</label>
-                  <input required value={contact.firstName} onChange={(e) => setContact({ ...contact, firstName: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
-                </div>
-                <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Nom *</label>
-                  <input required value={contact.lastName} onChange={(e) => setContact({ ...contact, lastName: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
-                </div>
+          <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+            {[
+              { icon: '🔒', label: 'Zéro serveur centralisé' },
+              { icon: '🇫🇷', label: 'RGPD par conception' },
+              { icon: '📋', label: 'Démarche CSPN ANSSI' },
+            ].map(({ icon, label }) => (
+              <div key={label} className="bg-white border border-stone-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+                <span className="text-lg">{icon}</span>
+                <span className="text-stone-700 font-medium">{label}</span>
               </div>
-              <div>
-                <label className="text-sm text-stone-600 mb-1.5 block">Société *</label>
-                <input required value={contact.company} onChange={(e) => setContact({ ...contact, company: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
-              </div>
-              <div>
-                <label className="text-sm text-stone-600 mb-1.5 block">Email professionnel *</label>
-                <input required type="email" value={contact.email} onChange={(e) => setContact({ ...contact, email: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
-              </div>
-              <div>
-                <label className="text-sm text-stone-600 mb-1.5 block">Taille de l&apos;équipe</label>
-                <select value={contact.teamSize} onChange={(e) => setContact({ ...contact, teamSize: e.target.value })}
-                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900">
-                  <option value="1-10">1 – 10 personnes</option>
-                  <option value="11-50">11 – 50 personnes</option>
-                  <option value="51-200">51 – 200 personnes</option>
-                  <option value="200+">200+ personnes</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-sm text-stone-600 mb-1.5 block">Message</label>
-                <textarea rows={4} value={contact.message} onChange={(e) => setContact({ ...contact, message: e.target.value })}
-                  placeholder="Décrivez votre besoin, vos contraintes, vos questions…"
-                  className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-900 placeholder:text-stone-400" />
-              </div>
-              <button type="submit" disabled={contactStatus === 'sending'}
-                className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
-                {contactStatus === 'sending' ? 'Envoi en cours…' : 'Envoyer la demande'}
-              </button>
-              {contactStatus === 'error' && (
-                <p className="text-red-600 text-sm text-center">Une erreur est survenue. Réessayez ou contactez-nous directement.</p>
-              )}
-            </form>
-          )}
+            ))}
+          </div>
         </div>
       </section>
 
@@ -864,6 +879,22 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal reveal-delay-1">
             {[
+              {
+                href: '/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026',
+                cat: 'Comparatif',
+                catColor: 'text-green-700 bg-green-50 border-green-200',
+                title: 'Meilleur gestionnaire de mots de passe RGPD France 2026',
+                date: '15 juin 2026',
+                read: '10 min',
+              },
+              {
+                href: '/blog/keepass-alternative-post-quantique',
+                cat: 'Comparatif',
+                catColor: 'text-cyan-700 bg-cyan-50 border-cyan-200',
+                title: 'KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber',
+                date: '15 juin 2026',
+                read: '9 min',
+              },
               {
                 href: '/blog/kyber-local-vs-cloud',
                 cat: 'Analyse',
@@ -880,22 +911,6 @@ export default function Home() {
                 date: '9 juin 2026',
                 read: '8 min',
               },
-              {
-                href: '/blog/cryptographie-post-quantique',
-                cat: 'Éducation',
-                catColor: 'text-rose-700 bg-rose-50 border-rose-200',
-                title: "Qu'est-ce que la cryptographie post-quantique ?",
-                date: '9 juin 2026',
-                read: '10 min',
-              },
-              {
-                href: '/blog/argon2id-vs-pbkdf2',
-                cat: 'Technique',
-                catColor: 'text-cyan-700 bg-cyan-50 border-cyan-200',
-                title: 'Argon2id vs PBKDF2 vs bcrypt : quel KDF choisir ?',
-                date: '9 juin 2026',
-                read: '9 min',
-              },
             ].map((a) => (
               <Link key={a.href} href={a.href} className="group block bg-white border border-stone-300 rounded-xl p-5 hover:border-stone-300 hover:shadow-md transition-all shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
@@ -910,6 +925,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* ── NEWSLETTER ── */}
+      <NewsletterSection />
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-stone-300 py-12 px-6 bg-stone-50">
@@ -928,6 +946,7 @@ export default function Home() {
             <a href="/gestionnaire-mots-de-passe-post-quantique" className="hover:text-stone-900 transition-colors">Fonctionnalités</a>
             <a href="/comparatif-bitwarden-1password-kyber" className="hover:text-stone-900 transition-colors">Comparatif</a>
             <a href="/chiffrement-kyber1024" className="hover:text-stone-900 transition-colors">Technique</a>
+            <a href="/a-propos" className="hover:text-stone-900 transition-colors">À propos</a>
             <a href="/politique-de-confidentialite" className="hover:text-stone-900 transition-colors">Confidentialité</a>
             <a href="/cgv" className="hover:text-stone-900 transition-colors">CGV</a>
             <a href="mailto:contact@kyber-security.fr" className="hover:text-stone-900 transition-colors">contact@kyber-security.fr</a>
@@ -944,7 +963,7 @@ export default function Home() {
           <div className="bg-white border border-stone-300 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 15 €</h3>
+                <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 29 €</h3>
                 <p className="text-stone-500 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-400 hover:text-stone-600 text-xl leading-none ml-4 mt-0.5">✕</button>

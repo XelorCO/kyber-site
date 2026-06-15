@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
             description:
               'Gestionnaire de mots de passe post-quantique · Mots de passe illimités + toutes les fonctionnalités',
           },
-          unit_amount: 1500,
+          unit_amount: 2900,
         },
         quantity: 1,
       },

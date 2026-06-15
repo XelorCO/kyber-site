@@ -8,6 +8,8 @@ const navLinks = [
   { href: '/chiffrement-kyber1024', label: 'Cryptographie' },
   { href: '/comparatif-bitwarden-1password-kyber', label: 'Comparatif' },
   { href: '/blog', label: 'Blog' },
+  { href: '/roadmap', label: 'Roadmap' },
+  { href: '/a-propos', label: 'À propos' },
 ];
 
 export default function NavHeader() {
