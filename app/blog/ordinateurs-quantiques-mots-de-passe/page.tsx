@@ -202,7 +202,7 @@ export default function ArticleQCMotsDePasse() {
                       <div className="flex-shrink-0 w-20">
                         <span className={`text-sm font-mono font-bold text-${couleur}-600`}>{periode}</span>
                       </div>
-                      <div className="bg-white border border-stone-300 rounded-xl p-4 flex-1 shadow-sm">
+                      <div className="bg-white border border-stone-400 rounded-xl p-4 flex-1 shadow-sm">
                         <h3 className="font-semibold text-stone-900 text-sm mb-1">{titre}</h3>
                         <p className="text-xs text-stone-500">{desc}</p>
                       </div>
@@ -310,7 +310,7 @@ export default function ArticleQCMotsDePasse() {
                       reponse: "ML-KEM (Kyber1024) a passé 8 ans d'évaluation académique mondiale avant d'être standardisé par le NIST en août 2024. C'est actuellement le standard de fait de la cryptographie post-quantique.",
                     },
                   ].map(({ objection, reponse }) => (
-                    <div key={objection} className="border border-stone-300 rounded-xl p-5 bg-white shadow-sm">
+                    <div key={objection} className="border border-stone-400 rounded-xl p-5 bg-white shadow-sm">
                       <p className="text-sm font-medium text-stone-700 italic mb-2">{objection}</p>
                       <p className="text-sm text-stone-500">{reponse}</p>
                     </div>

@@ -647,7 +647,7 @@ export default function Home() {
             ].map((f, i) => (
               <div
                 key={f.title}
-                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
+                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm`}
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 bg-stone-100 rounded-xl p-2.5">{f.icon}</div>
@@ -675,7 +675,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Free */}
-            <div className="bg-white border border-stone-300 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
+            <div className="bg-white border border-stone-400 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
               <div className="mb-6">
                 <span className="text-stone-500 text-sm font-medium uppercase tracking-wider">Gratuit</span>
                 <div className="text-5xl font-bold mt-2 text-stone-900">0 €</div>
@@ -737,7 +737,7 @@ export default function Home() {
                 onClick={() => setShowModal(true)}
                 className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-rose-300/30 text-white"
               >
-                Acheter — 24,99 €
+                Acheter / 24,99 €
               </button>
             </div>
           </div>
@@ -805,7 +805,7 @@ export default function Home() {
             ].map((p, i) => (
               <div
                 key={p.platform}
-                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm`}
+                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm`}
               >
                 <div className="mb-3">{p.icon}</div>
                 <h3 className="font-semibold text-lg text-stone-900">{p.platform}</h3>
@@ -859,7 +859,7 @@ export default function Home() {
               { icon: '🇫🇷', label: 'RGPD par conception' },
               { icon: '📋', label: 'Démarche CSPN ANSSI' },
             ].map(({ icon, label }) => (
-              <div key={label} className="bg-white border border-stone-200 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
+              <div key={label} className="bg-white border border-stone-400 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
                 <span className="text-lg">{icon}</span>
                 <span className="text-stone-700 font-medium">{label}</span>
               </div>
@@ -912,7 +912,7 @@ export default function Home() {
                 read: '8 min',
               },
             ].map((a) => (
-              <Link key={a.href} href={a.href} className="group block bg-white border border-stone-300 rounded-xl p-5 hover:border-stone-300 hover:shadow-md transition-all shadow-sm">
+              <Link key={a.href} href={a.href} className="group block bg-white border border-stone-400 rounded-xl p-5 hover:border-stone-500 hover:shadow-md transition-all shadow-sm">
                 <div className="flex items-center gap-2 mb-3">
                   <span className={`text-xs font-medium px-2 py-0.5 rounded-full border ${a.catColor}`}>{a.cat}</span>
                   <span className="text-xs text-stone-400">{a.date} · {a.read}</span>
@@ -960,7 +960,7 @@ export default function Home() {
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-sm"
           onClick={(e) => e.target === e.currentTarget && setShowModal(false)}
         >
-          <div className="bg-white border border-stone-300 rounded-2xl p-8 max-w-md w-full shadow-2xl">
+          <div className="bg-white border border-stone-400 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
                 <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 24,99 €</h3>

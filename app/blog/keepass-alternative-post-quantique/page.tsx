@@ -233,7 +233,7 @@ export default function ArticleKeePass() {
                     desc: "Si vous avez plus de 3 mots de passe, la version Kyber Pro (24,99 € licence à vie) lève la limite. L'import fonctionne même en gratuit — vous verrez juste un avertissement si vous dépassez 3.",
                   },
                 ].map((item) => (
-                  <div key={item.step} className="flex gap-4 bg-white border border-stone-200 rounded-xl px-5 py-4 shadow-sm">
+                  <div key={item.step} className="flex gap-4 bg-white border border-stone-400 rounded-xl px-5 py-4 shadow-sm">
                     <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-rose-400 rounded-full flex items-center justify-center text-white text-xs font-bold">
                       {item.step}
                     </div>
@@ -273,7 +273,7 @@ export default function ArticleKeePass() {
                     a: "Oui. Kyber est disponible en AppImage, .deb et .rpm pour Linux. Testé sur Ubuntu, Debian, Kali, Fedora.",
                   },
                 ].map((faq) => (
-                  <details key={faq.q} className="bg-white border border-stone-200 rounded-xl px-5 py-4 shadow-sm group">
+                  <details key={faq.q} className="bg-white border border-stone-400 rounded-xl px-5 py-4 shadow-sm group">
                     <summary className="font-medium text-stone-900 cursor-pointer list-none flex items-center justify-between gap-3 text-sm">
                       {faq.q}
                       <span className="text-stone-400 flex-shrink-0 group-open:rotate-180 transition-transform">↓</span>

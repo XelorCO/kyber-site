@@ -53,7 +53,7 @@ export default function EntrepriseClient() {
                 {
                   name: 'Pro individuel',
                   price: '24,99 €',
-                  sub: 'paiement unique · licence à vie',
+                  sub: 'paiement unique / licence à vie',
                   features: ['1 utilisateur', 'Mots de passe illimités', 'Export CSV', 'Mises à jour à vie', 'Support email'],
                   cta: 'Acheter',
                   href: '/#pricing',
@@ -62,7 +62,7 @@ export default function EntrepriseClient() {
                 {
                   name: 'Équipe',
                   price: '19,99 €',
-                  sub: '10 utilisateurs · paiement unique',
+                  sub: '10 utilisateurs / paiement unique',
                   features: ['Multi-utilisateurs', 'Déploiement centralisé', 'Tarifs dégressifs', 'Support prioritaire', 'Facturation entreprise'],
                   cta: 'Nous contacter',
                   href: '#contact',
@@ -80,7 +80,7 @@ export default function EntrepriseClient() {
               ].map((plan) => (
                 <div
                   key={plan.name}
-                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-50 to-rose-50 border-2 border-blue-200 shadow-md relative' : 'bg-white border border-stone-200 shadow-sm'}`}
+                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-50 to-rose-50 border-2 border-blue-300 shadow-md relative' : 'bg-white border border-stone-400 shadow-sm'}`}
                 >
                   {plan.highlight && (
                     <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
@@ -117,31 +117,61 @@ export default function EntrepriseClient() {
           {/* ── ARGUMENTS B2B ── */}
           <section className="mb-16">
             <h2 className="text-2xl font-bold mb-8 text-stone-900">Pourquoi les équipes choisissent Kyber</h2>
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-3 gap-4">
               {[
                 {
                   icon: '🔒',
                   title: 'Zéro serveur centralisé',
-                  desc: "Chaque collaborateur stocke son coffre en local. Aucune base de données d'identifiants à cibler — la surface d'attaque est éliminée.",
-                  color: 'bg-blue-50 border-blue-200',
+                  desc: "Chaque collaborateur stocke son coffre en local. Aucune base de données d'identifiants à cibler / la surface d'attaque est éliminée.",
+                  color: 'bg-blue-50 border-blue-300',
                 },
                 {
                   icon: '🇫🇷',
-                  title: 'RGPD & souveraineté numérique',
-                  desc: "Aucune donnée ne quitte le territoire de l'entreprise. Conformité RGPD native — pas de DPA à négocier avec un fournisseur cloud américain.",
-                  color: 'bg-green-50 border-green-200',
+                  title: 'RGPD 🇫🇷 & souveraineté numérique',
+                  desc: "Aucune donnée ne quitte le territoire de l'entreprise. Conformité RGPD native / pas de DPA à négocier avec un fournisseur cloud américain.",
+                  color: 'bg-green-50 border-green-300',
                 },
                 {
                   icon: '⚛️',
                   title: "Post-quantique dès aujourd'hui",
-                  desc: "Standard NIST FIPS 203 (ML-KEM-1024). Vos mots de passe sont protégés contre les attaques harvest-now-decrypt-later, même sans ordinateur quantique actuel.",
-                  color: 'bg-rose-50 border-rose-200',
+                  desc: "Standard NIST FIPS 203 (ML-KEM-1024). Vos mots de passe sont protégés contre les attaques harvest-now-decrypt-later / même sans ordinateur quantique actuel.",
+                  color: 'bg-rose-50 border-rose-300',
                 },
                 {
                   icon: '📋',
                   title: 'En route vers la certification ANSSI',
-                  desc: "Démarche CSPN (Certification de Sécurité de Premier Niveau) en cours d'initiation. Le bon choix pour anticiper les exigences des marchés publics et des OIV.",
-                  color: 'bg-amber-50 border-amber-200',
+                  desc: "Démarche CSPN en cours d'initiation. Le bon choix pour anticiper les exigences des marchés publics et des OIV.",
+                  color: 'bg-amber-50 border-amber-300',
+                },
+                {
+                  icon: '🚀',
+                  title: 'Déploiement sans infrastructure',
+                  desc: "Chaque poste s'installe indépendamment en quelques minutes / aucun serveur de gestion / aucun VPN requis.",
+                  color: 'bg-purple-50 border-purple-300',
+                },
+                {
+                  icon: '🔑',
+                  title: 'Activation hors-ligne',
+                  desc: "Les licences sont activées localement par signature cryptographique Ed25519 / aucune connexion à un serveur de licences requise.",
+                  color: 'bg-cyan-50 border-cyan-300',
+                },
+                {
+                  icon: '📁',
+                  title: 'Chiffrement de fichiers inclus',
+                  desc: "Chiffrez vos documents confidentiels au format .kyber / accessibles uniquement avec la passphrase du coffre de chaque utilisateur.",
+                  color: 'bg-orange-50 border-orange-300',
+                },
+                {
+                  icon: '📊',
+                  title: 'Analyse de sécurité intégrée',
+                  desc: "Tableau de bord des mots de passe faibles / réutilisés / ou anciens. Chaque utilisateur visualise le niveau de risque de son coffre.",
+                  color: 'bg-teal-50 border-teal-300',
+                },
+                {
+                  icon: '🔄',
+                  title: 'Mises à jour perpétuelles',
+                  desc: "Votre licence inclut toutes les mises à jour de la branche v1.x / pas d'abonnement annuel / pas de surprise sur la facture.",
+                  color: 'bg-violet-50 border-violet-300',
                 },
               ].map((a) => (
                 <div key={a.title} className={`${a.color} border rounded-xl p-5`}>
@@ -208,9 +238,9 @@ export default function EntrepriseClient() {
                   <label className="text-sm text-stone-600 mb-1.5 block">Taille de l&apos;équipe</label>
                   <select value={form.teamSize} onChange={(e) => setForm({ ...form, teamSize: e.target.value })}
                     className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900">
-                    <option value="1-10">1 – 10 personnes</option>
-                    <option value="11-50">11 – 50 personnes</option>
-                    <option value="51-200">51 – 200 personnes</option>
+                    <option value="1-10">1 / 10 personnes</option>
+                    <option value="11-50">11 / 50 personnes</option>
+                    <option value="51-200">51 / 200 personnes</option>
                     <option value="200+">200+ personnes</option>
                   </select>
                 </div>
@@ -250,7 +280,7 @@ export default function EntrepriseClient() {
                 },
                 {
                   q: 'Quelle est votre politique de mise à jour ?',
-                  a: "Les licences Pro incluent toutes les mises à jour de la branche v1.x. Les nouvelles fonctionnalités majeures sont déployées progressivement. Pas d'abonnement caché — vous payez une fois.",
+                  a: "Les licences Pro incluent toutes les mises à jour de la branche v1.x. Les nouvelles fonctionnalités majeures sont déployées progressivement. Pas d'abonnement caché / vous payez une fois.",
                 },
                 {
                   q: 'Proposez-vous une facturation entreprise (bon de commande, TVA) ?',

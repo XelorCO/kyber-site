@@ -167,7 +167,7 @@ export default function BlogPage() {
               <div className="space-y-4">
                 {articles.filter((a) => !a.featured).map((article) => (
                   <Link key={article.slug} href={`/blog/${article.slug}`} className="group block">
-                    <div className="bg-white border border-stone-300 rounded-xl p-5 hover:border-stone-300 hover:shadow-md transition-all shadow-sm">
+                    <div className="bg-white border border-stone-400 rounded-xl p-5 hover:border-stone-500 hover:shadow-md transition-all shadow-sm">
                       <div className="flex items-start justify-between gap-4">
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 mb-2">
@@ -200,7 +200,7 @@ export default function BlogPage() {
               <h2 className="text-xl font-semibold mb-6 text-stone-700">Prochains articles</h2>
               <div className="space-y-4">
                 {comingSoon.map((a) => (
-                  <div key={a.title} className="bg-white border border-stone-300 rounded-xl p-5 opacity-60 shadow-sm">
+                  <div key={a.title} className="bg-white border border-stone-400 rounded-xl p-5 opacity-60 shadow-sm">
                     <div className="flex items-start justify-between gap-4">
                       <div>
                         <span className="text-xs text-stone-400 border border-stone-300 px-2 py-0.5 rounded-full mb-2 inline-block">

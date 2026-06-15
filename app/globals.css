@@ -7,6 +7,11 @@
   cursor: none !important;
 }
 
+::selection {
+  background-color: #c7c3bf;
+  color: #1c1917;
+}
+
 body {
   background-color: #faf8f6;
   color: #1c1917;

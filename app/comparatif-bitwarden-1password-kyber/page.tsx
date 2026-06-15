@@ -267,7 +267,7 @@ export default function PageComparatif() {
             <h2 className="text-2xl font-bold mb-8 text-stone-900">Analyse produit par produit</h2>
             <div className="space-y-6">
 
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-green-700">Bitwarden — Le meilleur choix cloud open source</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Bitwarden est l&apos;alternative open source de référence aux solutions cloud propriétaires.
@@ -278,7 +278,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">1Password — Premium cloud, code fermé</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   1Password offre une excellente expérience utilisateur et un modèle de sécurité solide avec
@@ -288,7 +288,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">KeePass — Le précurseur local, sans PQC</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   KeePass est la référence historique des gestionnaires locaux. Open source, gratuit, aucun cloud.
@@ -298,7 +298,7 @@ export default function PageComparatif() {
                 </p>
               </div>
 
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-bold text-lg mb-2 text-stone-700">Dashlane — Le meilleur choix cloud européen</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Dashlane est une entreprise fondée à Paris, avec des serveurs en Europe — un avantage RGPD réel

@@ -118,7 +118,7 @@ export default function PageTelechargement() {
               </div>
 
               {/* macOS */}
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
                 <div className="mb-4">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10 text-stone-400" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/>
@@ -126,7 +126,7 @@ export default function PageTelechargement() {
                 </div>
                 <h2 className="font-bold text-lg mb-1 text-stone-900">macOS</h2>
                 <p className="text-stone-400 text-xs mb-1">macOS 12 Monterey et supérieur</p>
-                <p className="text-xs text-stone-400 mb-3">Apple Silicon &amp; Intel — En développement</p>
+                <p className="text-xs text-stone-400 mb-3">Apple Silicon &amp; Intel / En développement</p>
                 <span className="inline-block w-full text-center text-stone-400 text-sm border border-stone-200 bg-stone-50 px-4 py-2 rounded-xl cursor-not-allowed">
                   Disponible bientôt
                 </span>
@@ -134,7 +134,7 @@ export default function PageTelechargement() {
               </div>
 
               {/* Linux */}
-              <div className="bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-200 hover:shadow-md transition-all shadow-sm">
+              <div className="bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm">
                 <div className="mb-4">
                   <svg className="w-10 h-10" viewBox="0 0 64 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <ellipse cx="32" cy="48" rx="15" ry="18" fill="#78716c"/>

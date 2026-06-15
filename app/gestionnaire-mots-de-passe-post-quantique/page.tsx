@@ -176,7 +176,7 @@ export default function PageGestionnaire() {
         {/* ── MENACE QUANTIQUE ── */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white border border-stone-300 rounded-2xl p-8 md:p-12 shadow-sm">
+            <div className="bg-white border border-stone-400 rounded-2xl p-8 md:p-12 shadow-sm">
               <h2 className="text-2xl md:text-3xl font-bold mb-6 text-stone-900">
                 Pourquoi votre gestionnaire actuel ne suffit plus
               </h2>
@@ -223,7 +223,7 @@ export default function PageGestionnaire() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="bg-white border border-stone-300 rounded-2xl p-6 hover:border-blue-300 hover:shadow-md transition-all shadow-sm"
+                  className="bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm"
                 >
                   <h3 className={`font-semibold text-lg mb-3 ${f.color}`}>{f.title}</h3>
                   <p className="text-stone-500 text-sm leading-relaxed mb-3">{f.desc}</p>
@@ -242,7 +242,7 @@ export default function PageGestionnaire() {
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold mb-8 text-center text-stone-900">Architecture de sécurité</h2>
-            <div className="bg-white border border-stone-300 rounded-2xl p-8 shadow-sm">
+            <div className="bg-white border border-stone-400 rounded-2xl p-8 shadow-sm">
               <p className="text-stone-400 text-sm mb-8 text-center">
                 Flux de chiffrement de votre passphrase jusqu&apos;aux données chiffrées
               </p>
@@ -304,7 +304,7 @@ export default function PageGestionnaire() {
                   a: "Le support macOS est en cours de développement. Kyber est actuellement disponible sur Windows 10/11 et Linux (Debian, Ubuntu, Fedora, Kali).",
                 },
               ].map(({ q, a }) => (
-                <div key={q} className="bg-white border border-stone-300 rounded-xl p-6 shadow-sm">
+                <div key={q} className="bg-white border border-stone-400 rounded-xl p-6 shadow-sm">
                   <h3 className="font-semibold mb-3 text-stone-900">{q}</h3>
                   <p className="text-stone-500 text-sm leading-relaxed">{a}</p>
                 </div>

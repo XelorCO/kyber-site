@@ -131,7 +131,7 @@ export default function PageRoadmap() {
                   {section.features.map((f) => (
                     <div
                       key={f.title}
-                      className="bg-white border border-stone-200 rounded-xl px-5 py-4 flex items-start gap-4 shadow-sm"
+                      className="bg-white border border-stone-400 rounded-xl px-5 py-4 flex items-start gap-4 shadow-sm"
                     >
                       <span className={`mt-1 flex-shrink-0 w-2.5 h-2.5 rounded-full ${statusDot[f.status]}`} />
                       <div className="flex-1 min-w-0">
