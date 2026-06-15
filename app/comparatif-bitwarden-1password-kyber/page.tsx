@@ -74,7 +74,7 @@ const products = [
     local: true,
     pqc: true,
     openSource: true,
-    prix: '0€ / 15€ unique',
+    prix: '0€ / 24,99€ unique',
     rgpd: 'Totale',
     incidents: 'Aucun',
     argon2: true,
@@ -325,7 +325,7 @@ export default function PageComparatif() {
                   Kyber combine les avantages de KeePass (stockage 100% local, souveraineté totale) avec
                   la cryptographie de 2024 (Kyber1024 + AES-256-GCM + Argon2id). Le coffre existe
                   uniquement sur votre disque — aucune brèche dans nos serveurs ne peut compromettre vos
-                  mots de passe (il n&apos;y a pas de serveur de coffres). Avec une licence Pro à 15€ paiement
+                  mots de passe (il n&apos;y a pas de serveur de coffres). Avec une licence Pro à 24,99€ paiement
                   unique, c&apos;est aussi le choix le plus économique sur 3 ans.
                 </p>
                 <div className="mt-4">

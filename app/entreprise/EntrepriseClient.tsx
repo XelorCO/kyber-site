@@ -52,8 +52,8 @@ export default function EntrepriseClient() {
               {[
                 {
                   name: 'Pro individuel',
-                  price: '29 €',
-                  sub: 'paiement unique',
+                  price: '24,99 €',
+                  sub: 'paiement unique · licence à vie',
                   features: ['1 utilisateur', 'Mots de passe illimités', 'Export CSV', 'Mises à jour à vie', 'Support email'],
                   cta: 'Acheter',
                   href: '/#pricing',
@@ -61,8 +61,8 @@ export default function EntrepriseClient() {
                 },
                 {
                   name: 'Équipe',
-                  price: '~5 € / utilisateur',
-                  sub: 'par an · à partir de 10 licences',
+                  price: '19,99 €',
+                  sub: '10 utilisateurs · paiement unique',
                   features: ['Multi-utilisateurs', 'Déploiement centralisé', 'Tarifs dégressifs', 'Support prioritaire', 'Facturation entreprise'],
                   cta: 'Nous contacter',
                   href: '#contact',
@@ -72,7 +72,7 @@ export default function EntrepriseClient() {
                   name: 'Entreprise',
                   price: 'Sur devis',
                   sub: 'contrat cadre',
-                  features: ['Licences illimitées', 'Dashboard admin (roadmap)', 'Intégration AD / LDAP (roadmap)', 'SLA & contrat', 'Formation incluse'],
+                  features: ['Licences illimitées', 'Intégration AD / LDAP (roadmap)', 'SLA & contrat', 'Formation incluse', 'Déploiement assisté'],
                   cta: 'Prendre RDV',
                   href: '#contact',
                   highlight: false,

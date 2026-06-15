@@ -40,7 +40,7 @@ export default function CGV() {
             <h2 className="text-xl font-semibold text-white mb-3">3. Prix</h2>
             <p>
               Le prix de la licence <strong className="text-white">Kyber Pro</strong> est de{' '}
-              <strong className="text-white">15,00 € TTC</strong> (paiement unique, licence perpétuelle pour 1 utilisateur).
+              <strong className="text-white">24,99 € TTC</strong> (paiement unique, licence perpétuelle pour 1 utilisateur).
               Les prix sont indiqués en euros, toutes taxes comprises.
             </p>
           </section>

@@ -29,7 +29,7 @@ const jsonLd = {
         {
           '@type': 'Offer',
           name: 'Kyber Pro',
-          price: '15.00',
+          price: '24.99',
           priceCurrency: 'EUR',
           description: 'Licence perpétuelle — mots de passe illimités',
         },
@@ -76,7 +76,7 @@ const jsonLd = {
           name: 'Kyber est-il gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Oui, Kyber est gratuit jusqu'à 3 mots de passe. La licence Pro à 15€ (paiement unique, perpétuelle) débloque les mots de passe illimités.",
+            text: "Oui, Kyber est gratuit jusqu'à 3 mots de passe. La licence Pro à 24,99€ (paiement unique, perpétuelle) débloque les mots de passe illimités.",
           },
         },
         {

@@ -15,7 +15,7 @@ const pageJsonLd = {
       inLanguage: 'fr-FR',
       offers: [
         { '@type': 'Offer', name: 'Kyber Gratuit', price: '0', priceCurrency: 'EUR', description: "Jusqu'à 3 mots de passe" },
-        { '@type': 'Offer', name: 'Kyber Pro', price: '15.00', priceCurrency: 'EUR', description: 'Mots de passe illimités, licence perpétuelle' },
+        { '@type': 'Offer', name: 'Kyber Pro', price: '24.99', priceCurrency: 'EUR', description: 'Mots de passe illimités, licence perpétuelle' },
       ],
       featureList: ['Chiffrement post-quantique Kyber1024', 'AES-256-GCM', 'Argon2id', 'Auto-remplissage', '100% local, zéro cloud'],
     },
@@ -318,7 +318,7 @@ export default function PageGestionnaire() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-stone-900">Prêt à passer au post-quantique ?</h2>
             <p className="text-stone-500 mb-8">
-              Gratuit jusqu&apos;à 3 mots de passe. Licence Pro à 15€ paiement unique, à vie.
+              Gratuit jusqu&apos;à 3 mots de passe. Licence Pro à 24,99€ paiement unique, à vie.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

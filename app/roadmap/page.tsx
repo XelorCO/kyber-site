@@ -85,7 +85,6 @@ const sections: { title: string; features: Feature[] }[] = [
     features: [
       { title: 'CLI pour DevOps / CI-CD', desc: 'Interface ligne de commande pour intégrer Kyber dans les pipelines d\'automatisation.', status: 'later' },
       { title: 'Mode multi-utilisateurs (équipes)', desc: 'Partage de coffre chiffré par équipe avec gestion des droits.', status: 'later' },
-      { title: 'Tableau de bord administrateur', desc: 'Gestion centralisée des licences entreprise et des accès.', status: 'later' },
       { title: 'Version mobile iOS & Android', desc: 'Application mobile avec synchronisation locale optionnelle (Bluetooth / USB).', status: 'later' },
       { title: 'Intégration Active Directory / LDAP', desc: 'Pour les grandes organisations avec annuaire d\'entreprise.', status: 'later' },
     ],

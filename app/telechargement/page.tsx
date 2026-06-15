@@ -23,7 +23,7 @@ const downloadJsonLd = {
   inLanguage: 'fr-FR',
   offers: [
     { '@type': 'Offer', price: '0', priceCurrency: 'EUR', name: 'Kyber Gratuit', description: "Jusqu'à 3 mots de passe" },
-    { '@type': 'Offer', price: '29.00', priceCurrency: 'EUR', name: 'Kyber Pro', description: 'Mots de passe illimités, licence perpétuelle' },
+    { '@type': 'Offer', price: '24.99', priceCurrency: 'EUR', name: 'Kyber Pro', description: 'Mots de passe illimités, licence perpétuelle' },
   ],
 };
 
@@ -262,7 +262,7 @@ export default function PageTelechargement() {
           <section className="bg-gradient-to-b from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold mb-3 text-stone-900">Passer à Kyber Pro</h2>
             <p className="text-stone-700 mb-2">Mots de passe illimités · Export CSV · Support prioritaire</p>
-            <p className="text-blue-600 font-bold text-2xl mb-6">29 € — paiement unique, licence à vie</p>
+            <p className="text-blue-600 font-bold text-2xl mb-6">24,99 € — paiement unique, licence à vie</p>
             <Link
               href="/#pricing"
               className="inline-block bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"

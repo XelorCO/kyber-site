@@ -713,7 +713,7 @@ export default function Home() {
               <div className="mb-6">
                 <span className="text-blue-600 text-sm font-medium uppercase tracking-wider">Kyber Pro</span>
                 <div className="flex items-end gap-2 mt-2">
-                  <span className="text-5xl font-bold text-stone-900">29 €</span>
+                  <span className="text-5xl font-bold text-stone-900">24,99 €</span>
                   <span className="text-stone-500 text-sm mb-1.5">paiement unique</span>
                 </div>
                 <p className="text-stone-500 text-sm mt-1">Licence perpétuelle — 1 utilisateur</p>
@@ -737,7 +737,7 @@ export default function Home() {
                 onClick={() => setShowModal(true)}
                 className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-rose-300/30 text-white"
               >
-                Acheter — 29 €
+                Acheter — 24,99 €
               </button>
             </div>
           </div>
@@ -963,7 +963,7 @@ export default function Home() {
           <div className="bg-white border border-stone-300 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 29 €</h3>
+                <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 24,99 €</h3>
                 <p className="text-stone-500 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-400 hover:text-stone-600 text-xl leading-none ml-4 mt-0.5">✕</button>
