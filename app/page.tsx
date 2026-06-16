@@ -636,16 +636,49 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FONCTIONNALITÉS — 4 clés ── */}
+      {/* ── FONCTIONNALITÉS — 9 ── */}
       <section className="py-24 px-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14 reveal">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">Tout ce dont vous avez besoin</h2>
             <p className="text-stone-500">Simple. Local. Sûr.</p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {[
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                  </svg>
+                ),
+                title: 'Kyber1024 Post-Quantique',
+                desc: 'Algorithme d\'encapsulation de clé standardisé par le NIST en 2024 (ML-KEM). Résistant à l\'algorithme de Shor et aux futurs ordinateurs quantiques. Votre coffre sera encore sécurisé dans 20 ans.',
+                tag: 'Post-quantique',
+                link: { href: '/chiffrement-kyber1024', label: 'En savoir plus sur Kyber1024 →' },
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+                  </svg>
+                ),
+                title: 'AES-256-GCM',
+                desc: 'Chiffrement symétrique authentifié de niveau militaire. Le "GCM" garantit que vos données ne peuvent pas être modifiées sans être détectées. Standard utilisé par les banques et l\'armée.',
+                tag: 'Militaire',
+                link: null,
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                  </svg>
+                ),
+                title: 'Argon2id — Dérivation de clé',
+                desc: 'Vainqueur de la Password Hashing Competition 2015. Paramétré à 64 MB de mémoire : rend les attaques GPU et ASIC économiquement impossibles. Votre passphrase ne peut pas être forcée brute.',
+                tag: 'PHC Winner',
+                link: null,
+              },
               {
                 icon: (
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-amber-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -653,28 +686,9 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Auto-remplissage',
-                desc: 'Détection automatique des champs de connexion dans toutes vos applications. Injectez vos identifiants en un clic.',
+                desc: 'Kyber détecte automatiquement les champs mot de passe dans n\'importe quelle application de votre système. Injection en un clic sans jamais copier-coller votre mot de passe dans le presse-papiers.',
                 tag: 'Productivité',
-              },
-              {
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
-                  </svg>
-                ),
-                title: 'Import depuis Bitwarden / 1Password',
-                desc: 'Migrez depuis n\'importe quel gestionnaire supportant le CSV. Aucune donnée perdue, migration en quelques secondes.',
-                tag: 'Migration',
-              },
-              {
-                icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-                  </svg>
-                ),
-                title: 'Chiffrement de fichiers & dossiers',
-                desc: 'Chiffrez n\'importe quel fichier avec votre clé coffre. Format .kyber illisible sans votre passphrase.',
-                tag: 'Pro',
+                link: null,
               },
               {
                 icon: (
@@ -683,15 +697,60 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Analyse de sécurité',
-                desc: 'Tableau de bord santé : mots de passe faibles, réutilisés ou anciens détectés automatiquement. Renforcez votre coffre.',
+                desc: 'Tableau de bord complet : détection des mots de passe faibles (entropie < 50 bits), réutilisés sur plusieurs sites, ou trop anciens. Score de sécurité global de votre coffre.',
                 tag: 'Intégré',
+                link: null,
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5" />
+                  </svg>
+                ),
+                title: 'Import universel (CSV)',
+                desc: 'Migrez depuis Bitwarden, 1Password, LastPass ou n\'importe quel gestionnaire exportant en CSV. Migration complète en quelques secondes, sans effort.',
+                tag: 'Migration',
+                link: { href: '/comparatif-bitwarden-1password-kyber', label: 'Voir le comparatif →' },
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
+                  </svg>
+                ),
+                title: 'Chiffrement de fichiers',
+                desc: 'Chiffrez n\'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Format .kyber lié à votre coffre : illisible sans votre passphrase.',
+                tag: 'Pro',
+                link: null,
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-purple-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 5.25a3 3 0 0 1 3 3m3 0a6 6 0 0 1-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 0 1 21.75 8.25Z" />
+                  </svg>
+                ),
+                title: 'Générateur de mots de passe',
+                desc: 'Génération cryptographiquement sûre via le CSPRNG du système. Longueur, caractères spéciaux, chiffres : tout est paramétrable. Entropie affichée en temps réel en bits.',
+                tag: 'Intégré',
+                link: null,
+              },
+              {
+                icon: (
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-stone-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
+                  </svg>
+                ),
+                title: '100% local — Zéro cloud',
+                desc: 'Votre coffre .vault est un fichier chiffré sur votre disque. Aucune donnée ne transite par internet. Pas de compte, pas de télémétrie, pas de serveur de notre côté. Vous êtes le seul propriétaire.',
+                tag: 'Privacy',
+                link: null,
               },
             ].map((f, i) => (
               <div
                 key={f.title}
-                className={`reveal reveal-delay-${i + 1} bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm`}
+                className={`reveal reveal-delay-${(i % 4) + 1} bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm flex flex-col`}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 flex-1">
                   <div className="flex-shrink-0 bg-stone-100 rounded-xl p-2.5">{f.icon}</div>
                   <div>
                     <div className="flex items-center gap-2 mb-2">
@@ -701,6 +760,13 @@ export default function Home() {
                     <p className="text-stone-500 text-sm leading-relaxed">{f.desc}</p>
                   </div>
                 </div>
+                {f.link && (
+                  <div className="mt-4 ml-14">
+                    <Link href={f.link.href} className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors">
+                      {f.link.label}
+                    </Link>
+                  </div>
+                )}
               </div>
             ))}
           </div>
