@@ -234,6 +234,7 @@ export default function Home() {
   const [buyerEmail, setBuyerEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -335,14 +336,55 @@ export default function Home() {
             <a href="/blog" className="hover:text-stone-900 transition-colors">Blog</a>
             <a href="/a-propos" className="hover:text-stone-900 transition-colors">À propos</a>
           </nav>
-          <a
-            href="/telechargement"
-            className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
-          >
-            Télécharger
-          </a>
+          <div className="flex items-center gap-3">
+            <a
+              href="/telechargement"
+              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
+            >
+              Télécharger
+            </a>
+            <button
+              className="md:hidden p-2 rounded-lg border border-stone-300 bg-white text-stone-600 hover:bg-stone-50 transition-colors"
+              onClick={() => setMobileMenuOpen(v => !v)}
+              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              ) : (
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-stone-200 bg-[#faf8f6]/98 backdrop-blur-md">
+            <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
+              {[
+                { href: '#how-it-works', label: 'Comment ça marche' },
+                { href: '#pricing', label: 'Tarifs' },
+                { href: '/blog', label: 'Blog' },
+                { href: '/a-propos', label: 'À propos' },
+              ].map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-3 py-2.5 rounded-lg text-sm text-stone-600 hover:bg-stone-100 hover:text-stone-900 transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
+        )}
       </header>
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
+      )}
 
       {/* ── HERO ── */}
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">

@@ -51,7 +51,7 @@ export default function PageAPropos() {
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                   <a
-                    href="https://linkedin.com/in/enzo-paccard"
+                    href="https://fr.linkedin.com/in/enzo-paccard-7394a52b1"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 border border-stone-300 hover:border-blue-400 px-4 py-2 rounded-lg text-sm text-stone-700 hover:text-blue-600 transition-all"
