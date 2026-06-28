@@ -159,74 +159,6 @@ function VizVault() {
   );
 }
 
-// ── Section newsletter ─────────────────────────────────────────────────────
-function NewsletterSection() {
-  const [email, setEmail] = useState('');
-  const [status, setStatus] = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus('loading');
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'homepage' }),
-      });
-      setStatus(res.ok ? 'done' : 'error');
-    } catch {
-      setStatus('error');
-    }
-  };
-
-  return (
-    <section className="py-20 px-6 bg-gradient-to-b from-stone-900 to-stone-800">
-      <div className="max-w-xl mx-auto text-center">
-        <div className="inline-flex items-center gap-2 border border-blue-500/30 bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
-          <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
-          Newsletter technique PQC
-        </div>
-        <h2 className="text-2xl md:text-3xl font-bold mb-3 text-white">
-          Restez au courant de la cryptographie post-quantique
-        </h2>
-        <p className="text-stone-400 mb-8 text-sm leading-relaxed">
-          1 email par mois sur la PQC, les avancées NIST et les nouvelles fonctionnalités Kyber.
-          Pas de spam, désinscription en un clic.
-        </p>
-        {status === 'done' ? (
-          <div className="bg-green-900/30 border border-green-500/30 rounded-xl p-5 text-green-400 font-medium">
-            Inscription confirmée — à bientôt dans votre boîte mail.
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="votre@email.fr"
-              className="flex-1 bg-stone-800 border border-stone-600 hover:border-stone-500 focus:border-blue-500 rounded-xl px-4 py-3 text-sm text-white placeholder:text-stone-500 focus:outline-none transition-colors"
-            />
-            <button
-              type="submit"
-              disabled={status === 'loading'}
-              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-50 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all whitespace-nowrap"
-            >
-              {status === 'loading' ? 'Inscription…' : "S'inscrire →"}
-            </button>
-          </form>
-        )}
-        {status === 'error' && (
-          <p className="mt-3 text-red-400 text-sm">Erreur, réessayez ou écrivez à contact@kyber-security.fr</p>
-        )}
-        <p className="text-stone-500 text-xs mt-4">
-          En vous inscrivant, vous acceptez de recevoir notre newsletter. Désinscription à tout moment.
-        </p>
-      </div>
-    </section>
-  );
-}
-
 // ── Page principale ────────────────────────────────────────────────────────
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
@@ -1033,9 +965,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* ── NEWSLETTER ── */}
-      <NewsletterSection />
 
       {/* ── FOOTER ── */}
       <footer className="border-t border-stone-300 py-12 px-6 bg-stone-50">

@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
-import MacOSWaitlist from '@/components/MacOSWaitlist';
 
 const downloadJsonLd = {
   '@context': 'https://schema.org',
@@ -130,7 +129,6 @@ export default function PageTelechargement() {
                 <span className="inline-block w-full text-center text-stone-400 text-sm border border-stone-200 bg-stone-50 px-4 py-2 rounded-xl cursor-not-allowed">
                   Disponible bientôt
                 </span>
-                <MacOSWaitlist />
               </div>
 
               {/* Linux */}

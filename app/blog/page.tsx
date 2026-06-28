@@ -2,7 +2,6 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
-import BlogNewsletterForm from '@/components/BlogNewsletterForm';
 
 export const metadata: Metadata = {
   title: { absolute: 'Blog Kyber | Cryptographie post-quantique' },
@@ -216,9 +215,6 @@ export default function BlogPage() {
               </div>
             </section>
           )}
-
-          {/* ── CTA NEWSLETTER ── */}
-          <BlogNewsletterForm />
 
         </div>
       </main>
