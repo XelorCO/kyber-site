@@ -1,0 +1,11 @@
+{
+  "version": "1.1.0",
+  "notes": "Mises à jour automatiques signées, interface modernisée, corrections de sécurité.",
+  "pub_date": "2026-07-01T21:00:00Z",
+  "platforms": {
+    "windows-x86_64": {
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQnBzdTVFeFBQLzRKS1Z6Nnd6Y2ZGcVNqbmdyeCswaURUNFMrR0IxVzRBUjJOWXBMcHRwMGVrazZsRm9vN3ZrRjhsa3J2akd0aE5RRXhVS2JxUzkvYUcyV3BGVm5SckFrPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgyOTM5NjAzCWZpbGU6S3liZXJfMS4xLjBfeDY0LXNldHVwLmV4ZQpNaEp0ZWhWVDNCb1ltaklPYXI5bndqRHRzeFYreXNoZDEzbmcrNDVlWGR1c2RSaC85dWp1RUEvM1c3NVRyZ1Nzd3dnbjdRdFVtZWU1L3pNRjA4VVZCQT09Cg==",
+      "url": "https://kyber-security.fr/downloads/Kyber_1.1.0_x64-setup.exe"
+    }
+  }
+}

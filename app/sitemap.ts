@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/telechargement`,                                       lastModified: now, changeFrequency: 'monthly',  priority: 0.9 },
     { url: `${base}/chiffrement-kyber1024`,                                lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/comparatif-bitwarden-1password-kyber`,                 lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
+    { url: `${base}/chiffrer-fichier`,                                     lastModified: now, changeFrequency: 'monthly',  priority: 0.9 },
     { url: `${base}/a-propos`,                                             lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/blog`,                                                 lastModified: now, changeFrequency: 'weekly',   priority: 0.7 },
     { url: `${base}/blog/kyber-local-vs-cloud`,                            lastModified: now, changeFrequency: 'monthly',  priority: 0.7 },

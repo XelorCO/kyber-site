@@ -21,7 +21,8 @@ const securityHeaders = [
     key: 'Content-Security-Policy',
     value: [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://js.stripe.com",
+      // 'wasm-unsafe-eval' : requis par Argon2id (hash-wasm) sur /chiffrer-fichier — WebAssembly uniquement, pas eval JS
+      "script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval' https://js.stripe.com",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://www.google.com https://kyber-security.fr",

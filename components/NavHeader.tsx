@@ -8,6 +8,7 @@ const navLinks = [
   { href: '/gestionnaire-mots-de-passe-post-quantique', label: 'Fonctionnalités' },
   { href: '/chiffrement-kyber1024', label: 'Cryptographie' },
   { href: '/comparatif-bitwarden-1password-kyber', label: 'Comparatif' },
+  { href: '/chiffrer-fichier', label: 'Chiffrer un fichier' },
   { href: '/blog', label: 'Blog' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/a-propos', label: 'À propos' },

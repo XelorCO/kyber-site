@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { ScrollProgress, Parallax } from '@/components/ScrollFx';
 import Link from 'next/link';
 
 // ── Visualisations des étapes crypto ──────────────────────────────────────
@@ -318,11 +319,13 @@ export default function Home() {
         <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
       )}
 
+      <ScrollProgress />
+
       {/* ── HERO ── */}
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="glow-blob absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl" />
-          <div className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-rose-200/30 rounded-full blur-3xl" />
+          <Parallax drift={80} className="glow-blob absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl" />
+          <Parallax drift={-60} className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-rose-200/30 rounded-full blur-3xl" />
           <div className="absolute inset-0 opacity-[0.04]"
             style={{ backgroundImage: 'radial-gradient(circle, #78716c 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
@@ -651,9 +654,9 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Chiffrement de fichiers',
-                desc: 'Chiffrez n\'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Format .kyber lié à votre coffre : illisible sans votre passphrase.',
+                desc: 'Chiffrez n\'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Essayez gratuitement dans votre navigateur : 100 % local, sans inscription.',
                 tag: 'Pro',
-                link: null,
+                link: { href: '/chiffrer-fichier', label: 'Essayer dans le navigateur →' },
               },
               {
                 icon: (
@@ -788,7 +791,7 @@ export default function Home() {
       <section id="download" className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal text-stone-900">Télécharger Kyber</h2>
-          <p className="text-stone-500 text-lg mb-14 reveal reveal-delay-1">Gratuit. Disponible sur toutes les plateformes.</p>
+          <p className="text-stone-500 text-lg mb-14 reveal reveal-delay-1">Gratuit. Windows disponible — Linux &amp; macOS de retour très bientôt.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
@@ -800,7 +803,7 @@ export default function Home() {
                 ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                href: '/downloads/Kyber_1.0.0_x64-setup.exe',
+                href: '/downloads/Kyber_1.1.0_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
                 available: true,
@@ -837,10 +840,10 @@ export default function Home() {
                 ),
                 platform: 'Linux',
                 versions: 'Debian / Ubuntu',
-                href: '/downloads/Kyber_1.0.0_amd64.AppImage',
-                label: 'Télécharger .AppImage',
-                note: 'Debian, Ubuntu, Kali & Red Hat',
-                available: true,
+                href: null,
+                label: 'De retour très bientôt',
+                note: 'Version 1.1.0 en préparation',
+                available: false,
               },
             ].map((p, i) => (
               <div
@@ -867,7 +870,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-stone-400 text-xs mt-10">Version 1.0.0</p>
+          <p className="text-stone-400 text-xs mt-10">Version 1.1.0 — mises à jour automatiques signées</p>
         </div>
       </section>
 

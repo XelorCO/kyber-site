@@ -8,16 +8,13 @@ const downloadJsonLd = {
   '@type': 'SoftwareApplication',
   name: 'Kyber',
   applicationCategory: 'SecurityApplication',
-  operatingSystem: ['Windows 10', 'Windows 11', 'Linux'],
+  operatingSystem: ['Windows 10', 'Windows 11'],
   downloadUrl: [
-    'https://kyber-security.fr/downloads/Kyber_1.0.0_x64-setup.exe',
-    'https://kyber-security.fr/downloads/Kyber_1.0.0_x64_en-US.msi',
-    'https://kyber-security.fr/downloads/Kyber_1.0.0_amd64.AppImage',
-    'https://kyber-security.fr/downloads/Kyber_1.0.0_amd64.deb',
-    'https://kyber-security.fr/downloads/Kyber-1.0.0-1.x86_64.rpm',
+    'https://kyber-security.fr/downloads/Kyber_1.1.0_x64-setup.exe',
+    'https://kyber-security.fr/downloads/Kyber_1.1.0_x64_en-US.msi',
   ],
-  softwareVersion: '1.0.0',
-  releaseNotes: 'Chiffrement Kyber1024 (ML-KEM) + AES-256-GCM + Argon2id. Support Windows et Linux.',
+  softwareVersion: '1.1.0',
+  releaseNotes: 'Mises à jour automatiques signées, chiffrement Kyber1024 (ML-KEM) + AES-256-GCM + Argon2id.',
   url: 'https://kyber-security.fr',
   inLanguage: 'fr-FR',
   offers: [
@@ -80,7 +77,7 @@ export default function PageTelechargement() {
             <p className="text-lg text-stone-500 mb-2">
               Gestionnaire de mots de passe post-quantique. Open source. Windows &amp; Linux.
             </p>
-            <p className="text-sm text-stone-400">Version 1.0.0 · Juin 2026 · Chiffrement Kyber1024 (ML-KEM)</p>
+            <p className="text-sm text-stone-400">Version 1.1.0 · Juillet 2026 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
           </div>
 
           {/* ── PLATEFORMES ── */}
@@ -98,7 +95,7 @@ export default function PageTelechargement() {
                 <p className="text-stone-400 text-xs mb-4">Windows 10 &amp; 11 — 64 bits</p>
                 <div className="space-y-2">
                   <a
-                    href="/downloads/Kyber_1.0.0_x64-setup.exe"
+                    href="/downloads/Kyber_1.1.0_x64-setup.exe"
                     download
                     className="flex items-center justify-between w-full text-blue-600 hover:text-blue-700 text-sm font-medium border border-blue-200 hover:border-blue-400 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -106,7 +103,7 @@ export default function PageTelechargement() {
                     <span className="text-xs text-stone-400">Installateur NSIS</span>
                   </a>
                   <a
-                    href="/downloads/Kyber_1.0.0_x64_en-US.msi"
+                    href="/downloads/Kyber_1.1.0_x64_en-US.msi"
                     download
                     className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -150,33 +147,11 @@ export default function PageTelechargement() {
                   </svg>
                 </div>
                 <h2 className="font-bold text-lg mb-1 text-stone-900">Linux</h2>
-                <p className="text-stone-400 text-xs mb-4">Debian, Ubuntu, Fedora, Kali</p>
-                <div className="space-y-2">
-                  <a
-                    href="/downloads/Kyber_1.0.0_amd64.AppImage"
-                    download
-                    className="flex items-center justify-between w-full text-blue-600 hover:text-blue-700 text-sm font-medium border border-blue-200 hover:border-blue-400 px-4 py-2.5 rounded-xl transition-all"
-                  >
-                    <span>Télécharger .AppImage</span>
-                    <span className="text-xs text-stone-400">Universel</span>
-                  </a>
-                  <a
-                    href="/downloads/Kyber_1.0.0_amd64.deb"
-                    download
-                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
-                  >
-                    <span>Télécharger .deb</span>
-                    <span className="text-xs text-stone-400">Debian / Ubuntu</span>
-                  </a>
-                  <a
-                    href="/downloads/Kyber-1.0.0-1.x86_64.rpm"
-                    download
-                    className="flex items-center justify-between w-full text-stone-600 hover:text-stone-900 text-sm font-medium border border-stone-300 hover:border-stone-300 px-4 py-2.5 rounded-xl transition-all"
-                  >
-                    <span>Télécharger .rpm</span>
-                    <span className="text-xs text-stone-400">Fedora / Red Hat</span>
-                  </a>
-                </div>
+                <p className="text-stone-400 text-xs mb-1">Debian, Ubuntu, Fedora, Kali</p>
+                <p className="text-xs text-stone-400 mb-3">AppImage, .deb, .rpm / Version 1.1.0 en préparation</p>
+                <span className="inline-block w-full text-center text-stone-400 text-sm border border-stone-200 bg-stone-50 px-4 py-2 rounded-xl cursor-not-allowed">
+                  De retour très bientôt
+                </span>
               </div>
 
             </div>
@@ -194,7 +169,7 @@ export default function PageTelechargement() {
                 <ol className="space-y-3 text-sm text-stone-700">
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">1.</span>
-                    <span>Téléchargez <strong className="text-stone-900">Kyber_1.0.0_x64-setup.exe</strong></span>
+                    <span>Téléchargez <strong className="text-stone-900">Kyber_1.1.0_x64-setup.exe</strong></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">2.</span>
@@ -213,24 +188,20 @@ export default function PageTelechargement() {
 
               <div className="bg-white border border-stone-300 rounded-2xl p-6 shadow-sm">
                 <h3 className="font-semibold mb-4">
-                  <span className="text-stone-700">Linux (Debian / Ubuntu)</span>
+                  <span className="text-stone-700">Mises à jour automatiques</span>
                 </h3>
                 <ol className="space-y-3 text-sm text-stone-700">
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">1.</span>
-                    <span>Téléchargez le <strong className="text-stone-900">.deb</strong> ou le <strong className="text-stone-900">.AppImage</strong></span>
+                    <span>Depuis la version 1.1.0, Kyber vérifie les mises à jour au démarrage et les installe en un clic</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">2.</span>
-                    <span>Pour le .deb :<br />
-                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-300">sudo dpkg -i Kyber_1.0.0_amd64.deb</code>
-                    </span>
+                    <span>Chaque mise à jour est <strong className="text-stone-900">signée cryptographiquement</strong> — l&apos;application refuse tout binaire non officiel</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">3.</span>
-                    <span>Pour l&apos;AppImage :<br />
-                      <code className="bg-stone-100 px-2 py-0.5 rounded text-xs font-mono border border-stone-300">chmod +x Kyber*.AppImage && ./Kyber*.AppImage</code>
-                    </span>
+                    <span>Vérification manuelle possible : <strong className="text-stone-900">Paramètres → Mises à jour</strong></span>
                   </li>
                 </ol>
               </div>
