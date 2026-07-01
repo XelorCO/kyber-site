@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     title: 'Argon2id vs PBKDF2 vs bcrypt : quel KDF choisir en 2026 ?',
-    description: "Comparatif des KDF modernes : sécurité GPU/ASIC, résistance brute-force, recommandations OWASP. Argon2id est le gagnant — voici pourquoi.",
+    description: "Comparatif des KDF modernes : sécurité GPU/ASIC, résistance brute-force, recommandations OWASP. Argon2id est le gagnant / voici pourquoi.",
     url: 'https://kyber-security.fr/blog/argon2id-vs-pbkdf2',
     siteName: 'Kyber Security',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Argon2id vs PBKDF2 vs bcrypt comparatif' }],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Argon2id vs PBKDF2 vs bcrypt : quel KDF choisir en 2026 ?',
-    description: "Comparatif complet des algorithmes de dérivation de clé. Argon2id gagne — voici les chiffres.",
+    description: "Comparatif complet des algorithmes de dérivation de clé. Argon2id gagne / voici les chiffres.",
     images: ['/opengraph-image'],
   },
 };
@@ -66,8 +66,8 @@ const kdfs = [
     gpu: '❌ Faible résistance',
     asic: '❌ Faible résistance',
     parallelisme: '✓ Non (séquentiel)',
-    memoire: '— (~4 KB)',
-    owasp: '⚠️ Acceptable (legacy)',
+    memoire: '/ (~4 KB)',
+    owasp: '⚠︎ Acceptable (legacy)',
     color: 'amber',
     verdict: 'Acceptable pour les anciens systèmes. Ne pas utiliser pour du nouveau code.',
   },
@@ -78,8 +78,8 @@ const kdfs = [
     gpu: '❌ Très faible',
     asic: '❌ Très faible',
     parallelisme: '✓ Non (séquentiel)',
-    memoire: '— (négligeable)',
-    owasp: '⚠️ 600 000 itérations min',
+    memoire: '/ (négligeable)',
+    owasp: '⚠︎ 600 000 itérations min',
     color: 'red',
     verdict: 'Standardisé NIST/FIPS. Utilisé partout malgré sa faiblesse. À éviter si possible.',
   },
@@ -111,7 +111,7 @@ const kdfs = [
 
 export default function ArticleKDF() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -138,7 +138,7 @@ export default function ArticleKDF() {
             </h1>
             <p className="text-stone-500 text-lg leading-relaxed">
               La force d&apos;un gestionnaire de mots de passe dépend autant de son algorithme de dérivation de clé
-              que de son chiffrement. Entre Argon2id, PBKDF2, bcrypt et scrypt — lequel résiste vraiment
+              que de son chiffrement. Entre Argon2id, PBKDF2, bcrypt et scrypt / lequel résiste vraiment
               à un attaquant équipé d&apos;une ferme GPU en 2026 ?
             </p>
           </div>
@@ -152,7 +152,7 @@ export default function ArticleKDF() {
                 </h2>
                 <p>
                   Un <strong className="text-stone-900">KDF (Key Derivation Function)</strong> transforme un mot de passe
-                  humain — court, mémorisable, potentiellement faible — en une clé cryptographique forte.
+                  humain / court, mémorisable, potentiellement faible / en une clé cryptographique forte.
                   C&apos;est la fonction qui se place entre &ldquo;l&apos;utilisateur tape son mot de passe maître&rdquo;
                   et &ldquo;les données sont déchiffrées&rdquo;.
                 </p>
@@ -260,7 +260,7 @@ export default function ArticleKDF() {
                   {[
                     { param: 'm_cost (mémoire)', val: '64 MB minimum', note: 'Plus c\'est élevé, plus la parallélisation GPU est difficile. Kyber utilise 64 MB.' },
                     { param: 't_cost (itérations)', val: '3 minimum', note: 'Nombre de passes sur la mémoire. Augmente le temps sans réduire la mémoire.' },
-                    { param: 'p_cost (parallélisme)', val: '1–4', note: 'Nombre de threads autorisés. N\'affecte pas la sécurité fondamentale.' },
+                    { param: 'p_cost (parallélisme)', val: '1/4', note: 'Nombre de threads autorisés. N\'affecte pas la sécurité fondamentale.' },
                   ].map(({ param, val, note }) => (
                     <div key={param} className="flex flex-col gap-0.5">
                       <div className="flex items-center justify-between">
@@ -279,12 +279,12 @@ export default function ArticleKDF() {
                 </h2>
                 <p>
                   PBKDF2 a été standardisé par le NIST (SP 800-132) et approuvé FIPS. Dans des environnements
-                  très réglementés — administration, défense, compliance financière — la certification FIPS
+                  très réglementés / administration, défense, compliance financière / la certification FIPS
                   est souvent une obligation contractuelle, pas un choix technique.
                 </p>
                 <p className="mt-4">
                   C&apos;est pour ça que 1Password, Bitwarden et la plupart des gestionnaires cloud utilisent PBKDF2
-                  (avec 600 000+ itérations). Ce n&apos;est pas de l&apos;incompétence — c&apos;est une contrainte de conformité.
+                  (avec 600 000+ itérations). Ce n&apos;est pas de l&apos;incompétence / c&apos;est une contrainte de conformité.
                 </p>
                 <p className="mt-4">
                   Kyber n&apos;a pas ces contraintes. On peut choisir l&apos;algorithme le plus sûr sans avoir à
@@ -352,7 +352,7 @@ export default function ArticleKDF() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>

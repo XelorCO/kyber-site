@@ -4,7 +4,7 @@ import NavHeader from '@/components/NavHeader';
 import NavFooter from '@/components/NavFooter';
 
 export const metadata: Metadata = {
-  title: { absolute: 'À propos — Enzo Paccard | Kyber Security' },
+  title: { absolute: 'À propos / Enzo Paccard | Kyber Security' },
   description:
     'Kyber Security est développé par Enzo Paccard, pentesteur et développeur spécialisé en cybersécurité. Découvrez la mission, l\'architecture technique et les valeurs derrière Kyber.',
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     canonical: 'https://kyber-security.fr/a-propos',
   },
   openGraph: {
-    title: 'À propos — Enzo Paccard | Kyber Security',
+    title: 'À propos / Enzo Paccard | Kyber Security',
     description: 'Kyber Security est développé par Enzo Paccard, pentesteur et développeur spécialisé en cybersécurité post-quantique.',
     url: 'https://kyber-security.fr/a-propos',
     siteName: 'Kyber Security',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function PageAPropos() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -38,9 +38,9 @@ export default function PageAPropos() {
           {/* ── HERO ── */}
           <section className="py-16">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
-              {/* Photo placeholder — remplacer par <Image> quand disponible */}
-              <div className="flex-shrink-0 w-36 h-36 rounded-2xl bg-gradient-to-br from-blue-100 to-rose-100 border border-stone-200 flex items-center justify-center text-5xl shadow-sm">
-                👤
+              {/* Photo placeholder / remplacer par <Image> quand disponible */}
+              <div className="flex-shrink-0 w-36 h-36 rounded-2xl bg-gradient-to-br from-blue-100 to-indigo-100 border border-stone-200 flex items-center justify-center text-5xl shadow-sm">
+                EP
               </div>
               <div className="text-center sm:text-left">
                 <h1 className="text-3xl md:text-4xl font-bold mb-2 text-stone-900">Enzo Paccard</h1>
@@ -82,7 +82,7 @@ export default function PageAPropos() {
               <p>
                 En tant que pentesteur, j&apos;ai passé des années à exploiter les failles de gestionnaires de mots de passe cloud
                 lors de missions d&apos;audit. Le constat est sans appel : quand un coffre est stocké sur un serveur tiers, il peut être
-                volé — chiffré, certes, mais exposé à une attaque différée.
+                volé / chiffré, certes, mais exposé à une attaque différée.
               </p>
               <p>
                 En 2022, la brèche LastPass a confirmé ce que je savais depuis longtemps : des millions de coffres chiffrés
@@ -92,7 +92,7 @@ export default function PageAPropos() {
               <p>
                 J&apos;ai créé Kyber avec une seule règle : <strong className="text-stone-900">aucune donnée ne quitte votre machine</strong>.
                 Pas de compte, pas de serveur, pas de synchronisation cloud. Et une cryptographie post-quantique réelle
-                — Kyber1024 standardisé par le NIST en 2024 — pour anticiper les ordinateurs quantiques d&apos;aujourd&apos;hui et de demain.
+                / Kyber1024 standardisé par le NIST en 2024 / pour anticiper les ordinateurs quantiques d&apos;aujourd&apos;hui et de demain.
               </p>
             </div>
           </section>
@@ -109,8 +109,8 @@ export default function PageAPropos() {
                 },
                 {
                   title: 'Kyber1024 (ML-KEM)',
-                  desc: 'Standard NIST FIPS 203 — résistant aux algorithmes de Shor et Grover. Utilisé dans le vrai flux de dérivation de clé de chaque coffre.',
-                  color: 'bg-rose-50 border-rose-200',
+                  desc: 'Standard NIST FIPS 203 / résistant aux algorithmes de Shor et Grover. Utilisé dans le vrai flux de dérivation de clé de chaque coffre.',
+                  color: 'bg-indigo-50 border-indigo-200',
                 },
                 {
                   title: 'Argon2id',
@@ -131,7 +131,7 @@ export default function PageAPropos() {
             </div>
             <p className="mt-4 text-sm text-stone-500">
               Le code source sera publié sur GitHub avec une licence{' '}
-              <strong className="text-stone-700">Business Source License 1.1</strong> — auditable par la communauté cyber,
+              <strong className="text-stone-700">Business Source License 1.1</strong> / auditable par la communauté cyber,
               utilisable librement à titre personnel, sans possibilité de revente commerciale sans accord.
             </p>
           </section>
@@ -142,13 +142,13 @@ export default function PageAPropos() {
             <div className="space-y-4">
               {[
                 {
-                  period: '2024 – présent',
-                  title: 'Fondateur — Kyber Security',
+                  period: '2024 / présent',
+                  title: 'Fondateur / Kyber Security',
                   desc: 'Conception et développement du premier gestionnaire de mots de passe post-quantique 100% local made in France.',
                 },
                 {
-                  period: '2022 – présent',
-                  title: 'Pentesteur indépendant — Softpac.fr',
+                  period: '2022 / présent',
+                  title: 'Pentesteur indépendant / Softpac.fr',
                   desc: 'Audits de sécurité pour PME et ETI françaises : tests d\'intrusion web, API, réseau, Active Directory.',
                 },
                 {
@@ -180,7 +180,7 @@ export default function PageAPropos() {
                   contact@kyber-security.fr
                 </a>
               </div>
-              <div><span className="text-stone-500">Pays :</span> <span className="text-stone-800">France 🇫🇷</span></div>
+              <div><span className="text-stone-500">Pays :</span> <span className="text-stone-800">France</span></div>
             </div>
           </section>
 
@@ -191,7 +191,7 @@ export default function PageAPropos() {
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
               >
                 Télécharger Kyber
               </Link>

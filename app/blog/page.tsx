@@ -40,7 +40,7 @@ const articles = [
     slug: 'meilleur-gestionnaire-mots-de-passe-rgpd-france-2026',
     title: 'Meilleur gestionnaire de mots de passe RGPD France 2026',
     excerpt:
-      'Comparatif complet des gestionnaires de mots de passe conformes RGPD en France : Kyber, KeePass, Bitwarden, 1Password. CLOUD Act, souveraineté numérique — lequel choisir ?',
+      'Comparatif complet des gestionnaires de mots de passe conformes RGPD en France : Kyber, KeePass, Bitwarden, 1Password. CLOUD Act, souveraineté numérique / lequel choisir ?',
     date: '15 juin 2026',
     readTime: '10 min',
     category: 'Comparatif',
@@ -77,14 +77,14 @@ const articles = [
     date: '9 juin 2026',
     readTime: '10 min',
     category: 'Éducation',
-    categoryColor: 'text-rose-700 bg-rose-50 border-rose-200',
+    categoryColor: 'text-indigo-700 bg-indigo-50 border-indigo-200',
     featured: false,
   },
   {
     slug: 'argon2id-vs-pbkdf2',
     title: 'Argon2id vs PBKDF2 vs bcrypt : quel est le meilleur KDF ?',
     excerpt:
-      "Analyse comparative des algorithmes de dérivation de clé les plus utilisés. Résistance GPU, ASIC, recommandations OWASP 2026 — et pourquoi Argon2id gagne.",
+      "Analyse comparative des algorithmes de dérivation de clé les plus utilisés. Résistance GPU, ASIC, recommandations OWASP 2026 / et pourquoi Argon2id gagne.",
     date: '9 juin 2026',
     readTime: '9 min',
     category: 'Technique',
@@ -108,7 +108,7 @@ const comingSoon: { title: string; desc: string; category: string }[] = [];
 
 export default function BlogPage() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -118,7 +118,7 @@ export default function BlogPage() {
           <div className="py-16">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
               Blog{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Kyber Security
               </span>
             </h1>
@@ -131,7 +131,7 @@ export default function BlogPage() {
           {articles.filter((a) => a.featured).map((article) => (
             <section key={article.slug} className="mb-12">
               <Link href={`/blog/${article.slug}`} className="group block">
-                <div className="bg-gradient-to-br from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-md transition-all shadow-sm">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 hover:border-blue-300 hover:shadow-md transition-all shadow-sm">
                   <div className="flex items-center gap-3 mb-4">
                     <span className={`text-xs font-medium px-3 py-1 rounded-full border ${article.categoryColor}`}>
                       {article.category}

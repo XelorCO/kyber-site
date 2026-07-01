@@ -15,7 +15,7 @@ const comparatifJsonLd = {
     {
       '@type': 'Question',
       name: 'Quelle est la différence entre un gestionnaire local et cloud ?',
-      acceptedAnswer: { '@type': 'Answer', text: "Un gestionnaire local (Kyber, KeePass) stocke vos mots de passe chiffrés sur votre appareil. Un gestionnaire cloud (Bitwarden, 1Password, Dashlane, LastPass) les stocke sur des serveurs distants. Le local offre une meilleure protection contre les brèches serveur — comme l'a prouvé l'incident LastPass 2022." },
+      acceptedAnswer: { '@type': 'Answer', text: "Un gestionnaire local (Kyber, KeePass) stocke vos mots de passe chiffrés sur votre appareil. Un gestionnaire cloud (Bitwarden, 1Password, Dashlane, LastPass) les stocke sur des serveurs distants. Le local offre une meilleure protection contre les brèches serveur / comme l'a prouvé l'incident LastPass 2022." },
     },
     {
       '@type': 'Question',
@@ -33,7 +33,7 @@ const comparatifJsonLd = {
 export const metadata: Metadata = {
   title: { absolute: 'Comparatif gestionnaires mots de passe 2026 | Kyber' },
   description:
-    'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass — comparatif 2026. Local vs cloud, PQC, RGPD, open source. Lequel choisir en France ?',
+    'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass / comparatif 2026. Local vs cloud, PQC, RGPD, open source. Lequel choisir en France ?',
   keywords: [
     'comparatif gestionnaire mots de passe',
     'alternative bitwarden locale',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Comparatif gestionnaires mots de passe 2026 | Kyber',
-    description: 'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass — tableau comparatif : local vs cloud, PQC, RGPD.',
+    description: 'Kyber, Bitwarden, 1Password, Dashlane, KeePass, LastPass / tableau comparatif : local vs cloud, PQC, RGPD.',
     url: 'https://kyber-security.fr/comparatif-bitwarden-1password-kyber',
     siteName: 'Kyber Security',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Comparatif gestionnaires mots de passe 2026' }],
@@ -131,7 +131,7 @@ const products = [
     openSource: false,
     prix: '3€/mois',
     rgpd: 'Non (serveurs US)',
-    incidents: '2022 — 25M coffres volés',
+    incidents: '2022 / 25M coffres volés',
     argon2: false,
     highlight: false,
   },
@@ -147,7 +147,7 @@ function Check({ ok }: { ok: boolean }) {
 
 export default function PageComparatif() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(comparatifJsonLd) }} />
       <NavHeader />
 
@@ -158,7 +158,7 @@ export default function PageComparatif() {
           <div className="py-16 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight text-stone-900">
               Kyber vs Bitwarden vs 1Password vs Dashlane vs KeePass{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 2026
               </span>
             </h1>
@@ -175,7 +175,7 @@ export default function PageComparatif() {
               <p className="text-stone-700 text-sm leading-relaxed">
                 En décembre 2022, LastPass a révélé que des millions de coffres chiffrés avaient été volés
                 depuis leurs serveurs. En mars 2026, Keeper Security a annoncé l&apos;intégration du chiffrement
-                Kyber1024 — mais dans un modèle cloud. Dans le même temps, l&apos;ANSSI pousse les organisations
+                Kyber1024 / mais dans un modèle cloud. Dans le même temps, l&apos;ANSSI pousse les organisations
                 françaises à migrer vers des solutions post-quantiques avant 2030. Ces évolutions rendent
                 indispensable une relecture des offres disponibles.
               </p>
@@ -194,7 +194,7 @@ export default function PageComparatif() {
                       <th key={p.name} className={`text-center py-3 px-4 font-medium ${p.highlight ? 'text-blue-600' : 'text-stone-700'}`}>
                         {p.name}
                         {p.highlight && (
-                          <span className="block text-xs font-normal text-blue-500 mt-0.5">⭐ Recommandé</span>
+                          <span className="block text-xs font-normal text-blue-500 mt-0.5">★ Recommandé</span>
                         )}
                       </th>
                     ))}
@@ -268,28 +268,28 @@ export default function PageComparatif() {
             <div className="space-y-6">
 
               <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-2 text-green-700">Bitwarden — Le meilleur choix cloud open source</h3>
+                <h3 className="font-bold text-lg mb-2 text-green-700">Bitwarden / Le meilleur choix cloud open source</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Bitwarden est l&apos;alternative open source de référence aux solutions cloud propriétaires.
                   Son modèle zero-knowledge est bien implémenté, et aucun incident majeur n&apos;a été reporté.
                   Ses limites : PBKDF2 comme KDF (moins robuste qu&apos;Argon2id), pas de chiffrement post-quantique,
-                  et un coffre stocké sur des serveurs américains — ce qui peut poser des questions RGPD.
+                  et un coffre stocké sur des serveurs américains / ce qui peut poser des questions RGPD.
                   La version auto-hébergée améliore la souveraineté mais reste sans PQC.
                 </p>
               </div>
 
               <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-2 text-stone-700">1Password — Premium cloud, code fermé</h3>
+                <h3 className="font-bold text-lg mb-2 text-stone-700">1Password / Premium cloud, code fermé</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   1Password offre une excellente expérience utilisateur et un modèle de sécurité solide avec
                   une &ldquo;Secret Key&rdquo; supplémentaire. Mais il est propriétaire (code non auditable),
                   stocke vos données sur des serveurs canadiens/américains, et nécessite un abonnement mensuel.
-                  Pas de PQC, pas d&apos;option locale, pas d&apos;open source — trois inconvénients majeurs pour 2026.
+                  Pas de PQC, pas d&apos;option locale, pas d&apos;open source / trois inconvénients majeurs pour 2026.
                 </p>
               </div>
 
               <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-2 text-stone-700">KeePass — Le précurseur local, sans PQC</h3>
+                <h3 className="font-bold text-lg mb-2 text-stone-700">KeePass / Le précurseur local, sans PQC</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   KeePass est la référence historique des gestionnaires locaux. Open source, gratuit, aucun cloud.
                   Ses faiblesses : une interface des années 2000, pas de chiffrement post-quantique, pas d&apos;auto-remplissage
@@ -299,18 +299,18 @@ export default function PageComparatif() {
               </div>
 
               <div className="bg-white border border-stone-400 rounded-2xl p-6 shadow-sm">
-                <h3 className="font-bold text-lg mb-2 text-stone-700">Dashlane — Le meilleur choix cloud européen</h3>
+                <h3 className="font-bold text-lg mb-2 text-stone-700">Dashlane / Le meilleur choix cloud européen</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
-                  Dashlane est une entreprise fondée à Paris, avec des serveurs en Europe — un avantage RGPD réel
+                  Dashlane est une entreprise fondée à Paris, avec des serveurs en Europe / un avantage RGPD réel
                   par rapport aux alternatives américaines. Son interface est excellente et son modèle de sécurité
                   solide. Ses limites : pas de chiffrement post-quantique, pas de stockage local, pas d&apos;open source,
                   et un tarif élevé (4€/mois). Pour une équipe française cherchant un gestionnaire cloud conforme RGPD,
-                  c&apos;est la meilleure option dans cette catégorie — mais sans la protection PQC.
+                  c&apos;est la meilleure option dans cette catégorie / mais sans la protection PQC.
                 </p>
               </div>
 
               <div className="bg-red-50 border border-red-200 rounded-2xl p-6">
-                <h3 className="font-bold text-lg mb-2 text-red-700">LastPass — À éviter</h3>
+                <h3 className="font-bold text-lg mb-2 text-red-700">LastPass / À éviter</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   En 2022, LastPass a subi deux brèches successives : la seconde a permis aux attaquants de voler
                   les coffres chiffrés de millions d&apos;utilisateurs. Ces coffres sont toujours entre les mains
@@ -320,11 +320,11 @@ export default function PageComparatif() {
               </div>
 
               <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-                <h3 className="font-bold text-lg mb-2 text-blue-700">Kyber — Local + Post-Quantique + Open Source</h3>
+                <h3 className="font-bold text-lg mb-2 text-blue-700">Kyber / Local + Post-Quantique + Open Source</h3>
                 <p className="text-stone-600 text-sm leading-relaxed">
                   Kyber combine les avantages de KeePass (stockage 100% local, souveraineté totale) avec
                   la cryptographie de 2024 (Kyber1024 + AES-256-GCM + Argon2id). Le coffre existe
-                  uniquement sur votre disque — aucune brèche dans nos serveurs ne peut compromettre vos
+                  uniquement sur votre disque / aucune brèche dans nos serveurs ne peut compromettre vos
                   mots de passe (il n&apos;y a pas de serveur de coffres). Avec une licence Pro à 24,99€ paiement
                   unique, c&apos;est aussi le choix le plus économique sur 3 ans.
                 </p>
@@ -350,7 +350,7 @@ export default function PageComparatif() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger gratuitement
               </Link>

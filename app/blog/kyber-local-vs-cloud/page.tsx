@@ -63,7 +63,7 @@ const articleJsonLd = {
 
 export default function ArticleKyberLocalCloud() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -108,13 +108,13 @@ export default function ArticleKyberLocalCloud() {
                 <p>
                   Kyber1024 est un algorithme d&apos;encapsulation de clé (KEM) standardisé par le NIST en 2024
                   sous le nom <strong className="text-stone-900">ML-KEM (FIPS 203)</strong>. Il résout le problème
-                  de l&apos;échange de clés résistant aux ordinateurs quantiques — remplaçant RSA et ECDH dans
+                  de l&apos;échange de clés résistant aux ordinateurs quantiques / remplaçant RSA et ECDH dans
                   les protocoles de communication.
                 </p>
                 <p className="mt-4">
                   Quand Keeper dit &ldquo;nous utilisons Kyber&rdquo;, voici ce que cela signifie concrètement :
                   les clés échangées entre votre appareil et leurs serveurs sont protégées avec Kyber. C&apos;est
-                  une amélioration réelle sur le <em>transport</em> — personne ne peut intercepter votre session
+                  une amélioration réelle sur le <em>transport</em> / personne ne peut intercepter votre session
                   de connexion avec un ordinateur quantique.
                 </p>
                 <p className="mt-4">
@@ -134,7 +134,7 @@ export default function ArticleKyberLocalCloud() {
                   {[
                     'Votre coffre chiffré est stocké sur des serveurs distants',
                     'Quand vous vous connectez, votre mot de passe maître dérive une clé qui déchiffre localement le coffre',
-                    'Cette opération se passe côté client — c\'est ce qu\'on appelle le "zero-knowledge"',
+                    'Cette opération se passe côté client / c\'est ce qu\'on appelle le "zero-knowledge"',
                     'Mais votre coffre chiffré existe physiquement sur un serveur que vous ne contrôlez pas',
                   ].map((item, i) => (
                     <li key={i} className="flex gap-3 items-start">
@@ -158,7 +158,7 @@ export default function ArticleKyberLocalCloud() {
                   <p>
                     En décembre 2022, LastPass a révélé une brèche catastrophique :
                     <strong className="text-stone-900"> des millions de coffres chiffrés avaient été volés</strong> depuis
-                    leurs serveurs. Pas déchiffrés — volés dans leur état chiffré.
+                    leurs serveurs. Pas déchiffrés / volés dans leur état chiffré.
                   </p>
                   <p className="mt-3">
                     La conséquence immédiate : les attaquants peuvent tenter de forcer le mot de passe maître
@@ -183,15 +183,15 @@ export default function ArticleKyberLocalCloud() {
                   les capacités quantiques seront disponibles.
                 </p>
                 <p className="mt-4">
-                  Si un attaquant vole un coffre Bitwarden ou Keeper aujourd&apos;hui — même chiffré avec Kyber
-                  sur le transport — et que dans 15 ans des ordinateurs quantiques permettent de casser le
+                  Si un attaquant vole un coffre Bitwarden ou Keeper aujourd&apos;hui / même chiffré avec Kyber
+                  sur le transport / et que dans 15 ans des ordinateurs quantiques permettent de casser le
                   chiffrement symétrique sous-jacent ou d&apos;attaquer le mot de passe maître par force brute
                   accélérée, ce coffre sera déchiffré.
                 </p>
                 <p className="mt-4">
                   C&apos;est précisément pour cette raison que l&apos;intégration de Kyber <em>uniquement</em> sur
                   le transport ne suffit pas. Il faut que le chiffrement post-quantique s&apos;applique au fichier
-                  coffre lui-même — et que ce fichier ne soit jamais accessible depuis l&apos;extérieur.
+                  coffre lui-même / et que ce fichier ne soit jamais accessible depuis l&apos;extérieur.
                 </p>
               </section>
 
@@ -209,7 +209,7 @@ export default function ArticleKyberLocalCloud() {
                 </p>
                 <ul className="mt-4 space-y-2">
                   {[
-                    'Personne ne peut voler votre coffre depuis nos serveurs — il n\'y est pas',
+                    'Personne ne peut voler votre coffre depuis nos serveurs / il n\'y est pas',
                     'Aucune brèche chez nous ne compromet vos mots de passe',
                     'Vous contrôlez la sauvegarde : clé USB, disque chiffré, cloud personnel',
                     'Zéro dépendance à notre continuité d\'activité',
@@ -231,7 +231,7 @@ export default function ArticleKyberLocalCloud() {
                   Kyber1024 local : le chiffrement post-quantique là où ça compte
                 </h2>
                 <p>
-                  Dans Kyber, Kyber1024 ne protège pas seulement le transport — il protège le fichier coffre
+                  Dans Kyber, Kyber1024 ne protège pas seulement le transport / il protège le fichier coffre
                   lui-même. Le flux complet :
                 </p>
                 <div className="mt-6 bg-stone-100 border border-stone-300 rounded-xl p-6 space-y-3">
@@ -239,7 +239,7 @@ export default function ArticleKyberLocalCloud() {
                     { step: 'Votre passphrase', color: 'text-stone-700' },
                     { step: '↓ Argon2id (64 MB RAM) → seed cryptographique', color: 'text-cyan-700' },
                     { step: '↓ Kyber1024 KEM → paire de clés post-quantique', color: 'text-blue-600' },
-                    { step: '↓ HKDF-SHA256 → clé de chiffrement finale', color: 'text-rose-700' },
+                    { step: '↓ HKDF-SHA256 → clé de chiffrement finale', color: 'text-indigo-700' },
                     { step: '↓ AES-256-GCM → fichier .vault chiffré sur disque', color: 'text-green-700' },
                   ].map(({ step, color }) => (
                     <div key={step} className={`text-sm font-mono ${color}`}>{step}</div>
@@ -259,7 +259,7 @@ export default function ArticleKyberLocalCloud() {
                 <p>
                   L&apos;ANSSI publie depuis début 2026 des guides poussant les organisations françaises à migrer
                   vers des solutions post-quantiques. Dans le même temps, stocker des données sensibles sur
-                  des serveurs américains reste un sujet brûlant du point de vue RGPD — le Cloud Act américain
+                  des serveurs américains reste un sujet brûlant du point de vue RGPD / le Cloud Act américain
                   permet aux autorités américaines d&apos;accéder aux données hébergées par des entreprises US.
                 </p>
                 <p className="mt-4">
@@ -309,7 +309,7 @@ export default function ArticleKyberLocalCloud() {
                     maximale, il faut les deux : <strong className="text-stone-900">chiffrement PQC et stockage local</strong>.
                   </p>
                   <p className="mt-3">
-                    C&apos;est précisément ce que Kyber offre depuis le premier jour — et pourquoi être le seul
+                    C&apos;est précisément ce que Kyber offre depuis le premier jour / et pourquoi être le seul
                     à se trouver à cette intersection précise n&apos;est pas un hasard.
                   </p>
                 </div>
@@ -326,7 +326,7 @@ export default function ArticleKyberLocalCloud() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm"
               >
                 Télécharger Kyber gratuitement →
               </Link>

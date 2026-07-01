@@ -24,14 +24,14 @@ const jsonLd = {
           name: 'Kyber Gratuit',
           price: '0',
           priceCurrency: 'EUR',
-          description: "Version gratuite — jusqu'à 3 mots de passe",
+          description: "Version gratuite / jusqu'à 3 mots de passe",
         },
         {
           '@type': 'Offer',
           name: 'Kyber Pro',
           price: '24.99',
           priceCurrency: 'EUR',
-          description: 'Licence perpétuelle — mots de passe illimités',
+          description: 'Licence perpétuelle / mots de passe illimités',
         },
       ],
       featureList: [
@@ -104,8 +104,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
 
   title: {
-    default: 'Kyber — Gestionnaire de mots de passe post-quantique',
-    template: '%s — Kyber',
+    default: 'Kyber / Gestionnaire de mots de passe post-quantique',
+    template: '%s / Kyber',
   },
   description:
     'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 3 mots de passe. Windows, macOS, Linux.',
@@ -137,7 +137,7 @@ export const metadata: Metadata = {
     'alternative bitwarden locale',
   ],
 
-  authors: [{ name: 'Kyber Security — Enzo Paccard', url: BASE_URL }],
+  authors: [{ name: 'Kyber Security / Enzo Paccard', url: BASE_URL }],
   creator: 'Kyber Security',
   publisher: 'Kyber Security',
 
@@ -163,16 +163,16 @@ export const metadata: Metadata = {
     locale: 'fr_FR',
     url: BASE_URL,
     siteName: 'Kyber',
-    title: 'Kyber — Gestionnaire de mots de passe post-quantique',
+    title: 'Kyber / Gestionnaire de mots de passe post-quantique',
     description:
       'Premier gestionnaire de mots de passe post-quantique français. Kyber1024 + AES-256-GCM. Gratuit, dispo Windows / macOS / Linux.',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber — Gestionnaire de mots de passe post-quantique' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber / Gestionnaire de mots de passe post-quantique' }],
   },
 
   twitter: {
     card: 'summary_large_image',
-    title: 'Kyber — Gestionnaire de mots de passe post-quantique',
-    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit jusqu\'à 3 mots de passe. 🇫🇷',
+    title: 'Kyber / Gestionnaire de mots de passe post-quantique',
+    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit jusqu\'à 3 mots de passe.',
     images: ['/opengraph-image'],
   },
 

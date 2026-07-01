@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Politique de confidentialité — Kyber',
+  title: 'Politique de confidentialité / Kyber',
 };
 
 export default function PolitiqueConfidentialite() {
@@ -20,7 +20,7 @@ export default function PolitiqueConfidentialite() {
             <h2 className="text-xl font-semibold text-white mb-3">1. Responsable du traitement</h2>
             <p>
               Le site <strong className="text-white">kyber-security.fr</strong> est édité par :<br />
-              <strong className="text-white">Kyber Security</strong> — Enzo Paccard<br />
+              <strong className="text-white">Kyber Security</strong> / Enzo Paccard<br />
               SIRET : 94467475300016<br />
               Contact : <a href="mailto:contact@kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">contact@kyber-security.fr</a>
             </p>
@@ -30,9 +30,9 @@ export default function PolitiqueConfidentialite() {
             <h2 className="text-xl font-semibold text-white mb-3">2. Données collectées</h2>
             <p className="mb-3">Nous collectons uniquement les données strictement nécessaires :</p>
             <ul className="list-disc list-inside space-y-2 ml-2">
-              <li><strong className="text-white">Nom et adresse email</strong> — lors de l'achat d'une licence, pour vous envoyer votre clé d'activation.</li>
-              <li><strong className="text-white">Données de paiement</strong> — traitées exclusivement par <strong className="text-white">Stripe</strong> (PCI-DSS certifié). Nous n'avons jamais accès à vos coordonnées bancaires.</li>
-              <li><strong className="text-white">Formulaire entreprise</strong> — nom, société, email et message, pour répondre à votre demande.</li>
+              <li><strong className="text-white">Nom et adresse email</strong> / lors de l'achat d'une licence, pour vous envoyer votre clé d'activation.</li>
+              <li><strong className="text-white">Données de paiement</strong> / traitées exclusivement par <strong className="text-white">Stripe</strong> (PCI-DSS certifié). Nous n'avons jamais accès à vos coordonnées bancaires.</li>
+              <li><strong className="text-white">Formulaire entreprise</strong> / nom, société, email et message, pour répondre à votre demande.</li>
             </ul>
             <p className="mt-3">
               L'application <strong className="text-white">Kyber</strong> (logiciel bureau) fonctionne entièrement en local.
@@ -52,9 +52,9 @@ export default function PolitiqueConfidentialite() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">4. Sous-traitants</h2>
             <div className="space-y-2">
-              <p><strong className="text-white">Stripe</strong> — traitement des paiements (États-Unis / UE). <a href="https://stripe.com/fr/privacy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Stripe</a></p>
-              <p><strong className="text-white">Resend</strong> — envoi d'emails transactionnels. <a href="https://resend.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Resend</a></p>
-              <p><strong className="text-white">Vercel</strong> — hébergement du site. <a href="https://vercel.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Vercel</a></p>
+              <p><strong className="text-white">Stripe</strong> / traitement des paiements (États-Unis / UE). <a href="https://stripe.com/fr/privacy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Stripe</a></p>
+              <p><strong className="text-white">Resend</strong> / envoi d'emails transactionnels. <a href="https://resend.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Resend</a></p>
+              <p><strong className="text-white">Vercel</strong> / hébergement du site. <a href="https://vercel.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Vercel</a></p>
             </div>
           </section>
 

@@ -51,7 +51,7 @@ const jsonLd = {
 
 export default function ArticleRGPD() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavHeader />
 
@@ -80,7 +80,7 @@ export default function ArticleRGPD() {
                 Enzo Paccard
               </Link>
               <span>·</span>
-              <span>Pentesteur — Fondateur de Kyber Security</span>
+              <span>Pentesteur / Fondateur de Kyber Security</span>
             </div>
           </header>
 
@@ -98,14 +98,14 @@ export default function ArticleRGPD() {
               </p>
               <p>
                 Si votre coffre est hébergé sur des serveurs d&apos;un prestataire américain, vous êtes potentiellement soumis
-                au <strong className="text-stone-900">CLOUD Act (2018)</strong> — une loi américaine qui oblige les entreprises US à
+                au <strong className="text-stone-900">CLOUD Act (2018)</strong> / une loi américaine qui oblige les entreprises US à
                 communiquer des données aux autorités, même si ces données sont physiquement stockées en Europe.
                 Ce n&apos;est pas hypothétique : des transferts de données ont été ordonnés par la justice américaine malgré
                 les réglementations européennes.
               </p>
               <div className="bg-amber-50 border border-amber-200 rounded-xl p-5 text-sm text-amber-800">
                 <strong>Point RGPD clé :</strong> L&apos;article 46 du RGPD exige des garanties appropriées pour les transferts
-                hors UE. Les clauses contractuelles types (CCT) ne protègent pas contre le CLOUD Act — un avis confirmé
+                hors UE. Les clauses contractuelles types (CCT) ne protègent pas contre le CLOUD Act / un avis confirmé
                 par la CNIL et le Comité européen de la protection des données.
               </div>
             </section>
@@ -128,12 +128,12 @@ export default function ArticleRGPD() {
                   </thead>
                   <tbody>
                     {[
-                      { name: 'Kyber Security', host: 'Local uniquement', cloud: '✗ Aucun risque', oss: 'BSL 1.1 (prévu)', pq: '✓ Kyber1024', note: '⭐⭐⭐⭐⭐', highlight: true },
-                      { name: 'KeePass', host: 'Local uniquement', cloud: '✗ Aucun risque', oss: '✓ GPL', pq: '✗ Non', note: '⭐⭐⭐⭐', highlight: false },
-                      { name: 'Bitwarden', host: 'Cloud (US) ou self-hosted', cloud: '⚠ Risque (US)', oss: '✓ AGPL', pq: '✗ Non', note: '⭐⭐⭐', highlight: false },
-                      { name: '1Password', host: 'Cloud (Canada / US)', cloud: '⚠ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '⭐⭐', highlight: false },
-                      { name: 'LastPass', host: 'Cloud (US)', cloud: '⚠ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '⭐', highlight: false },
-                      { name: 'Dashlane', host: 'Cloud (US)', cloud: '⚠ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '⭐⭐', highlight: false },
+                      { name: 'Kyber Security', host: 'Local uniquement', cloud: '✗ Aucun risque', oss: 'BSL 1.1 (prévu)', pq: '✓ Kyber1024', note: '★★★★★', highlight: true },
+                      { name: 'KeePass', host: 'Local uniquement', cloud: '✗ Aucun risque', oss: '✓ GPL', pq: '✗ Non', note: '★★★★', highlight: false },
+                      { name: 'Bitwarden', host: 'Cloud (US) ou self-hosted', cloud: '⚠︎ Risque (US)', oss: '✓ AGPL', pq: '✗ Non', note: '★★★', highlight: false },
+                      { name: '1Password', host: 'Cloud (Canada / US)', cloud: '⚠︎ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '★★', highlight: false },
+                      { name: 'LastPass', host: 'Cloud (US)', cloud: '⚠︎ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '★', highlight: false },
+                      { name: 'Dashlane', host: 'Cloud (US)', cloud: '⚠︎ Risque (US)', oss: '✗ Non', pq: '✗ Non', note: '★★', highlight: false },
                     ].map((row) => (
                       <tr key={row.name} className={`border-b border-stone-200 last:border-0 ${row.highlight ? 'bg-blue-50' : 'bg-white'}`}>
                         <td className="px-4 py-3 font-medium text-stone-900">{row.name}{row.highlight && <span className="ml-2 text-xs text-blue-600 border border-blue-200 px-1.5 py-0.5 rounded-full">Cet article</span>}</td>
@@ -157,15 +157,15 @@ export default function ArticleRGPD() {
               <div className="space-y-8">
 
                 <div className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
-                  <h3 className="font-bold text-lg text-stone-900 mb-2">Kyber Security — Local + Post-quantique</h3>
+                  <h3 className="font-bold text-lg text-stone-900 mb-2">Kyber Security / Local + Post-quantique</h3>
                   <p className="text-stone-700 mb-3">
                     Le seul gestionnaire de mots de passe français qui combine stockage 100% local et chiffrement
-                    post-quantique (Kyber1024, standard NIST FIPS 203). Aucune donnée ne quitte votre machine —
+                    post-quantique (Kyber1024, standard NIST FIPS 203). Aucune donnée ne quitte votre machine /
                     il n&apos;y a littéralement aucun serveur à cibler. Conformité RGPD garantie par architecture.
                   </p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                      <span className="text-green-600">✓</span> <span className="text-green-800">Zéro transfert hors UE — par conception</span>
+                      <span className="text-green-600">✓</span> <span className="text-green-800">Zéro transfert hors UE / par conception</span>
                     </div>
                     <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
                       <span className="text-green-600">✓</span> <span className="text-green-800">CLOUD Act inapplicable (0 serveur)</span>
@@ -180,7 +180,7 @@ export default function ArticleRGPD() {
                 </div>
 
                 <div className="bg-white border border-stone-200 rounded-2xl p-6">
-                  <h3 className="font-bold text-lg text-stone-900 mb-2">KeePass — Open source historique</h3>
+                  <h3 className="font-bold text-lg text-stone-900 mb-2">KeePass / Open source historique</h3>
                   <p className="text-stone-700 mb-3">
                     KeePass est la référence du gestionnaire local open source. Développé depuis 2003, audité
                     de nombreuses fois, il stocke les coffres localement en format .kdbx (AES-256). Solide
@@ -188,13 +188,13 @@ export default function ArticleRGPD() {
                   </p>
                   <div className="grid grid-cols-2 gap-2 text-sm">
                     <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                      <span className="text-green-600">✓</span> <span className="text-green-800">GPL — code auditable</span>
+                      <span className="text-green-600">✓</span> <span className="text-green-800">GPL / code auditable</span>
                     </div>
                     <div className="bg-red-50 border border-red-200 rounded-lg px-3 py-2">
                       <span className="text-red-500">✗</span> <span className="text-red-700">Pas de protection post-quantique</span>
                     </div>
                     <div className="bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                      <span className="text-green-600">✓</span> <span className="text-green-800">Stockage local — RGPD garanti</span>
+                      <span className="text-green-600">✓</span> <span className="text-green-800">Stockage local / RGPD garanti</span>
                     </div>
                     <div className="bg-red-50 border border-red-200 rounded-lg px-3 py-2">
                       <span className="text-red-500">✗</span> <span className="text-red-700">UX datée, pas de scanner natif</span>
@@ -203,11 +203,11 @@ export default function ArticleRGPD() {
                 </div>
 
                 <div className="bg-white border border-stone-200 rounded-2xl p-6">
-                  <h3 className="font-bold text-lg text-stone-900 mb-2">Bitwarden — Le meilleur cloud pour RGPD</h3>
+                  <h3 className="font-bold text-lg text-stone-900 mb-2">Bitwarden / Le meilleur cloud pour RGPD</h3>
                   <p className="text-stone-700 mb-3">
                     Bitwarden est la meilleure option cloud en termes de RGPD, car il est open source (AGPL)
                     et propose une option self-hosted. En mode cloud standard, les serveurs sont aux États-Unis
-                    — le CLOUD Act s&apos;applique potentiellement. L&apos;option self-hosted sur infrastructure européenne
+                    / le CLOUD Act s&apos;applique potentiellement. L&apos;option self-hosted sur infrastructure européenne
                     améliore significativement la conformité.
                   </p>
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-xs text-amber-800">
@@ -217,10 +217,10 @@ export default function ArticleRGPD() {
                 </div>
 
                 <div className="bg-white border border-stone-200 rounded-2xl p-6">
-                  <h3 className="font-bold text-lg text-stone-900 mb-2">LastPass — À éviter en 2026</h3>
+                  <h3 className="font-bold text-lg text-stone-900 mb-2">LastPass / À éviter en 2026</h3>
                   <p className="text-stone-700 mb-3">
                     La brèche de décembre 2022 a exposé les coffres chiffrés de millions d&apos;utilisateurs.
-                    En 2026, ces coffres sont toujours entre les mains d&apos;attaquants — et déchiffrables
+                    En 2026, ces coffres sont toujours entre les mains d&apos;attaquants / et déchiffrables
                     via brute-force si les mots de passe maîtres étaient faibles. LastPass est fermé,
                     américain, et a prouvé que ses serveurs centralisés constituent un point de défaillance unique.
                   </p>
@@ -246,7 +246,7 @@ export default function ArticleRGPD() {
                     color: 'border-blue-200 bg-blue-50',
                   },
                   {
-                    profil: 'PME française — conformité RGPD maximale',
+                    profil: 'PME française / conformité RGPD maximale',
                     reco: 'Kyber Pro (licences équipe)',
                     detail: "Aucun serveur à risque, conformité RGPD par conception, made in France, démarche ANSSI. Idéal avant 2030.",
                     color: 'border-green-200 bg-green-50',
@@ -261,7 +261,7 @@ export default function ArticleRGPD() {
                     profil: 'Organisation traitant des données de santé (RGPD renforcé)',
                     reco: 'Kyber + démarche CSPN ANSSI',
                     detail: "Le secteur santé est soumis au RGPD renforcé (article 9). Un stockage 100% local avec certification ANSSI en cours est l'approche la plus robuste.",
-                    color: 'border-rose-200 bg-rose-50',
+                    color: 'border-indigo-200 bg-indigo-50',
                   },
                 ].map((item) => (
                   <div key={item.profil} className={`${item.color} border rounded-xl p-5`}>
@@ -283,7 +283,7 @@ export default function ArticleRGPD() {
               <p>
                 La Commission Nationale de l&apos;Informatique et des Libertés recommande depuis 2021 de privilégier
                 les solutions qui minimisent les transferts de données hors UE. En 2023, elle a renforcé ses
-                lignes directrices sur les outils analytiques américains — une logique qui s&apos;applique aussi
+                lignes directrices sur les outils analytiques américains / une logique qui s&apos;applique aussi
                 aux gestionnaires de mots de passe cloud.
               </p>
               <p>
@@ -309,7 +309,7 @@ export default function ArticleRGPD() {
               </p>
               <p>
                 Kyber combine cet avantage avec une cryptographie post-quantique (Kyber1024, NIST FIPS 203) qui
-                protège vos données même contre les futures attaques quantiques — un critère de plus en plus
+                protège vos données même contre les futures attaques quantiques / un critère de plus en plus
                 examiné par les RSSI et les auditeurs de conformité.
               </p>
               <p>
@@ -326,7 +326,7 @@ export default function ArticleRGPD() {
           </div>
 
           {/* ── CTA ── */}
-          <div className="mt-16 bg-gradient-to-br from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 text-center">
+          <div className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold mb-3 text-stone-900">Essayez Kyber gratuitement</h2>
             <p className="text-stone-500 text-sm mb-6 max-w-md mx-auto">
               Gestionnaire de mots de passe post-quantique 100% local. Conformité RGPD par conception.
@@ -335,7 +335,7 @@ export default function ArticleRGPD() {
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
               >
                 Télécharger Kyber
               </Link>

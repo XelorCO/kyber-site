@@ -4,7 +4,7 @@ import EntrepriseClient from './EntrepriseClient';
 export const metadata: Metadata = {
   title: { absolute: 'Kyber Enterprise | Gestionnaire de mots de passe pour équipes' },
   description:
-    'Déployez Kyber dans votre équipe : licences multi-utilisateurs, conformité RGPD native, tarifs dégressifs. Zéro serveur centralisé — sécurité post-quantique pour les entreprises françaises.',
+    'Déployez Kyber dans votre équipe : licences multi-utilisateurs, conformité RGPD native, tarifs dégressifs. Zéro serveur centralisé / sécurité post-quantique pour les entreprises françaises.',
   keywords: [
     'kyber entreprise',
     'gestionnaire mots de passe entreprise',

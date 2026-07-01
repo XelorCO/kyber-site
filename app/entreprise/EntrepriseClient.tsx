@@ -25,7 +25,7 @@ export default function EntrepriseClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -80,10 +80,10 @@ export default function EntrepriseClient() {
               ].map((plan) => (
                 <div
                   key={plan.name}
-                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-50 to-rose-50 border-2 border-blue-300 shadow-md relative' : 'bg-white border border-stone-400 shadow-sm'}`}
+                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-50 to-indigo-50 border-2 border-blue-300 shadow-md relative' : 'bg-white border border-stone-400 shadow-sm'}`}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
                       Le plus choisi
                     </div>
                   )}
@@ -102,7 +102,7 @@ export default function EntrepriseClient() {
                   </ul>
                   <a
                     href={plan.href}
-                    className={`block text-center py-2.5 rounded-xl text-sm font-semibold transition-all ${plan.highlight ? 'bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 text-white hover:opacity-90' : 'border border-stone-300 hover:border-stone-400 text-stone-700 hover:bg-stone-50'}`}
+                    className={`block text-center py-2.5 rounded-xl text-sm font-semibold transition-all ${plan.highlight ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90' : 'border border-stone-300 hover:border-stone-400 text-stone-700 hover:bg-stone-50'}`}
                   >
                     {plan.cta}
                   </a>
@@ -120,55 +120,55 @@ export default function EntrepriseClient() {
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 {
-                  icon: '🔒',
+                  icon: '◆',
                   title: 'Zéro serveur centralisé',
                   desc: "Chaque collaborateur stocke son coffre en local. Aucune base de données d'identifiants à cibler / la surface d'attaque est éliminée.",
                   color: 'bg-blue-50 border-blue-300',
                 },
                 {
-                  icon: '🇫🇷',
-                  title: 'RGPD 🇫🇷 & souveraineté numérique',
+                  icon: 'FR',
+                  title: 'RGPD & souveraineté numérique',
                   desc: "Aucune donnée ne quitte le territoire de l'entreprise. Conformité RGPD native / pas de DPA à négocier avec un fournisseur cloud américain.",
                   color: 'bg-green-50 border-green-300',
                 },
                 {
-                  icon: '⚛️',
+                  icon: '✦',
                   title: "Post-quantique dès aujourd'hui",
                   desc: "Standard NIST FIPS 203 (ML-KEM-1024). Vos mots de passe sont protégés contre les attaques harvest-now-decrypt-later / même sans ordinateur quantique actuel.",
-                  color: 'bg-rose-50 border-rose-300',
+                  color: 'bg-indigo-50 border-indigo-300',
                 },
                 {
-                  icon: '📋',
+                  icon: '⧉',
                   title: 'En route vers la certification ANSSI',
                   desc: "Démarche CSPN en cours d'initiation. Le bon choix pour anticiper les exigences des marchés publics et des OIV.",
                   color: 'bg-amber-50 border-amber-300',
                 },
                 {
-                  icon: '🚀',
+                  icon: '▲',
                   title: 'Déploiement sans infrastructure',
                   desc: "Chaque poste s'installe indépendamment en quelques minutes / aucun serveur de gestion / aucun VPN requis.",
                   color: 'bg-purple-50 border-purple-300',
                 },
                 {
-                  icon: '🔑',
+                  icon: '⬡',
                   title: 'Activation hors-ligne',
                   desc: "Les licences sont activées localement par signature cryptographique Ed25519 / aucune connexion à un serveur de licences requise.",
                   color: 'bg-cyan-50 border-cyan-300',
                 },
                 {
-                  icon: '📁',
+                  icon: '▤',
                   title: 'Chiffrement de fichiers inclus',
                   desc: "Chiffrez vos documents confidentiels au format .kyber / accessibles uniquement avec la passphrase du coffre de chaque utilisateur.",
                   color: 'bg-orange-50 border-orange-300',
                 },
                 {
-                  icon: '📊',
+                  icon: '▥',
                   title: 'Analyse de sécurité intégrée',
                   desc: "Tableau de bord des mots de passe faibles / réutilisés / ou anciens. Chaque utilisateur visualise le niveau de risque de son coffre.",
                   color: 'bg-teal-50 border-teal-300',
                 },
                 {
-                  icon: '🔄',
+                  icon: '↻',
                   title: 'Mises à jour perpétuelles',
                   desc: "Votre licence inclut toutes les mises à jour de la branche v1.x / pas d'abonnement annuel / pas de surprise sur la facture.",
                   color: 'bg-violet-50 border-violet-300',
@@ -194,7 +194,7 @@ export default function EntrepriseClient() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a
-                href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise — demande de devis"
+                href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise / demande de devis"
                 className="flex items-center justify-center gap-2 border border-stone-300 hover:border-blue-400 hover:text-blue-600 px-6 py-3 rounded-xl text-sm font-medium text-stone-700 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -251,7 +251,7 @@ export default function EntrepriseClient() {
                     className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-900 placeholder:text-stone-400" />
                 </div>
                 <button type="submit" disabled={status === 'sending'}
-                  className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
+                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
                   {status === 'sending' ? 'Envoi en cours…' : 'Envoyer la demande'}
                 </button>
                 {status === 'error' && (

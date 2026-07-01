@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     description: 'Kyber1024 + AES-256-GCM. 100% local, zéro cloud. Premier gestionnaire post-quantique français. Gratuit.',
     url: 'https://kyber-security.fr/gestionnaire-mots-de-passe-post-quantique',
     siteName: 'Kyber Security',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber — Gestionnaire de mots de passe post-quantique' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber / Gestionnaire de mots de passe post-quantique' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -79,13 +79,13 @@ const features = [
     linkLabel: 'En savoir plus sur Kyber1024 →',
   },
   {
-    color: 'text-rose-600',
+    color: 'text-indigo-600',
     title: 'AES-256-GCM',
     desc: 'Chiffrement symétrique authentifié de niveau militaire. Le "GCM" garantit que vos données ne peuvent pas être modifiées sans être détectées. Standard utilisé par les banques et l\'armée.',
   },
   {
     color: 'text-cyan-700',
-    title: 'Argon2id — Dérivation de clé',
+    title: 'Argon2id / Dérivation de clé',
     desc: 'Vainqueur de la Password Hashing Competition 2015. Paramétré à 64 MB de mémoire : rend les attaques GPU et ASIC économiquement impossibles. Votre passphrase ne peut pas être forcée brute.',
   },
   {
@@ -106,7 +106,7 @@ const features = [
     linkLabel: 'Voir le comparatif →',
   },
   {
-    color: 'text-rose-700',
+    color: 'text-indigo-700',
     title: 'Chiffrement de fichiers',
     desc: "Chiffrez n'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Format .kyber lié à votre coffre : illisible sans votre passphrase.",
   },
@@ -117,7 +117,7 @@ const features = [
   },
   {
     color: 'text-indigo-700',
-    title: '100% local — Zéro cloud',
+    title: '100% local / Zéro cloud',
     desc: "Votre coffre .vault est un fichier chiffré sur votre disque. Aucune donnée ne transite par internet. Pas de compte, pas de télémétrie, pas de serveur de notre côté. Vous êtes le seul propriétaire.",
   },
   {
@@ -129,7 +129,7 @@ const features = [
 
 export default function PageGestionnaire() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
       <NavHeader />
 
@@ -139,16 +139,16 @@ export default function PageGestionnaire() {
         <section className="relative py-20 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-rose-200/30 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-indigo-200/30 rounded-full blur-3xl" />
           </div>
           <div className="relative max-w-4xl mx-auto text-center">
             <div className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm mb-8 font-medium">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              Standard NIST 2024 — ML-KEM (Kyber1024)
+              Standard NIST 2024 / ML-KEM (Kyber1024)
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-stone-900">
               Gestionnaire de mots de passe{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 post-quantique
               </span>
             </h1>
@@ -159,7 +159,7 @@ export default function PageGestionnaire() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger gratuitement
               </Link>
@@ -182,9 +182,9 @@ export default function PageGestionnaire() {
               </h2>
               <div className="space-y-4 text-stone-600 leading-relaxed">
                 <p>
-                  Bitwarden, 1Password, LastPass — tous reposent sur des algorithmes conçus dans les années 1990 :
+                  Bitwarden, 1Password, LastPass / tous reposent sur des algorithmes conçus dans les années 1990 :
                   RSA et ECDH. Ces algorithmes seront vulnérables aux ordinateurs quantiques dès qu&apos;ils
-                  seront suffisamment puissants. L&apos;horizon estimé : <strong className="text-stone-900">2030–2040</strong>.
+                  seront suffisamment puissants. L&apos;horizon estimé : <strong className="text-stone-900">2030/2040</strong>.
                 </p>
                 <p>
                   Plus grave encore : la stratégie &ldquo;harvest now, decrypt later&rdquo; est déjà en cours.
@@ -254,7 +254,7 @@ export default function PageGestionnaire() {
                   { arrow: true },
                   { step: '3', label: 'Kyber1024 KEM', sublabel: 'Encapsulation post-quantique (NIST ML-KEM)', color: 'border-blue-300 text-blue-700' },
                   { arrow: true },
-                  { step: '4', label: 'HKDF-SHA256', sublabel: 'Dérivation de clé finale', color: 'border-rose-300 text-rose-700' },
+                  { step: '4', label: 'HKDF-SHA256', sublabel: 'Dérivation de clé finale', color: 'border-indigo-300 text-indigo-700' },
                   { arrow: true },
                   { step: '5', label: 'AES-256-GCM', sublabel: 'Chiffrement authentifié de vos données', color: 'border-green-300 text-green-700' },
                 ].map((item, i) =>
@@ -271,7 +271,7 @@ export default function PageGestionnaire() {
                 )}
               </div>
               <p className="text-stone-400 text-xs text-center mt-8">
-                Votre clé maîtresse n&apos;est jamais stockée — elle est re-dérivée à chaque ouverture de coffre.
+                Votre clé maîtresse n&apos;est jamais stockée / elle est re-dérivée à chaque ouverture de coffre.
               </p>
             </div>
           </div>
@@ -285,11 +285,11 @@ export default function PageGestionnaire() {
               {[
                 {
                   q: 'Mes mots de passe sont-ils envoyés sur internet ?',
-                  a: "Non. Kyber fonctionne entièrement en local. Vos données sont chiffrées et stockées sur votre appareil uniquement. Aucune donnée ne transite par nos serveurs — nous n'en avons d'ailleurs aucun pour stocker vos données.",
+                  a: "Non. Kyber fonctionne entièrement en local. Vos données sont chiffrées et stockées sur votre appareil uniquement. Aucune donnée ne transite par nos serveurs / nous n'en avons d'ailleurs aucun pour stocker vos données.",
                 },
                 {
                   q: 'Que se passe-t-il si je perds ma passphrase ?',
-                  a: "La passphrase est la seule clé de votre coffre. Si vous la perdez, personne — y compris nous — ne peut récupérer vos données. C'est le prix de la sécurité absolue. Nous recommandons de la noter dans un endroit physique sécurisé.",
+                  a: "La passphrase est la seule clé de votre coffre. Si vous la perdez, personne / y compris nous / ne peut récupérer vos données. C'est le prix de la sécurité absolue. Nous recommandons de la noter dans un endroit physique sécurisé.",
                 },
                 {
                   q: "Puis-je migrer depuis Bitwarden ou 1Password ?",
@@ -323,7 +323,7 @@ export default function PageGestionnaire() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger gratuitement
               </Link>

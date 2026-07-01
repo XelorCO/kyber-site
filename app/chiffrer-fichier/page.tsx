@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: 'https://kyber-security.fr/chiffrer-fichier' },
   openGraph: {
-    title: 'Chiffrer un fichier en ligne — 100 % local, post-quantique',
+    title: 'Chiffrer un fichier en ligne / 100 % local, post-quantique',
     description:
       'Argon2id + Kyber ML-KEM-1024 + AES-256-GCM dans votre navigateur. Aucun envoi de données, gratuit, sans inscription.',
     url: 'https://kyber-security.fr/chiffrer-fichier',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Chiffrer un fichier en ligne — 100 % local, post-quantique',
+    title: 'Chiffrer un fichier en ligne / 100 % local, post-quantique',
     description: 'Le fichier ne quitte jamais votre navigateur. Kyber ML-KEM-1024 + AES-256-GCM + Argon2id.',
     images: ['/opengraph-image'],
   },
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: 'Mon fichier est-il envoyé sur un serveur ?',
-    a: "Non, jamais. Tout le chiffrement s'exécute dans votre navigateur grâce à WebCrypto et WebAssembly. Vous pouvez couper votre connexion internet une fois la page chargée : l'outil fonctionne toujours. C'est vérifiable dans l'onglet Réseau de votre navigateur — aucune requête ne part pendant le chiffrement.",
+    a: "Non, jamais. Tout le chiffrement s'exécute dans votre navigateur grâce à WebCrypto et WebAssembly. Vous pouvez couper votre connexion internet une fois la page chargée : l'outil fonctionne toujours. C'est vérifiable dans l'onglet Réseau de votre navigateur / aucune requête ne part pendant le chiffrement.",
   },
   {
     q: 'Qui peut déchiffrer mon fichier .kyber ?',
@@ -61,7 +61,7 @@ const faq = [
   },
   {
     q: "Que se passe-t-il si j'oublie le mot de passe ?",
-    a: "Le fichier est définitivement illisible. Il n'existe aucune porte dérobée, aucun moyen de récupération — ni pour vous, ni pour nous, ni pour personne. C'est précisément ce qui garantit la confidentialité de vos données. Notez le mot de passe dans un gestionnaire comme Kyber.",
+    a: "Le fichier est définitivement illisible. Il n'existe aucune porte dérobée, aucun moyen de récupération / ni pour vous, ni pour nous, ni pour personne. C'est précisément ce qui garantit la confidentialité de vos données. Notez le mot de passe dans un gestionnaire comme Kyber.",
   },
   {
     q: 'Quel chiffrement est utilisé exactement ?',
@@ -85,7 +85,7 @@ const faqJsonLd = {
 
 export default function PageChiffrerFichier() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavHeader />
@@ -96,14 +96,14 @@ export default function PageChiffrerFichier() {
           <div className="py-12 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
               Chiffrez un fichier,{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 sans qu&apos;il quitte votre machine
               </span>
             </h1>
             <p className="text-lg text-stone-500 max-w-2xl mx-auto">
               Chiffrement post-quantique gratuit, directement dans votre navigateur.
               Le fichier <strong className="text-stone-700">.kyber</strong> obtenu peut être ouvert par toute
-              personne possédant le mot de passe — sur cette page, depuis n&apos;importe où.
+              personne possédant le mot de passe / sur cette page, depuis n&apos;importe où.
             </p>
           </div>
 
@@ -116,17 +116,17 @@ export default function PageChiffrerFichier() {
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 {
-                  icon: '📤',
+                  icon: '→',
                   title: 'Transmettre un document sensible',
                   desc: 'Contrat, pièce d\'identité, RIB… Chiffrez, envoyez le .kyber par email, donnez le mot de passe par téléphone. Même si la boîte mail est compromise, le fichier reste illisible.',
                 },
                 {
-                  icon: '☁️',
+                  icon: '◆',
                   title: 'Stocker dans le cloud sans confiance',
                   desc: 'Déposez vos .kyber sur Drive, Dropbox ou iCloud : l\'hébergeur ne voit qu\'un bloc chiffré. Vous gardez la clé, il garde les octets.',
                 },
                 {
-                  icon: '🗄️',
+                  icon: '▤',
                   title: 'Archiver pour les décennies à venir',
                   desc: 'Le chiffrement résiste aux ordinateurs quantiques (« harvest now, decrypt later »). Vos archives d\'aujourd\'hui restent confidentielles demain.',
                 },
@@ -157,7 +157,7 @@ export default function PageChiffrerFichier() {
           </section>
 
           {/* ── CTA APP ── */}
-          <section className="mt-16 bg-gradient-to-b from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
+          <section className="mt-16 bg-gradient-to-b from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold mb-3 text-stone-900">Et pour vos mots de passe ?</h2>
             <p className="text-stone-600 mb-6 max-w-xl mx-auto">
               Kyber est aussi un gestionnaire de mots de passe de bureau, 100 % local, avec la même
@@ -165,7 +165,7 @@ export default function PageChiffrerFichier() {
             </p>
             <Link
               href="/telechargement"
-              className="inline-block bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
             >
               Télécharger Kyber →
             </Link>

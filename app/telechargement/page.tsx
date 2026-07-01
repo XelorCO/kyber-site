@@ -58,7 +58,7 @@ export const metadata: Metadata = {
 
 export default function PageTelechargement() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(downloadJsonLd) }} />
       <NavHeader />
 
@@ -69,7 +69,7 @@ export default function PageTelechargement() {
           <div className="py-16 text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
               Télécharger{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 Kyber
               </span>{' '}
               gratuitement
@@ -92,7 +92,7 @@ export default function PageTelechargement() {
                   </svg>
                 </div>
                 <h2 className="font-bold text-lg mb-1 text-stone-900">Windows</h2>
-                <p className="text-stone-400 text-xs mb-4">Windows 10 &amp; 11 — 64 bits</p>
+                <p className="text-stone-400 text-xs mb-4">Windows 10 &amp; 11 / 64 bits</p>
                 <div className="space-y-2">
                   <a
                     href="/downloads/Kyber_1.1.0_x64-setup.exe"
@@ -197,7 +197,7 @@ export default function PageTelechargement() {
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">2.</span>
-                    <span>Chaque mise à jour est <strong className="text-stone-900">signée cryptographiquement</strong> — l&apos;application refuse tout binaire non officiel</span>
+                    <span>Chaque mise à jour est <strong className="text-stone-900">signée cryptographiquement</strong> / l&apos;application refuse tout binaire non officiel</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-600 font-mono flex-shrink-0">3.</span>
@@ -214,10 +214,10 @@ export default function PageTelechargement() {
             <h2 className="text-2xl font-bold mb-6 text-stone-900">Configuration requise</h2>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               {[
-                { os: 'Windows', req: 'Windows 10 ou 11, 64 bits — 50 MB espace disque' },
-                { os: 'Linux', req: 'Distribution 64 bits avec glibc 2.17+ — 60 MB espace disque' },
+                { os: 'Windows', req: 'Windows 10 ou 11, 64 bits / 50 MB espace disque' },
+                { os: 'Linux', req: 'Distribution 64 bits avec glibc 2.17+ / 60 MB espace disque' },
                 { os: 'RAM', req: '512 MB minimum (recommandé : 1 GB+)' },
-                { os: 'Processeur', req: 'x86-64 (Intel / AMD) — pas de ARM pour l\'instant' },
+                { os: 'Processeur', req: 'x86-64 (Intel / AMD) / pas de ARM pour l\'instant' },
               ].map(({ os, req }) => (
                 <div key={os} className="bg-white border border-stone-300 rounded-xl px-5 py-4 shadow-sm">
                   <span className="text-stone-600 font-medium">{os} :</span>
@@ -228,13 +228,13 @@ export default function PageTelechargement() {
           </section>
 
           {/* ── PASSER PRO ── */}
-          <section className="bg-gradient-to-b from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
+          <section className="bg-gradient-to-b from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold mb-3 text-stone-900">Passer à Kyber Pro</h2>
             <p className="text-stone-700 mb-2">Mots de passe illimités · Export CSV · Support prioritaire</p>
-            <p className="text-blue-600 font-bold text-2xl mb-6">24,99 € — paiement unique, licence à vie</p>
+            <p className="text-blue-600 font-bold text-2xl mb-6">24,99 € / paiement unique, licence à vie</p>
             <Link
               href="/#pricing"
-              className="inline-block bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
             >
               Acheter Kyber Pro →
             </Link>

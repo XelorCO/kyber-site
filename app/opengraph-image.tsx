@@ -1,7 +1,7 @@
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
-export const alt = 'Kyber — Gestionnaire de mots de passe post-quantique';
+export const alt = 'Kyber / Gestionnaire de mots de passe post-quantique';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -53,7 +53,7 @@ export default function OGImage() {
             borderRadius: 50, padding: '8px 20px',
             color: '#93c5fd', fontSize: 18,
           }}>
-            🇫🇷  Premier gestionnaire post-quantique français
+             Premier gestionnaire post-quantique français
           </div>
 
           {/* Title */}
@@ -76,7 +76,7 @@ export default function OGImage() {
 
           {/* Tags */}
           <div style={{ display: 'flex', gap: 14, marginTop: 8 }}>
-            {['🔷 Kyber1024', '🔐 AES-256-GCM', '🛡️ Argon2id'].map(tag => (
+            {['◆ Kyber1024', '⬡ AES-256-GCM', '✓ Argon2id'].map(tag => (
               <div key={tag} style={{
                 background: 'rgba(255,255,255,0.05)',
                 border: '1px solid rgba(255,255,255,0.15)',

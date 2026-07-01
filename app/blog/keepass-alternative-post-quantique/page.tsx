@@ -52,7 +52,7 @@ const jsonLd = {
 
 export default function ArticleKeePass() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavHeader />
 
@@ -73,7 +73,7 @@ export default function ArticleKeePass() {
             <p className="text-lg text-stone-500 leading-relaxed">
               KeePass est l&apos;une des meilleures décisions que vous ayez pu prendre en matière de sécurité.
               Mais son chiffrement AES-256 avec PBKDF2 ne résistera pas aux ordinateurs quantiques.
-              Voici pourquoi Kyber est la prochaine étape logique — et comment migrer sans perdre vos données.
+              Voici pourquoi Kyber est la prochaine étape logique / et comment migrer sans perdre vos données.
             </p>
             <div className="mt-6 flex items-center gap-3 text-sm text-stone-500">
               <span>Par</span>
@@ -81,7 +81,7 @@ export default function ArticleKeePass() {
                 Enzo Paccard
               </Link>
               <span>·</span>
-              <span>Pentesteur — Fondateur de Kyber Security</span>
+              <span>Pentesteur / Fondateur de Kyber Security</span>
             </div>
           </header>
 
@@ -93,7 +93,7 @@ export default function ArticleKeePass() {
               <p className="text-blue-800 font-medium mb-2">Avant de commencer : soyons honnêtes</p>
               <p className="text-blue-700 text-sm">
                 Si vous utilisez KeePass, vous faites déjà partie des 5% d&apos;utilisateurs qui ont compris l&apos;intérêt
-                du stockage local. Ce n&apos;est pas un article pour vous convaincre que KeePass est mauvais —
+                du stockage local. Ce n&apos;est pas un article pour vous convaincre que KeePass est mauvais /
                 il est excellent. C&apos;est un article sur ce qui manque à KeePass en 2026 : la résistance aux
                 algorithmes quantiques.
               </p>
@@ -114,8 +114,8 @@ export default function ArticleKeePass() {
               </p>
               <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  'Stockage local — aucun serveur impliqué',
-                  'Open source GPL — audité extensivement',
+                  'Stockage local / aucun serveur impliqué',
+                  'Open source GPL / audité extensivement',
                   'Format .kdbx standardisé',
                   'AES-256 + Argon2 (kdbx v4)',
                   'Multi-plateformes (via ports)',
@@ -134,7 +134,7 @@ export default function ArticleKeePass() {
               <h2 className="text-2xl font-bold text-stone-900 mb-4">Le problème : AES-256 seul ne suffit plus</h2>
               <p>
                 AES-256 est sûr contre les ordinateurs classiques. Grover&apos;s algorithm (quantique) peut en théorie
-                réduire sa sécurité de 256 bits à 128 bits — ce qui reste élevé. Mais ce n&apos;est pas l&apos;AES qui
+                réduire sa sécurité de 256 bits à 128 bits / ce qui reste élevé. Mais ce n&apos;est pas l&apos;AES qui
                 est le maillon faible dans KeePass.
               </p>
               <p>
@@ -149,7 +149,7 @@ export default function ArticleKeePass() {
                   Des acteurs étatiques copient des coffres chiffrés dès aujourd&apos;hui, en attendant d&apos;avoir
                   suffisamment de puissance quantique pour les déchiffrer plus tard. Si votre fichier .kdbx
                   est exposé une seule fois (USB perdue, backup cloud, PC volé), il pourrait être déchiffré
-                  dans 5-15 ans. Pas hypothétique — <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-amber-700 underline">des programmes HNDL sont documentés</Link>.
+                  dans 5-15 ans. Pas hypothétique / <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-amber-700 underline">des programmes HNDL sont documentés</Link>.
                 </p>
               </div>
               <p>
@@ -183,8 +183,8 @@ export default function ArticleKeePass() {
                       ['Open source', '✓ GPL', 'BSL 1.1 (prévu)'],
                       ['Auto-remplissage', '✓ via plugins', '✓ natif (scanner)'],
                       ['Chiffrement fichiers', '✗ Non', '✓ Format .kyber (AES-GCM)'],
-                      ['Interface', 'Windows native (vieillissante)', 'Tauri — moderne'],
-                      ['Certifications', 'Aucune en cours', 'CSPN ANSSI — initié'],
+                      ['Interface', 'Windows native (vieillissante)', 'Tauri / moderne'],
+                      ['Certifications', 'Aucune en cours', 'CSPN ANSSI / initié'],
                     ].map(([critere, keepass, kyber]) => (
                       <tr key={critere} className="border-b border-stone-200 last:border-0">
                         <td className="px-4 py-2.5 font-medium text-stone-700 bg-stone-50">{critere}</td>
@@ -210,7 +210,7 @@ export default function ArticleKeePass() {
                   {
                     step: '1',
                     title: 'Exporter depuis KeePass',
-                    desc: 'Dans KeePass : Fichier → Exporter → Format CSV. Cochez "Titre, Identifiant, Mot de passe, URL, Notes". Sauvegardez en local — ne mettez pas ce CSV dans le cloud.',
+                    desc: 'Dans KeePass : Fichier → Exporter → Format CSV. Cochez "Titre, Identifiant, Mot de passe, URL, Notes". Sauvegardez en local / ne mettez pas ce CSV dans le cloud.',
                   },
                   {
                     step: '2',
@@ -225,16 +225,16 @@ export default function ArticleKeePass() {
                   {
                     step: '4',
                     title: 'Vérifier et supprimer le CSV',
-                    desc: 'Vérifiez que vos entrées sont bien présentes. Supprimez immédiatement le fichier CSV — il contient vos mots de passe en clair. Videz la corbeille.',
+                    desc: 'Vérifiez que vos entrées sont bien présentes. Supprimez immédiatement le fichier CSV / il contient vos mots de passe en clair. Videz la corbeille.',
                   },
                   {
                     step: '5',
                     title: 'Passer Pro (optionnel)',
-                    desc: "Si vous avez plus de 3 mots de passe, la version Kyber Pro (24,99 € licence à vie) lève la limite. L'import fonctionne même en gratuit — vous verrez juste un avertissement si vous dépassez 3.",
+                    desc: "Si vous avez plus de 3 mots de passe, la version Kyber Pro (24,99 € licence à vie) lève la limite. L'import fonctionne même en gratuit / vous verrez juste un avertissement si vous dépassez 3.",
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4 bg-white border border-stone-400 rounded-xl px-5 py-4 shadow-sm">
-                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-rose-400 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
                       {item.step}
                     </div>
                     <div>
@@ -303,7 +303,7 @@ export default function ArticleKeePass() {
           </div>
 
           {/* ── CTA ── */}
-          <div className="mt-16 bg-gradient-to-br from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 text-center">
+          <div className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold mb-3 text-stone-900">Migrer de KeePass vers Kyber en 5 minutes</h2>
             <p className="text-stone-500 text-sm mb-6 max-w-md mx-auto">
               Téléchargez Kyber gratuitement. Importez votre CSV KeePass.
@@ -312,7 +312,7 @@ export default function ArticleKeePass() {
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
               >
                 Télécharger Kyber gratuitement
               </Link>

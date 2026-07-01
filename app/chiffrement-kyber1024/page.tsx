@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     description: 'Kyber1024, AES-256-GCM, Argon2id : comment fonctionne le chiffrement hybride post-quantique de Kyber. Guide technique complet.',
     url: 'https://kyber-security.fr/chiffrement-kyber1024',
     siteName: 'Kyber Security',
-    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber1024 — Chiffrement post-quantique' }],
+    images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber1024 / Chiffrement post-quantique' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function PageChiffrement() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -51,11 +51,11 @@ export default function PageChiffrement() {
           {/* ── HERO ── */}
           <div className="py-16 text-center">
             <div className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm mb-8 font-medium">
-              NIST FIPS 203 — ML-KEM (Kyber1024)
+              NIST FIPS 203 / ML-KEM (Kyber1024)
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight tracking-tight text-stone-900">
               Kyber1024 : le standard{' '}
-              <span className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
                 post-quantique
               </span>{' '}
               du NIST
@@ -71,19 +71,19 @@ export default function PageChiffrement() {
             <h2 className="text-2xl font-bold mb-4 text-stone-900">Qu&apos;est-ce que Kyber1024 ?</h2>
             <div className="space-y-4 text-stone-600 leading-relaxed">
               <p>
-                Kyber1024 est un <strong className="text-stone-900">algorithme d&apos;encapsulation de clé</strong> (KEM —
+                Kyber1024 est un <strong className="text-stone-900">algorithme d&apos;encapsulation de clé</strong> (KEM /
                 Key Encapsulation Mechanism) basé sur la cryptographie en treillis (lattice cryptography).
                 En août 2024, le NIST l&apos;a standardisé sous le nom <strong className="text-stone-900">ML-KEM</strong> (FIPS 203),
                 le désignant comme la référence mondiale pour la cryptographie post-quantique à clé publique.
               </p>
               <p>
                 Contrairement à RSA qui repose sur la difficulté de factoriser de grands entiers, Kyber1024 repose
-                sur le problème <strong className="text-stone-900">Module Learning With Errors (MLWE)</strong> — un problème
+                sur le problème <strong className="text-stone-900">Module Learning With Errors (MLWE)</strong> / un problème
                 mathématique pour lequel aucun algorithme quantique efficace n&apos;est connu à ce jour.
               </p>
               <p>
                 Le &ldquo;1024&rdquo; dans Kyber1024 désigne le niveau de sécurité le plus élevé de la famille Kyber,
-                équivalent à <strong className="text-stone-900">256 bits de sécurité classique</strong> — soit le double
+                équivalent à <strong className="text-stone-900">256 bits de sécurité classique</strong> / soit le double
                 du niveau requis par le gouvernement américain pour les données top secrètes.
               </p>
             </div>
@@ -97,7 +97,7 @@ export default function PageChiffrement() {
               <p className="text-stone-600 text-sm leading-relaxed">
                 L&apos;algorithme de Shor, exécuté sur un ordinateur quantique suffisamment puissant, peut factoriser
                 un entier RSA-2048 en quelques heures. Les estimations actuelles situent l&apos;horizon à{' '}
-                <strong className="text-stone-900">2030–2040</strong> pour les premiers ordinateurs quantiques &ldquo;cryptographiquement pertinents&rdquo;.
+                <strong className="text-stone-900">2030/2040</strong> pour les premiers ordinateurs quantiques &ldquo;cryptographiquement pertinents&rdquo;.
               </p>
             </div>
             <div className="space-y-4 text-stone-600 leading-relaxed">
@@ -118,7 +118,7 @@ export default function PageChiffrement() {
             <h2 className="text-2xl font-bold mb-4 text-stone-900">AES-256-GCM : le chiffrement symétrique authentifié</h2>
             <div className="space-y-4 text-stone-600 leading-relaxed">
               <p>
-                Kyber1024 est un KEM — il sert à <em>encapsuler</em> une clé symétrique de manière post-quantique.
+                Kyber1024 est un KEM / il sert à <em>encapsuler</em> une clé symétrique de manière post-quantique.
                 Le chiffrement réel des données s&apos;effectue avec <strong className="text-stone-900">AES-256-GCM</strong>.
               </p>
               <p>
@@ -152,7 +152,7 @@ export default function PageChiffrement() {
               </p>
               <p>
                 Contrairement à PBKDF2 (utilisé par Bitwarden) ou bcrypt, Argon2id résiste nativement aux
-                attaques matérielles parallèles — la mémoire requise ne peut pas être contournée.
+                attaques matérielles parallèles / la mémoire requise ne peut pas être contournée.
               </p>
             </div>
           </section>
@@ -166,31 +166,31 @@ export default function PageChiffrement() {
                   {
                     n: '01',
                     title: 'Votre passphrase',
-                    desc: 'Entrée uniquement dans votre mémoire RAM — jamais stockée sur disque',
+                    desc: 'Entrée uniquement dans votre mémoire RAM / jamais stockée sur disque',
                     color: 'text-stone-700',
                   },
                   {
                     n: '02',
                     title: 'Argon2id → seed (256 bits)',
-                    desc: 'Dérivation résistante GPU — transforme votre passphrase en graine cryptographique',
+                    desc: 'Dérivation résistante GPU / transforme votre passphrase en graine cryptographique',
                     color: 'text-cyan-700',
                   },
                   {
                     n: '03',
                     title: 'Kyber1024 KEM',
-                    desc: 'Génération d\'une paire de clés post-quantique + encapsulation — résistant aux ordinateurs quantiques',
+                    desc: 'Génération d\'une paire de clés post-quantique + encapsulation / résistant aux ordinateurs quantiques',
                     color: 'text-blue-700',
                   },
                   {
                     n: '04',
                     title: 'HKDF-SHA256',
                     desc: 'Extraction et expansion de la clé partagée en une clé de chiffrement finale uniforme',
-                    color: 'text-rose-700',
+                    color: 'text-indigo-700',
                   },
                   {
                     n: '05',
                     title: 'AES-256-GCM → fichier .vault',
-                    desc: 'Chiffrement authentifié de vos mots de passe — toute modification non autorisée est détectée',
+                    desc: 'Chiffrement authentifié de vos mots de passe / toute modification non autorisée est détectée',
                     color: 'text-green-700',
                   },
                 ].map(({ n, title, desc, color }) => (
@@ -213,7 +213,7 @@ export default function PageChiffrement() {
               {[
                 {
                   q: 'Kyber1024 a-t-il été audité ?',
-                  a: "Kyber1024 a été soumis à cinq ans d'analyse cryptographique publique dans le cadre du processus de standardisation du NIST (2016–2024). Des dizaines d'équipes de recherche du monde entier ont tenté de le casser. Il est aujourd'hui le ML-KEM standardisé FIPS 203.",
+                  a: "Kyber1024 a été soumis à cinq ans d'analyse cryptographique publique dans le cadre du processus de standardisation du NIST (2016/2024). Des dizaines d'équipes de recherche du monde entier ont tenté de le casser. Il est aujourd'hui le ML-KEM standardisé FIPS 203.",
                 },
                 {
                   q: "La clé privée Kyber est-elle stockée quelque part ?",
@@ -221,7 +221,7 @@ export default function PageChiffrement() {
                 },
                 {
                   q: "Pourquoi un chiffrement hybride Kyber + AES ?",
-                  a: "Kyber1024 est un KEM — il établit une clé partagée post-quantique. AES-256-GCM est un algorithme de chiffrement symétrique authentifié — il chiffre les données réelles. Les deux se complètent : Kyber apporte la résistance quantique, AES apporte la performance et l'authenticité.",
+                  a: "Kyber1024 est un KEM / il établit une clé partagée post-quantique. AES-256-GCM est un algorithme de chiffrement symétrique authentifié / il chiffre les données réelles. Les deux se complètent : Kyber apporte la résistance quantique, AES apporte la performance et l'authenticité.",
                 },
               ].map(({ q, a }) => (
                 <div key={q} className="bg-white border border-stone-300 rounded-xl p-6 shadow-sm">
@@ -240,7 +240,7 @@ export default function PageChiffrement() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber
               </Link>

@@ -38,7 +38,7 @@ function VizPassphrase() {
 function VizArgon2() {
   return (
     <div className="flex flex-col items-center justify-center h-full gap-5 py-4">
-      <p className="text-xs text-stone-500 text-center">Argon2id alloue 64 MB de RAM — impossible à paralléliser sur GPU</p>
+      <p className="text-xs text-stone-500 text-center">Argon2id alloue 64 MB de RAM / impossible à paralléliser sur GPU</p>
       <div className="w-full max-w-xs space-y-3">
         {[
           { label: 'Allocation mémoire', val: '64 MB', delay: '' },
@@ -84,21 +84,21 @@ function VizKyber() {
   ];
   return (
     <div className="flex flex-col items-center justify-center h-full gap-4 py-4">
-      <p className="text-xs text-stone-500 text-center">Réseau euclidien (Module-LWE) — insoluble par algorithme de Shor</p>
-      <div className="relative w-full max-w-xs h-40 bg-rose-50 rounded-xl border border-rose-200 overflow-hidden">
+      <p className="text-xs text-stone-500 text-center">Réseau euclidien (Module-LWE) / insoluble par algorithme de Shor</p>
+      <div className="relative w-full max-w-xs h-40 bg-indigo-50 rounded-xl border border-indigo-200 overflow-hidden">
         {dots.map((d, i) => (
           <div
             key={i}
-            className={`lattice-dot absolute ${d.size} rounded-full bg-gradient-to-br from-rose-400 to-blue-400 opacity-80`}
+            className={`lattice-dot absolute ${d.size} rounded-full bg-gradient-to-br from-indigo-400 to-blue-400 opacity-80`}
             style={{ left: d.x, top: d.y, transform: 'translate(-50%,-50%)' }}
           />
         ))}
         <div className="absolute inset-0 flex items-end justify-center pb-3">
-          <span className="text-xs text-rose-500 font-mono">Module-LWE lattice</span>
+          <span className="text-xs text-indigo-500 font-mono">Module-LWE lattice</span>
         </div>
       </div>
       <div className="flex gap-3 text-xs">
-        <div className="bg-rose-50 border border-rose-200 rounded-full px-3 py-1 text-rose-700">NIST FIPS 203</div>
+        <div className="bg-indigo-50 border border-indigo-200 rounded-full px-3 py-1 text-indigo-700">NIST FIPS 203</div>
         <div className="bg-blue-50 border border-blue-200 rounded-full px-3 py-1 text-blue-700">ML-KEM-1024</div>
       </div>
     </div>
@@ -140,7 +140,7 @@ function VizVault() {
     <div className="flex flex-col items-center justify-center h-full gap-5 py-4">
       <p className="text-xs text-stone-500 text-center">Le fichier chiffré n&apos;existe que sur votre appareil</p>
       <div className="vault-shield bg-green-50 border border-green-200 rounded-xl p-6 text-center w-full max-w-xs">
-        <div className="text-4xl mb-3">🔒</div>
+        <div className="text-4xl mb-3">◆</div>
         <div className="font-mono text-sm text-green-700">coffre.vault</div>
         <div className="text-xs text-stone-400 mt-1">~/.kyber/coffre.vault</div>
       </div>
@@ -236,34 +236,34 @@ export default function Home() {
   const colorMap: Record<string, string> = {
     blue:   'border-blue-200 bg-blue-50 text-blue-700',
     cyan:   'border-cyan-200 bg-cyan-50 text-cyan-700',
-    purple: 'border-rose-200 bg-rose-50 text-rose-700',
+    purple: 'border-indigo-200 bg-indigo-50 text-indigo-700',
     green:  'border-green-200 bg-green-50 text-green-700',
     orange: 'border-amber-200 bg-amber-50 text-amber-700',
   };
 
   const connectorColorMap: Record<string, string> = {
     blue:   'from-blue-300 to-cyan-300',
-    cyan:   'from-cyan-300 to-rose-300',
-    purple: 'from-rose-300 to-green-300',
+    cyan:   'from-cyan-300 to-blue-300',
+    purple: 'from-indigo-300 to-blue-300',
     green:  'from-green-300 to-amber-300',
     orange: 'from-amber-300 to-amber-200',
   };
 
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
 
       {/* ── HEADER ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#faf8f6]/90 backdrop-blur-md border-b border-stone-300">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f4f2ef]/90 backdrop-blur-md border-b border-stone-300">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 bg-clip-text text-transparent">
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
               Kyber
             </span>
             <span className="text-xs text-stone-500 border border-stone-300 px-2 py-0.5 rounded-full hidden sm:inline">
               Post-Quantique
             </span>
           </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm text-stone-500">
+          <nav className="hidden lg:flex items-center gap-7 text-sm text-stone-500">
             <a href="#how-it-works" className="hover:text-stone-900 transition-colors">Comment ça marche</a>
             <a href="#pricing" className="hover:text-stone-900 transition-colors">Tarifs</a>
             <a href="/blog" className="hover:text-stone-900 transition-colors">Blog</a>
@@ -272,12 +272,12 @@ export default function Home() {
           <div className="flex items-center gap-3">
             <a
               href="/telechargement"
-              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
             >
               Télécharger
             </a>
             <button
-              className="md:hidden p-2 rounded-lg border border-stone-300 bg-white text-stone-600 hover:bg-stone-50 transition-colors"
+              className="lg:hidden p-2 rounded-lg border border-stone-300 bg-white text-stone-600 hover:bg-stone-50 transition-colors"
               onClick={() => setMobileMenuOpen(v => !v)}
               aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
@@ -294,7 +294,7 @@ export default function Home() {
           </div>
         </div>
         {mobileMenuOpen && (
-          <div className="md:hidden border-t border-stone-200 bg-[#faf8f6]/98 backdrop-blur-md">
+          <div className="lg:hidden border-t border-stone-200 bg-[#f4f2ef]/98 backdrop-blur-md">
             <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
               {[
                 { href: '#how-it-works', label: 'Comment ça marche' },
@@ -316,7 +316,7 @@ export default function Home() {
         )}
       </header>
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 md:hidden" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
+        <div className="fixed inset-0 z-40 lg:hidden" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
       )}
 
       <ScrollProgress />
@@ -325,7 +325,7 @@ export default function Home() {
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <Parallax drift={80} className="glow-blob absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl" />
-          <Parallax drift={-60} className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-rose-200/30 rounded-full blur-3xl" />
+          <Parallax drift={-60} className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-indigo-200/30 rounded-full blur-3xl" />
           <div className="absolute inset-0 opacity-[0.04]"
             style={{ backgroundImage: 'radial-gradient(circle, #78716c 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
@@ -344,13 +344,13 @@ export default function Home() {
           <p className="text-lg text-stone-500 mb-10 max-w-2xl mx-auto leading-relaxed">
             Kyber combine <strong className="text-stone-900">Kyber1024</strong> (standard NIST 2024),{' '}
             <strong className="text-stone-900">Argon2id</strong> et <strong className="text-stone-900">AES-256-GCM</strong>{' '}
-            pour chiffrer vos mots de passe localement — aucune donnée ne quitte votre machine.
+            pour chiffrer vos mots de passe localement / aucune donnée ne quitte votre machine.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-8">
             <a
               href="/telechargement"
-              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-rose-300/30 text-sm text-white"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all shadow-lg shadow-blue-300/30 text-sm text-white"
             >
               Télécharger gratuitement
             </a>
@@ -365,7 +365,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── COMMENT ÇA MARCHE — schéma interactif ── */}
+      {/* ── COMMENT ÇA MARCHE / schéma interactif ── */}
       <section id="how-it-works" className="py-24 px-6">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14 reveal">
@@ -432,7 +432,7 @@ export default function Home() {
                   <p className="text-stone-600 text-sm leading-relaxed mb-4">
                     {[
                       'Votre passphrase ne quitte jamais votre mémoire vive. Elle n\'est jamais écrite sur le disque ni transmise sur le réseau. C\'est le seul secret que vous possédez, et il reste exclusivement chez vous.',
-                      'Argon2id transforme votre passphrase en une seed cryptographique en allouant 64 MB de RAM. Cette contrainte mémoire rend la parallélisation sur GPU ou ASIC impraticable — un attaquant ne peut pas accélérer le brute-force.',
+                      'Argon2id transforme votre passphrase en une seed cryptographique en allouant 64 MB de RAM. Cette contrainte mémoire rend la parallélisation sur GPU ou ASIC impraticable / un attaquant ne peut pas accélérer le brute-force.',
                       'La seed génère une paire de clés ML-KEM-1024 (Kyber1024). Cet algorithme standardisé par le NIST en 2024 (FIPS 203) résiste aux attaques de l\'algorithme de Shor, même sur un ordinateur quantique puissant.',
                       'La clé finale, dérivée via HKDF-SHA256, chiffre votre coffre avec AES-256-GCM. Le mode GCM garantit l\'authenticité : toute modification du fichier .vault est immédiatement détectée à l\'ouverture.',
                       'Le fichier .vault chiffré est stocké sur votre disque. Nulle part ailleurs. Pas sur nos serveurs, pas dans un cloud, pas dans une base de données centralisée. Il n\'existe aucun serveur à pirater.',
@@ -493,7 +493,7 @@ export default function Home() {
             {/* Cloud */}
             <div className="cloud-danger bg-red-50 border border-red-200 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
-                <span className="text-red-500 text-lg">⚠</span>
+                <span className="text-red-500 text-lg">⚠︎</span>
                 <h3 className="font-bold text-red-700">Gestionnaire cloud</h3>
                 <span className="ml-auto text-xs text-red-500 border border-red-200 px-2 py-0.5 rounded-full">
                   Bitwarden, 1Password…
@@ -502,10 +502,10 @@ export default function Home() {
 
               <div className="space-y-3">
                 {[
-                  { icon: '💻', label: 'Votre appareil', sub: 'Vous tapez votre mot de passe', color: 'slate' },
-                  { icon: '🌐', label: 'Internet', sub: 'Transit chiffré (PQC ou TLS)', color: 'slate' },
-                  { icon: '🖥️', label: 'Serveurs du fournisseur', sub: 'Coffre chiffré stocké ici', color: 'red' },
-                  { icon: '⚠️', label: 'Exposition', sub: 'Brèche possible (cf. LastPass 2022)', color: 'red' },
+                  { icon: '▣', label: 'Votre appareil', sub: 'Vous tapez votre mot de passe', color: 'slate' },
+                  { icon: '◯', label: 'Internet', sub: 'Transit chiffré (PQC ou TLS)', color: 'slate' },
+                  { icon: '▤', label: 'Serveurs du fournisseur', sub: 'Coffre chiffré stocké ici', color: 'red' },
+                  { icon: '⚠︎', label: 'Exposition', sub: 'Brèche possible (cf. LastPass 2022)', color: 'red' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
                     <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-100 border border-red-200' : 'bg-white border border-stone-300'} rounded-xl px-4 py-3`}>
@@ -528,8 +528,8 @@ export default function Home() {
             {/* Kyber local */}
             <div className="vault-shield bg-green-50 border border-green-200 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
-                <span className="text-green-600 text-lg">🛡</span>
-                <h3 className="font-bold text-green-800">Kyber — 100% local</h3>
+                <span className="text-green-600 text-lg">✓</span>
+                <h3 className="font-bold text-green-800">Kyber / 100% local</h3>
                 <span className="ml-auto text-xs text-green-600 border border-green-200 px-2 py-0.5 rounded-full">
                   Votre appareil uniquement
                 </span>
@@ -537,9 +537,9 @@ export default function Home() {
 
               <div className="space-y-3">
                 {[
-                  { icon: '💻', label: 'Votre appareil', sub: 'Vous tapez votre passphrase', color: 'slate' },
-                  { icon: '🔐', label: 'Kyber1024 + Argon2id + AES-256-GCM', sub: 'Chiffrement complet en local', color: 'green' },
-                  { icon: '🔒', label: 'Fichier .vault sur votre disque', sub: 'N\'existe que chez vous', color: 'green' },
+                  { icon: '▣', label: 'Votre appareil', sub: 'Vous tapez votre passphrase', color: 'slate' },
+                  { icon: '⬡', label: 'Kyber1024 + Argon2id + AES-256-GCM', sub: 'Chiffrement complet en local', color: 'green' },
+                  { icon: '◆', label: 'Fichier .vault sur votre disque', sub: 'N\'existe que chez vous', color: 'green' },
                   { icon: '✓', label: 'Aucun serveur à attaquer', sub: 'Inatteignable depuis internet', color: 'green' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
@@ -562,7 +562,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 bg-blue-50 border border-blue-200 rounded-xl p-5 text-center text-sm text-stone-600 reveal reveal-delay-2">
-            En décembre 2022, des millions de coffres LastPass ont été volés depuis leurs serveurs. Chiffrés, certes —
+            En décembre 2022, des millions de coffres LastPass ont été volés depuis leurs serveurs. Chiffrés, certes /
             mais maintenant en possession d&apos;attaquants, déchiffrables dans le futur.{' '}
             <Link href="/blog/kyber-local-vs-cloud" className="text-blue-600 hover:text-blue-700 transition-colors underline">
               Analyse complète →
@@ -571,7 +571,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── FONCTIONNALITÉS — 9 ── */}
+      {/* ── FONCTIONNALITÉS / 9 ── */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14 reveal">
@@ -609,7 +609,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
                   </svg>
                 ),
-                title: 'Argon2id — Dérivation de clé',
+                title: 'Argon2id / Dérivation de clé',
                 desc: 'Vainqueur de la Password Hashing Competition 2015. Paramétré à 64 MB de mémoire : rend les attaques GPU et ASIC économiquement impossibles. Votre passphrase ne peut pas être forcée brute.',
                 tag: 'PHC Winner',
                 link: null,
@@ -649,7 +649,7 @@ export default function Home() {
               },
               {
                 icon: (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-rose-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-7 h-7 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
                   </svg>
                 ),
@@ -675,7 +675,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Z" />
                   </svg>
                 ),
-                title: '100% local — Zéro cloud',
+                title: '100% local / Zéro cloud',
                 desc: 'Votre coffre .vault est un fichier chiffré sur votre disque. Aucune donnée ne transite par internet. Pas de compte, pas de télémétrie, pas de serveur de notre côté. Vous êtes le seul propriétaire.',
                 tag: 'Privacy',
                 link: null,
@@ -749,8 +749,8 @@ export default function Home() {
             </div>
 
             {/* Pro */}
-            <div className="relative bg-gradient-to-b from-blue-50 to-rose-50 border border-blue-200 rounded-2xl p-8 flex flex-col reveal reveal-delay-2 shadow-md">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+            <div className="relative bg-gradient-to-b from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 flex flex-col reveal reveal-delay-2 shadow-md">
+              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
                 Recommandé
               </div>
               <div className="mb-6">
@@ -759,7 +759,7 @@ export default function Home() {
                   <span className="text-5xl font-bold text-stone-900">24,99 €</span>
                   <span className="text-stone-500 text-sm mb-1.5">paiement unique</span>
                 </div>
-                <p className="text-stone-500 text-sm mt-1">Licence perpétuelle — 1 utilisateur</p>
+                <p className="text-stone-500 text-sm mt-1">Licence perpétuelle / 1 utilisateur</p>
               </div>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
@@ -778,7 +778,7 @@ export default function Home() {
               </ul>
               <button
                 onClick={() => setShowModal(true)}
-                className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-rose-300/30 text-white"
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-300/30 text-white"
               >
                 Acheter / 24,99 €
               </button>
@@ -791,7 +791,7 @@ export default function Home() {
       <section id="download" className="py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 reveal text-stone-900">Télécharger Kyber</h2>
-          <p className="text-stone-500 text-lg mb-14 reveal reveal-delay-1">Gratuit. Windows disponible — Linux &amp; macOS de retour très bientôt.</p>
+          <p className="text-stone-500 text-lg mb-14 reveal reveal-delay-1">Gratuit. Windows disponible / Linux &amp; macOS de retour très bientôt.</p>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
@@ -870,7 +870,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-stone-400 text-xs mt-10">Version 1.1.0 — mises à jour automatiques signées</p>
+          <p className="text-stone-400 text-xs mt-10">Version 1.1.0 / mises à jour automatiques signées</p>
         </div>
       </section>
 
@@ -885,12 +885,12 @@ export default function Home() {
           <div className="flex flex-wrap gap-4 justify-center">
             <a
               href="/entreprise"
-              className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
             >
               Voir les offres entreprise →
             </a>
             <a
-              href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise — demande de devis"
+              href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise / demande de devis"
               className="border border-stone-300 hover:border-stone-400 px-8 py-3.5 rounded-xl font-semibold text-sm text-stone-700 transition-all"
             >
               contact@kyber-security.fr
@@ -898,9 +898,9 @@ export default function Home() {
           </div>
           <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
             {[
-              { icon: '🔒', label: 'Zéro serveur centralisé' },
-              { icon: '🇫🇷', label: 'RGPD par conception' },
-              { icon: '📋', label: 'Démarche CSPN ANSSI' },
+              { icon: '◆', label: 'Zéro serveur centralisé' },
+              { icon: 'FR', label: 'RGPD par conception' },
+              { icon: '⧉', label: 'Démarche CSPN ANSSI' },
             ].map(({ icon, label }) => (
               <div key={label} className="bg-white border border-stone-400 rounded-xl px-4 py-3 flex items-center gap-3 shadow-sm">
                 <span className="text-lg">{icon}</span>
@@ -973,9 +973,9 @@ export default function Home() {
       <footer className="border-t border-stone-300 py-12 px-6 bg-stone-50">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-stone-500">
           <div className="flex flex-col items-center md:items-start gap-1">
-            <span><span className="font-bold text-stone-900">Kyber</span> — © 2026 Kyber Security. Made in France 🇫🇷</span>
+            <span><span className="font-bold text-stone-900">Kyber</span> / © 2026 Kyber Security. Made in France</span>
             <span>
-              Créé avec ❤️ par{' '}
+              Créé avec soin par{' '}
               <a href="https://softpac.fr" target="_blank" rel="noopener" className="text-blue-600 hover:text-blue-700 transition-colors">
                 Softpac.fr
               </a>
@@ -1003,7 +1003,7 @@ export default function Home() {
           <div className="bg-white border border-stone-400 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-900">Kyber Pro — 24,99 €</h3>
+                <h3 className="font-bold text-xl text-stone-900">Kyber Pro / 24,99 €</h3>
                 <p className="text-stone-500 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-400 hover:text-stone-600 text-xl leading-none ml-4 mt-0.5">✕</button>
@@ -1024,7 +1024,7 @@ export default function Home() {
                 Votre clé de licence sera envoyée à cet email immédiatement après le paiement.
               </div>
               <button type="submit" disabled={checkoutLoading}
-                className="w-full bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 disabled:opacity-60 py-3.5 rounded-xl font-semibold transition-all text-sm text-white">
+                className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 disabled:opacity-60 py-3.5 rounded-xl font-semibold transition-all text-sm text-white">
                 {checkoutLoading ? 'Redirection vers Stripe…' : 'Continuer vers le paiement →'}
               </button>
               <div className="flex items-center justify-center gap-2 text-xs text-stone-400">

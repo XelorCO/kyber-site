@@ -60,7 +60,7 @@ const articleJsonLd = {
 
 export default function ArticleQCMotsDePasse() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -88,7 +88,7 @@ export default function ArticleQCMotsDePasse() {
             <p className="text-stone-500 text-lg leading-relaxed">
               &ldquo;Les ordinateurs quantiques sont encore loin.&rdquo; Cette phrase revient souvent pour justifier
               l&apos;inaction. Mais la vraie question n&apos;est pas &ldquo;quand le Q-day arrivera-t-il ?&rdquo;
-              — c&apos;est &ldquo;depuis quand vos données sont-elles déjà collectées ?&rdquo;
+              / c&apos;est &ldquo;depuis quand vos données sont-elles déjà collectées ?&rdquo;
             </p>
           </div>
 
@@ -102,23 +102,23 @@ export default function ArticleQCMotsDePasse() {
                 <p>
                   La menace des ordinateurs quantiques sur les mots de passe est réelle, mais elle ne fonctionne
                   pas comme dans les films. Personne ne va se connecter à votre compte Gmail avec un ordinateur
-                  quantique le jour du Q-day. La menace est plus insidieuse — et elle est déjà active.
+                  quantique le jour du Q-day. La menace est plus insidieuse / et elle est déjà active.
                 </p>
                 <p className="mt-4">
                   Il y a deux scénarios d&apos;attaque distincts, avec des horizons temporels très différents :
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-4">
                   <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-                    <h3 className="font-semibold text-amber-700 mb-2">Scénario A — Attaque directe sur le coffre (futur)</h3>
+                    <h3 className="font-semibold text-amber-700 mb-2">Scénario A / Attaque directe sur le coffre (futur)</h3>
                     <p className="text-sm">
-                      Un QC casse le chiffrement AES-256 ou attaque la dérivation de clé. Horizon : <strong>2030–2040</strong>.
+                      Un QC casse le chiffrement AES-256 ou attaque la dérivation de clé. Horizon : <strong>2030/2040</strong>.
                       Si vous utilisez Argon2id + AES-256, vous êtes protégé même contre ça.
                     </p>
                   </div>
                   <div className="bg-red-50 border border-red-200 rounded-xl p-5">
-                    <h3 className="font-semibold text-red-700 mb-2">Scénario B — Harvest now, decrypt later (maintenant)</h3>
+                    <h3 className="font-semibold text-red-700 mb-2">Scénario B / Harvest now, decrypt later (maintenant)</h3>
                     <p className="text-sm">
-                      Un adversaire vole votre coffre <em>aujourd&apos;hui</em> — chiffré — et attend d&apos;avoir les capacités
+                      Un adversaire vole votre coffre <em>aujourd&apos;hui</em> / chiffré / et attend d&apos;avoir les capacités
                       quantiques pour le déchiffrer. Si votre coffre est sur un cloud, ce risque est <strong>immédiat</strong>.
                     </p>
                   </div>
@@ -144,22 +144,22 @@ export default function ArticleQCMotsDePasse() {
                   <p className="text-sm text-stone-500 mb-3">Qui est concerné par HNDL ?</p>
                   <ul className="space-y-2 text-sm">
                     {[
-                      { icon: '🔴', text: 'Données devant rester confidentielles 10+ ans (secrets d\'entreprise, propriété intellectuelle, informations médicales)' },
-                      { icon: '🔴', text: 'Communications diplomatiques et gouvernementales' },
-                      { icon: '🟡', text: 'Mots de passe de comptes permanents (ils ne changent pas pendant des années)' },
-                      { icon: '🟡', text: 'Coffres de mots de passe stockés sur des serveurs cloud tiers' },
-                      { icon: '🟢', text: 'Données éphémères (sessions web, streaming, communications jetables)' },
-                    ].map(({ icon, text }) => (
+                      { icon: '●', color: 'text-red-500', text: 'Données devant rester confidentielles 10+ ans (secrets d\'entreprise, propriété intellectuelle, informations médicales)' },
+                      { icon: '●', color: 'text-red-500', text: 'Communications diplomatiques et gouvernementales' },
+                      { icon: '●', color: 'text-amber-500', text: 'Mots de passe de comptes permanents (ils ne changent pas pendant des années)' },
+                      { icon: '●', color: 'text-amber-500', text: 'Coffres de mots de passe stockés sur des serveurs cloud tiers' },
+                      { icon: '●', color: 'text-green-500', text: 'Données éphémères (sessions web, streaming, communications jetables)' },
+                    ].map(({ icon, color, text }) => (
                       <li key={text} className="flex gap-3 items-start">
-                        <span className="flex-shrink-0">{icon}</span>
+                        <span className={`flex-shrink-0 ${color}`}>{icon}</span>
                         <span className="text-stone-700">{text}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <p className="mt-4">
-                  Vos mots de passe bancaires, vos accès professionnels, vos emails — si stockés dans un
-                  gestionnaire cloud — entrent dans la catégorie rouge.
+                  Vos mots de passe bancaires, vos accès professionnels, vos emails / si stockés dans un
+                  gestionnaire cloud / entrent dans la catégorie rouge.
                 </p>
               </section>
 
@@ -176,7 +176,7 @@ export default function ArticleQCMotsDePasse() {
                     {
                       periode: '2019',
                       titre: 'Suprématie quantique Google',
-                      desc: "Google annonce avoir accompli en 200 secondes un calcul qu'un supercalculateur classique ne pourrait résoudre en 10 000 ans. Problème très spécifique, non applicable à la cryptographie — mais preuve que la progression est réelle.",
+                      desc: "Google annonce avoir accompli en 200 secondes un calcul qu'un supercalculateur classique ne pourrait résoudre en 10 000 ans. Problème très spécifique, non applicable à la cryptographie / mais preuve que la progression est réelle.",
                       couleur: 'stone',
                     },
                     {
@@ -186,13 +186,13 @@ export default function ArticleQCMotsDePasse() {
                       couleur: 'blue',
                     },
                     {
-                      periode: '2025–2026',
+                      periode: '2025/2026',
                       titre: 'Google Willow & progrès correction d\'erreur',
                       desc: "Google annonce des percées en correction d'erreurs quantiques avec Willow. Les experts estiment que la correction d'erreur à grande échelle est désormais une question d'ingénierie, non de physique fondamentale.",
                       couleur: 'amber',
                     },
                     {
-                      periode: '2030–2035',
+                      periode: '2030/2035',
                       titre: 'Fenêtre du Q-day (consensus agences)',
                       desc: "NSA (2022), GCHQ (2023), BSI (2023) et ANSSI (2022) recommandent toutes de finaliser la migration post-quantique avant 2030. L'ANSSI estime qu'un ordinateur quantique cryptographiquement pertinent est plausible dans cette fenêtre.",
                       couleur: 'red',
@@ -230,7 +230,7 @@ export default function ArticleQCMotsDePasse() {
                     Des millions de coffres chiffrés ont été exfiltrés depuis les serveurs de LastPass.
                     Ces coffres existent quelque part, en possession d&apos;acteurs malveillants.
                     Si un ordinateur quantique suffisamment puissant arrive d&apos;ici 2035, ces coffres seront
-                    potentiellement déchiffrables — 13 ans après le vol.
+                    potentiellement déchiffrables / 13 ans après le vol.
                   </p>
                   <p className="text-sm mt-2 text-red-600">
                     Les utilisateurs avec des mots de passe maîtres faibles ont déjà vu leurs comptes
@@ -264,7 +264,7 @@ export default function ArticleQCMotsDePasse() {
                     {
                       priorite: 'Conseillé',
                       action: 'Vérifier que vos outils utilisent AES-256 (pas AES-128)',
-                      detail: "L'algorithme de Grover réduit la sécurité AES par √. AES-128 devient ~64 bits effectifs. AES-256 reste à 128 bits effectifs — largement suffisant.",
+                      detail: "L'algorithme de Grover réduit la sécurité AES par √. AES-128 devient ~64 bits effectifs. AES-256 reste à 128 bits effectifs / largement suffisant.",
                       couleur: 'blue',
                     },
                     {
@@ -299,7 +299,7 @@ export default function ArticleQCMotsDePasse() {
                     },
                     {
                       objection: '"Les gestionnaires cloud utilisent aussi du chiffrement fort."',
-                      reponse: "Le chiffrement est fort. Le problème n'est pas le chiffrement — c'est que le coffre chiffré existe sur un serveur accessible depuis internet, et peut être volé. LastPass avait aussi du chiffrement fort.",
+                      reponse: "Le chiffrement est fort. Le problème n'est pas le chiffrement / c'est que le coffre chiffré existe sur un serveur accessible depuis internet, et peut être volé. LastPass avait aussi du chiffrement fort.",
                     },
                     {
                       objection: '"Les gouvernements et banques n\'ont pas migré, donc ce n\'est pas urgent."',
@@ -322,7 +322,7 @@ export default function ArticleQCMotsDePasse() {
                 <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                   <h2 className="text-xl font-bold text-stone-900 mb-3">Conclusion</h2>
                   <p className="text-sm mb-3">
-                    Oui, il faut se préoccuper des ordinateurs quantiques pour ses mots de passe — mais
+                    Oui, il faut se préoccuper des ordinateurs quantiques pour ses mots de passe / mais
                     pas pour les raisons instinctives. La vraie menace n&apos;est pas un QC qui se &ldquo;connecte&rdquo;
                     à vos comptes demain : c&apos;est la collecte silencieuse de vos données chiffrées aujourd&apos;hui,
                     en vue d&apos;un déchiffrement futur.
@@ -330,7 +330,7 @@ export default function ArticleQCMotsDePasse() {
                   <p className="text-sm text-stone-600">
                     La bonne nouvelle : le problème a une solution simple et disponible dès maintenant.
                     Stocker vos mots de passe localement avec un chiffrement post-quantique (Kyber1024 + Argon2id)
-                    neutralise la menace HNDL complètement. Pas besoin d&apos;attendre le Q-day — ni de le craindre.
+                    neutralise la menace HNDL complètement. Pas besoin d&apos;attendre le Q-day / ni de le craindre.
                   </p>
                 </div>
               </section>
@@ -345,7 +345,7 @@ export default function ArticleQCMotsDePasse() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>

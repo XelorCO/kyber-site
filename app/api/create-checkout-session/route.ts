@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
         price_data: {
           currency: 'eur',
           product_data: {
-            name: 'Kyber Pro — Licence perpétuelle',
+            name: 'Kyber Pro / Licence perpétuelle',
             description:
               'Gestionnaire de mots de passe post-quantique · Mots de passe illimités + toutes les fonctionnalités',
           },
@@ -49,6 +49,7 @@ export async function POST(req: NextRequest) {
       },
     ],
     mode: 'payment',
+    allow_promotion_codes: true,
     customer_email: email,
     metadata: { name, email },
     success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,

@@ -60,7 +60,7 @@ const articleJsonLd = {
 
 export default function ArticlePQC() {
   return (
-    <div className="min-h-screen bg-[#faf8f6] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -75,7 +75,7 @@ export default function ArticlePQC() {
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-rose-700 bg-rose-50 border-rose-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-indigo-700 bg-indigo-50 border-indigo-200">
                 Éducation
               </span>
               <span className="text-stone-500 text-xs">9 juin 2026</span>
@@ -87,7 +87,7 @@ export default function ArticlePQC() {
             </h1>
             <p className="text-stone-500 text-lg leading-relaxed">
               Les ordinateurs quantiques vont briser RSA, ECDSA et tout ce qui sécurise internet aujourd&apos;hui.
-              Pas dans 50 ans — dans moins de 15 ans selon les estimations sérieuses. Voici ce que ça signifie,
+              Pas dans 50 ans / dans moins de 15 ans selon les estimations sérieuses. Voici ce que ça signifie,
               et comment la cryptographie post-quantique répond au problème.
             </p>
           </div>
@@ -125,7 +125,7 @@ export default function ArticlePQC() {
                 </h2>
                 <p>
                   En 1994, le mathématicien Peter Shor a démontré théoriquement qu&apos;un ordinateur quantique
-                  pouvait factoriser des grands nombres en <strong className="text-stone-900">temps polynomial</strong> —
+                  pouvait factoriser des grands nombres en <strong className="text-stone-900">temps polynomial</strong> /
                   c&apos;est-à-dire exponentiellement plus vite qu&apos;un ordinateur classique.
                 </p>
                 <p className="mt-4">
@@ -260,11 +260,11 @@ export default function ArticlePQC() {
                 <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
                   <p className="text-sm font-mono text-stone-700 mb-3">
                     Étant donné un système d&apos;équations linéaires <span className="text-blue-700">A·s + e = b</span>
-                    <br />où <span className="text-rose-600">s</span> est le secret et{' '}
+                    <br />où <span className="text-indigo-600">s</span> est le secret et{' '}
                     <span className="text-amber-600">e</span> est un vecteur de petit bruit aléatoire...
                   </p>
                   <p className="text-sm text-stone-500">
-                    Retrouver <span className="text-rose-600 font-mono">s</span> est calculatoirement infaisable,
+                    Retrouver <span className="text-indigo-600 font-mono">s</span> est calculatoirement infaisable,
                     même avec un ordinateur quantique. Le meilleur algorithme connu (BKZ) reste exponentiel.
                   </p>
                 </div>
@@ -284,9 +284,9 @@ export default function ArticlePQC() {
                 </p>
                 <div className="mt-6 space-y-3">
                   {[
-                    { periode: '2026–2030', couleur: 'text-green-600', desc: 'Quantiques bruités (NISQ). Utiles pour certaines simulations, pas pour la cryptographie.' },
-                    { periode: '2030–2035', couleur: 'text-amber-600', desc: 'Zone d\'incertitude. Premiers systèmes à correction d\'erreur. NSA, ANSSI et ENISA recommandent la migration dès maintenant.' },
-                    { periode: '2035–2040', couleur: 'text-red-600', desc: 'Fenêtre probable du Q-day selon les agences de sécurité gouvernementales (NSA, GCHQ, BSI).' },
+                    { periode: '2026/2030', couleur: 'text-green-600', desc: 'Quantiques bruités (NISQ). Utiles pour certaines simulations, pas pour la cryptographie.' },
+                    { periode: '2030/2035', couleur: 'text-amber-600', desc: 'Zone d\'incertitude. Premiers systèmes à correction d\'erreur. NSA, ANSSI et ENISA recommandent la migration dès maintenant.' },
+                    { periode: '2035/2040', couleur: 'text-red-600', desc: 'Fenêtre probable du Q-day selon les agences de sécurité gouvernementales (NSA, GCHQ, BSI).' },
                   ].map(({ periode, couleur, desc }) => (
                     <div key={periode} className="flex gap-4 items-start">
                       <span className={`${couleur} font-mono text-sm flex-shrink-0 w-24`}>{periode}</span>
@@ -315,7 +315,7 @@ export default function ArticlePQC() {
                   {[
                     { step: '① Passphrase → Argon2id', detail: 'Dérivation résistante aux GPU/ASIC, 64 MB RAM', color: 'text-cyan-700' },
                     { step: '② Seed → ML-KEM-1024 keygen', detail: 'Génération déterministe des clés post-quantiques', color: 'text-blue-700' },
-                    { step: '③ KEM encapsulate → shared secret', detail: 'Encapsulation Kyber1024 (ciphertext 1568 octets)', color: 'text-rose-600' },
+                    { step: '③ KEM encapsulate → shared secret', detail: 'Encapsulation Kyber1024 (ciphertext 1568 octets)', color: 'text-indigo-600' },
                     { step: '④ Shared secret → HKDF-SHA256', detail: 'Dérivation de la clé finale 256 bits', color: 'text-violet-700' },
                     { step: '⑤ Clé → AES-256-GCM', detail: 'Chiffrement authentifié du coffre, nonce aléatoire', color: 'text-green-700' },
                   ].map(({ step, detail, color }) => (
@@ -326,7 +326,7 @@ export default function ArticlePQC() {
                   ))}
                 </div>
                 <p className="mt-4">
-                  Ce n&apos;est pas juste un &ldquo;label&rdquo; post-quantique sur un produit existant — c&apos;est Kyber1024
+                  Ce n&apos;est pas juste un &ldquo;label&rdquo; post-quantique sur un produit existant / c&apos;est Kyber1024
                   qui génère réellement la clé qui chiffre vos mots de passe.
                 </p>
               </section>
@@ -337,7 +337,7 @@ export default function ArticlePQC() {
                   <ul className="space-y-2 text-sm">
                     {[
                       "RSA et ECDSA seront brisés par l'algorithme de Shor une fois les QC suffisamment puissants",
-                      "AES-256 et SHA-256 restent sûrs — il suffit d'éviter AES-128",
+                      "AES-256 et SHA-256 restent sûrs / il suffit d'éviter AES-128",
                       "Le NIST a standardisé 4 algorithmes PQC en 2024, dont ML-KEM (Kyber1024)",
                       "La menace harvest-now-decrypt-later rend la migration urgente dès aujourd'hui",
                       "Kyber (l'app) utilise ML-KEM-1024 pour chiffrer le fichier coffre, pas juste le transport",
@@ -361,7 +361,7 @@ export default function ArticlePQC() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-500 via-rose-400 to-amber-400 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>

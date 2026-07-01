@@ -9,7 +9,7 @@ interface Particle {
   icon: string;
 }
 
-const ICONS = ['🔒', '🔑', '🛡️', '🔐', '🔒', '🔑'];
+const ICONS = ['◆', '✦', '●', '◇', '◆', '✦'];
 
 export default function CustomCursor() {
   const [pos, setPos]       = useState({ x: -200, y: -200 });
@@ -64,7 +64,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Anneau extérieur — lag */}
+      {/* Anneau extérieur / lag */}
       <div
         className="fixed pointer-events-none z-[9998] rounded-full transition-[width,height,border-color,background] duration-200"
         style={{
@@ -77,7 +77,7 @@ export default function CustomCursor() {
           background: hovering ? 'rgba(139,92,246,0.07)' : 'transparent',
         }}
       />
-      {/* Point central — précis */}
+      {/* Point central / précis */}
       <div
         className="fixed pointer-events-none z-[9999] rounded-full transition-[width,height,background,box-shadow] duration-100"
         style={{

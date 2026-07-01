@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Conditions Générales de Vente — Kyber',
+  title: 'Conditions Générales de Vente / Kyber',
 };
 
 export default function CGV() {
@@ -78,7 +78,7 @@ export default function CGV() {
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">6. Droit de rétractation et remboursement</h2>
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-xl p-5 mb-4">
-              <p className="text-amber-300 font-medium mb-2">⚠️ Bien numérique — exception légale</p>
+              <p className="text-amber-300 font-medium mb-2">⚠︎ Bien numérique / exception légale</p>
               <p className="text-slate-300 text-sm">
                 Conformément à l'article L.221-28 du Code de la consommation, le droit de rétractation
                 ne s'applique pas aux <strong className="text-white">contenus numériques non fournis sur support matériel</strong> dont
@@ -94,8 +94,8 @@ export default function CGV() {
             <div className="bg-white/5 border border-white/10 rounded-xl p-5">
               <p className="font-semibold text-white mb-2">Cas unique de remboursement :</p>
               <p>
-                Si la clé de licence fournie est <strong className="text-white">techniquement non fonctionnelle</strong> — c'est-à-dire
-                qu'elle ne s'active pas dans l'application Kyber malgré une saisie correcte — le client
+                Si la clé de licence fournie est <strong className="text-white">techniquement non fonctionnelle</strong> / c'est-à-dire
+                qu'elle ne s'active pas dans l'application Kyber malgré une saisie correcte / le client
                 peut demander un remboursement en apportant la{' '}
                 <strong className="text-white">preuve technique de la non-fonctionnalité</strong>{' '}
                 (capture d'écran du message d'erreur, logs applicatifs) dans un délai de{' '}
