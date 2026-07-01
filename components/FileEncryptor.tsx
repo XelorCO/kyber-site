@@ -129,7 +129,7 @@ export default function FileEncryptor() {
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         animate={{ opacity: 1, y: 0 }}
-        className="flex items-center gap-3 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3 mb-6 text-sm text-emerald-800"
+        className="flex items-center gap-3 bg-emerald-950/50 border border-emerald-800 rounded-xl px-4 py-3 mb-6 text-sm text-emerald-200"
       >
         <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -141,15 +141,15 @@ export default function FileEncryptor() {
       </motion.div>
 
       {/* Sélecteur de mode */}
-      <div className="flex gap-2 mb-4 bg-stone-100 border border-stone-200 rounded-xl p-1.5">
+      <div className="flex gap-2 mb-4 bg-stone-800 border border-stone-800 rounded-xl p-1.5">
         {(['encrypt', 'decrypt'] as Mode[]).map((m) => (
           <button
             key={m}
             onClick={() => { setMode(m); reset(); }}
             className={`flex-1 py-2.5 rounded-lg text-sm font-semibold transition-all ${
               mode === m
-                ? 'bg-white text-stone-900 shadow-sm border border-stone-200'
-                : 'text-stone-500 hover:text-stone-700'
+                ? 'bg-[#151922] text-stone-100 shadow-sm border border-stone-800'
+                : 'text-stone-400 hover:text-stone-300'
             }`}
           >
             {m === 'encrypt' ? '◆ Chiffrer un fichier' : '◇ Déchiffrer un .kyber'}
@@ -165,10 +165,10 @@ export default function FileEncryptor() {
         onClick={() => inputRef.current?.click()}
         className={`relative cursor-pointer border-2 border-dashed rounded-2xl px-6 py-10 text-center transition-all ${
           dragging
-            ? 'border-blue-400 bg-blue-50 scale-[1.01]'
+            ? 'border-blue-400 bg-blue-950/50 scale-[1.01]'
             : file
-              ? 'border-emerald-300 bg-emerald-50/50'
-              : 'border-stone-300 bg-white hover:border-blue-300 hover:bg-blue-50/40'
+              ? 'border-emerald-700 bg-emerald-950/40'
+              : 'border-stone-700 bg-[#151922] hover:border-blue-700 hover:bg-blue-950/50'
         }`}
       >
         <input
@@ -180,33 +180,33 @@ export default function FileEncryptor() {
         />
         {file ? (
           <div>
-            <p className="font-semibold text-stone-900 break-all">{file.name}</p>
-            <p className="text-sm text-stone-500 mt-1">{formatSize(file.size)} / cliquez pour changer de fichier</p>
+            <p className="font-semibold text-stone-100 break-all">{file.name}</p>
+            <p className="text-sm text-stone-400 mt-1">{formatSize(file.size)} / cliquez pour changer de fichier</p>
           </div>
         ) : (
           <div>
             <motion.div
               animate={{ y: dragging ? -4 : 0 }}
-              className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white text-xl shadow-md"
+              className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-500 flex items-center justify-center text-white text-xl shadow-md"
             >
               {mode === 'encrypt' ? '◆' : '◇'}
             </motion.div>
-            <p className="font-medium text-stone-700">
+            <p className="font-medium text-stone-300">
               {mode === 'encrypt'
                 ? 'Déposez un fichier ici, ou cliquez pour parcourir'
                 : 'Déposez un fichier .kyber ici, ou cliquez pour parcourir'}
             </p>
-            <p className="text-xs text-stone-400 mt-2">Jusqu&apos;à 200 Mo / tout type de fichier</p>
+            <p className="text-xs text-stone-500 mt-2">Jusqu&apos;à 200 Mo / tout type de fichier</p>
           </div>
         )}
       </div>
 
       {/* Mot de passe */}
       <div className="mt-5">
-        <label className="block text-sm font-medium text-stone-700 mb-2">
+        <label className="block text-sm font-medium text-stone-300 mb-2">
           {mode === 'encrypt' ? 'Mot de passe de chiffrement' : 'Mot de passe du fichier'}
           {mode === 'encrypt' && (
-            <span className="text-stone-400 font-normal"> / {MIN_PASSWORD_LEN} caractères minimum</span>
+            <span className="text-stone-500 font-normal"> / {MIN_PASSWORD_LEN} caractères minimum</span>
           )}
         </label>
         <div className="flex flex-wrap gap-2">
@@ -216,14 +216,14 @@ export default function FileEncryptor() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder={mode === 'encrypt' ? 'Un mot de passe énorme et unique…' : 'Le mot de passe utilisé au chiffrement'}
-              className="w-full bg-white border border-stone-300 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100"
+              className="w-full bg-[#151922] border border-stone-700 rounded-xl px-4 py-3 pr-11 text-sm focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-900"
               autoComplete="off"
               spellCheck={false}
             />
             <button
               type="button"
               onClick={() => setShowPwd((v) => !v)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 text-sm"
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-500 hover:text-stone-400 text-sm"
               aria-label={showPwd ? 'Masquer' : 'Afficher'}
             >
               {showPwd ? '⊘' : '◉'}
@@ -243,7 +243,7 @@ export default function FileEncryptor() {
                 <button
                   type="button"
                   onClick={copyPassword}
-                  className="px-4 py-3 bg-white border border-stone-300 rounded-xl text-sm font-medium hover:border-blue-300 transition-colors"
+                  className="px-4 py-3 bg-[#151922] border border-stone-700 rounded-xl text-sm font-medium hover:border-blue-700 transition-colors"
                   title="Copier le mot de passe"
                 >
                   {copied ? '✓' : '⧉'}
@@ -255,7 +255,7 @@ export default function FileEncryptor() {
 
         {mode === 'encrypt' && password.length > 0 && (
           <div className="mt-2">
-            <div className="h-1.5 bg-stone-200 rounded-full overflow-hidden">
+            <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
               <motion.div
                 animate={{ width: `${score}%` }}
                 className={`h-full rounded-full ${score < 45 ? 'bg-red-400' : score < 75 ? 'bg-amber-400' : 'bg-emerald-500'}`}
@@ -266,7 +266,7 @@ export default function FileEncryptor() {
         )}
 
         {mode === 'encrypt' && (
-          <div className="flex items-start gap-2 mt-3 text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-3 py-2.5">
+          <div className="flex items-start gap-2 mt-3 text-xs text-amber-300 bg-amber-950/50 border border-amber-800 rounded-lg px-3 py-2.5">
             <span>⚠︎</span>
             <span>
               <strong>Notez ce mot de passe précieusement.</strong> Il n&apos;existe aucun moyen de récupérer
@@ -280,7 +280,7 @@ export default function FileEncryptor() {
       <button
         onClick={run}
         disabled={!file || !password || status === 'working' || (mode === 'encrypt' && !!pwdError)}
-        className="mt-5 w-full py-3.5 rounded-xl font-semibold text-white text-sm shadow-md transition-all bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
+        className="mt-5 w-full py-3.5 rounded-xl font-semibold text-white text-sm shadow-md transition-all bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed"
       >
         {status === 'working'
           ? (phase ? PHASE_LABELS[phase] : 'Traitement…')
@@ -295,7 +295,7 @@ export default function FileEncryptor() {
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0 }}
-            className="mt-4 flex items-center gap-3 text-sm text-stone-600 bg-white border border-stone-200 rounded-xl px-4 py-3"
+            className="mt-4 flex items-center gap-3 text-sm text-stone-400 bg-[#151922] border border-stone-800 rounded-xl px-4 py-3"
           >
             <motion.div
               animate={{ rotate: 360 }}
@@ -311,11 +311,11 @@ export default function FileEncryptor() {
             key="done"
             initial={{ opacity: 0, scale: 0.97 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="mt-4 bg-emerald-50 border border-emerald-200 rounded-xl px-5 py-4"
+            className="mt-4 bg-emerald-950/50 border border-emerald-800 rounded-xl px-5 py-4"
           >
-            <p className="text-sm text-emerald-800 mb-3">
+            <p className="text-sm text-emerald-200 mb-3">
               {mode === 'encrypt' ? '◆ Fichier chiffré avec succès.' : '◇ Fichier déchiffré avec succès.'}
-              {' '}<span className="text-emerald-600">({formatSize(result.size)})</span>
+              {' '}<span className="text-emerald-400">({formatSize(result.size)})</span>
             </p>
             <a
               href={result.url}
@@ -332,7 +332,7 @@ export default function FileEncryptor() {
             key="error"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mt-4 text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3"
+            className="mt-4 text-sm text-red-400 bg-red-950/50 border border-red-800 rounded-xl px-4 py-3"
           >
             {error}
           </motion.div>
@@ -340,11 +340,11 @@ export default function FileEncryptor() {
       </AnimatePresence>
 
       {/* Chaîne crypto */}
-      <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-stone-500">
+      <div className="mt-8 flex flex-wrap items-center justify-center gap-2 text-xs text-stone-400">
         {['Argon2id', 'ML-KEM-1024 (Kyber)', 'HKDF-SHA256', 'AES-256-GCM'].map((step, i, arr) => (
           <span key={step} className="flex items-center gap-2">
-            <span className="bg-white border border-stone-200 rounded-full px-3 py-1 font-mono">{step}</span>
-            {i < arr.length - 1 && <span className="text-stone-300">→</span>}
+            <span className="bg-[#151922] border border-stone-800 rounded-full px-3 py-1 font-mono">{step}</span>
+            {i < arr.length - 1 && <span className="text-stone-600">→</span>}
           </span>
         ))}
       </div>

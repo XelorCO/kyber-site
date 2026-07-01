@@ -31,7 +31,7 @@ export default function NavHeader() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#f4f2ef]/90 backdrop-blur-md border-b border-stone-300">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0e1015]/90 backdrop-blur-md border-b border-stone-700">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2.5">
             <svg viewBox="0 0 190 190" className="w-8 h-8 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -69,21 +69,21 @@ export default function NavHeader() {
               <path d="M86,89 Q86,77 95,77 Q104,77 104,89" fill="none" stroke="white" strokeWidth="1.8" opacity="0.85"/>
               <circle cx="95" cy="100" r="3" fill="white" opacity="0.9"/>
             </svg>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
               Kyber
             </span>
-            <span className="text-xs text-stone-500 border border-stone-300 px-2 py-0.5 rounded-full hidden sm:inline">
+            <span className="text-xs text-stone-400 border border-stone-700 px-2 py-0.5 rounded-full hidden sm:inline">
               Post-Quantique
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm text-stone-500">
+          <nav className="hidden lg:flex items-center gap-7 text-sm text-stone-400">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}
                 href={href}
-                className={`hover:text-stone-900 transition-colors ${pathname.startsWith(href) ? 'text-stone-900 font-medium' : ''}`}
+                className={`hover:text-stone-100 transition-colors ${pathname.startsWith(href) ? 'text-stone-100 font-medium' : ''}`}
               >
                 {label}
               </Link>
@@ -93,14 +93,14 @@ export default function NavHeader() {
           <div className="flex items-center gap-3">
             <Link
               href="/telechargement"
-              className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
+              className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
             >
               Télécharger
             </Link>
 
             {/* Burger mobile */}
             <button
-              className="lg:hidden p-2 rounded-lg border border-stone-300 bg-white text-stone-600 hover:bg-stone-50 transition-colors"
+              className="lg:hidden p-2 rounded-lg border border-stone-700 bg-[#151922] text-stone-400 hover:bg-stone-900 transition-colors"
               onClick={() => setOpen(v => !v)}
               aria-label={open ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={open}
@@ -120,7 +120,7 @@ export default function NavHeader() {
 
         {/* Mobile menu */}
         {open && (
-          <div className="lg:hidden border-t border-stone-200 bg-[#f4f2ef]/98 backdrop-blur-md">
+          <div className="lg:hidden border-t border-stone-800 bg-[#0e1015]/98 backdrop-blur-md">
             <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
               {navLinks.map(({ href, label }) => (
                 <Link
@@ -128,8 +128,8 @@ export default function NavHeader() {
                   href={href}
                   className={`px-3 py-2.5 rounded-lg text-sm transition-colors ${
                     pathname.startsWith(href)
-                      ? 'bg-blue-50 text-blue-700 font-medium border border-blue-200'
-                      : 'text-stone-600 hover:bg-stone-100 hover:text-stone-900'
+                      ? 'bg-blue-950/50 text-blue-300 font-medium border border-blue-800'
+                      : 'text-stone-400 hover:bg-stone-800 hover:text-stone-100'
                   }`}
                 >
                   {label}

@@ -85,7 +85,7 @@ const faqJsonLd = {
 
 export default function PageChiffrerFichier() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(toolJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <NavHeader />
@@ -94,15 +94,15 @@ export default function PageChiffrerFichier() {
         <div className="max-w-4xl mx-auto px-6">
           {/* ── HERO ── */}
           <div className="py-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-900">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-stone-100">
               Chiffrez un fichier,{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
                 sans qu&apos;il quitte votre machine
               </span>
             </h1>
-            <p className="text-lg text-stone-500 max-w-2xl mx-auto">
+            <p className="text-lg text-stone-400 max-w-2xl mx-auto">
               Chiffrement post-quantique gratuit, directement dans votre navigateur.
-              Le fichier <strong className="text-stone-700">.kyber</strong> obtenu peut être ouvert par toute
+              Le fichier <strong className="text-stone-300">.kyber</strong> obtenu peut être ouvert par toute
               personne possédant le mot de passe / sur cette page, depuis n&apos;importe où.
             </p>
           </div>
@@ -112,7 +112,7 @@ export default function PageChiffrerFichier() {
 
           {/* ── CAS D'USAGE ── */}
           <section className="mt-20">
-            <h2 className="text-2xl font-bold mb-6 text-center text-stone-900">Pour quoi faire ?</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-stone-100">Pour quoi faire ?</h2>
             <div className="grid md:grid-cols-3 gap-5">
               {[
                 {
@@ -131,10 +131,10 @@ export default function PageChiffrerFichier() {
                   desc: 'Le chiffrement résiste aux ordinateurs quantiques (« harvest now, decrypt later »). Vos archives d\'aujourd\'hui restent confidentielles demain.',
                 },
               ].map(({ icon, title, desc }) => (
-                <div key={title} className="bg-white border border-stone-200 rounded-2xl p-6 shadow-sm">
+                <div key={title} className="bg-[#151922] border border-stone-800 rounded-2xl p-6 shadow-sm">
                   <div className="text-2xl mb-3">{icon}</div>
-                  <h3 className="font-semibold mb-2 text-stone-900">{title}</h3>
-                  <p className="text-sm text-stone-500 leading-relaxed">{desc}</p>
+                  <h3 className="font-semibold mb-2 text-stone-100">{title}</h3>
+                  <p className="text-sm text-stone-400 leading-relaxed">{desc}</p>
                 </div>
               ))}
             </div>
@@ -142,30 +142,30 @@ export default function PageChiffrerFichier() {
 
           {/* ── FAQ ── */}
           <section className="mt-20">
-            <h2 className="text-2xl font-bold mb-6 text-center text-stone-900">Questions fréquentes</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center text-stone-100">Questions fréquentes</h2>
             <div className="space-y-4">
               {faq.map(({ q, a }) => (
-                <details key={q} className="group bg-white border border-stone-200 rounded-xl px-5 py-4 shadow-sm">
-                  <summary className="font-medium text-stone-800 cursor-pointer list-none flex justify-between items-center">
+                <details key={q} className="group bg-[#151922] border border-stone-800 rounded-xl px-5 py-4 shadow-sm">
+                  <summary className="font-medium text-stone-200 cursor-pointer list-none flex justify-between items-center">
                     {q}
-                    <span className="text-stone-400 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
+                    <span className="text-stone-500 group-open:rotate-45 transition-transform text-lg leading-none">+</span>
                   </summary>
-                  <p className="text-sm text-stone-500 leading-relaxed mt-3">{a}</p>
+                  <p className="text-sm text-stone-400 leading-relaxed mt-3">{a}</p>
                 </details>
               ))}
             </div>
           </section>
 
           {/* ── CTA APP ── */}
-          <section className="mt-16 bg-gradient-to-b from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center shadow-sm">
-            <h2 className="text-2xl font-bold mb-3 text-stone-900">Et pour vos mots de passe ?</h2>
-            <p className="text-stone-600 mb-6 max-w-xl mx-auto">
+          <section className="mt-16 bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center shadow-sm">
+            <h2 className="text-2xl font-bold mb-3 text-stone-100">Et pour vos mots de passe ?</h2>
+            <p className="text-stone-400 mb-6 max-w-xl mx-auto">
               Kyber est aussi un gestionnaire de mots de passe de bureau, 100 % local, avec la même
               chaîne de chiffrement post-quantique. Gratuit jusqu&apos;à 3 mots de passe.
             </p>
             <Link
               href="/telechargement"
-              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
             >
               Télécharger Kyber →
             </Link>

@@ -60,7 +60,7 @@ const articleJsonLd = {
 
 export default function ArticleQCMotsDePasse() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -71,21 +71,21 @@ export default function ArticleQCMotsDePasse() {
         <div className="max-w-2xl mx-auto px-6">
 
           <div className="py-12">
-            <Link href="/blog" className="text-stone-500 hover:text-stone-900 text-sm transition-colors mb-8 inline-block">
+            <Link href="/blog" className="text-stone-400 hover:text-stone-100 text-sm transition-colors mb-8 inline-block">
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-700 bg-red-50 border-red-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-700 bg-red-950/50 border-red-800">
                 Sécurité
               </span>
-              <span className="text-stone-500 text-xs">9 juin 2026</span>
-              <span className="text-stone-400 text-xs">·</span>
-              <span className="text-stone-500 text-xs">8 min de lecture</span>
+              <span className="text-stone-400 text-xs">9 juin 2026</span>
+              <span className="text-stone-500 text-xs">·</span>
+              <span className="text-stone-400 text-xs">8 min de lecture</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?
             </h1>
-            <p className="text-stone-500 text-lg leading-relaxed">
+            <p className="text-stone-400 text-lg leading-relaxed">
               &ldquo;Les ordinateurs quantiques sont encore loin.&rdquo; Cette phrase revient souvent pour justifier
               l&apos;inaction. Mais la vraie question n&apos;est pas &ldquo;quand le Q-day arrivera-t-il ?&rdquo;
               / c&apos;est &ldquo;depuis quand vos données sont-elles déjà collectées ?&rdquo;
@@ -93,10 +93,10 @@ export default function ArticleQCMotsDePasse() {
           </div>
 
           <article className="prose prose-stone max-w-none">
-            <div className="space-y-8 text-stone-700 leading-relaxed">
+            <div className="space-y-8 text-stone-300 leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   La réponse courte : oui, et pas pour les raisons que vous pensez
                 </h2>
                 <p>
@@ -108,14 +108,14 @@ export default function ArticleQCMotsDePasse() {
                   Il y a deux scénarios d&apos;attaque distincts, avec des horizons temporels très différents :
                 </p>
                 <div className="mt-6 grid grid-cols-1 gap-4">
-                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-                    <h3 className="font-semibold text-amber-700 mb-2">Scénario A / Attaque directe sur le coffre (futur)</h3>
+                  <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-5">
+                    <h3 className="font-semibold text-amber-300 mb-2">Scénario A / Attaque directe sur le coffre (futur)</h3>
                     <p className="text-sm">
                       Un QC casse le chiffrement AES-256 ou attaque la dérivation de clé. Horizon : <strong>2030/2040</strong>.
                       Si vous utilisez Argon2id + AES-256, vous êtes protégé même contre ça.
                     </p>
                   </div>
-                  <div className="bg-red-50 border border-red-200 rounded-xl p-5">
+                  <div className="bg-red-950/50 border border-red-800 rounded-xl p-5">
                     <h3 className="font-semibold text-red-700 mb-2">Scénario B / Harvest now, decrypt later (maintenant)</h3>
                     <p className="text-sm">
                       Un adversaire vole votre coffre <em>aujourd&apos;hui</em> / chiffré / et attend d&apos;avoir les capacités
@@ -126,7 +126,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Harvest now, decrypt later : la menace silencieuse déjà en cours
                 </h2>
                 <p>
@@ -140,8 +140,8 @@ export default function ArticleQCMotsDePasse() {
                   migration post-quantique en précisant que &ldquo;les adversaires collectent des données
                   aujourd&apos;hui en anticipation des futurs ordinateurs quantiques&rdquo;.
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
-                  <p className="text-sm text-stone-500 mb-3">Qui est concerné par HNDL ?</p>
+                <div className="mt-6 bg-stone-900 border border-stone-700 rounded-xl p-6">
+                  <p className="text-sm text-stone-400 mb-3">Qui est concerné par HNDL ?</p>
                   <ul className="space-y-2 text-sm">
                     {[
                       { icon: '●', color: 'text-red-500', text: 'Données devant rester confidentielles 10+ ans (secrets d\'entreprise, propriété intellectuelle, informations médicales)' },
@@ -152,7 +152,7 @@ export default function ArticleQCMotsDePasse() {
                     ].map(({ icon, color, text }) => (
                       <li key={text} className="flex gap-3 items-start">
                         <span className={`flex-shrink-0 ${color}`}>{icon}</span>
-                        <span className="text-stone-700">{text}</span>
+                        <span className="text-stone-300">{text}</span>
                       </li>
                     ))}
                   </ul>
@@ -164,7 +164,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Timeline réaliste du Q-day
                 </h2>
                 <p>
@@ -202,9 +202,9 @@ export default function ArticleQCMotsDePasse() {
                       <div className="flex-shrink-0 w-20">
                         <span className={`text-sm font-mono font-bold text-${couleur}-600`}>{periode}</span>
                       </div>
-                      <div className="bg-white border border-stone-400 rounded-xl p-4 flex-1 shadow-sm">
-                        <h3 className="font-semibold text-stone-900 text-sm mb-1">{titre}</h3>
-                        <p className="text-xs text-stone-500">{desc}</p>
+                      <div className="bg-[#151922] border border-stone-700 rounded-xl p-4 flex-1 shadow-sm">
+                        <h3 className="font-semibold text-stone-100 text-sm mb-1">{titre}</h3>
+                        <p className="text-xs text-stone-400">{desc}</p>
                       </div>
                     </div>
                   ))}
@@ -212,7 +212,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Pourquoi les gestionnaires cloud sont plus vulnérables
                 </h2>
                 <p>
@@ -220,11 +220,11 @@ export default function ArticleQCMotsDePasse() {
                   depuis l&apos;extérieur en ce moment ?
                 </p>
                 <p className="mt-4">
-                  Pour Bitwarden, 1Password, LastPass, Keeper et tous les gestionnaires cloud : <strong className="text-stone-900">oui</strong>.
+                  Pour Bitwarden, 1Password, LastPass, Keeper et tous les gestionnaires cloud : <strong className="text-stone-100">oui</strong>.
                   Leurs serveurs sont accessibles depuis internet. Leurs bases de données chiffrées sont
                   des cibles. L&apos;incident LastPass de 2022 l&apos;a prouvé dramatiquement.
                 </p>
-                <div className="mt-6 bg-red-50 border border-red-200 rounded-xl p-5">
+                <div className="mt-6 bg-red-950/50 border border-red-800 rounded-xl p-5">
                   <h3 className="font-semibold text-red-700 mb-2">L&apos;incident LastPass (décembre 2022)</h3>
                   <p className="text-sm">
                     Des millions de coffres chiffrés ont été exfiltrés depuis les serveurs de LastPass.
@@ -232,7 +232,7 @@ export default function ArticleQCMotsDePasse() {
                     Si un ordinateur quantique suffisamment puissant arrive d&apos;ici 2035, ces coffres seront
                     potentiellement déchiffrables / 13 ans après le vol.
                   </p>
-                  <p className="text-sm mt-2 text-red-600">
+                  <p className="text-sm mt-2 text-red-400">
                     Les utilisateurs avec des mots de passe maîtres faibles ont déjà vu leurs comptes
                     compromis par force brute classique dans les mois suivants.
                   </p>
@@ -244,7 +244,7 @@ export default function ArticleQCMotsDePasse() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Ce que vous pouvez faire dès aujourd&apos;hui
                 </h2>
                 <div className="space-y-4">
@@ -280,15 +280,15 @@ export default function ArticleQCMotsDePasse() {
                           {priorite}
                         </span>
                       </div>
-                      <h3 className="font-semibold text-stone-900 mb-1">{action}</h3>
-                      <p className="text-sm text-stone-500">{detail}</p>
+                      <h3 className="font-semibold text-stone-100 mb-1">{action}</h3>
+                      <p className="text-sm text-stone-400">{detail}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Les objections courantes répondues
                 </h2>
                 <div className="space-y-4">
@@ -310,24 +310,24 @@ export default function ArticleQCMotsDePasse() {
                       reponse: "ML-KEM (Kyber1024) a passé 8 ans d'évaluation académique mondiale avant d'être standardisé par le NIST en août 2024. C'est actuellement le standard de fait de la cryptographie post-quantique.",
                     },
                   ].map(({ objection, reponse }) => (
-                    <div key={objection} className="border border-stone-400 rounded-xl p-5 bg-white shadow-sm">
-                      <p className="text-sm font-medium text-stone-700 italic mb-2">{objection}</p>
-                      <p className="text-sm text-stone-500">{reponse}</p>
+                    <div key={objection} className="border border-stone-700 rounded-xl p-5 bg-[#151922] shadow-sm">
+                      <p className="text-sm font-medium text-stone-300 italic mb-2">{objection}</p>
+                      <p className="text-sm text-stone-400">{reponse}</p>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h2 className="text-xl font-bold text-stone-900 mb-3">Conclusion</h2>
+                <div className="bg-blue-950/50 border border-blue-800 rounded-xl p-6">
+                  <h2 className="text-xl font-bold text-stone-100 mb-3">Conclusion</h2>
                   <p className="text-sm mb-3">
                     Oui, il faut se préoccuper des ordinateurs quantiques pour ses mots de passe / mais
                     pas pour les raisons instinctives. La vraie menace n&apos;est pas un QC qui se &ldquo;connecte&rdquo;
                     à vos comptes demain : c&apos;est la collecte silencieuse de vos données chiffrées aujourd&apos;hui,
                     en vue d&apos;un déchiffrement futur.
                   </p>
-                  <p className="text-sm text-stone-600">
+                  <p className="text-sm text-stone-400">
                     La bonne nouvelle : le problème a une solution simple et disponible dès maintenant.
                     Stocker vos mots de passe localement avec un chiffrement post-quantique (Kyber1024 + Argon2id)
                     neutralise la menace HNDL complètement. Pas besoin d&apos;attendre le Q-day / ni de le craindre.
@@ -338,31 +338,31 @@ export default function ArticleQCMotsDePasse() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-stone-300">
-            <p className="text-stone-500 text-sm mb-6">
+          <div className="mt-12 pt-8 border-t border-stone-700">
+            <p className="text-stone-400 text-sm mb-6">
               Passez au chiffrement post-quantique local dès aujourd&apos;hui. Gratuit jusqu&apos;à 3 mots de passe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>
               <Link
                 href="/blog/kyber-local-vs-cloud"
-                className="border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-700 shadow-sm"
+                className="border border-stone-700 hover:border-stone-700 bg-[#151922] hover:bg-stone-900 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-300 shadow-sm"
               >
                 Local vs cloud : analyse complète →
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-stone-300 flex justify-between items-center text-sm">
-            <Link href="/blog/argon2id-vs-pbkdf2" className="text-stone-500 hover:text-stone-900 transition-colors">
+          <div className="mt-8 pt-6 border-t border-stone-700 flex justify-between items-center text-sm">
+            <Link href="/blog/argon2id-vs-pbkdf2" className="text-stone-400 hover:text-stone-100 transition-colors">
               ← Argon2id vs PBKDF2
             </Link>
-            <Link href="/blog" className="text-stone-500 hover:text-stone-900 transition-colors">
+            <Link href="/blog" className="text-stone-400 hover:text-stone-100 transition-colors">
               Tous les articles →
             </Link>
           </div>

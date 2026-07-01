@@ -91,7 +91,7 @@ export default function CGV() {
               <strong className="text-white">Aucun remboursement ne sera accordé</strong> sauf dans le cas
               exclusif suivant :
             </p>
-            <div className="bg-white/5 border border-white/10 rounded-xl p-5">
+            <div className="bg-[#151922]/5 border border-white/10 rounded-xl p-5">
               <p className="font-semibold text-white mb-2">Cas unique de remboursement :</p>
               <p>
                 Si la clé de licence fournie est <strong className="text-white">techniquement non fonctionnelle</strong> / c'est-à-dire

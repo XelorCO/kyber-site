@@ -64,32 +64,36 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Anneau extérieur / lag */}
+      {/* Losange extérieur / lag (gem) */}
       <div
-        className="fixed pointer-events-none z-[9998] rounded-full transition-[width,height,border-color,background] duration-200"
+        className="fixed pointer-events-none z-[9998] transition-[width,height,border-color,background] duration-200"
         style={{
           left: trail.x,
           top: trail.y,
-          transform: 'translate(-50%, -50%)',
-          width:  hovering ? 44 : 28,
-          height: hovering ? 44 : 28,
-          border: `1px solid ${hovering ? 'rgba(139,92,246,0.7)' : 'rgba(6,182,212,0.5)'}`,
-          background: hovering ? 'rgba(139,92,246,0.07)' : 'transparent',
+          transform: 'translate(-50%, -50%) rotate(45deg)',
+          width:  hovering ? 34 : 22,
+          height: hovering ? 34 : 22,
+          borderRadius: 4,
+          border: `1px solid ${hovering ? 'rgba(129,140,248,0.8)' : 'rgba(96,165,250,0.5)'}`,
+          background: hovering ? 'rgba(99,102,241,0.10)' : 'transparent',
         }}
       />
-      {/* Point central / précis */}
+      {/* Gem central / précis */}
       <div
-        className="fixed pointer-events-none z-[9999] rounded-full transition-[width,height,background,box-shadow] duration-100"
+        className="fixed pointer-events-none z-[9999] transition-[width,height,background,box-shadow] duration-100"
         style={{
           left: pos.x,
           top:  pos.y,
-          transform: 'translate(-50%, -50%)',
-          width:  hovering ? 5 : 7,
-          height: hovering ? 5 : 7,
-          background:  hovering ? '#a78bfa' : '#22d3ee',
+          transform: 'translate(-50%, -50%) rotate(45deg)',
+          width:  hovering ? 6 : 8,
+          height: hovering ? 6 : 8,
+          borderRadius: 1.5,
+          background: hovering
+            ? 'linear-gradient(135deg, #818cf8, #6366f1)'
+            : 'linear-gradient(135deg, #60a5fa, #3b82f6)',
           boxShadow: hovering
-            ? '0 0 12px 4px rgba(139,92,246,0.7)'
-            : '0 0 10px 3px rgba(6,182,212,0.6)',
+            ? '0 0 12px 3px rgba(99,102,241,0.6)'
+            : '0 0 10px 2px rgba(59,130,246,0.5)',
         }}
       />
       {/* Particules au clic */}

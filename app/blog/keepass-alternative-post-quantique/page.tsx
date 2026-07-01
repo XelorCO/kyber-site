@@ -52,7 +52,7 @@ const jsonLd = {
 
 export default function ArticleKeePass() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavHeader />
 
@@ -62,22 +62,22 @@ export default function ArticleKeePass() {
           {/* ── HEADER ── */}
           <header className="py-12">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-700 bg-cyan-50 border-cyan-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-300 bg-cyan-50 border-cyan-200">
                 Comparatif
               </span>
-              <span className="text-stone-400 text-xs">15 juin 2026 · 9 min de lecture</span>
+              <span className="text-stone-500 text-xs">15 juin 2026 · 9 min de lecture</span>
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900 leading-tight">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100 leading-tight">
               KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber
             </h1>
-            <p className="text-lg text-stone-500 leading-relaxed">
+            <p className="text-lg text-stone-400 leading-relaxed">
               KeePass est l&apos;une des meilleures décisions que vous ayez pu prendre en matière de sécurité.
               Mais son chiffrement AES-256 avec PBKDF2 ne résistera pas aux ordinateurs quantiques.
               Voici pourquoi Kyber est la prochaine étape logique / et comment migrer sans perdre vos données.
             </p>
-            <div className="mt-6 flex items-center gap-3 text-sm text-stone-500">
+            <div className="mt-6 flex items-center gap-3 text-sm text-stone-400">
               <span>Par</span>
-              <Link href="/a-propos" className="font-medium text-stone-900 hover:text-blue-600 transition-colors">
+              <Link href="/a-propos" className="font-medium text-stone-100 hover:text-blue-400 transition-colors">
                 Enzo Paccard
               </Link>
               <span>·</span>
@@ -86,12 +86,12 @@ export default function ArticleKeePass() {
           </header>
 
           {/* ── CONTENU ── */}
-          <div className="prose prose-stone max-w-none space-y-10 text-stone-700 leading-relaxed">
+          <div className="prose prose-stone max-w-none space-y-10 text-stone-300 leading-relaxed">
 
             {/* HONNÊTETÉ */}
-            <section className="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+            <section className="bg-blue-950/50 border border-blue-800 rounded-2xl p-6">
               <p className="text-blue-800 font-medium mb-2">Avant de commencer : soyons honnêtes</p>
-              <p className="text-blue-700 text-sm">
+              <p className="text-blue-300 text-sm">
                 Si vous utilisez KeePass, vous faites déjà partie des 5% d&apos;utilisateurs qui ont compris l&apos;intérêt
                 du stockage local. Ce n&apos;est pas un article pour vous convaincre que KeePass est mauvais /
                 il est excellent. C&apos;est un article sur ce qui manque à KeePass en 2026 : la résistance aux
@@ -101,14 +101,14 @@ export default function ArticleKeePass() {
 
             {/* CE QUE KEEPASS FAIT BIEN */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">Ce que KeePass fait parfaitement bien</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-4">Ce que KeePass fait parfaitement bien</h2>
               <p>
                 KeePass existe depuis 2003 et a été audité des dizaines de fois. Son format .kdbx (v4)
                 utilise AES-256-CBC avec Argon2 pour la dérivation de clé. Le code est sous GPL, visible
                 par tous, et vérifié par la communauté crypto internationale.
               </p>
               <p>
-                <strong className="text-stone-900">Le stockage local est la bonne décision.</strong> En choisissant KeePass,
+                <strong className="text-stone-100">Le stockage local est la bonne décision.</strong> En choisissant KeePass,
                 vous avez écarté les risques de brèches serveur (LastPass 2022), de faillite de prestataire,
                 et de surveillance cloud. Ces risques sont réels, et vous avez bien fait de les éviter.
               </p>
@@ -121,8 +121,8 @@ export default function ArticleKeePass() {
                   'Multi-plateformes (via ports)',
                   'Plugins extensibles',
                 ].map((point) => (
-                  <div key={point} className="flex items-center gap-2 text-sm text-stone-700 bg-green-50 border border-green-200 rounded-lg px-3 py-2">
-                    <span className="text-green-600 flex-shrink-0">✓</span>
+                  <div key={point} className="flex items-center gap-2 text-sm text-stone-300 bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
+                    <span className="text-green-400 flex-shrink-0">✓</span>
                     {point}
                   </div>
                 ))}
@@ -131,29 +131,29 @@ export default function ArticleKeePass() {
 
             {/* LE PROBLÈME QUANTIQUE */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">Le problème : AES-256 seul ne suffit plus</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-4">Le problème : AES-256 seul ne suffit plus</h2>
               <p>
                 AES-256 est sûr contre les ordinateurs classiques. Grover&apos;s algorithm (quantique) peut en théorie
                 réduire sa sécurité de 256 bits à 128 bits / ce qui reste élevé. Mais ce n&apos;est pas l&apos;AES qui
                 est le maillon faible dans KeePass.
               </p>
               <p>
-                Le vrai problème est la <strong className="text-stone-900">dérivation de clé basée sur un mot de passe humain</strong>.
+                Le vrai problème est la <strong className="text-stone-100">dérivation de clé basée sur un mot de passe humain</strong>.
                 KeePass utilise Argon2 pour dériver la clé depuis votre mot de passe maître. Tant qu&apos;Argon2 tient,
                 votre coffre est protégé. Mais si votre mot de passe maître est faible ou réutilisé,
                 un ordinateur quantique suffirait à accélérer massivement le brute-force.
               </p>
-              <div className="bg-amber-50 border border-amber-200 rounded-xl p-5">
+              <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-5">
                 <h3 className="font-semibold text-amber-900 mb-2">La menace harvest-now-decrypt-later</h3>
                 <p className="text-amber-800 text-sm">
                   Des acteurs étatiques copient des coffres chiffrés dès aujourd&apos;hui, en attendant d&apos;avoir
                   suffisamment de puissance quantique pour les déchiffrer plus tard. Si votre fichier .kdbx
                   est exposé une seule fois (USB perdue, backup cloud, PC volé), il pourrait être déchiffré
-                  dans 5-15 ans. Pas hypothétique / <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-amber-700 underline">des programmes HNDL sont documentés</Link>.
+                  dans 5-15 ans. Pas hypothétique / <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-amber-300 underline">des programmes HNDL sont documentés</Link>.
                 </p>
               </div>
               <p>
-                Kyber Security résout ce problème en ajoutant <strong className="text-stone-900">Kyber1024 (ML-KEM FIPS 203)</strong>
+                Kyber Security résout ce problème en ajoutant <strong className="text-stone-100">Kyber1024 (ML-KEM FIPS 203)</strong>
                 {' '}au flux de dérivation. L&apos;algorithme de Shor, qui casserait RSA et ECDSA, est <em>mathématiquement</em>
                 {' '}sans effet sur les réseaux euclidiens (Module-LWE) qu&apos;utilise Kyber1024.
               </p>
@@ -161,15 +161,15 @@ export default function ArticleKeePass() {
 
             {/* COMPARAISON TECHNIQUE */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-6">Comparaison technique : KeePass vs Kyber</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-6">Comparaison technique : KeePass vs Kyber</h2>
 
-              <div className="overflow-x-auto rounded-2xl border border-stone-200 shadow-sm">
+              <div className="overflow-x-auto rounded-2xl border border-stone-800 shadow-sm">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="bg-stone-100 border-b border-stone-200">
-                      <th className="text-left px-4 py-3 font-semibold text-stone-700">Critère</th>
-                      <th className="text-left px-4 py-3 font-semibold text-stone-700">KeePass (kdbx v4)</th>
-                      <th className="text-left px-4 py-3 font-semibold text-stone-700 bg-blue-50">Kyber Security v2</th>
+                    <tr className="bg-stone-800 border-b border-stone-800">
+                      <th className="text-left px-4 py-3 font-semibold text-stone-300">Critère</th>
+                      <th className="text-left px-4 py-3 font-semibold text-stone-300">KeePass (kdbx v4)</th>
+                      <th className="text-left px-4 py-3 font-semibold text-stone-300 bg-blue-950/50">Kyber Security v2</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -186,10 +186,10 @@ export default function ArticleKeePass() {
                       ['Interface', 'Windows native (vieillissante)', 'Tauri / moderne'],
                       ['Certifications', 'Aucune en cours', 'CSPN ANSSI / initié'],
                     ].map(([critere, keepass, kyber]) => (
-                      <tr key={critere} className="border-b border-stone-200 last:border-0">
-                        <td className="px-4 py-2.5 font-medium text-stone-700 bg-stone-50">{critere}</td>
-                        <td className="px-4 py-2.5 text-stone-600">{keepass}</td>
-                        <td className="px-4 py-2.5 text-stone-800 bg-blue-50">{kyber}</td>
+                      <tr key={critere} className="border-b border-stone-800 last:border-0">
+                        <td className="px-4 py-2.5 font-medium text-stone-300 bg-stone-900">{critere}</td>
+                        <td className="px-4 py-2.5 text-stone-400">{keepass}</td>
+                        <td className="px-4 py-2.5 text-stone-200 bg-blue-950/50">{kyber}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -199,7 +199,7 @@ export default function ArticleKeePass() {
 
             {/* MIGRATION */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">Comment migrer de KeePass vers Kyber</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-4">Comment migrer de KeePass vers Kyber</h2>
               <p>
                 La migration est simple grâce à l&apos;export CSV de KeePass et l&apos;import CSV de Kyber.
                 Vous ne perdrez aucune entrée (titre, identifiant, URL, mot de passe, notes).
@@ -233,19 +233,19 @@ export default function ArticleKeePass() {
                     desc: "Si vous avez plus de 3 mots de passe, la version Kyber Pro (24,99 € licence à vie) lève la limite. L'import fonctionne même en gratuit / vous verrez juste un avertissement si vous dépassez 3.",
                   },
                 ].map((item) => (
-                  <div key={item.step} className="flex gap-4 bg-white border border-stone-400 rounded-xl px-5 py-4 shadow-sm">
-                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-xs font-bold">
+                  <div key={item.step} className="flex gap-4 bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 shadow-sm">
+                    <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-full flex items-center justify-center text-white text-xs font-bold">
                       {item.step}
                     </div>
                     <div>
-                      <div className="font-semibold text-stone-900 mb-1">{item.title}</div>
-                      <div className="text-stone-500 text-sm leading-relaxed">{item.desc}</div>
+                      <div className="font-semibold text-stone-100 mb-1">{item.title}</div>
+                      <div className="text-stone-400 text-sm leading-relaxed">{item.desc}</div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="mt-4 bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+              <div className="mt-4 bg-amber-950/50 border border-amber-800 rounded-xl p-4 text-sm text-amber-800">
                 <strong>À noter :</strong> L&apos;import .kdbx natif (sans passer par CSV) est sur la roadmap Kyber
                 pour le T3 2026. En attendant, le CSV fonctionne parfaitement pour la migration.
               </div>
@@ -253,7 +253,7 @@ export default function ArticleKeePass() {
 
             {/* FAQ MIGRATION */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-6">Questions fréquentes sur la migration</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-6">Questions fréquentes sur la migration</h2>
               <div className="space-y-4">
                 {[
                   {
@@ -273,12 +273,12 @@ export default function ArticleKeePass() {
                     a: "Oui. Kyber est disponible en AppImage, .deb et .rpm pour Linux. Testé sur Ubuntu, Debian, Kali, Fedora.",
                   },
                 ].map((faq) => (
-                  <details key={faq.q} className="bg-white border border-stone-400 rounded-xl px-5 py-4 shadow-sm group">
-                    <summary className="font-medium text-stone-900 cursor-pointer list-none flex items-center justify-between gap-3 text-sm">
+                  <details key={faq.q} className="bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 shadow-sm group">
+                    <summary className="font-medium text-stone-100 cursor-pointer list-none flex items-center justify-between gap-3 text-sm">
                       {faq.q}
-                      <span className="text-stone-400 flex-shrink-0 group-open:rotate-180 transition-transform">↓</span>
+                      <span className="text-stone-500 flex-shrink-0 group-open:rotate-180 transition-transform">↓</span>
                     </summary>
-                    <p className="mt-3 text-stone-500 text-sm leading-relaxed">{faq.a}</p>
+                    <p className="mt-3 text-stone-400 text-sm leading-relaxed">{faq.a}</p>
                   </details>
                 ))}
               </div>
@@ -286,7 +286,7 @@ export default function ArticleKeePass() {
 
             {/* CONCLUSION */}
             <section>
-              <h2 className="text-2xl font-bold text-stone-900 mb-4">Conclusion</h2>
+              <h2 className="text-2xl font-bold text-stone-100 mb-4">Conclusion</h2>
               <p>
                 KeePass est un excellent choix qui a prouvé sa valeur pendant 20 ans. Mais la menace
                 quantique est réelle, documentée par le NIST, l&apos;ANSSI, et les agences de renseignement
@@ -294,7 +294,7 @@ export default function ArticleKeePass() {
                 les données sensibles.
               </p>
               <p>
-                Kyber est conçu pour être <strong className="text-stone-900">la prochaine étape logique après KeePass</strong> :
+                Kyber est conçu pour être <strong className="text-stone-100">la prochaine étape logique après KeePass</strong> :
                 stockage local, conformité RGPD, mais avec Kyber1024 (NIST FIPS 203) intégré dès la dérivation
                 de clé. La migration prend moins de 5 minutes depuis un export CSV.
               </p>
@@ -303,22 +303,22 @@ export default function ArticleKeePass() {
           </div>
 
           {/* ── CTA ── */}
-          <div className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center">
-            <h2 className="text-xl font-bold mb-3 text-stone-900">Migrer de KeePass vers Kyber en 5 minutes</h2>
-            <p className="text-stone-500 text-sm mb-6 max-w-md mx-auto">
+          <div className="mt-16 bg-gradient-to-br from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center">
+            <h2 className="text-xl font-bold mb-3 text-stone-100">Migrer de KeePass vers Kyber en 5 minutes</h2>
+            <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
               Téléchargez Kyber gratuitement. Importez votre CSV KeePass.
               Vos mots de passe sont protégés par Kyber1024.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
               >
                 Télécharger Kyber gratuitement
               </Link>
               <Link
                 href="/chiffrement-kyber1024"
-                className="border border-stone-300 hover:border-stone-400 px-6 py-3 rounded-xl font-semibold text-sm text-stone-700 transition-all"
+                className="border border-stone-700 hover:border-stone-700 px-6 py-3 rounded-xl font-semibold text-sm text-stone-300 transition-all"
               >
                 Architecture crypto →
               </Link>
@@ -327,10 +327,10 @@ export default function ArticleKeePass() {
 
           {/* ── NAVIGATION BLOG ── */}
           <nav className="mt-12 flex items-center justify-between">
-            <Link href="/blog" className="text-sm text-stone-500 hover:text-stone-900 transition-colors">
+            <Link href="/blog" className="text-sm text-stone-400 hover:text-stone-100 transition-colors">
               ← Retour au blog
             </Link>
-            <Link href="/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026" className="text-sm text-blue-600 hover:text-blue-700 transition-colors">
+            <Link href="/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026" className="text-sm text-blue-400 hover:text-blue-300 transition-colors">
               Comparatif RGPD France 2026 →
             </Link>
           </nav>

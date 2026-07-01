@@ -72,19 +72,19 @@ export const metadata: Metadata = {
 
 const features = [
   {
-    color: 'text-blue-600',
+    color: 'text-blue-400',
     title: 'Kyber1024 Post-Quantique',
     desc: "Algorithme d'encapsulation de clé standardisé par le NIST en 2024 (ML-KEM). Résistant à l'algorithme de Shor et aux futurs ordinateurs quantiques. Votre coffre sera encore sécurisé dans 20 ans.",
     link: '/chiffrement-kyber1024',
     linkLabel: 'En savoir plus sur Kyber1024 →',
   },
   {
-    color: 'text-indigo-600',
+    color: 'text-indigo-400',
     title: 'AES-256-GCM',
     desc: 'Chiffrement symétrique authentifié de niveau militaire. Le "GCM" garantit que vos données ne peuvent pas être modifiées sans être détectées. Standard utilisé par les banques et l\'armée.',
   },
   {
-    color: 'text-cyan-700',
+    color: 'text-cyan-300',
     title: 'Argon2id / Dérivation de clé',
     desc: 'Vainqueur de la Password Hashing Competition 2015. Paramétré à 64 MB de mémoire : rend les attaques GPU et ASIC économiquement impossibles. Votre passphrase ne peut pas être forcée brute.',
   },
@@ -94,19 +94,19 @@ const features = [
     desc: "Kyber détecte automatiquement les champs mot de passe dans n'importe quelle application de votre système. Injection en un clic sans jamais copier-coller votre mot de passe dans le presse-papiers.",
   },
   {
-    color: 'text-green-700',
+    color: 'text-green-300',
     title: 'Analyse de sécurité',
     desc: 'Tableau de bord complet : détection des mots de passe faibles (entropie < 50 bits), réutilisés sur plusieurs sites, ou trop anciens. Score de sécurité global de votre coffre.',
   },
   {
-    color: 'text-amber-700',
+    color: 'text-amber-300',
     title: 'Import universel (CSV)',
     desc: 'Migrez depuis Bitwarden, 1Password, LastPass ou n\'importe quel gestionnaire exportant en CSV. Migration complète en quelques secondes, sans effort.',
     link: '/comparatif-bitwarden-1password-kyber',
     linkLabel: 'Voir le comparatif →',
   },
   {
-    color: 'text-indigo-700',
+    color: 'text-indigo-300',
     title: 'Chiffrement de fichiers',
     desc: "Chiffrez n'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Format .kyber lié à votre coffre : illisible sans votre passphrase.",
   },
@@ -116,7 +116,7 @@ const features = [
     desc: 'Génération cryptographiquement sûre via le CSPRNG du système. Longueur, caractères spéciaux, chiffres : tout est paramétrable. Entropie affichée en temps réel en bits.',
   },
   {
-    color: 'text-indigo-700',
+    color: 'text-indigo-300',
     title: '100% local / Zéro cloud',
     desc: "Votre coffre .vault est un fichier chiffré sur votre disque. Aucune donnée ne transite par internet. Pas de compte, pas de télémétrie, pas de serveur de notre côté. Vous êtes le seul propriétaire.",
   },
@@ -129,7 +129,7 @@ const features = [
 
 export default function PageGestionnaire() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(pageJsonLd) }} />
       <NavHeader />
 
@@ -138,34 +138,34 @@ export default function PageGestionnaire() {
         {/* ── HERO ── */}
         <section className="relative py-20 px-6 overflow-hidden">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-200/40 rounded-full blur-3xl" />
-            <div className="absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-indigo-200/30 rounded-full blur-3xl" />
+            <div className="absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl" />
+            <div className="absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl" />
           </div>
           <div className="relative max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm mb-8 font-medium">
+            <div className="inline-flex items-center gap-2 border border-blue-800 bg-blue-950/50 text-blue-300 px-4 py-1.5 rounded-full text-sm mb-8 font-medium">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               Standard NIST 2024 / ML-KEM (Kyber1024)
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-stone-900">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight text-stone-100">
               Gestionnaire de mots de passe{' '}
-              <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
                 post-quantique
               </span>
             </h1>
-            <p className="text-lg text-stone-500 mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-stone-400 mb-10 max-w-2xl mx-auto leading-relaxed">
               Kyber est le premier gestionnaire de mots de passe 100% local et post-quantique conçu en France.
               Votre coffre est chiffré avec Kyber1024 + AES-256-GCM et ne quitte jamais votre machine.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger gratuitement
               </Link>
               <Link
                 href="/#pricing"
-                className="border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-700 shadow-sm"
+                className="border border-stone-700 hover:border-stone-700 bg-[#151922] hover:bg-stone-900 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-300 shadow-sm"
               >
                 Voir les tarifs →
               </Link>
@@ -176,15 +176,15 @@ export default function PageGestionnaire() {
         {/* ── MENACE QUANTIQUE ── */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-white border border-stone-400 rounded-2xl p-8 md:p-12 shadow-sm">
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-stone-900">
+            <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 md:p-12 shadow-sm">
+              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-stone-100">
                 Pourquoi votre gestionnaire actuel ne suffit plus
               </h2>
-              <div className="space-y-4 text-stone-600 leading-relaxed">
+              <div className="space-y-4 text-stone-400 leading-relaxed">
                 <p>
                   Bitwarden, 1Password, LastPass / tous reposent sur des algorithmes conçus dans les années 1990 :
                   RSA et ECDH. Ces algorithmes seront vulnérables aux ordinateurs quantiques dès qu&apos;ils
-                  seront suffisamment puissants. L&apos;horizon estimé : <strong className="text-stone-900">2030/2040</strong>.
+                  seront suffisamment puissants. L&apos;horizon estimé : <strong className="text-stone-100">2030/2040</strong>.
                 </p>
                 <p>
                   Plus grave encore : la stratégie &ldquo;harvest now, decrypt later&rdquo; est déjà en cours.
@@ -193,7 +193,7 @@ export default function PageGestionnaire() {
                   pourraient être compromis dans 10 ans.
                 </p>
                 <p>
-                  Kyber utilise <strong className="text-stone-900">Kyber1024 (ML-KEM)</strong>, standardisé par le
+                  Kyber utilise <strong className="text-stone-100">Kyber1024 (ML-KEM)</strong>, standardisé par le
                   NIST en 2024 comme référence mondiale post-quantique. Combiné à AES-256-GCM et Argon2id,
                   votre coffre est protégé contre les attaques classiques <em>et</em> quantiques.
                 </p>
@@ -201,7 +201,7 @@ export default function PageGestionnaire() {
               <div className="mt-8">
                 <Link
                   href="/chiffrement-kyber1024"
-                  className="text-blue-600 hover:text-blue-700 text-sm font-medium transition-colors"
+                  className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
                 >
                   Comprendre le chiffrement Kyber1024 en détail →
                 </Link>
@@ -211,11 +211,11 @@ export default function PageGestionnaire() {
         </section>
 
         {/* ── FONCTIONNALITÉS ── */}
-        <section className="py-16 px-6 bg-stone-50">
+        <section className="py-16 px-6 bg-stone-900">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">Toutes les fonctionnalités</h2>
-              <p className="text-stone-500 max-w-xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100">Toutes les fonctionnalités</h2>
+              <p className="text-stone-400 max-w-xl mx-auto">
                 Chaque composant a été choisi pour sa résistance aux attaques classiques et quantiques.
               </p>
             </div>
@@ -223,12 +223,12 @@ export default function PageGestionnaire() {
               {features.map((f) => (
                 <div
                   key={f.title}
-                  className="bg-white border border-stone-400 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm"
+                  className="bg-[#151922] border border-stone-700 rounded-2xl p-6 hover:border-blue-400 hover:shadow-md transition-all shadow-sm"
                 >
                   <h3 className={`font-semibold text-lg mb-3 ${f.color}`}>{f.title}</h3>
-                  <p className="text-stone-500 text-sm leading-relaxed mb-3">{f.desc}</p>
+                  <p className="text-stone-400 text-sm leading-relaxed mb-3">{f.desc}</p>
                   {f.link && (
-                    <Link href={f.link} className="text-blue-600 hover:text-blue-700 text-xs transition-colors">
+                    <Link href={f.link} className="text-blue-400 hover:text-blue-300 text-xs transition-colors">
                       {f.linkLabel}
                     </Link>
                   )}
@@ -241,36 +241,36 @@ export default function PageGestionnaire() {
         {/* ── ARCHITECTURE ── */}
         <section className="py-16 px-6">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center text-stone-900">Architecture de sécurité</h2>
-            <div className="bg-white border border-stone-400 rounded-2xl p-8 shadow-sm">
-              <p className="text-stone-400 text-sm mb-8 text-center">
+            <h2 className="text-3xl font-bold mb-8 text-center text-stone-100">Architecture de sécurité</h2>
+            <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 shadow-sm">
+              <p className="text-stone-500 text-sm mb-8 text-center">
                 Flux de chiffrement de votre passphrase jusqu&apos;aux données chiffrées
               </p>
               <div className="flex flex-col items-center gap-3 text-sm">
                 {[
-                  { step: '1', label: 'Votre passphrase', color: 'border-stone-300 text-stone-700' },
+                  { step: '1', label: 'Votre passphrase', color: 'border-stone-700 text-stone-300' },
                   { arrow: true },
-                  { step: '2', label: 'Argon2id (64 MB mémoire)', sublabel: 'Résistant GPU / ASIC / force brute', color: 'border-cyan-300 text-cyan-700' },
+                  { step: '2', label: 'Argon2id (64 MB mémoire)', sublabel: 'Résistant GPU / ASIC / force brute', color: 'border-cyan-300 text-cyan-300' },
                   { arrow: true },
-                  { step: '3', label: 'Kyber1024 KEM', sublabel: 'Encapsulation post-quantique (NIST ML-KEM)', color: 'border-blue-300 text-blue-700' },
+                  { step: '3', label: 'Kyber1024 KEM', sublabel: 'Encapsulation post-quantique (NIST ML-KEM)', color: 'border-blue-700 text-blue-300' },
                   { arrow: true },
-                  { step: '4', label: 'HKDF-SHA256', sublabel: 'Dérivation de clé finale', color: 'border-indigo-300 text-indigo-700' },
+                  { step: '4', label: 'HKDF-SHA256', sublabel: 'Dérivation de clé finale', color: 'border-indigo-700 text-indigo-300' },
                   { arrow: true },
-                  { step: '5', label: 'AES-256-GCM', sublabel: 'Chiffrement authentifié de vos données', color: 'border-green-300 text-green-700' },
+                  { step: '5', label: 'AES-256-GCM', sublabel: 'Chiffrement authentifié de vos données', color: 'border-green-300 text-green-300' },
                 ].map((item, i) =>
                   'arrow' in item ? (
-                    <div key={i} className="text-stone-300 text-lg">↓</div>
+                    <div key={i} className="text-stone-600 text-lg">↓</div>
                   ) : (
-                    <div key={i} className={`border ${item.color} rounded-xl px-6 py-3 text-center w-full max-w-sm bg-stone-50`}>
+                    <div key={i} className={`border ${item.color} rounded-xl px-6 py-3 text-center w-full max-w-sm bg-stone-900`}>
                       <span className="font-medium">{item.label}</span>
                       {item.sublabel && (
-                        <div className="text-xs text-stone-400 mt-0.5">{item.sublabel}</div>
+                        <div className="text-xs text-stone-500 mt-0.5">{item.sublabel}</div>
                       )}
                     </div>
                   )
                 )}
               </div>
-              <p className="text-stone-400 text-xs text-center mt-8">
+              <p className="text-stone-500 text-xs text-center mt-8">
                 Votre clé maîtresse n&apos;est jamais stockée / elle est re-dérivée à chaque ouverture de coffre.
               </p>
             </div>
@@ -278,9 +278,9 @@ export default function PageGestionnaire() {
         </section>
 
         {/* ── FAQ ── */}
-        <section className="py-16 px-6 bg-stone-50">
+        <section className="py-16 px-6 bg-stone-900">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-10 text-center text-stone-900">Questions fréquentes</h2>
+            <h2 className="text-3xl font-bold mb-10 text-center text-stone-100">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -304,9 +304,9 @@ export default function PageGestionnaire() {
                   a: "Le support macOS est en cours de développement. Kyber est actuellement disponible sur Windows 10/11 et Linux (Debian, Ubuntu, Fedora, Kali).",
                 },
               ].map(({ q, a }) => (
-                <div key={q} className="bg-white border border-stone-400 rounded-xl p-6 shadow-sm">
-                  <h3 className="font-semibold mb-3 text-stone-900">{q}</h3>
-                  <p className="text-stone-500 text-sm leading-relaxed">{a}</p>
+                <div key={q} className="bg-[#151922] border border-stone-700 rounded-xl p-6 shadow-sm">
+                  <h3 className="font-semibold mb-3 text-stone-100">{q}</h3>
+                  <p className="text-stone-400 text-sm leading-relaxed">{a}</p>
                 </div>
               ))}
             </div>
@@ -316,20 +316,20 @@ export default function PageGestionnaire() {
         {/* ── CTA ── */}
         <section className="py-16 px-6">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-4 text-stone-900">Prêt à passer au post-quantique ?</h2>
-            <p className="text-stone-500 mb-8">
+            <h2 className="text-3xl font-bold mb-4 text-stone-100">Prêt à passer au post-quantique ?</h2>
+            <p className="text-stone-400 mb-8">
               Gratuit jusqu&apos;à 3 mots de passe. Licence Pro à 24,99€ paiement unique, à vie.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger gratuitement
               </Link>
               <Link
                 href="/comparatif-bitwarden-1password-kyber"
-                className="border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-700 shadow-sm"
+                className="border border-stone-700 hover:border-stone-700 bg-[#151922] hover:bg-stone-900 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-300 shadow-sm"
               >
                 Voir le comparatif →
               </Link>

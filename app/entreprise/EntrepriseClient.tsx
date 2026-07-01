@@ -25,7 +25,7 @@ export default function EntrepriseClient() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -33,13 +33,13 @@ export default function EntrepriseClient() {
 
           {/* ── HERO ── */}
           <section className="py-16 text-center">
-            <div className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
+            <div className="inline-flex items-center gap-2 border border-blue-800 bg-blue-950/50 text-blue-300 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
               Solution équipe &amp; entreprise
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100">
               Kyber pour votre organisation
             </h1>
-            <p className="text-lg text-stone-500 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
               Déployez un gestionnaire de mots de passe post-quantique 100% local dans votre équipe.
               Aucune donnée sur un serveur tiers. Conformité RGPD native. Tarifs dégressifs.
             </p>
@@ -47,7 +47,7 @@ export default function EntrepriseClient() {
 
           {/* ── GRILLE TARIFAIRE ── */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-8 text-center text-stone-900">Tarifs indicatifs</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center text-stone-100">Tarifs indicatifs</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
@@ -80,68 +80,68 @@ export default function EntrepriseClient() {
               ].map((plan) => (
                 <div
                   key={plan.name}
-                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-50 to-indigo-50 border-2 border-blue-300 shadow-md relative' : 'bg-white border border-stone-400 shadow-sm'}`}
+                  className={`rounded-2xl p-7 flex flex-col ${plan.highlight ? 'bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border-2 border-blue-700 shadow-md relative' : 'bg-[#151922] border border-stone-700 shadow-sm'}`}
                 >
                   {plan.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
                       Le plus choisi
                     </div>
                   )}
                   <div className="mb-5">
-                    <div className="text-sm font-medium text-stone-500 mb-1">{plan.name}</div>
-                    <div className="text-2xl font-bold text-stone-900">{plan.price}</div>
-                    <div className="text-xs text-stone-400 mt-0.5">{plan.sub}</div>
+                    <div className="text-sm font-medium text-stone-400 mb-1">{plan.name}</div>
+                    <div className="text-2xl font-bold text-stone-100">{plan.price}</div>
+                    <div className="text-xs text-stone-500 mt-0.5">{plan.sub}</div>
                   </div>
                   <ul className="space-y-2 mb-6 flex-1">
                     {plan.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-stone-700">
-                        <span className="text-green-600 flex-shrink-0 text-xs">✓</span>
+                      <li key={f} className="flex items-center gap-2 text-sm text-stone-300">
+                        <span className="text-green-400 flex-shrink-0 text-xs">✓</span>
                         {f}
                       </li>
                     ))}
                   </ul>
                   <a
                     href={plan.href}
-                    className={`block text-center py-2.5 rounded-xl text-sm font-semibold transition-all ${plan.highlight ? 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white hover:opacity-90' : 'border border-stone-300 hover:border-stone-400 text-stone-700 hover:bg-stone-50'}`}
+                    className={`block text-center py-2.5 rounded-xl text-sm font-semibold transition-all ${plan.highlight ? 'bg-gradient-to-r from-blue-500 to-indigo-500 text-white hover:opacity-90' : 'border border-stone-700 hover:border-stone-700 text-stone-300 hover:bg-stone-900'}`}
                   >
                     {plan.cta}
                   </a>
                 </div>
               ))}
             </div>
-            <p className="text-center text-xs text-stone-400 mt-4">
+            <p className="text-center text-xs text-stone-500 mt-4">
               Tarifs définitifs communiqués sur devis selon le volume et la durée du contrat.
             </p>
           </section>
 
           {/* ── ARGUMENTS B2B ── */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-8 text-stone-900">Pourquoi les équipes choisissent Kyber</h2>
+            <h2 className="text-2xl font-bold mb-8 text-stone-100">Pourquoi les équipes choisissent Kyber</h2>
             <div className="grid sm:grid-cols-3 gap-4">
               {[
                 {
                   icon: '◆',
                   title: 'Zéro serveur centralisé',
                   desc: "Chaque collaborateur stocke son coffre en local. Aucune base de données d'identifiants à cibler / la surface d'attaque est éliminée.",
-                  color: 'bg-blue-50 border-blue-300',
+                  color: 'bg-blue-950/50 border-blue-700',
                 },
                 {
                   icon: 'FR',
                   title: 'RGPD & souveraineté numérique',
                   desc: "Aucune donnée ne quitte le territoire de l'entreprise. Conformité RGPD native / pas de DPA à négocier avec un fournisseur cloud américain.",
-                  color: 'bg-green-50 border-green-300',
+                  color: 'bg-green-950/50 border-green-300',
                 },
                 {
                   icon: '✦',
                   title: "Post-quantique dès aujourd'hui",
                   desc: "Standard NIST FIPS 203 (ML-KEM-1024). Vos mots de passe sont protégés contre les attaques harvest-now-decrypt-later / même sans ordinateur quantique actuel.",
-                  color: 'bg-indigo-50 border-indigo-300',
+                  color: 'bg-indigo-950/50 border-indigo-700',
                 },
                 {
                   icon: '⧉',
                   title: 'En route vers la certification ANSSI',
                   desc: "Démarche CSPN en cours d'initiation. Le bon choix pour anticiper les exigences des marchés publics et des OIV.",
-                  color: 'bg-amber-50 border-amber-300',
+                  color: 'bg-amber-950/50 border-amber-300',
                 },
                 {
                   icon: '▲',
@@ -176,8 +176,8 @@ export default function EntrepriseClient() {
               ].map((a) => (
                 <div key={a.title} className={`${a.color} border rounded-xl p-5`}>
                   <div className="text-2xl mb-3">{a.icon}</div>
-                  <h3 className="font-semibold text-stone-900 mb-2">{a.title}</h3>
-                  <p className="text-stone-600 text-sm leading-relaxed">{a.desc}</p>
+                  <h3 className="font-semibold text-stone-100 mb-2">{a.title}</h3>
+                  <p className="text-stone-400 text-sm leading-relaxed">{a.desc}</p>
                 </div>
               ))}
             </div>
@@ -186,8 +186,8 @@ export default function EntrepriseClient() {
           {/* ── CONTACT ── */}
           <section id="contact" className="scroll-mt-24">
             <div className="text-center mb-10">
-              <h2 className="text-2xl font-bold mb-3 text-stone-900">Discutons de votre projet</h2>
-              <p className="text-stone-500 text-sm max-w-lg mx-auto leading-relaxed">
+              <h2 className="text-2xl font-bold mb-3 text-stone-100">Discutons de votre projet</h2>
+              <p className="text-stone-400 text-sm max-w-lg mx-auto leading-relaxed">
                 Décrivez votre besoin et votre équipe. On vous répond sous 24h avec une proposition adaptée.
               </p>
             </div>
@@ -195,7 +195,7 @@ export default function EntrepriseClient() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
               <a
                 href="mailto:contact@kyber-security.fr?subject=Kyber Enterprise / demande de devis"
-                className="flex items-center justify-center gap-2 border border-stone-300 hover:border-blue-400 hover:text-blue-600 px-6 py-3 rounded-xl text-sm font-medium text-stone-700 transition-all"
+                className="flex items-center justify-center gap-2 border border-stone-700 hover:border-blue-400 hover:text-blue-400 px-6 py-3 rounded-xl text-sm font-medium text-stone-300 transition-all"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
@@ -205,39 +205,39 @@ export default function EntrepriseClient() {
             </div>
 
             {status === 'sent' ? (
-              <div className="bg-green-50 border border-green-200 rounded-2xl p-8 text-center">
+              <div className="bg-green-950/50 border border-green-800 rounded-2xl p-8 text-center">
                 <div className="text-4xl mb-3">✓</div>
-                <h3 className="font-semibold text-xl mb-2 text-stone-900">Message envoyé !</h3>
-                <p className="text-stone-500">Nous vous répondrons dans les 24 heures.</p>
+                <h3 className="font-semibold text-xl mb-2 text-stone-100">Message envoyé !</h3>
+                <p className="text-stone-400">Nous vous répondrons dans les 24 heures.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="bg-white border border-stone-300 rounded-2xl p-8 space-y-4 shadow-sm">
+              <form onSubmit={handleSubmit} className="bg-[#151922] border border-stone-700 rounded-2xl p-8 space-y-4 shadow-sm">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm text-stone-600 mb-1.5 block">Prénom *</label>
+                    <label className="text-sm text-stone-400 mb-1.5 block">Prénom *</label>
                     <input required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })}
-                      className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                      className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100" />
                   </div>
                   <div>
-                    <label className="text-sm text-stone-600 mb-1.5 block">Nom *</label>
+                    <label className="text-sm text-stone-400 mb-1.5 block">Nom *</label>
                     <input required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })}
-                      className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                      className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100" />
                   </div>
                 </div>
                 <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Société *</label>
+                  <label className="text-sm text-stone-400 mb-1.5 block">Société *</label>
                   <input required value={form.company} onChange={(e) => setForm({ ...form, company: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                    className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100" />
                 </div>
                 <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Email professionnel *</label>
+                  <label className="text-sm text-stone-400 mb-1.5 block">Email professionnel *</label>
                   <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900" />
+                    className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100" />
                 </div>
                 <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Taille de l&apos;équipe</label>
+                  <label className="text-sm text-stone-400 mb-1.5 block">Taille de l&apos;équipe</label>
                   <select value={form.teamSize} onChange={(e) => setForm({ ...form, teamSize: e.target.value })}
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-900">
+                    className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100">
                     <option value="1-10">1 / 10 personnes</option>
                     <option value="11-50">11 / 50 personnes</option>
                     <option value="51-200">51 / 200 personnes</option>
@@ -245,17 +245,17 @@ export default function EntrepriseClient() {
                   </select>
                 </div>
                 <div>
-                  <label className="text-sm text-stone-600 mb-1.5 block">Votre besoin</label>
+                  <label className="text-sm text-stone-400 mb-1.5 block">Votre besoin</label>
                   <textarea rows={4} value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })}
                     placeholder="Décrivez votre contexte, vos contraintes de conformité, vos questions sur les licences…"
-                    className="w-full bg-stone-50 border border-stone-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-900 placeholder:text-stone-400" />
+                    className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors resize-none text-stone-100 placeholder:text-stone-500" />
                 </div>
                 <button type="submit" disabled={status === 'sending'}
-                  className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
+                  className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 disabled:opacity-50 py-3.5 rounded-xl text-sm font-semibold transition-all text-white">
                   {status === 'sending' ? 'Envoi en cours…' : 'Envoyer la demande'}
                 </button>
                 {status === 'error' && (
-                  <p className="text-red-600 text-sm text-center">Erreur lors de l&apos;envoi. Contactez-nous directement à contact@kyber-security.fr</p>
+                  <p className="text-red-400 text-sm text-center">Erreur lors de l&apos;envoi. Contactez-nous directement à contact@kyber-security.fr</p>
                 )}
               </form>
             )}
@@ -263,7 +263,7 @@ export default function EntrepriseClient() {
 
           {/* ── FAQ ── */}
           <section className="mt-16">
-            <h2 className="text-2xl font-bold mb-8 text-stone-900">Questions fréquentes</h2>
+            <h2 className="text-2xl font-bold mb-8 text-stone-100">Questions fréquentes</h2>
             <div className="space-y-4">
               {[
                 {
@@ -287,12 +287,12 @@ export default function EntrepriseClient() {
                   a: "Oui, pour les commandes d'au moins 5 licences, nous émettons une facture avec TVA et pouvons accepter les bons de commande. Contactez-nous via le formulaire ci-dessus.",
                 },
               ].map((faq) => (
-                <details key={faq.q} className="bg-white border border-stone-200 rounded-xl px-6 py-4 shadow-sm group">
-                  <summary className="font-medium text-stone-900 cursor-pointer list-none flex items-center justify-between gap-3 text-sm">
+                <details key={faq.q} className="bg-[#151922] border border-stone-800 rounded-xl px-6 py-4 shadow-sm group">
+                  <summary className="font-medium text-stone-100 cursor-pointer list-none flex items-center justify-between gap-3 text-sm">
                     {faq.q}
-                    <span className="text-stone-400 group-open:rotate-180 transition-transform text-lg flex-shrink-0">↓</span>
+                    <span className="text-stone-500 group-open:rotate-180 transition-transform text-lg flex-shrink-0">↓</span>
                   </summary>
-                  <p className="mt-3 text-stone-500 text-sm leading-relaxed">{faq.a}</p>
+                  <p className="mt-3 text-stone-400 text-sm leading-relaxed">{faq.a}</p>
                 </details>
               ))}
             </div>
@@ -300,10 +300,10 @@ export default function EntrepriseClient() {
 
           {/* ── CTA FINAL ── */}
           <section className="mt-16 text-center">
-            <p className="text-stone-500 text-sm mb-4">Vous préférez tester avant de commander ?</p>
+            <p className="text-stone-400 text-sm mb-4">Vous préférez tester avant de commander ?</p>
             <Link
               href="/telechargement"
-              className="inline-block border border-stone-300 hover:border-stone-400 px-6 py-3 rounded-xl font-medium text-sm text-stone-700 transition-all"
+              className="inline-block border border-stone-700 hover:border-stone-700 px-6 py-3 rounded-xl font-medium text-sm text-stone-300 transition-all"
             >
               Télécharger Kyber gratuitement →
             </Link>

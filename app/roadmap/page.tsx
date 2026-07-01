@@ -36,10 +36,10 @@ const statusLabel: Record<Status, string> = {
 };
 
 const statusStyle: Record<Status, string> = {
-  done: 'bg-green-50 text-green-700 border-green-200',
-  'in-progress': 'bg-blue-50 text-blue-700 border-blue-200',
-  planned: 'bg-amber-50 text-amber-700 border-amber-200',
-  later: 'bg-stone-100 text-stone-500 border-stone-200',
+  done: 'bg-green-950/50 text-green-300 border-green-800',
+  'in-progress': 'bg-blue-950/50 text-blue-300 border-blue-800',
+  planned: 'bg-amber-950/50 text-amber-300 border-amber-800',
+  later: 'bg-stone-800 text-stone-400 border-stone-800',
 };
 
 const statusDot: Record<Status, string> = {
@@ -95,7 +95,7 @@ const sections: { title: string; features: Feature[] }[] = [
 
 export default function PageRoadmap() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <NavHeader />
 
       <main className="pt-24 pb-16">
@@ -103,12 +103,12 @@ export default function PageRoadmap() {
 
           {/* ── HERO ── */}
           <section className="py-16">
-            <div className="inline-flex items-center gap-2 border border-blue-200 bg-blue-50 text-blue-700 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
+            <div className="inline-flex items-center gap-2 border border-blue-800 bg-blue-950/50 text-blue-300 px-4 py-1.5 rounded-full text-sm mb-6 font-medium">
               <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               Mise à jour / Juin 2026
             </div>
-            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-900">Roadmap Kyber</h1>
-            <p className="text-stone-500 text-lg leading-relaxed">
+            <h1 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100">Roadmap Kyber</h1>
+            <p className="text-stone-400 text-lg leading-relaxed">
               Les fonctionnalités disponibles, ce qui est en cours de développement, et ce qui est prévu.
               La roadmap évolue en fonction des retours utilisateurs.
             </p>
@@ -128,25 +128,25 @@ export default function PageRoadmap() {
           <div className="space-y-12">
             {sections.map((section) => (
               <section key={section.title}>
-                <h2 className="text-lg font-bold mb-4 text-stone-700">{section.title}</h2>
+                <h2 className="text-lg font-bold mb-4 text-stone-300">{section.title}</h2>
                 <div className="space-y-3">
                   {section.features.map((f) => (
                     <div
                       key={f.title}
-                      className="bg-white border border-stone-400 rounded-xl px-5 py-4 flex items-start gap-4 shadow-sm"
+                      className="bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 flex items-start gap-4 shadow-sm"
                     >
                       <span className={`mt-1 flex-shrink-0 w-2.5 h-2.5 rounded-full ${statusDot[f.status]}`} />
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-3 flex-wrap">
-                          <span className="font-semibold text-stone-900 text-sm">{f.title}</span>
+                          <span className="font-semibold text-stone-100 text-sm">{f.title}</span>
                           <span className={`text-xs px-2 py-0.5 rounded-full border ${statusStyle[f.status]}`}>
                             {statusLabel[f.status]}
                           </span>
                           {f.eta && (
-                            <span className="text-xs text-stone-400 font-mono">{f.eta}</span>
+                            <span className="text-xs text-stone-500 font-mono">{f.eta}</span>
                           )}
                         </div>
-                        <p className="text-stone-500 text-sm mt-1 leading-relaxed">{f.desc}</p>
+                        <p className="text-stone-400 text-sm mt-1 leading-relaxed">{f.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -156,22 +156,22 @@ export default function PageRoadmap() {
           </div>
 
           {/* ── VOTE / SUGGESTION ── */}
-          <section className="mt-16 bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-200 rounded-2xl p-8 text-center">
-            <h2 className="text-xl font-bold mb-3 text-stone-900">Une fonctionnalité manque ?</h2>
-            <p className="text-stone-500 text-sm mb-6 leading-relaxed">
+          <section className="mt-16 bg-gradient-to-br from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center">
+            <h2 className="text-xl font-bold mb-3 text-stone-100">Une fonctionnalité manque ?</h2>
+            <p className="text-stone-400 text-sm mb-6 leading-relaxed">
               Vos retours influencent directement la priorité des développements.
               Écrivez-nous pour suggérer une fonctionnalité ou voter pour une existante.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
                 href="mailto:contact@kyber-security.fr?subject=Suggestion fonctionnalité Kyber"
-                className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Suggérer une fonctionnalité
               </a>
               <Link
                 href="/telechargement"
-                className="inline-block border border-stone-300 hover:border-stone-400 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-700"
+                className="inline-block border border-stone-700 hover:border-stone-700 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-300"
               >
                 Télécharger Kyber →
               </Link>

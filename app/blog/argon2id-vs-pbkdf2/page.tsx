@@ -111,7 +111,7 @@ const kdfs = [
 
 export default function ArticleKDF() {
   return (
-    <div className="min-h-screen bg-[#f4f2ef] text-stone-900 overflow-x-hidden">
+    <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -122,21 +122,21 @@ export default function ArticleKDF() {
         <div className="max-w-2xl mx-auto px-6">
 
           <div className="py-12">
-            <Link href="/blog" className="text-stone-500 hover:text-stone-900 text-sm transition-colors mb-8 inline-block">
+            <Link href="/blog" className="text-stone-400 hover:text-stone-100 text-sm transition-colors mb-8 inline-block">
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-700 bg-cyan-50 border-cyan-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-300 bg-cyan-50 border-cyan-200">
                 Technique
               </span>
-              <span className="text-stone-500 text-xs">9 juin 2026</span>
-              <span className="text-stone-400 text-xs">·</span>
-              <span className="text-stone-500 text-xs">9 min de lecture</span>
+              <span className="text-stone-400 text-xs">9 juin 2026</span>
+              <span className="text-stone-500 text-xs">·</span>
+              <span className="text-stone-400 text-xs">9 min de lecture</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
               Argon2id vs PBKDF2 vs bcrypt : quel est le meilleur KDF en 2026 ?
             </h1>
-            <p className="text-stone-500 text-lg leading-relaxed">
+            <p className="text-stone-400 text-lg leading-relaxed">
               La force d&apos;un gestionnaire de mots de passe dépend autant de son algorithme de dérivation de clé
               que de son chiffrement. Entre Argon2id, PBKDF2, bcrypt et scrypt / lequel résiste vraiment
               à un attaquant équipé d&apos;une ferme GPU en 2026 ?
@@ -144,14 +144,14 @@ export default function ArticleKDF() {
           </div>
 
           <article className="prose prose-stone max-w-none">
-            <div className="space-y-8 text-stone-700 leading-relaxed">
+            <div className="space-y-8 text-stone-300 leading-relaxed">
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   C&apos;est quoi un KDF, exactement ?
                 </h2>
                 <p>
-                  Un <strong className="text-stone-900">KDF (Key Derivation Function)</strong> transforme un mot de passe
+                  Un <strong className="text-stone-100">KDF (Key Derivation Function)</strong> transforme un mot de passe
                   humain / court, mémorisable, potentiellement faible / en une clé cryptographique forte.
                   C&apos;est la fonction qui se place entre &ldquo;l&apos;utilisateur tape son mot de passe maître&rdquo;
                   et &ldquo;les données sont déchiffrées&rdquo;.
@@ -164,12 +164,12 @@ export default function ArticleKDF() {
                 </p>
                 <p className="mt-4">
                   La différence entre les KDF modernes se joue sur une question : un attaquant peut-il
-                  <strong className="text-stone-900"> paralléliser massivement</strong> cette opération sur GPU ou ASIC ?
+                  <strong className="text-stone-100"> paralléliser massivement</strong> cette opération sur GPU ou ASIC ?
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Le problème des GPU : pourquoi bcrypt et PBKDF2 sont dépassés
                 </h2>
                 <p>
@@ -177,43 +177,43 @@ export default function ArticleKDF() {
                   que du CPU et de la bande passante mémoire classique, un attaquant peut lancer des milliers
                   de tentatives simultanées.
                 </p>
-                <div className="mt-6 bg-stone-50 border border-stone-300 rounded-xl p-6">
-                  <p className="text-sm text-stone-500 mb-4">Comparaison de la résistance aux attaques GPU :</p>
+                <div className="mt-6 bg-stone-900 border border-stone-700 rounded-xl p-6">
+                  <p className="text-sm text-stone-400 mb-4">Comparaison de la résistance aux attaques GPU :</p>
                   <div className="space-y-3">
                     {[
-                      { algo: 'PBKDF2-SHA256 (600k iter)', gpu: '~1 500 000 H/s', couleur: 'text-red-600' },
+                      { algo: 'PBKDF2-SHA256 (600k iter)', gpu: '~1 500 000 H/s', couleur: 'text-red-400' },
                       { algo: 'bcrypt (cost 12)', gpu: '~5 000 H/s', couleur: 'text-amber-600' },
-                      { algo: 'scrypt (N=32768, r=8)', gpu: '~500 H/s', couleur: 'text-blue-600' },
-                      { algo: 'Argon2id (m=64MB, t=3)', gpu: '~50 H/s', couleur: 'text-green-600' },
+                      { algo: 'scrypt (N=32768, r=8)', gpu: '~500 H/s', couleur: 'text-blue-400' },
+                      { algo: 'Argon2id (m=64MB, t=3)', gpu: '~50 H/s', couleur: 'text-green-400' },
                     ].map(({ algo, gpu, couleur }) => (
                       <div key={algo} className="flex justify-between items-center text-sm">
-                        <span className="text-stone-700">{algo}</span>
+                        <span className="text-stone-300">{algo}</span>
                         <span className={`font-mono ${couleur}`}>{gpu}</span>
                       </div>
                     ))}
                   </div>
-                  <p className="text-xs text-stone-400 mt-4">* Approximations sur RTX 4090 avec hashcat. Les valeurs varient selon la config exacte.</p>
+                  <p className="text-xs text-stone-500 mt-4">* Approximations sur RTX 4090 avec hashcat. Les valeurs varient selon la config exacte.</p>
                 </div>
                 <p className="mt-4">
                   PBKDF2 permet 1,5 million de tentatives par seconde sur un GPU grand public.
                   Argon2id, grâce à sa contrainte mémoire, n&apos;en permet que 50.
-                  <strong className="text-stone-900"> Un facteur 30 000.</strong>
+                  <strong className="text-stone-100"> Un facteur 30 000.</strong>
                 </p>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">Comparatif détaillé</h2>
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">Comparatif détaillé</h2>
                 <div className="space-y-4">
                   {kdfs.map(({ name, annee, type, gpu, asic, memoire, owasp, color, verdict }) => (
                     <div key={name} className={`bg-${color}-50 border border-${color}-200 rounded-xl p-5`}>
                       <div className="flex items-center justify-between mb-3">
                         <div>
-                          <span className="font-bold text-stone-900 text-lg">{name}</span>
-                          <span className="text-xs text-stone-400 ml-2">({annee})</span>
+                          <span className="font-bold text-stone-100 text-lg">{name}</span>
+                          <span className="text-xs text-stone-500 ml-2">({annee})</span>
                         </div>
                         <span className={`text-xs px-2 py-0.5 rounded-full bg-${color}-100 text-${color}-700`}>{type}</span>
                       </div>
-                      <div className="grid grid-cols-2 gap-2 text-xs mb-3">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs mb-3">
                         {[
                           ['Résistance GPU', gpu],
                           ['Résistance ASIC', asic],
@@ -221,8 +221,8 @@ export default function ArticleKDF() {
                           ['OWASP 2026', owasp],
                         ].map(([k, v]) => (
                           <div key={k} className="flex flex-col">
-                            <span className="text-stone-400">{k}</span>
-                            <span className="text-stone-700">{v}</span>
+                            <span className="text-stone-500">{k}</span>
+                            <span className="text-stone-300">{v}</span>
                           </div>
                         ))}
                       </div>
@@ -233,11 +233,11 @@ export default function ArticleKDF() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Argon2id : comment ça marche ?
                 </h2>
                 <p>
-                  Argon2id est le lauréat du <strong className="text-stone-900">Password Hashing Competition (PHC)</strong>,
+                  Argon2id est le lauréat du <strong className="text-stone-100">Password Hashing Competition (PHC)</strong>,
                   un concours académique organisé en 2015 sur le modèle du concours AES du NIST.
                   Il combine les deux variantes Argon2i et Argon2d :
                 </p>
@@ -248,7 +248,7 @@ export default function ArticleKDF() {
                     { name: 'Argon2id', desc: "Hybride : première moitié Argon2i (protection side-channel), deuxième moitié Argon2d (résistance GPU/ASIC). Le meilleur des deux mondes." },
                   ].map(({ name, desc }) => (
                     <li key={name} className="flex gap-3 items-start">
-                      <span className="text-blue-600 font-mono text-sm flex-shrink-0 mt-0.5 w-20">{name}</span>
+                      <span className="text-blue-400 font-mono text-sm flex-shrink-0 mt-0.5 w-20">{name}</span>
                       <span className="text-sm">{desc}</span>
                     </li>
                   ))}
@@ -256,7 +256,7 @@ export default function ArticleKDF() {
                 <p className="mt-4">
                   Les trois paramètres clés à configurer :
                 </p>
-                <div className="mt-4 bg-stone-50 border border-stone-300 rounded-xl p-5 space-y-3">
+                <div className="mt-4 bg-stone-900 border border-stone-700 rounded-xl p-5 space-y-3">
                   {[
                     { param: 'm_cost (mémoire)', val: '64 MB minimum', note: 'Plus c\'est élevé, plus la parallélisation GPU est difficile. Kyber utilise 64 MB.' },
                     { param: 't_cost (itérations)', val: '3 minimum', note: 'Nombre de passes sur la mémoire. Augmente le temps sans réduire la mémoire.' },
@@ -264,17 +264,17 @@ export default function ArticleKDF() {
                   ].map(({ param, val, note }) => (
                     <div key={param} className="flex flex-col gap-0.5">
                       <div className="flex items-center justify-between">
-                        <span className="text-sm font-mono text-blue-700">{param}</span>
-                        <span className="text-sm font-mono text-green-700">{val}</span>
+                        <span className="text-sm font-mono text-blue-300">{param}</span>
+                        <span className="text-sm font-mono text-green-300">{val}</span>
                       </div>
-                      <span className="text-xs text-stone-400">{note}</span>
+                      <span className="text-xs text-stone-500">{note}</span>
                     </div>
                   ))}
                 </div>
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   Pourquoi PBKDF2 est encore partout malgré ses faiblesses
                 </h2>
                 <p>
@@ -293,11 +293,11 @@ export default function ArticleKDF() {
               </section>
 
               <section>
-                <h2 className="text-2xl font-bold text-stone-900 mb-4">
+                <h2 className="text-2xl font-bold text-stone-100 mb-4">
                   L&apos;interaction avec les algorithmes post-quantiques
                 </h2>
                 <p>
-                  Un point souvent ignoré : Argon2id et Kyber1024 sont <strong className="text-stone-900">complémentaires</strong>,
+                  Un point souvent ignoré : Argon2id et Kyber1024 sont <strong className="text-stone-100">complémentaires</strong>,
                   pas redondants.
                 </p>
                 <p className="mt-4">
@@ -313,29 +313,29 @@ export default function ArticleKDF() {
               </section>
 
               <section>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                  <h2 className="text-xl font-bold text-stone-900 mb-3">Recommandation finale</h2>
+                <div className="bg-blue-950/50 border border-blue-800 rounded-xl p-6">
+                  <h2 className="text-xl font-bold text-stone-100 mb-3">Recommandation finale</h2>
                   <p className="text-sm mb-3">
-                    Pour tout nouveau système en 2026, <strong className="text-stone-900">utilisez Argon2id</strong> avec au
+                    Pour tout nouveau système en 2026, <strong className="text-stone-100">utilisez Argon2id</strong> avec au
                     minimum :
                   </p>
-                  <div className="bg-white border border-stone-300 rounded-lg p-4 font-mono text-sm">
-                    <span className="text-green-700">m_cost</span>
-                    <span className="text-stone-400"> = </span>
-                    <span className="text-blue-700">65536</span>
-                    <span className="text-stone-400"> # 64 MB</span>
+                  <div className="bg-[#151922] border border-stone-700 rounded-lg p-4 font-mono text-sm">
+                    <span className="text-green-300">m_cost</span>
+                    <span className="text-stone-500"> = </span>
+                    <span className="text-blue-300">65536</span>
+                    <span className="text-stone-500"> # 64 MB</span>
                     <br />
-                    <span className="text-green-700">t_cost</span>
-                    <span className="text-stone-400"> = </span>
-                    <span className="text-blue-700">3</span>
-                    <span className="text-stone-400"> # 3 itérations</span>
+                    <span className="text-green-300">t_cost</span>
+                    <span className="text-stone-500"> = </span>
+                    <span className="text-blue-300">3</span>
+                    <span className="text-stone-500"> # 3 itérations</span>
                     <br />
-                    <span className="text-green-700">p_cost</span>
-                    <span className="text-stone-400"> = </span>
-                    <span className="text-blue-700">1</span>
-                    <span className="text-stone-400"> # 1 thread</span>
+                    <span className="text-green-300">p_cost</span>
+                    <span className="text-stone-500"> = </span>
+                    <span className="text-blue-300">1</span>
+                    <span className="text-stone-500"> # 1 thread</span>
                   </div>
-                  <p className="text-sm mt-3 text-stone-500">
+                  <p className="text-sm mt-3 text-stone-400">
                     C&apos;est exactement les paramètres utilisés dans Kyber. Ces valeurs suivent les recommandations
                     OWASP 2026 (section &ldquo;Password Storage Cheat Sheet&rdquo;).
                   </p>
@@ -345,31 +345,31 @@ export default function ArticleKDF() {
             </div>
           </article>
 
-          <div className="mt-12 pt-8 border-t border-stone-300">
-            <p className="text-stone-500 text-sm mb-6">
+          <div className="mt-12 pt-8 border-t border-stone-700">
+            <p className="text-stone-400 text-sm mb-6">
               Kyber combine Argon2id + Kyber1024 pour une protection maximale de vos mots de passe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
                 href="/telechargement"
-                className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+                className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
                 Télécharger Kyber gratuitement →
               </Link>
               <Link
                 href="/chiffrement-kyber1024"
-                className="border border-stone-300 hover:border-stone-400 bg-white hover:bg-stone-50 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-700 shadow-sm"
+                className="border border-stone-700 hover:border-stone-700 bg-[#151922] hover:bg-stone-900 px-6 py-3 rounded-xl font-semibold transition-all text-sm text-stone-300 shadow-sm"
               >
                 Voir le flux cryptographique complet →
               </Link>
             </div>
           </div>
 
-          <div className="mt-8 pt-6 border-t border-stone-300 flex justify-between items-center text-sm">
-            <Link href="/blog/cryptographie-post-quantique" className="text-stone-500 hover:text-stone-900 transition-colors">
+          <div className="mt-8 pt-6 border-t border-stone-700 flex justify-between items-center text-sm">
+            <Link href="/blog/cryptographie-post-quantique" className="text-stone-400 hover:text-stone-100 transition-colors">
               ← C&apos;est quoi la PQC ?
             </Link>
-            <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-stone-500 hover:text-stone-900 transition-colors">
+            <Link href="/blog/ordinateurs-quantiques-mots-de-passe" className="text-stone-400 hover:text-stone-100 transition-colors">
               QC et mots de passe →
             </Link>
           </div>
