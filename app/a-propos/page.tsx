@@ -27,9 +27,49 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      name: 'À propos de Kyber Security',
+      url: 'https://kyber-security.fr/a-propos',
+      inLanguage: 'fr-FR',
+      about: { '@id': 'https://kyber-security.fr/#person-enzo-paccard' },
+    },
+    {
+      '@type': 'Person',
+      '@id': 'https://kyber-security.fr/#person-enzo-paccard',
+      name: 'Enzo Paccard',
+      jobTitle: 'Pentesteur / Fondateur',
+      description:
+        'Pentesteur et développeur spécialisé en cybersécurité, créateur de Kyber Security, gestionnaire de mots de passe post-quantique 100% local.',
+      url: 'https://kyber-security.fr/a-propos',
+      sameAs: ['https://fr.linkedin.com/in/enzo-paccard-7394a52b1'],
+      worksFor: { '@type': 'Organization', name: 'Kyber Security', url: 'https://kyber-security.fr' },
+      knowsAbout: [
+        'Cryptographie post-quantique',
+        'Tests de pénétration',
+        'Sécurité applicative',
+        'Rust',
+        'ML-KEM / Kyber1024',
+      ],
+      nationality: { '@type': 'Country', name: 'France' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+        { '@type': 'ListItem', position: 2, name: 'À propos', item: 'https://kyber-security.fr/a-propos' },
+      ],
+    },
+  ],
+};
+
 export default function PageAPropos() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavHeader />
 
       <main className="pt-24 pb-16">

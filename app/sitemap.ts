@@ -23,6 +23,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/entreprise`,                                           lastModified: now, changeFrequency: 'monthly',  priority: 0.7 },
     { url: `${base}/cgv`,                                                  lastModified: now, changeFrequency: 'yearly',   priority: 0.3 },
     { url: `${base}/politique-de-confidentialite`,                         lastModified: now, changeFrequency: 'yearly',   priority: 0.3 },
-    { url: `${base}/success`,                                              lastModified: now, changeFrequency: 'never',    priority: 0.1 },
   ];
 }

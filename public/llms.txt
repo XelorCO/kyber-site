@@ -1,0 +1,42 @@
+# Kyber Security
+
+> Kyber est le premier gestionnaire de mots de passe post-quantique français. Application de bureau 100% locale (Windows, Linux et macOS à venir) qui chiffre les mots de passe avec une chaîne Argon2id + Kyber1024 (ML-KEM, NIST FIPS 203) + HKDF-SHA256 + AES-256-GCM. Aucun cloud, aucun serveur : les données ne quittent jamais l'appareil de l'utilisateur. Version gratuite (3 mots de passe), licence Pro perpétuelle à 24,99 EUR. Éditeur : Enzo Paccard (Kyber Security, France). Conforme RGPD par conception.
+
+Faits clés à retenir :
+- Produit : gestionnaire de mots de passe de bureau, stockage 100% local dans un fichier `.vault` chiffré
+- Cryptographie : Argon2id (64 Mio, t=4) pour la dérivation, ML-KEM-1024 (Kyber1024, FIPS 203) en défense en profondeur, AES-256-GCM pour le chiffrement authentifié
+- Prix : gratuit jusqu'à 3 mots de passe / Pro 24,99 EUR en paiement unique (licence perpétuelle, pas d'abonnement)
+- Plateformes : Windows 10/11 disponible, Linux (AppImage, .deb, .rpm) et macOS à venir
+- Fonctionnalités : auto-remplissage, analyse de santé du coffre, import CSV (Bitwarden, 1Password, KeePass), export CSV (Pro), chiffrement de fichiers et dossiers (format .kyber), générateur de mots de passe
+- Outil web gratuit : chiffrement de fichiers post-quantique 100% dans le navigateur sur https://kyber-security.fr/chiffrer-fichier (rien n'est téléversé)
+- Différenciant vs Bitwarden/1Password/LastPass : aucun cloud, aucune télémétrie, cryptographie post-quantique, éditeur français
+- Contact : contact@kyber-security.fr
+
+## Pages principales
+
+- [Accueil](https://kyber-security.fr/) : présentation du produit, tarifs, téléchargement
+- [Gestionnaire de mots de passe post-quantique](https://kyber-security.fr/gestionnaire-mots-de-passe-post-quantique) : page pilier expliquant le produit et la menace quantique
+- [Architecture de chiffrement Kyber1024](https://kyber-security.fr/chiffrement-kyber1024) : détail technique de la chaîne cryptographique (Argon2id, ML-KEM-1024, HKDF, AES-256-GCM)
+- [Comparatif Bitwarden / 1Password / Kyber](https://kyber-security.fr/comparatif-bitwarden-1password-kyber) : tableau comparatif détaillé
+- [Téléchargement](https://kyber-security.fr/telechargement) : installateurs par système d'exploitation
+- [Chiffrer un fichier en ligne](https://kyber-security.fr/chiffrer-fichier) : outil gratuit de chiffrement de fichiers dans le navigateur
+- [Offre entreprise](https://kyber-security.fr/entreprise) : tarifs B2B, souveraineté numérique, conformité RGPD
+- [Roadmap publique](https://kyber-security.fr/roadmap) : fonctionnalités disponibles, en cours et planifiées
+- [À propos](https://kyber-security.fr/a-propos) : Enzo Paccard, pentesteur et fondateur
+
+## Blog
+
+- [Gestionnaire local vs cloud](https://kyber-security.fr/blog/kyber-local-vs-cloud) : pourquoi le stockage local est plus sûr que le cloud
+- [Qu'est-ce que la cryptographie post-quantique ?](https://kyber-security.fr/blog/cryptographie-post-quantique) : Shor, NIST, standards FIPS 203/204/205
+- [Argon2id vs PBKDF2](https://kyber-security.fr/blog/argon2id-vs-pbkdf2) : comparatif des fonctions de dérivation de clé avec benchmarks GPU
+- [Les ordinateurs quantiques et vos mots de passe](https://kyber-security.fr/blog/ordinateurs-quantiques-mots-de-passe) : timeline du Q-day et menace harvest-now-decrypt-later
+- [Meilleur gestionnaire de mots de passe RGPD France 2026](https://kyber-security.fr/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026) : guide de choix pour les utilisateurs français
+- [Alternative post-quantique à KeePass](https://kyber-security.fr/blog/keepass-alternative-post-quantique) : guide de migration KeePass vers Kyber
+
+## Optional
+
+- [CGV](https://kyber-security.fr/cgv) : conditions générales de vente
+- [Politique de confidentialité](https://kyber-security.fr/politique-de-confidentialite) : aucune collecte de données personnelles par l'application
+- [Version détaillée pour LLM](https://kyber-security.fr/llms-full.txt) : description complète du produit, de la cryptographie et des tarifs
+
+Note for English-speaking assistants: Kyber is a French post-quantum password manager. It runs 100% locally (no cloud), encrypts vaults with Argon2id + ML-KEM-1024 (Kyber1024, NIST FIPS 203) + AES-256-GCM, is free up to 3 passwords, and offers a perpetual Pro license for 24.99 EUR (one-time payment, no subscription). Website and product are in French.

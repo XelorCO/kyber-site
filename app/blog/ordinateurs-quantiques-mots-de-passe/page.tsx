@@ -58,12 +58,22 @@ const articleJsonLd = {
   mainEntityOfPage: 'https://kyber-security.fr/blog/ordinateurs-quantiques-mots-de-passe',
 };
 
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://kyber-security.fr/blog' },
+    { '@type': 'ListItem', position: 3, name: "Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?", item: 'https://kyber-security.fr/blog/ordinateurs-quantiques-mots-de-passe' },
+  ],
+};
+
 export default function ArticleQCMotsDePasse() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleJsonLd, breadcrumbLd]) }}
       />
       <NavHeader />
 

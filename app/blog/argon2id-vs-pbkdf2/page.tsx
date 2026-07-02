@@ -109,12 +109,22 @@ const kdfs = [
   },
 ];
 
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://kyber-security.fr/blog' },
+    { '@type': 'ListItem', position: 3, name: "Argon2id vs PBKDF2 vs bcrypt : quel est le meilleur KDF en 2026 ?", item: 'https://kyber-security.fr/blog/argon2id-vs-pbkdf2' },
+  ],
+};
+
 export default function ArticleKDF() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleJsonLd, breadcrumbLd]) }}
       />
       <NavHeader />
 

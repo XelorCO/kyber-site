@@ -93,9 +93,32 @@ const sections: { title: string; features: Feature[] }[] = [
   },
 ];
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      name: 'Roadmap Kyber / Fonctionnalités à venir',
+      url: 'https://kyber-security.fr/roadmap',
+      inLanguage: 'fr-FR',
+      description:
+        'Roadmap publique de Kyber Security : version macOS, extension navigateur, import KeePass, CLI DevOps, partage de coffre chiffré.',
+      isPartOf: { '@type': 'WebSite', name: 'Kyber Security', url: 'https://kyber-security.fr' },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+        { '@type': 'ListItem', position: 2, name: 'Roadmap', item: 'https://kyber-security.fr/roadmap' },
+      ],
+    },
+  ],
+};
+
 export default function PageRoadmap() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <NavHeader />
 
       <main className="pt-24 pb-16">

@@ -26,6 +26,69 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'FAQPage',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: 'Comment fonctionne le déploiement dans une équipe ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Chaque collaborateur installe Kyber sur son poste. Il crée son propre coffre protégé par sa passphrase personnelle. La licence est activée depuis l'application en entrant la clé reçue par email. Aucune infrastructure centralisée requise.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Peut-on partager des mots de passe entre collègues ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Le partage de coffre chiffré entre utilisateurs est sur la roadmap (T4 2026 / 2027). En attendant, l'export CSV chiffré permet un transfert ponctuel.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: "Kyber est-il compatible avec les politiques de sécurité d'entreprise ?",
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Oui. Kyber ne crée aucune connexion sortante et ne requiert aucun compte en ligne. Il s'installe comme un logiciel standard et respecte les politiques de pare-feu et antivirus. Aucune donnée n'est transmise à l'extérieur.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Quelle est votre politique de mise à jour ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Les licences Pro incluent toutes les mises à jour de la branche v1.x. Les nouvelles fonctionnalités majeures sont déployées progressivement. Pas d'abonnement caché / vous payez une fois.",
+          },
+        },
+        {
+          '@type': 'Question',
+          name: 'Proposez-vous une facturation entreprise (bon de commande, TVA) ?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: "Oui, pour les commandes d'au moins 5 licences, nous émettons une facture avec TVA et pouvons accepter les bons de commande.",
+          },
+        },
+      ],
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+        { '@type': 'ListItem', position: 2, name: 'Entreprise', item: 'https://kyber-security.fr/entreprise' },
+      ],
+    },
+  ],
+};
+
 export default function PageEntrepriseWrapper() {
-  return <EntrepriseClient />;
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <EntrepriseClient />
+    </>
+  );
 }

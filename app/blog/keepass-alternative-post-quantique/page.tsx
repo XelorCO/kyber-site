@@ -50,10 +50,20 @@ const jsonLd = {
   inLanguage: 'fr-FR',
 };
 
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://kyber-security.fr/blog' },
+    { '@type': 'ListItem', position: 3, name: "KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber", item: 'https://kyber-security.fr/blog/keepass-alternative-post-quantique' },
+  ],
+};
+
 export default function ArticleKeePass() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([jsonLd, breadcrumbLd]) }} />
       <NavHeader />
 
       <main className="pt-24 pb-16">

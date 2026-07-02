@@ -58,12 +58,22 @@ const articleJsonLd = {
   mainEntityOfPage: 'https://kyber-security.fr/blog/cryptographie-post-quantique',
 };
 
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://kyber-security.fr' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://kyber-security.fr/blog' },
+    { '@type': 'ListItem', position: 3, name: "Qu'est-ce que la cryptographie post-quantique ?", item: 'https://kyber-security.fr/blog/cryptographie-post-quantique' },
+  ],
+};
+
 export default function ArticlePQC() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify([articleJsonLd, breadcrumbLd]) }}
       />
       <NavHeader />
 
