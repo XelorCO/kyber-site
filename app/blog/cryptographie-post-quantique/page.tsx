@@ -323,7 +323,7 @@ export default function ArticlePQC() {
                 </p>
                 <div className="mt-6 bg-stone-900 border border-stone-700 rounded-xl p-6 space-y-3">
                   {[
-                    { step: '① Passphrase → Argon2id', detail: 'Dérivation résistante aux GPU/ASIC, 64 MB RAM', color: 'text-cyan-300' },
+                    { step: '① Passphrase → Argon2id', detail: 'Dérivation résistante aux GPU/ASIC, 64 MB RAM', color: 'text-indigo-300' },
                     { step: '② Seed → ML-KEM-1024 keygen', detail: 'Génération déterministe des clés post-quantiques', color: 'text-blue-300' },
                     { step: '③ KEM encapsulate → shared secret', detail: 'Encapsulation Kyber1024 (ciphertext 1568 octets)', color: 'text-indigo-400' },
                     { step: '④ Shared secret → HKDF-SHA256', detail: 'Dérivation de la clé finale 256 bits', color: 'text-violet-700' },
@@ -366,7 +366,7 @@ export default function ArticlePQC() {
 
           <div className="mt-12 pt-8 border-t border-stone-700">
             <p className="text-stone-400 text-sm mb-6">
-              Prêt à protéger vos mots de passe avec une cryptographie post-quantique réelle ? Kyber est gratuit jusqu&apos;à 3 mots de passe.
+              Prêt à protéger vos mots de passe avec une cryptographie post-quantique réelle ? Kyber est gratuit jusqu&apos;à 10 mots de passe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

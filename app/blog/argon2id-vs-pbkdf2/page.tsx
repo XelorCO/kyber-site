@@ -136,7 +136,7 @@ export default function ArticleKDF() {
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-300 bg-cyan-50 border-cyan-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-indigo-300 bg-indigo-950/50 border-indigo-800">
                 Technique
               </span>
               <span className="text-stone-400 text-xs">9 juin 2026</span>

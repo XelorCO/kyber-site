@@ -24,14 +24,21 @@ const jsonLd = {
           name: 'Kyber Gratuit',
           price: '0',
           priceCurrency: 'EUR',
-          description: "Version gratuite / jusqu'à 3 mots de passe",
+          description: "Version gratuite / jusqu'à 10 mots de passe",
         },
         {
           '@type': 'Offer',
           name: 'Kyber Pro',
-          price: '24.99',
+          price: '29.00',
           priceCurrency: 'EUR',
-          description: 'Licence perpétuelle / mots de passe illimités',
+          description: 'Licence perpétuelle / mots de passe illimités / paiement unique, prix de lancement',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Kyber Famille',
+          price: '49.00',
+          priceCurrency: 'EUR',
+          description: 'Licence perpétuelle / 5 postes / paiement unique',
         },
       ],
       featureList: [
@@ -76,7 +83,7 @@ const jsonLd = {
           name: 'Kyber est-il gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Oui, Kyber est gratuit jusqu'à 3 mots de passe. La licence Pro à 24,99€ (paiement unique, perpétuelle) débloque les mots de passe illimités.",
+            text: "Oui, Kyber est gratuit jusqu'à 10 mots de passe. La licence Pro à 29 € (paiement unique, perpétuelle) débloque les mots de passe illimités.",
           },
         },
         {
@@ -108,7 +115,7 @@ export const metadata: Metadata = {
     template: '%s / Kyber',
   },
   description:
-    'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 3 mots de passe. Windows, macOS, Linux.',
+    'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 10 mots de passe. Windows, macOS, Linux.',
 
   keywords: [
     'gestionnaire mots de passe',
@@ -172,7 +179,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Kyber / Gestionnaire de mots de passe post-quantique',
-    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit jusqu\'à 3 mots de passe.',
+    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit jusqu\'à 10 mots de passe.',
     images: ['/opengraph-image'],
   },
 

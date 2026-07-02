@@ -185,3 +185,49 @@ input, textarea, select {
 input::placeholder, textarea::placeholder {
   color: #57534e;
 }
+
+/* ── Aurora / fond animé pleine page ─────────────────────────────────── */
+.aurora-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  overflow: hidden;
+  pointer-events: none;
+}
+.aurora-blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(90px);
+  opacity: 0.13;
+  will-change: transform;
+}
+.aurora-1 {
+  width: 55vw; height: 55vw; left: -12vw; top: -18vh;
+  background: radial-gradient(circle at 30% 30%, #3b82f6, transparent 65%);
+  animation: aurora-drift-1 38s ease-in-out infinite alternate;
+}
+.aurora-2 {
+  width: 45vw; height: 45vw; right: -10vw; top: 22vh;
+  background: radial-gradient(circle at 60% 40%, #6366f1, transparent 65%);
+  animation: aurora-drift-2 46s ease-in-out infinite alternate;
+}
+.aurora-3 {
+  width: 50vw; height: 50vw; left: 22vw; bottom: -22vh;
+  background: radial-gradient(circle at 50% 60%, #8b5cf6, transparent 65%);
+  animation: aurora-drift-3 52s ease-in-out infinite alternate;
+}
+@keyframes aurora-drift-1 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(20vw, 14vh, 0) scale(1.15); }
+}
+@keyframes aurora-drift-2 {
+  from { transform: translate3d(0, 0, 0) scale(1.1); }
+  to   { transform: translate3d(-16vw, 20vh, 0) scale(0.95); }
+}
+@keyframes aurora-drift-3 {
+  from { transform: translate3d(0, 0, 0) scale(1); }
+  to   { transform: translate3d(12vw, -16vh, 0) scale(1.2); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aurora-blob { animation: none; }
+}

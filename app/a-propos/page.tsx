@@ -227,7 +227,7 @@ export default function PageAPropos() {
           {/* ── CTA ── */}
           <section className="text-center py-8">
             <h2 className="text-xl font-bold mb-3 text-stone-100">Essayez Kyber gratuitement</h2>
-            <p className="text-stone-400 text-sm mb-6">3 mots de passe, chiffrement Kyber1024 complet, aucune CB requise.</p>
+            <p className="text-stone-400 text-sm mb-6">10 mots de passe, chiffrement Kyber1024 complet, aucune CB requise.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"

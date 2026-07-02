@@ -173,7 +173,7 @@ export default function PageChiffrement() {
                     n: '02',
                     title: 'Argon2id → seed (256 bits)',
                     desc: 'Dérivation résistante GPU / transforme votre passphrase en graine cryptographique',
-                    color: 'text-cyan-300',
+                    color: 'text-indigo-300',
                   },
                   {
                     n: '03',

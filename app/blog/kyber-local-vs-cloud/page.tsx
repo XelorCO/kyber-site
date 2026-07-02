@@ -247,7 +247,7 @@ export default function ArticleKyberLocalCloud() {
                 <div className="mt-6 bg-stone-800 border border-stone-700 rounded-xl p-6 space-y-3">
                   {[
                     { step: 'Votre passphrase', color: 'text-stone-300' },
-                    { step: '↓ Argon2id (64 MB RAM) → seed cryptographique', color: 'text-cyan-300' },
+                    { step: '↓ Argon2id (64 MB RAM) → seed cryptographique', color: 'text-indigo-300' },
                     { step: '↓ Kyber1024 KEM → paire de clés post-quantique', color: 'text-blue-400' },
                     { step: '↓ HKDF-SHA256 → clé de chiffrement finale', color: 'text-indigo-300' },
                     { step: '↓ AES-256-GCM → fichier .vault chiffré sur disque', color: 'text-green-300' },
@@ -331,7 +331,7 @@ export default function ArticleKyberLocalCloud() {
           {/* ── CTA ARTICLE ── */}
           <div className="mt-12 pt-8 border-t border-stone-700">
             <p className="text-stone-400 text-sm mb-6">
-              Vous voulez passer au chiffrement post-quantique local ? Kyber est gratuit jusqu&apos;à 3 mots de passe.
+              Vous voulez passer au chiffrement post-quantique local ? Kyber est gratuit jusqu&apos;à 10 mots de passe.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

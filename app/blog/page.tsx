@@ -55,7 +55,7 @@ const articles = [
     date: '15 juin 2026',
     readTime: '9 min',
     category: 'Comparatif',
-    categoryColor: 'text-cyan-300 bg-cyan-50 border-cyan-200',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
     featured: false,
   },
   {
@@ -88,7 +88,7 @@ const articles = [
     date: '9 juin 2026',
     readTime: '9 min',
     category: 'Technique',
-    categoryColor: 'text-cyan-300 bg-cyan-50 border-cyan-200',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
     featured: false,
   },
   {

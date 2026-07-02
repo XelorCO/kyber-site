@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ScrollProgress, Parallax } from '@/components/ScrollFx';
+import { ScrollProgress } from '@/components/ScrollFx';
 import Link from 'next/link';
 
 // ── Visualisations des étapes crypto ──────────────────────────────────────
@@ -27,7 +27,7 @@ function VizPassphrase() {
         ].map(({ color, label }) => (
           <div key={label} className="flex items-center gap-2">
             <span className={`w-2 h-2 rounded-full bg-${color}-500 animate-pulse flex-shrink-0`} />
-            <span className={`text-${color}-600`}>{label}</span>
+            <span className={`text-${color}-400`}>{label}</span>
           </div>
         ))}
       </div>
@@ -48,10 +48,10 @@ function VizArgon2() {
           <div key={label}>
             <div className="flex justify-between text-xs mb-1">
               <span className="text-stone-400">{label}</span>
-              <span className="text-cyan-300 font-mono">{val}</span>
+              <span className="text-indigo-300 font-mono">{val}</span>
             </div>
             <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
-              <div className={`h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full ${delay || 'mem-bar'}`} />
+              <div className={`h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full ${delay || 'mem-bar'}`} />
             </div>
           </div>
         ))}
@@ -151,8 +151,8 @@ function VizVault() {
           { icon: '✓', color: 'green', label: 'Uniquement sur votre disque' },
         ].map(({ icon, color, label }) => (
           <div key={label} className="flex items-center gap-2">
-            <span className={`text-${color}-600 font-bold w-4`}>{icon}</span>
-            <span className={`text-${color}-600`}>{label}</span>
+            <span className={`text-${color}-400 font-bold w-4`}>{icon}</span>
+            <span className={`text-${color}-400`}>{label}</span>
           </div>
         ))}
       </div>
@@ -163,6 +163,7 @@ function VizVault() {
 // ── Page principale ────────────────────────────────────────────────────────
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [buyTier, setBuyTier] = useState<'pro' | 'famille'>('pro');
   const [buyerName, setBuyerName] = useState('');
   const [buyerEmail, setBuyerEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
@@ -185,7 +186,7 @@ export default function Home() {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: buyerName, email: buyerEmail }),
+        body: JSON.stringify({ name: buyerName, email: buyerEmail, tier: buyTier }),
       });
       const data = await res.json();
       if (data.url) window.location.href = data.url;
@@ -235,15 +236,15 @@ export default function Home() {
 
   const colorMap: Record<string, string> = {
     blue:   'border-blue-800 bg-blue-950/50 text-blue-300',
-    cyan:   'border-cyan-200 bg-cyan-50 text-cyan-300',
+    cyan:   'border-indigo-800 bg-indigo-950/50 text-indigo-300',
     purple: 'border-indigo-800 bg-indigo-950/50 text-indigo-300',
     green:  'border-green-800 bg-green-950/50 text-green-300',
     orange: 'border-amber-800 bg-amber-950/50 text-amber-300',
   };
 
   const connectorColorMap: Record<string, string> = {
-    blue:   'from-blue-300 to-cyan-300',
-    cyan:   'from-cyan-300 to-blue-300',
+    blue:   'from-blue-300 to-indigo-300',
+    cyan:   'from-indigo-300 to-blue-300',
     purple: 'from-indigo-300 to-blue-300',
     green:  'from-green-300 to-amber-300',
     orange: 'from-amber-300 to-amber-200',
@@ -321,11 +322,16 @@ export default function Home() {
 
       <ScrollProgress />
 
+      {/* ── Fond animé pleine page ── */}
+      <div className="aurora-bg" aria-hidden="true">
+        <div className="aurora-blob aurora-1" />
+        <div className="aurora-blob aurora-2" />
+        <div className="aurora-blob aurora-3" />
+      </div>
+
       {/* ── HERO ── */}
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <Parallax drift={80} className="glow-blob absolute top-1/4 left-1/6 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl" />
-          <Parallax drift={-60} className="glow-blob-2 absolute top-1/3 right-1/6 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-3xl" />
           <div className="absolute inset-0 opacity-[0.04]"
             style={{ backgroundImage: 'radial-gradient(circle, #78716c 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
         </div>
@@ -508,7 +514,7 @@ export default function Home() {
                   { icon: '⚠︎', label: 'Exposition', sub: 'Brèche possible (cf. LastPass 2022)', color: 'red' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
-                    <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-100 border border-red-800' : 'bg-[#151922] border border-stone-700'} rounded-xl px-4 py-3`}>
+                    <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-950/50 border border-red-800' : 'bg-[#151922] border border-stone-700'} rounded-xl px-4 py-3`}>
                       <span className="text-lg">{icon}</span>
                       <div>
                         <div className={`text-sm font-medium ${color === 'red' ? 'text-red-700' : 'text-stone-300'}`}>{label}</div>
@@ -529,7 +535,7 @@ export default function Home() {
             <div className="vault-shield bg-green-950/50 border border-green-800 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-green-400 text-lg">✓</span>
-                <h3 className="font-bold text-green-800">Kyber / 100% local</h3>
+                <h3 className="font-bold text-green-300">Kyber / 100% local</h3>
                 <span className="ml-auto text-xs text-green-400 border border-green-800 px-2 py-0.5 rounded-full">
                   Votre appareil uniquement
                 </span>
@@ -543,7 +549,7 @@ export default function Home() {
                   { icon: '✓', label: 'Aucun serveur à attaquer', sub: 'Inatteignable depuis internet', color: 'green' },
                 ].map(({ icon, label, sub, color }, i) => (
                   <div key={i}>
-                    <div className={`flex items-center gap-3 ${color === 'green' ? 'bg-green-100 border border-green-800' : 'bg-[#151922] border border-stone-700'} rounded-xl px-4 py-3`}>
+                    <div className={`flex items-center gap-3 ${color === 'green' ? 'bg-green-950/50 border border-green-800' : 'bg-[#151922] border border-stone-700'} rounded-xl px-4 py-3`}>
                       <span className="text-lg">{icon}</span>
                       <div>
                         <div className={`text-sm font-medium ${color === 'green' ? 'text-green-300' : 'text-stone-300'}`}>{label}</div>
@@ -716,7 +722,7 @@ export default function Home() {
             <p className="text-stone-400 text-lg">Pas d&apos;abonnement. Une licence, à vie.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Free */}
             <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
               <div className="mb-6">
@@ -726,7 +732,7 @@ export default function Home() {
               </div>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
-                  '3 mots de passe maximum',
+                  '10 mots de passe',
                   'Générateur de mots de passe',
                   'Chiffrement post-quantique (Kyber1024)',
                   'Chiffrement de fichiers & dossiers',
@@ -756,19 +762,20 @@ export default function Home() {
               <div className="mb-6">
                 <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">Kyber Pro</span>
                 <div className="flex items-end gap-2 mt-2">
-                  <span className="text-5xl font-bold text-stone-100">24,99 €</span>
+                  <span className="text-5xl font-bold text-stone-100">29 €</span>
                   <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
                 </div>
                 <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 1 utilisateur</p>
+                <p className="text-blue-300 text-xs mt-2">Prix de lancement / passera à 39 € à la sortie de macOS et de l&apos;extension navigateur</p>
               </div>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
                   'Mots de passe illimités',
+                  'Coffres illimités',
                   'Toutes les fonctionnalités gratuites',
                   'Export CSV',
-                  'Mises à jour à vie',
+                  'Mises à jour v1.x incluses',
                   'Support prioritaire',
-                  'Licence perpétuelle',
                 ].map((feat) => (
                   <li key={feat} className="flex items-center gap-3 text-stone-300">
                     <span className="text-blue-400 flex-shrink-0">✓</span>
@@ -777,10 +784,42 @@ export default function Home() {
                 ))}
               </ul>
               <button
-                onClick={() => setShowModal(true)}
+                onClick={() => { setBuyTier('pro'); setShowModal(true); }}
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-900/40 text-white"
               >
-                Acheter / 24,99 €
+                Acheter / 29 €
+              </button>
+            </div>
+
+            {/* Famille */}
+            <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 flex flex-col reveal reveal-delay-3 shadow-sm">
+              <div className="mb-6">
+                <span className="text-indigo-400 text-sm font-medium uppercase tracking-wider">Kyber Famille</span>
+                <div className="flex items-end gap-2 mt-2">
+                  <span className="text-5xl font-bold text-stone-100">49 €</span>
+                  <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
+                </div>
+                <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 5 postes</p>
+                <p className="text-stone-500 text-xs mt-2">Moins de 10 € par personne, pour toute la famille</p>
+              </div>
+              <ul className="space-y-3 mb-8 text-sm flex-1">
+                {[
+                  'Tout Kyber Pro',
+                  '5 postes (famille ou foyer)',
+                  'Une seule clé de licence',
+                  'Mises à jour v1.x incluses',
+                ].map((feat) => (
+                  <li key={feat} className="flex items-center gap-3 text-stone-300">
+                    <span className="text-indigo-400 flex-shrink-0">✓</span>
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <button
+                onClick={() => { setBuyTier('famille'); setShowModal(true); }}
+                className="w-full border border-indigo-700 hover:bg-indigo-950/40 py-3.5 rounded-xl text-sm font-semibold transition-all text-indigo-300"
+              >
+                Acheter / 49 €
               </button>
             </div>
           </div>
@@ -803,7 +842,7 @@ export default function Home() {
                 ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                href: '/downloads/Kyber_1.1.0_x64-setup.exe',
+                href: '/downloads/Kyber_1.1.1_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
                 available: true,
@@ -933,7 +972,7 @@ export default function Home() {
               {
                 href: '/blog/keepass-alternative-post-quantique',
                 cat: 'Comparatif',
-                catColor: 'text-cyan-300 bg-cyan-50 border-cyan-200',
+                catColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
                 title: 'KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber',
                 date: '15 juin 2026',
                 read: '9 min',
@@ -1003,7 +1042,7 @@ export default function Home() {
           <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-100">Kyber Pro / 24,99 €</h3>
+                <h3 className="font-bold text-xl text-stone-100">{buyTier === 'famille' ? 'Kyber Famille / 49 €' : 'Kyber Pro / 29 €'}</h3>
                 <p className="text-stone-400 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-500 hover:text-stone-400 text-xl leading-none ml-4 mt-0.5">✕</button>

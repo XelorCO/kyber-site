@@ -14,8 +14,8 @@ const pageJsonLd = {
       url: 'https://kyber-security.fr',
       inLanguage: 'fr-FR',
       offers: [
-        { '@type': 'Offer', name: 'Kyber Gratuit', price: '0', priceCurrency: 'EUR', description: "Jusqu'à 3 mots de passe" },
-        { '@type': 'Offer', name: 'Kyber Pro', price: '24.99', priceCurrency: 'EUR', description: 'Mots de passe illimités, licence perpétuelle' },
+        { '@type': 'Offer', name: 'Kyber Gratuit', price: '0', priceCurrency: 'EUR', description: "Jusqu'à 10 mots de passe" },
+        { '@type': 'Offer', name: 'Kyber Pro', price: '29.00', priceCurrency: 'EUR', description: 'Mots de passe illimités, licence perpétuelle' },
       ],
       featureList: ['Chiffrement post-quantique Kyber1024', 'AES-256-GCM', 'Argon2id', 'Auto-remplissage', '100% local, zéro cloud'],
     },
@@ -84,7 +84,7 @@ const features = [
     desc: 'Chiffrement symétrique authentifié de niveau militaire. Le "GCM" garantit que vos données ne peuvent pas être modifiées sans être détectées. Standard utilisé par les banques et l\'armée.',
   },
   {
-    color: 'text-cyan-300',
+    color: 'text-indigo-300',
     title: 'Argon2id / Dérivation de clé',
     desc: 'Vainqueur de la Password Hashing Competition 2015. Paramétré à 64 MB de mémoire : rend les attaques GPU et ASIC économiquement impossibles. Votre passphrase ne peut pas être forcée brute.',
   },
@@ -250,13 +250,13 @@ export default function PageGestionnaire() {
                 {[
                   { step: '1', label: 'Votre passphrase', color: 'border-stone-700 text-stone-300' },
                   { arrow: true },
-                  { step: '2', label: 'Argon2id (64 MB mémoire)', sublabel: 'Résistant GPU / ASIC / force brute', color: 'border-cyan-300 text-cyan-300' },
+                  { step: '2', label: 'Argon2id (64 MB mémoire)', sublabel: 'Résistant GPU / ASIC / force brute', color: 'border-indigo-800 text-indigo-300' },
                   { arrow: true },
                   { step: '3', label: 'Kyber1024 KEM', sublabel: 'Encapsulation post-quantique (NIST ML-KEM)', color: 'border-blue-700 text-blue-300' },
                   { arrow: true },
                   { step: '4', label: 'HKDF-SHA256', sublabel: 'Dérivation de clé finale', color: 'border-indigo-700 text-indigo-300' },
                   { arrow: true },
-                  { step: '5', label: 'AES-256-GCM', sublabel: 'Chiffrement authentifié de vos données', color: 'border-green-300 text-green-300' },
+                  { step: '5', label: 'AES-256-GCM', sublabel: 'Chiffrement authentifié de vos données', color: 'border-green-800 text-green-300' },
                 ].map((item, i) =>
                   'arrow' in item ? (
                     <div key={i} className="text-stone-600 text-lg">↓</div>
@@ -318,7 +318,7 @@ export default function PageGestionnaire() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-4 text-stone-100">Prêt à passer au post-quantique ?</h2>
             <p className="text-stone-400 mb-8">
-              Gratuit jusqu&apos;à 3 mots de passe. Licence Pro à 24,99€ paiement unique, à vie.
+              Gratuit jusqu&apos;à 10 mots de passe. Licence Pro à 29 € paiement unique, à vie.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

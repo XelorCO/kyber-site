@@ -6,22 +6,24 @@ interface SendLicenseEmailParams {
   name: string;
   email: string;
   licenseKey: string;
+  tier?: 'pro' | 'famille';
 }
 
-export async function sendLicenseEmail({ name, email, licenseKey }: SendLicenseEmailParams) {
+export async function sendLicenseEmail({ name, email, licenseKey, tier = 'pro' }: SendLicenseEmailParams) {
   const firstName = name.split(' ')[0];
+  const tierLabel = tier === 'famille' ? 'Kyber Famille' : 'Kyber Pro';
 
   await resend.emails.send({
     from: 'Kyber <noreply@kyber-security.fr>',
     to: [email],
-    subject: 'Votre licence Kyber Pro 🔑',
+    subject: `Votre licence ${tierLabel} 🔑`,
     html: `
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Votre licence Kyber Pro</title>
+  <title>Votre licence ${tierLabel}</title>
 </head>
 <body style="margin:0;padding:20px;background:#f1f5f9;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <div style="max-width:600px;margin:0 auto;">
@@ -36,8 +38,8 @@ export async function sendLicenseEmail({ name, email, licenseKey }: SendLicenseE
     <div style="background:white;padding:32px;border-radius:0 0 16px 16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);">
       <p style="color:#1e293b;font-size:16px;margin-top:0;">Bonjour <strong>${firstName}</strong>,</p>
       <p style="color:#475569;font-size:15px;line-height:1.6;">
-        Merci pour votre achat ! Votre licence <strong>Kyber Pro</strong> est prête.
-        Voici votre clé personnelle :
+        Merci pour votre achat ! Votre licence <strong>${tierLabel}</strong> est prête.
+        Voici votre clé personnelle${tier === 'famille' ? ' / utilisable sur les 5 postes de votre foyer' : ''} :
       </p>
 
       <!-- License key box -->

@@ -38,10 +38,19 @@ export default function CGV() {
 
           <section>
             <h2 className="text-xl font-semibold text-white mb-3">3. Prix</h2>
-            <p>
+            <p className="mb-3">
               Le prix de la licence <strong className="text-white">Kyber Pro</strong> est de{' '}
-              <strong className="text-white">24,99 € TTC</strong> (paiement unique, licence perpétuelle pour 1 utilisateur).
-              Les prix sont indiqués en euros, toutes taxes comprises.
+              <strong className="text-white">29 € TTC</strong> (paiement unique, licence perpétuelle pour 1 utilisateur).
+              Le prix de la licence <strong className="text-white">Kyber Famille</strong> est de{' '}
+              <strong className="text-white">49 € TTC</strong> (paiement unique, licence perpétuelle pour 5 postes
+              d&apos;un même foyer). Les prix sont indiqués en euros, toutes taxes comprises.
+            </p>
+            <p>
+              Les licences perpétuelles incluent l&apos;ensemble des mises à jour de la branche{' '}
+              <strong className="text-white">version 1.x</strong> du logiciel, sans limite de durée.
+              En cas de sortie d&apos;une version majeure ultérieure (v2), une mise à niveau
+              à tarif préférentiel sera proposée aux détenteurs d&apos;une licence v1 / la version
+              acquise restant pleinement fonctionnelle sans obligation d&apos;achat.
             </p>
           </section>
 

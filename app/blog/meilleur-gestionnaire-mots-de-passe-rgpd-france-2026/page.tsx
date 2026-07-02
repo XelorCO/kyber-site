@@ -113,7 +113,7 @@ export default function ArticleRGPD() {
                 Ce n&apos;est pas hypothétique : des transferts de données ont été ordonnés par la justice américaine malgré
                 les réglementations européennes.
               </p>
-              <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-5 text-sm text-amber-800">
+              <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-5 text-sm text-amber-300">
                 <strong>Point RGPD clé :</strong> L&apos;article 46 du RGPD exige des garanties appropriées pour les transferts
                 hors UE. Les clauses contractuelles types (CCT) ne protègent pas contre le CLOUD Act / un avis confirmé
                 par la CNIL et le Comité européen de la protection des données.
@@ -175,16 +175,16 @@ export default function ArticleRGPD() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
-                      <span className="text-green-400">✓</span> <span className="text-green-800">Zéro transfert hors UE / par conception</span>
+                      <span className="text-green-400">✓</span> <span className="text-green-300">Zéro transfert hors UE / par conception</span>
                     </div>
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
-                      <span className="text-green-400">✓</span> <span className="text-green-800">CLOUD Act inapplicable (0 serveur)</span>
+                      <span className="text-green-400">✓</span> <span className="text-green-300">CLOUD Act inapplicable (0 serveur)</span>
                     </div>
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
-                      <span className="text-green-400">✓</span> <span className="text-green-800">Protection harvest-now-decrypt-later</span>
+                      <span className="text-green-400">✓</span> <span className="text-green-300">Protection harvest-now-decrypt-later</span>
                     </div>
                     <div className="bg-amber-950/50 border border-amber-800 rounded-lg px-3 py-2">
-                      <span className="text-amber-600">→</span> <span className="text-amber-800">macOS en cours (été 2026)</span>
+                      <span className="text-amber-600">→</span> <span className="text-amber-300">macOS en cours (été 2026)</span>
                     </div>
                   </div>
                 </div>
@@ -198,13 +198,13 @@ export default function ArticleRGPD() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
-                      <span className="text-green-400">✓</span> <span className="text-green-800">GPL / code auditable</span>
+                      <span className="text-green-400">✓</span> <span className="text-green-300">GPL / code auditable</span>
                     </div>
                     <div className="bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
                       <span className="text-red-500">✗</span> <span className="text-red-700">Pas de protection post-quantique</span>
                     </div>
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
-                      <span className="text-green-400">✓</span> <span className="text-green-800">Stockage local / RGPD garanti</span>
+                      <span className="text-green-400">✓</span> <span className="text-green-300">Stockage local / RGPD garanti</span>
                     </div>
                     <div className="bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
                       <span className="text-red-500">✗</span> <span className="text-red-700">UX datée, pas de scanner natif</span>
@@ -220,7 +220,7 @@ export default function ArticleRGPD() {
                     / le CLOUD Act s&apos;applique potentiellement. L&apos;option self-hosted sur infrastructure européenne
                     améliore significativement la conformité.
                   </p>
-                  <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-3 text-xs text-amber-800">
+                  <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-3 text-xs text-amber-300">
                     <strong>Note :</strong> Bitwarden self-hosted sur un VPS OVH ou Scaleway (France) + chiffrement de bout en bout
                     est une option sérieuse pour les équipes tech. Mais cela nécessite une infrastructure à maintenir.
                   </div>
@@ -234,7 +234,7 @@ export default function ArticleRGPD() {
                     via brute-force si les mots de passe maîtres étaient faibles. LastPass est fermé,
                     américain, et a prouvé que ses serveurs centralisés constituent un point de défaillance unique.
                   </p>
-                  <div className="bg-red-950/50 border border-red-800 rounded-xl p-3 text-xs text-red-800">
+                  <div className="bg-red-950/50 border border-red-800 rounded-xl p-3 text-xs text-red-300">
                     La CNIL française a enquêté sur LastPass suite à la brèche pour vérifier la conformité RGPD
                     des notifications aux utilisateurs européens. Évitez LastPass en 2026.
                   </div>

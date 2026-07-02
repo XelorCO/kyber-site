@@ -52,7 +52,7 @@ export default function EntrepriseClient() {
               {[
                 {
                   name: 'Pro individuel',
-                  price: '24,99 €',
+                  price: '29 €',
                   sub: 'paiement unique / licence à vie',
                   features: ['1 utilisateur', 'Mots de passe illimités', 'Export CSV', 'Mises à jour à vie', 'Support email'],
                   cta: 'Acheter',
@@ -61,9 +61,9 @@ export default function EntrepriseClient() {
                 },
                 {
                   name: 'Équipe',
-                  price: '19,99 €',
-                  sub: '10 utilisateurs / paiement unique',
-                  features: ['Multi-utilisateurs', 'Déploiement centralisé', 'Tarifs dégressifs', 'Support prioritaire', 'Facturation entreprise'],
+                  price: '19 €',
+                  sub: 'par utilisateur / an, minimum 5 postes',
+                  features: ['Abonnement annuel sans engagement', 'Multi-utilisateurs', 'Tarifs dégressifs dès 20 postes', 'Support prioritaire', 'Facturation entreprise (TVA, bon de commande)'],
                   cta: 'Nous contacter',
                   href: '#contact',
                   highlight: true,
@@ -129,7 +129,7 @@ export default function EntrepriseClient() {
                   icon: 'FR',
                   title: 'RGPD & souveraineté numérique',
                   desc: "Aucune donnée ne quitte le territoire de l'entreprise. Conformité RGPD native / pas de DPA à négocier avec un fournisseur cloud américain.",
-                  color: 'bg-green-950/50 border-green-300',
+                  color: 'bg-green-950/50 border-green-800',
                 },
                 {
                   icon: '✦',
@@ -141,25 +141,25 @@ export default function EntrepriseClient() {
                   icon: '⧉',
                   title: 'En route vers la certification ANSSI',
                   desc: "Démarche CSPN en cours d'initiation. Le bon choix pour anticiper les exigences des marchés publics et des OIV.",
-                  color: 'bg-amber-950/50 border-amber-300',
+                  color: 'bg-amber-950/50 border-amber-800',
                 },
                 {
                   icon: '▲',
                   title: 'Déploiement sans infrastructure',
                   desc: "Chaque poste s'installe indépendamment en quelques minutes / aucun serveur de gestion / aucun VPN requis.",
-                  color: 'bg-purple-50 border-purple-300',
+                  color: 'bg-purple-950/50 border-purple-800',
                 },
                 {
                   icon: '⬡',
                   title: 'Activation hors-ligne',
                   desc: "Les licences sont activées localement par signature cryptographique Ed25519 / aucune connexion à un serveur de licences requise.",
-                  color: 'bg-cyan-50 border-cyan-300',
+                  color: 'bg-indigo-950/50 border-indigo-800',
                 },
                 {
                   icon: '▤',
                   title: 'Chiffrement de fichiers inclus',
                   desc: "Chiffrez vos documents confidentiels au format .kyber / accessibles uniquement avec la passphrase du coffre de chaque utilisateur.",
-                  color: 'bg-orange-50 border-orange-300',
+                  color: 'bg-amber-950/50 border-amber-800',
                 },
                 {
                   icon: '▥',
@@ -171,7 +171,7 @@ export default function EntrepriseClient() {
                   icon: '↻',
                   title: 'Mises à jour perpétuelles',
                   desc: "Votre licence inclut toutes les mises à jour de la branche v1.x / pas d'abonnement annuel / pas de surprise sur la facture.",
-                  color: 'bg-violet-50 border-violet-300',
+                  color: 'bg-violet-950/50 border-violet-800',
                 },
               ].map((a) => (
                 <div key={a.title} className={`${a.color} border rounded-xl p-5`}>

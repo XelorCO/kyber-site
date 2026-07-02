@@ -72,7 +72,7 @@ export default function ArticleKeePass() {
           {/* ── HEADER ── */}
           <header className="py-12">
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-cyan-300 bg-cyan-50 border-cyan-200">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-indigo-300 bg-indigo-950/50 border-indigo-800">
                 Comparatif
               </span>
               <span className="text-stone-500 text-xs">15 juin 2026 · 9 min de lecture</span>
@@ -100,7 +100,7 @@ export default function ArticleKeePass() {
 
             {/* HONNÊTETÉ */}
             <section className="bg-blue-950/50 border border-blue-800 rounded-2xl p-6">
-              <p className="text-blue-800 font-medium mb-2">Avant de commencer : soyons honnêtes</p>
+              <p className="text-blue-300 font-medium mb-2">Avant de commencer : soyons honnêtes</p>
               <p className="text-blue-300 text-sm">
                 Si vous utilisez KeePass, vous faites déjà partie des 5% d&apos;utilisateurs qui ont compris l&apos;intérêt
                 du stockage local. Ce n&apos;est pas un article pour vous convaincre que KeePass est mauvais /
@@ -154,8 +154,8 @@ export default function ArticleKeePass() {
                 un ordinateur quantique suffirait à accélérer massivement le brute-force.
               </p>
               <div className="bg-amber-950/50 border border-amber-800 rounded-xl p-5">
-                <h3 className="font-semibold text-amber-900 mb-2">La menace harvest-now-decrypt-later</h3>
-                <p className="text-amber-800 text-sm">
+                <h3 className="font-semibold text-amber-200 mb-2">La menace harvest-now-decrypt-later</h3>
+                <p className="text-amber-300 text-sm">
                   Des acteurs étatiques copient des coffres chiffrés dès aujourd&apos;hui, en attendant d&apos;avoir
                   suffisamment de puissance quantique pour les déchiffrer plus tard. Si votre fichier .kdbx
                   est exposé une seule fois (USB perdue, backup cloud, PC volé), il pourrait être déchiffré
@@ -240,7 +240,7 @@ export default function ArticleKeePass() {
                   {
                     step: '5',
                     title: 'Passer Pro (optionnel)',
-                    desc: "Si vous avez plus de 3 mots de passe, la version Kyber Pro (24,99 € licence à vie) lève la limite. L'import fonctionne même en gratuit / vous verrez juste un avertissement si vous dépassez 3.",
+                    desc: "Si vous avez plus de 10 mots de passe, la version Kyber Pro (29 € licence à vie) lève la limite. L'import fonctionne même en gratuit / vous verrez juste un avertissement si vous dépassez 10.",
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4 bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 shadow-sm">
@@ -255,7 +255,7 @@ export default function ArticleKeePass() {
                 ))}
               </div>
 
-              <div className="mt-4 bg-amber-950/50 border border-amber-800 rounded-xl p-4 text-sm text-amber-800">
+              <div className="mt-4 bg-amber-950/50 border border-amber-800 rounded-xl p-4 text-sm text-amber-300">
                 <strong>À noter :</strong> L&apos;import .kdbx natif (sans passer par CSV) est sur la roadmap Kyber
                 pour le T3 2026. En attendant, le CSV fonctionne parfaitement pour la migration.
               </div>

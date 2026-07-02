@@ -51,9 +51,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Email introuvable' }, { status: 400 });
     }
 
+    const tier = session.metadata?.tier === 'famille' ? 'famille' : 'pro';
+
     try {
-      const licenseKey = await generateLicenseKey({ name, email, tier: 'pro' });
-      await sendLicenseEmail({ name, email, licenseKey });
+      const licenseKey = await generateLicenseKey({ name, email, tier });
+      await sendLicenseEmail({ name, email, licenseKey, tier });
       console.log(`[webhook] Licence envoyée à ${email}`);
     } catch (err) {
       console.error('[webhook] Erreur génération/envoi licence:', err);
