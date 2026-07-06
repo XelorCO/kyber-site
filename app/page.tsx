@@ -842,7 +842,7 @@ export default function Home() {
                 ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                href: '/downloads/Kyber_1.1.1_x64-setup.exe',
+                href: '/downloads/Kyber_1.2.0_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
                 available: true,

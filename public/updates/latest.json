@@ -1,11 +1,11 @@
 {
-  "version": "1.1.1",
-  "notes": "Version gratuite étendue à 10 mots de passe, améliorations mineures.",
-  "pub_date": "2026-07-02T22:00:00Z",
+  "version": "1.2.0",
+  "notes": "Nouveau design sombre, nouveau logo, popup de mise à jour et améliorations visuelles.",
+  "pub_date": "2026-07-06T17:36:58Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQnBzdTVFeFBQLzJGRVFaMGVacVF0N1EyQzk2bG43cEgzMkNJMUFZT1R2LzVUSTJJNXRyNkZkeVZMSkd5cCs1bXVtQTA5N0I4UVBIUzlrYkJNWGt0bnY5b0hXcmZSNWdFPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzMDI4OTQwCWZpbGU6S3liZXJfMS4xLjFfeDY0LXNldHVwLmV4ZQphMCtIZnlFTjgyYnU3MS95cXVza0JwOVhrc2d6bS9SVE4zaVdYOXVVTUVrbHlkLzdHTXdpMEc0VnE2NksvQ1FOYXpDNUJNWW9kMWZyaE9rQmlZVUxCdz09Cg==",
-      "url": "https://kyber-security.fr/downloads/Kyber_1.1.1_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQnBzdTVFeFBQLzZTOVRrR0pyRnRKODdlSGhVdEZid1ZQQmQ2SXJORlR1Z1NxUFRnTGJOaXV5MmNEYXBGQ09MOW9GcUJzdVk1eFZ0cGRsVnhCZzVsRDFtMDAvS043UkFVPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzgzMzU5MzkxCWZpbGU6S3liZXJfMS4yLjBfeDY0LXNldHVwLmV4ZQo0NzlhdEhZbWJrdXVHMnJ3QnloVklIVHNqTGV4dThmK25NM09nU00rRkIwSVA2SC84TTlWL1dQaVNZRHE5bGxMbVIwZjB5VExtSWtPdk1LbG1NaVlEdz09Cg==",
+      "url": "https://kyber-security.fr/downloads/Kyber_1.2.0_x64-setup.exe"
     }
   }
 }

@@ -63,7 +63,7 @@ Il n'y a AUCUN abonnement pour les offres Pro et Famille : c'est un paiement uni
 
 ## Plateformes et téléchargement
 
-- Windows 10 / 11 : disponible (installateur .exe NSIS et .msi), version actuelle 1.1.1
+- Windows 10 / 11 : disponible (installateur .exe NSIS et .msi), version actuelle 1.2.0
 - Linux : AppImage, .deb, .rpm / retour prochainement (rebuild en cours)
 - macOS 12+ : à venir
 - Téléchargement : https://kyber-security.fr/telechargement
