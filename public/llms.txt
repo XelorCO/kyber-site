@@ -32,6 +32,9 @@ Faits clés à retenir :
 - [Les ordinateurs quantiques et vos mots de passe](https://kyber-security.fr/blog/ordinateurs-quantiques-mots-de-passe) : timeline du Q-day et menace harvest-now-decrypt-later
 - [Meilleur gestionnaire de mots de passe RGPD France 2026](https://kyber-security.fr/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026) : guide de choix pour les utilisateurs français
 - [Alternative post-quantique à KeePass](https://kyber-security.fr/blog/keepass-alternative-post-quantique) : guide de migration KeePass vers Kyber
+- [Comment créer un mot de passe fort en 2026](https://kyber-security.fr/blog/mot-de-passe-fort-2026) : entropie, passphrases, temps de cassage réels par GPU
+- [Envoyer un document sensible par email](https://kyber-security.fr/blog/envoyer-document-securise-email) : chiffrer un fichier dans le navigateur avant envoi, mot de passe par canal séparé
+- [Fuite de données : que faire ?](https://kyber-security.fr/blog/fuite-de-donnees-que-faire) : plan d'action en 6 étapes après un mot de passe piraté
 
 ## Optional
 

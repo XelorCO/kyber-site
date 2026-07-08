@@ -37,6 +37,39 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'mot-de-passe-fort-2026',
+    title: 'Comment créer un mot de passe fort en 2026 : le guide complet',
+    excerpt:
+      "Oubliez les règles « majuscule + chiffre + symbole ». Entropie, passphrases, temps de cassage réels par GPU : la méthode concrète en 3 règles pour des mots de passe vraiment incassables.",
+    date: '9 juillet 2026',
+    readTime: '9 min',
+    category: 'Guide pratique',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+    featured: false,
+  },
+  {
+    slug: 'envoyer-document-securise-email',
+    title: 'Comment envoyer un document sensible par email en toute sécurité',
+    excerpt:
+      "RIB, pièce d'identité, contrat : la méthode simple et gratuite pour que vos pièces jointes restent illisibles même si la boîte mail est piratée. Chiffrement dans le navigateur, mot de passe par canal séparé.",
+    date: '9 juillet 2026',
+    readTime: '7 min',
+    category: 'Guide pratique',
+    categoryColor: 'text-green-300 bg-green-950/50 border-green-800',
+    featured: false,
+  },
+  {
+    slug: 'fuite-de-donnees-que-faire',
+    title: 'Fuite de données : que faire quand votre mot de passe a été piraté ?',
+    excerpt:
+      "Votre email apparaît dans une fuite ? Le plan d'action en 6 étapes dans le bon ordre : sécuriser l'email d'abord, credential stuffing, double authentification, et comment ne plus jamais revivre ça.",
+    date: '9 juillet 2026',
+    readTime: '8 min',
+    category: 'Sécurité',
+    categoryColor: 'text-red-300 bg-red-950/50 border-red-800',
+    featured: false,
+  },
+  {
     slug: 'meilleur-gestionnaire-mots-de-passe-rgpd-france-2026',
     title: 'Meilleur gestionnaire de mots de passe RGPD France 2026',
     excerpt:

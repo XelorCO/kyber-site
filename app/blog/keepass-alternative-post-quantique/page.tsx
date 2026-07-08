@@ -280,7 +280,7 @@ export default function ArticleKeePass() {
                   },
                   {
                     q: 'Puis-je utiliser Kyber sur Linux comme KeePass ?',
-                    a: "Oui. Kyber est disponible en AppImage, .deb et .rpm pour Linux. Testé sur Ubuntu, Debian, Kali, Fedora.",
+                    a: "Le support Linux (AppImage, .deb, .rpm) arrive très prochainement / il est en tête de la roadmap publique. En attendant, Kyber est disponible sur Windows 10/11.",
                   },
                 ].map((faq) => (
                   <details key={faq.q} className="bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 shadow-sm group">
