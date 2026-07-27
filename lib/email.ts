@@ -2,6 +2,15 @@ import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+function escapeHtml(str: string): string {
+  return (str ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;');
+}
+
 interface SendLicenseEmailParams {
   name: string;
   email: string;
@@ -10,7 +19,7 @@ interface SendLicenseEmailParams {
 }
 
 export async function sendLicenseEmail({ name, email, licenseKey, tier = 'pro' }: SendLicenseEmailParams) {
-  const firstName = name.split(' ')[0];
+  const firstName = escapeHtml(name.split(' ')[0]);
   const tierLabel = tier === 'famille' ? 'Kyber Famille' : 'Kyber Pro';
 
   await resend.emails.send({

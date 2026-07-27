@@ -201,13 +201,13 @@ export default function ArticleRGPD() {
                       <span className="text-green-400">✓</span> <span className="text-green-300">GPL / code auditable</span>
                     </div>
                     <div className="bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
-                      <span className="text-red-500">✗</span> <span className="text-red-700">Pas de protection post-quantique</span>
+                      <span className="text-red-500">✗</span> <span className="text-red-300">Pas de protection post-quantique</span>
                     </div>
                     <div className="bg-green-950/50 border border-green-800 rounded-lg px-3 py-2">
                       <span className="text-green-400">✓</span> <span className="text-green-300">Stockage local / RGPD garanti</span>
                     </div>
                     <div className="bg-red-950/50 border border-red-800 rounded-lg px-3 py-2">
-                      <span className="text-red-500">✗</span> <span className="text-red-700">UX datée, pas de scanner natif</span>
+                      <span className="text-red-500">✗</span> <span className="text-red-300">UX datée, pas de scanner natif</span>
                     </div>
                   </div>
                 </div>

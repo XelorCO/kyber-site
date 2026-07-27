@@ -85,7 +85,7 @@ export default function ArticleQCMotsDePasse() {
               ← Blog
             </Link>
             <div className="flex items-center gap-3 mb-6">
-              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-700 bg-red-950/50 border-red-800">
+              <span className="text-xs font-medium px-3 py-1 rounded-full border text-red-300 bg-red-950/50 border-red-800">
                 Sécurité
               </span>
               <span className="text-stone-400 text-xs">9 juin 2026</span>
@@ -126,7 +126,7 @@ export default function ArticleQCMotsDePasse() {
                     </p>
                   </div>
                   <div className="bg-red-950/50 border border-red-800 rounded-xl p-5">
-                    <h3 className="font-semibold text-red-700 mb-2">Scénario B / Harvest now, decrypt later (maintenant)</h3>
+                    <h3 className="font-semibold text-red-300 mb-2">Scénario B / Harvest now, decrypt later (maintenant)</h3>
                     <p className="text-sm">
                       Un adversaire vole votre coffre <em>aujourd&apos;hui</em> / chiffré / et attend d&apos;avoir les capacités
                       quantiques pour le déchiffrer. Si votre coffre est sur un cloud, ce risque est <strong>immédiat</strong>.
@@ -235,7 +235,7 @@ export default function ArticleQCMotsDePasse() {
                   des cibles. L&apos;incident LastPass de 2022 l&apos;a prouvé dramatiquement.
                 </p>
                 <div className="mt-6 bg-red-950/50 border border-red-800 rounded-xl p-5">
-                  <h3 className="font-semibold text-red-700 mb-2">L&apos;incident LastPass (décembre 2022)</h3>
+                  <h3 className="font-semibold text-red-300 mb-2">L&apos;incident LastPass (décembre 2022)</h3>
                   <p className="text-sm">
                     Des millions de coffres chiffrés ont été exfiltrés depuis les serveurs de LastPass.
                     Ces coffres existent quelque part, en possession d&apos;acteurs malveillants.

@@ -143,7 +143,7 @@ const articles = [
     date: '9 juin 2026',
     readTime: '8 min',
     category: 'Sécurité',
-    categoryColor: 'text-red-700 bg-red-950/50 border-red-800',
+    categoryColor: 'text-red-300 bg-red-950/50 border-red-800',
     featured: false,
   },
 ];

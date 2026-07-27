@@ -75,9 +75,9 @@ export default function PageTelechargement() {
               gratuitement
             </h1>
             <p className="text-lg text-stone-400 mb-2">
-              Gestionnaire de mots de passe post-quantique. Open source. Windows &amp; Linux.
+              Gestionnaire de mots de passe post-quantique. Windows disponible / Linux et macOS à venir.
             </p>
-            <p className="text-sm text-stone-500">Version 1.1.0 · Juillet 2026 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
+            <p className="text-sm text-stone-500">Version 1.2.0 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
           </div>
 
           {/* ── PLATEFORMES ── */}
@@ -148,7 +148,7 @@ export default function PageTelechargement() {
                 </div>
                 <h2 className="font-bold text-lg mb-1 text-stone-100">Linux</h2>
                 <p className="text-stone-500 text-xs mb-1">Debian, Ubuntu, Fedora, Kali</p>
-                <p className="text-xs text-stone-500 mb-3">AppImage, .deb, .rpm / Version 1.1.0 en préparation</p>
+                <p className="text-xs text-stone-500 mb-3">AppImage, .deb, .rpm / en préparation</p>
                 <span className="inline-block w-full text-center text-stone-500 text-sm border border-stone-800 bg-stone-900 px-4 py-2 rounded-xl cursor-not-allowed">
                   De retour très bientôt
                 </span>

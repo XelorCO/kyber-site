@@ -111,7 +111,7 @@ const features = [
     desc: "Chiffrez n'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Format .kyber lié à votre coffre : illisible sans votre passphrase.",
   },
   {
-    color: 'text-teal-700',
+    color: 'text-green-300',
     title: 'Générateur de mots de passe',
     desc: 'Génération cryptographiquement sûre via le CSPRNG du système. Longueur, caractères spéciaux, chiffres : tout est paramétrable. Entropie affichée en temps réel en bits.',
   },
@@ -121,7 +121,7 @@ const features = [
     desc: "Votre coffre .vault est un fichier chiffré sur votre disque. Aucune donnée ne transite par internet. Pas de compte, pas de télémétrie, pas de serveur de notre côté. Vous êtes le seul propriétaire.",
   },
   {
-    color: 'text-pink-700',
+    color: 'text-indigo-300',
     title: 'Multi-coffres',
     desc: "Créez plusieurs coffres indépendants : personnel, professionnel, famille. Chaque coffre a sa propre passphrase et sa propre paire de clés Kyber1024. Cloisonnement total.",
   },

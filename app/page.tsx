@@ -435,7 +435,7 @@ export default function Home() {
             <div className="cloud-danger bg-red-950/50 border border-red-800 rounded-2xl p-6">
               <div className="flex items-center gap-2 mb-5">
                 <span className="text-red-500 text-lg">⚠︎</span>
-                <h3 className="font-bold text-red-700">Gestionnaire cloud</h3>
+                <h3 className="font-bold text-red-300">Gestionnaire cloud</h3>
                 <span className="ml-auto text-xs text-red-500 border border-red-800 px-2 py-0.5 rounded-full">
                   Bitwarden, 1Password…
                 </span>
@@ -452,7 +452,7 @@ export default function Home() {
                     <div className={`flex items-center gap-3 ${color === 'red' ? 'bg-red-950/50 border border-red-800' : 'bg-[#151922] border border-stone-700'} rounded-xl px-4 py-3`}>
                       <span className="text-lg">{icon}</span>
                       <div>
-                        <div className={`text-sm font-medium ${color === 'red' ? 'text-red-700' : 'text-stone-300'}`}>{label}</div>
+                        <div className={`text-sm font-medium ${color === 'red' ? 'text-red-300' : 'text-stone-300'}`}>{label}</div>
                         <div className="text-xs text-stone-500">{sub}</div>
                       </div>
                     </div>
@@ -816,7 +816,7 @@ export default function Home() {
                 versions: 'Debian / Ubuntu',
                 href: null,
                 label: 'De retour très bientôt',
-                note: 'Version 1.1.0 en préparation',
+                note: 'En préparation',
                 available: false,
               },
             ].map((p, i) => (
@@ -844,7 +844,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-stone-500 text-xs mt-10">Version 1.1.0 / mises à jour automatiques signées</p>
+          <p className="text-stone-500 text-xs mt-10">Version 1.2.0 / mises à jour automatiques signées</p>
         </div>
       </section>
 
@@ -923,7 +923,7 @@ export default function Home() {
               {
                 href: '/blog/ordinateurs-quantiques-mots-de-passe',
                 cat: 'Sécurité',
-                catColor: 'text-red-700 bg-red-950/50 border-red-800',
+                catColor: 'text-red-300 bg-red-950/50 border-red-800',
                 title: 'Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?',
                 date: '9 juin 2026',
                 read: '8 min',

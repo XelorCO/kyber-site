@@ -93,7 +93,7 @@ export default function PageChiffrement() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-stone-100">Pourquoi RSA et ECDH ne suffisent plus</h2>
             <div className="bg-red-950/50 border border-red-800 rounded-xl p-6 mb-6">
-              <p className="text-red-700 text-sm font-medium mb-2">La menace concrète</p>
+              <p className="text-red-300 text-sm font-medium mb-2">La menace concrète</p>
               <p className="text-stone-400 text-sm leading-relaxed">
                 L&apos;algorithme de Shor, exécuté sur un ordinateur quantique suffisamment puissant, peut factoriser
                 un entier RSA-2048 en quelques heures. Les estimations actuelles situent l&apos;horizon à{' '}

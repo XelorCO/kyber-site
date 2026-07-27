@@ -165,7 +165,7 @@ export default function EntrepriseClient() {
                   icon: '▥',
                   title: 'Analyse de sécurité intégrée',
                   desc: "Tableau de bord des mots de passe faibles / réutilisés / ou anciens. Chaque utilisateur visualise le niveau de risque de son coffre.",
-                  color: 'bg-teal-50 border-teal-300',
+                  color: 'bg-green-950/50 border-green-800',
                 },
                 {
                   icon: '↻',

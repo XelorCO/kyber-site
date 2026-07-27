@@ -63,20 +63,20 @@ const sections: { title: string; features: Feature[] }[] = [
       { title: 'Analyse de sécurité', desc: 'Détection des mots de passe faibles, réutilisés ou anciens.', status: 'done' },
       { title: 'Migration coffres v1 → v2', desc: 'Mise à niveau des anciens coffres vers le format Kyber v2.', status: 'done' },
       { title: 'Windows 10/11 (x64)', desc: 'Installateur NSIS + MSI.', status: 'done' },
-      { title: 'Linux (x64)', desc: 'AppImage + .deb + .rpm / version 1.1.0 en cours de compilation, de retour très bientôt.', status: 'in-progress' },
       { title: 'Licence Pro Ed25519', desc: 'Système de licences cryptographiques hors-ligne.', status: 'done' },
     ],
   },
   {
     title: 'En développement',
     features: [
+      { title: 'Linux (x64)', desc: 'AppImage + .deb + .rpm / build en préparation, de retour très bientôt.', status: 'in-progress' },
       { title: 'macOS (Apple Silicon + Intel)', desc: 'Version .dmg pour macOS 12 Monterey et supérieur. Apple Silicon natif.', status: 'in-progress', eta: 'Été 2026' },
+      { title: 'Extension navigateur Chrome & Edge', desc: 'Auto-remplissage web natif / détection des champs de connexion dans le navigateur, connexion directe au coffre déjà ouvert dans l\'app. En beta.', status: 'in-progress', eta: 'T3 2026' },
     ],
   },
   {
     title: 'Planifié',
     features: [
-      { title: 'Extension navigateur Chrome & Firefox', desc: 'Auto-remplissage web natif / détection des champs de connexion dans le navigateur.', status: 'planned', eta: 'T3 2026' },
       { title: 'Import KeePass (.kdbx)', desc: 'Migration depuis KeePass sans passer par CSV / support des groupes et métadonnées.', status: 'planned', eta: 'T3 2026' },
       { title: 'Sauvegarde chiffrée NAS / USB', desc: 'Sync optionnel vers un emplacement personnalisé / aucun cloud, vous choisissez la destination.', status: 'planned', eta: 'T4 2026' },
       { title: 'Page de changelog public', desc: 'Historique des versions accessible sur le site avec notes de release.', status: 'planned', eta: 'T3 2026' },

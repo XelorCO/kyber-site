@@ -165,7 +165,7 @@ export default function ArticlePQC() {
                 </h2>
                 <div className="space-y-4">
                   <div className="bg-red-950/50 border border-red-800 rounded-xl p-5">
-                    <h3 className="font-semibold text-red-700 mb-2">Cassé par Shor (algorithmes asymétriques)</h3>
+                    <h3 className="font-semibold text-red-300 mb-2">Cassé par Shor (algorithmes asymétriques)</h3>
                     <ul className="space-y-1 text-sm">
                       {['RSA (TLS, email, signatures)', 'ECDSA / ECDH (Bitcoin, TLS 1.3, Signal)', 'DSA, DH classique'].map(item => (
                         <li key={item} className="flex gap-2">

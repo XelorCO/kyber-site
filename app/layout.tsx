@@ -14,7 +14,7 @@ const jsonLd = {
       '@type': 'SoftwareApplication',
       name: 'Kyber',
       applicationCategory: 'SecurityApplication',
-      operatingSystem: 'Windows 10, Windows 11, macOS 12, Linux',
+      operatingSystem: 'Windows 10, Windows 11',
       description: 'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id.',
       url: 'https://kyber-security.fr',
       inLanguage: 'fr-FR',
@@ -91,7 +91,7 @@ const jsonLd = {
           name: 'Sur quels systèmes Kyber fonctionne-t-il ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Kyber est compatible Windows 10 et 11, macOS 12 (Monterey) et supérieur, et Linux (Debian, Ubuntu).',
+            text: 'Kyber est disponible sur Windows 10 et 11. Les versions macOS 12 (Monterey) et supérieur, et Linux (Debian, Ubuntu), sont en préparation.',
           },
         },
         {
@@ -115,7 +115,7 @@ export const metadata: Metadata = {
     template: '%s / Kyber',
   },
   description:
-    'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 10 mots de passe. Windows, macOS, Linux.',
+    'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 10 mots de passe. Disponible sur Windows.',
 
   keywords: [
     'gestionnaire mots de passe',
@@ -172,7 +172,7 @@ export const metadata: Metadata = {
     siteName: 'Kyber',
     title: 'Kyber / Gestionnaire de mots de passe post-quantique',
     description:
-      'Premier gestionnaire de mots de passe post-quantique français. Kyber1024 + AES-256-GCM. Gratuit, dispo Windows / macOS / Linux.',
+      'Premier gestionnaire de mots de passe post-quantique français. Kyber1024 + AES-256-GCM. Gratuit, disponible sur Windows.',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber / Gestionnaire de mots de passe post-quantique' }],
   },
 

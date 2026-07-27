@@ -10,7 +10,7 @@ const comparatifJsonLd = {
     {
       '@type': 'Question',
       name: 'Quelle est la meilleure alternative à Bitwarden en France ?',
-      acceptedAnswer: { '@type': 'Answer', text: "Kyber est une alternative 100% locale et open source à Bitwarden. Contrairement à Bitwarden qui stocke les coffres dans le cloud, Kyber garde vos mots de passe uniquement sur votre disque. Il est également le seul à intégrer le chiffrement post-quantique Kyber1024 (ML-KEM NIST 2024)." },
+      acceptedAnswer: { '@type': 'Answer', text: "Kyber est une alternative 100% locale à Bitwarden. Contrairement à Bitwarden qui stocke les coffres dans le cloud, Kyber garde vos mots de passe uniquement sur votre disque. Il est également le seul à intégrer le chiffrement post-quantique Kyber1024 (ML-KEM NIST 2024)." },
     },
     {
       '@type': 'Question',
@@ -73,7 +73,7 @@ const products = [
     badgeColor: 'bg-blue-900/40 text-blue-300 border-blue-800',
     local: true,
     pqc: true,
-    openSource: true,
+    openSource: false,
     prix: '0€ / 29 € unique',
     rgpd: 'Totale',
     incidents: 'Aucun',
@@ -200,7 +200,7 @@ export default function PageComparatif() {
                     ))}
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-stone-100">
+                <tbody className="divide-y divide-stone-800">
                   <tr>
                     <td className="py-3 pr-6 pl-6 text-stone-400">Stockage local</td>
                     {products.map((p) => (
@@ -310,7 +310,7 @@ export default function PageComparatif() {
               </div>
 
               <div className="bg-red-950/50 border border-red-800 rounded-2xl p-6">
-                <h3 className="font-bold text-lg mb-2 text-red-700">LastPass / À éviter</h3>
+                <h3 className="font-bold text-lg mb-2 text-red-300">LastPass / À éviter</h3>
                 <p className="text-stone-400 text-sm leading-relaxed">
                   En 2022, LastPass a subi deux brèches successives : la seconde a permis aux attaquants de voler
                   les coffres chiffrés de millions d&apos;utilisateurs. Ces coffres sont toujours entre les mains

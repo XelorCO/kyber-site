@@ -162,7 +162,7 @@ export default function ArticleKyberLocalCloud() {
 
               <section>
                 <div className="bg-red-950/50 border border-red-800 rounded-xl p-6">
-                  <h2 className="text-xl font-bold text-red-700 mb-3">
+                  <h2 className="text-xl font-bold text-red-300 mb-3">
                     Les incidents qui ont tout changé
                   </h2>
                   <p>
@@ -177,7 +177,7 @@ export default function ArticleKyberLocalCloud() {
                     crypto ont été vidés.
                   </p>
                   <p className="mt-3">
-                    <strong className="text-red-700">La leçon :</strong> si votre coffre existe sur des serveurs tiers,
+                    <strong className="text-red-300">La leçon :</strong> si votre coffre existe sur des serveurs tiers,
                     il peut être volé. Peu importe la qualité du chiffrement en transit.
                   </p>
                 </div>
