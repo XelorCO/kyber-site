@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { ScrollProgress } from '@/components/ScrollFx';
 import Link from 'next/link';
+import NavHeader from '@/components/NavHeader';
 
 // ── Visualisations des étapes crypto ──────────────────────────────────────
 
@@ -168,7 +169,6 @@ export default function Home() {
   const [buyerEmail, setBuyerEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -253,72 +253,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#0e1015] text-stone-100 overflow-x-hidden">
 
-      {/* ── HEADER ── */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#0e1015]/90 backdrop-blur-md border-b border-stone-700">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2.5">
-            <span className="text-2xl font-bold bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
-              Kyber
-            </span>
-            <span className="text-xs text-stone-400 border border-stone-700 px-2 py-0.5 rounded-full hidden sm:inline">
-              Post-Quantique
-            </span>
-          </div>
-          <nav className="hidden lg:flex items-center gap-7 text-sm text-stone-400">
-            <a href="#how-it-works" className="hover:text-stone-100 transition-colors">Comment ça marche</a>
-            <a href="#pricing" className="hover:text-stone-100 transition-colors">Tarifs</a>
-            <a href="/blog" className="hover:text-stone-100 transition-colors">Blog</a>
-            <a href="/a-propos" className="hover:text-stone-100 transition-colors">À propos</a>
-          </nav>
-          <div className="flex items-center gap-3">
-            <a
-              href="/telechargement"
-              className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-4 py-2 rounded-lg text-sm font-medium transition-opacity text-white shadow-sm"
-            >
-              Télécharger
-            </a>
-            <button
-              className="lg:hidden p-2 rounded-lg border border-stone-700 bg-[#151922] text-stone-400 hover:bg-stone-900 transition-colors"
-              onClick={() => setMobileMenuOpen(v => !v)}
-              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-            >
-              {mobileMenuOpen ? (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-              ) : (
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-stone-800 bg-[#0e1015]/98 backdrop-blur-md">
-            <nav className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1">
-              {[
-                { href: '#how-it-works', label: 'Comment ça marche' },
-                { href: '#pricing', label: 'Tarifs' },
-                { href: '/blog', label: 'Blog' },
-                { href: '/a-propos', label: 'À propos' },
-              ].map(({ href, label }) => (
-                <a
-                  key={href}
-                  href={href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2.5 rounded-lg text-sm text-stone-400 hover:bg-stone-800 hover:text-stone-100 transition-colors"
-                >
-                  {label}
-                </a>
-              ))}
-            </nav>
-          </div>
-        )}
-      </header>
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 lg:hidden" onClick={() => setMobileMenuOpen(false)} aria-hidden="true" />
-      )}
+      <NavHeader />
 
       <ScrollProgress />
 

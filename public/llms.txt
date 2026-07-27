@@ -26,6 +26,7 @@ Faits clés à retenir :
 
 ## Blog
 
+- [Alternative à LastPass 2026](https://kyber-security.fr/blog/alternative-lastpass-gratuite) : pourquoi la fuite LastPass de 2022 pousse vers un gestionnaire local, comparatif et guide de migration CSV
 - [Gestionnaire local vs cloud](https://kyber-security.fr/blog/kyber-local-vs-cloud) : pourquoi le stockage local est plus sûr que le cloud
 - [Qu'est-ce que la cryptographie post-quantique ?](https://kyber-security.fr/blog/cryptographie-post-quantique) : Shor, NIST, standards FIPS 203/204/205
 - [Argon2id vs PBKDF2](https://kyber-security.fr/blog/argon2id-vs-pbkdf2) : comparatif des fonctions de dérivation de clé avec benchmarks GPU

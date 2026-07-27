@@ -188,8 +188,8 @@ export default function PageAPropos() {
                 },
                 {
                   period: '2022 / présent',
-                  title: 'Pentesteur indépendant / Softpac.fr',
-                  desc: 'Audits de sécurité pour PME et ETI françaises : tests d\'intrusion web, API, réseau, Active Directory.',
+                  title: 'Solutions IT & automatisations IA / Softpac.fr',
+                  desc: 'J\'accompagne les PME et ETI françaises en trouvant des solutions informatiques et des automatisations IA sur mesure, toujours alliées à la cybersécurité pour rester protégé.',
                 },
                 {
                   period: 'Formation',

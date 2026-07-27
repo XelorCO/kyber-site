@@ -37,6 +37,17 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'alternative-lastpass-gratuite',
+    title: 'Alternative à LastPass 2026 : gratuite, locale et sans abonnement',
+    excerpt:
+      "Fuite de données en 2022, hausses de prix répétées : les raisons de quitter LastPass ne manquent pas. Comparatif, guide de migration CSV et pourquoi le modèle local supprime le risque à la racine.",
+    date: '27 juillet 2026',
+    readTime: '8 min',
+    category: 'Comparatif',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+    featured: false,
+  },
+  {
     slug: 'mot-de-passe-fort-2026',
     title: 'Comment créer un mot de passe fort en 2026 : le guide complet',
     excerpt:
