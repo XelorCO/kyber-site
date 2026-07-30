@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { rateLimit } from '@/lib/ratelimit';
+import { getLaunchCounts, remainingSlots, LAUNCH_PRICES, LAUNCH_LIMIT } from '@/lib/launch';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -51,6 +52,13 @@ export async function POST(req: NextRequest) {
   } as const;
   const offer = offers[tier];
 
+  const counts = await getLaunchCounts(stripe);
+  const isLaunch = remainingSlots(counts[tier]) > 0;
+  const unit_amount = isLaunch ? LAUNCH_PRICES[tier] : offer.unit_amount;
+  const description = isLaunch
+    ? `${offer.description} · Prix de lancement (${LAUNCH_LIMIT} premiers utilisateurs)`
+    : offer.description;
+
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
@@ -59,9 +67,9 @@ export async function POST(req: NextRequest) {
           currency: 'eur',
           product_data: {
             name: offer.name,
-            description: offer.description,
+            description,
           },
-          unit_amount: offer.unit_amount,
+          unit_amount,
         },
         quantity: 1,
       },
@@ -69,7 +77,7 @@ export async function POST(req: NextRequest) {
     mode: 'payment',
     allow_promotion_codes: true,
     customer_email: email,
-    metadata: { name, email, tier },
+    metadata: { name, email, tier, launch: isLaunch ? 'true' : 'false' },
     success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
     cancel_url: `${baseUrl}/#pricing`,
     payment_intent_data: {

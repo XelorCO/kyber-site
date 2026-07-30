@@ -169,6 +169,7 @@ export default function Home() {
   const [buyerEmail, setBuyerEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
+  const [launchStatus, setLaunchStatus] = useState<{ limit: number; pro: number; famille: number } | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -178,6 +179,18 @@ export default function Home() {
     document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    fetch('/api/launch-status')
+      .then((res) => res.json())
+      .then((data) => setLaunchStatus(data))
+      .catch(() => {});
+  }, []);
+
+  const proLaunchActive = !!launchStatus && launchStatus.pro > 0;
+  const familleLaunchActive = !!launchStatus && launchStatus.famille > 0;
+  const proPrice = proLaunchActive ? 15 : 29;
+  const famillePrice = familleLaunchActive ? 25 : 49;
 
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -696,12 +709,34 @@ export default function Home() {
               </div>
               <div className="mb-6">
                 <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">Kyber Pro</span>
-                <div className="flex items-end gap-2 mt-2">
-                  <span className="text-5xl font-bold text-stone-100">29 €</span>
+                <div className="flex flex-wrap items-end gap-2 mt-2">
+                  {proLaunchActive ? (
+                    <>
+                      <span className="text-5xl font-bold text-stone-100">15 €</span>
+                      <span className="text-stone-500 text-lg line-through mb-1.5">29 €</span>
+                    </>
+                  ) : (
+                    <span className="text-5xl font-bold text-stone-100">29 €</span>
+                  )}
                   <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
                 </div>
                 <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 1 utilisateur</p>
-                <p className="text-blue-300 text-xs mt-2">Prix de lancement / passera à 39 € à la sortie de macOS et de l&apos;extension navigateur</p>
+                {proLaunchActive ? (
+                  <div className="mt-3">
+                    <div className="flex items-center justify-between text-xs mb-1.5 gap-2">
+                      <span className="text-blue-300 font-semibold whitespace-nowrap">◆ Offre de lancement</span>
+                      <span className="text-stone-400 whitespace-nowrap">{launchStatus!.pro}/{launchStatus!.limit} places</span>
+                    </div>
+                    <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-500"
+                        style={{ width: `${(launchStatus!.pro / launchStatus!.limit) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-blue-300 text-xs mt-2">Passera à 39 € à la sortie de macOS et de l&apos;extension navigateur</p>
+                )}
               </div>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
@@ -722,7 +757,7 @@ export default function Home() {
                 onClick={() => { setBuyTier('pro'); setShowModal(true); }}
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-900/40 text-white"
               >
-                Acheter / 29 €
+                Acheter / {proPrice} €
               </button>
             </div>
 
@@ -730,12 +765,34 @@ export default function Home() {
             <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 flex flex-col reveal reveal-delay-3 shadow-sm">
               <div className="mb-6">
                 <span className="text-indigo-400 text-sm font-medium uppercase tracking-wider">Kyber Famille</span>
-                <div className="flex items-end gap-2 mt-2">
-                  <span className="text-5xl font-bold text-stone-100">49 €</span>
+                <div className="flex flex-wrap items-end gap-2 mt-2">
+                  {familleLaunchActive ? (
+                    <>
+                      <span className="text-5xl font-bold text-stone-100">25 €</span>
+                      <span className="text-stone-500 text-lg line-through mb-1.5">49 €</span>
+                    </>
+                  ) : (
+                    <span className="text-5xl font-bold text-stone-100">49 €</span>
+                  )}
                   <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
                 </div>
                 <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 5 postes</p>
-                <p className="text-stone-500 text-xs mt-2">Moins de 10 € par personne, pour toute la famille</p>
+                {familleLaunchActive ? (
+                  <div className="mt-3">
+                    <div className="flex items-center justify-between text-xs mb-1.5 gap-2">
+                      <span className="text-indigo-300 font-semibold whitespace-nowrap">◆ Offre de lancement</span>
+                      <span className="text-stone-400 whitespace-nowrap">{launchStatus!.famille}/{launchStatus!.limit} places</span>
+                    </div>
+                    <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
+                      <div
+                        className="h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full transition-all duration-500"
+                        style={{ width: `${(launchStatus!.famille / launchStatus!.limit) * 100}%` }}
+                      />
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-stone-500 text-xs mt-2">Moins de 10 € par personne, pour toute la famille</p>
+                )}
               </div>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
@@ -754,7 +811,7 @@ export default function Home() {
                 onClick={() => { setBuyTier('famille'); setShowModal(true); }}
                 className="w-full border border-indigo-700 hover:bg-indigo-950/40 py-3.5 rounded-xl text-sm font-semibold transition-all text-indigo-300"
               >
-                Acheter / 49 €
+                Acheter / {famillePrice} €
               </button>
             </div>
           </div>
@@ -977,7 +1034,7 @@ export default function Home() {
           <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-100">{buyTier === 'famille' ? 'Kyber Famille / 49 €' : 'Kyber Pro / 29 €'}</h3>
+                <h3 className="font-bold text-xl text-stone-100">{buyTier === 'famille' ? `Kyber Famille / ${famillePrice} €` : `Kyber Pro / ${proPrice} €`}</h3>
                 <p className="text-stone-400 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-500 hover:text-stone-400 text-xl leading-none ml-4 mt-0.5">✕</button>
