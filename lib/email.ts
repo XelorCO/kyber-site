@@ -22,7 +22,7 @@ export async function sendLicenseEmail({ name, email, licenseKey, tier = 'pro' }
   const firstName = escapeHtml(name.split(' ')[0]);
   const tierLabel = tier === 'famille' ? 'Kyber Famille' : 'Kyber Pro';
 
-  await resend.emails.send({
+  const { error } = await resend.emails.send({
     from: 'Kyber <noreply@kyber-security.fr>',
     to: [email],
     subject: `Votre licence ${tierLabel} 🔑`,
@@ -99,4 +99,8 @@ export async function sendLicenseEmail({ name, email, licenseKey, tier = 'pro' }
 </html>
     `.trim(),
   });
+
+  if (error) {
+    throw new Error(`Resend a refusé l'envoi : ${error.name} — ${error.message}`);
+  }
 }
