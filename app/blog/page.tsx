@@ -37,6 +37,17 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'gestionnaire-mots-de-passe-windows-11',
+    title: 'Meilleur gestionnaire de mots de passe Windows 11 en 2026',
+    excerpt:
+      "Coffre-fort intégré à Edge/Chrome, Windows Hello, Bitwarden, 1Password ou solution locale : comparatif complet et pourquoi le stockage local exploite mieux la sécurité déjà présente sur Windows 11.",
+    date: '3 août 2026',
+    readTime: '8 min',
+    category: 'Comparatif',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+    featured: false,
+  },
+  {
     slug: 'alternative-lastpass-gratuite',
     title: 'Alternative à LastPass 2026 : gratuite, locale et sans abonnement',
     excerpt:
