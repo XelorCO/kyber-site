@@ -37,6 +37,17 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'passkeys-vs-gestionnaire-mots-de-passe',
+    title: 'Passkeys : la fin des mots de passe ? Ce qu\'elles ne remplacent pas',
+    excerpt:
+      "Couverture réelle des sites, dépendance au trousseau Apple ou Google, récupération de compte et exposition quantique : pourquoi les passkeys ne rendent pas un coffre-fort inutile en 2026.",
+    date: '9 août 2026',
+    readTime: '9 min',
+    category: 'Analyse',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+    featured: false,
+  },
+  {
     slug: 'gestionnaire-mots-de-passe-windows-11',
     title: 'Meilleur gestionnaire de mots de passe Windows 11 en 2026',
     excerpt:

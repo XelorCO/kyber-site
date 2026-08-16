@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/chiffrer-fichier`,                                     lastModified: now, changeFrequency: 'monthly',  priority: 0.9 },
     { url: `${base}/a-propos`,                                             lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/blog`,                                                 lastModified: now, changeFrequency: 'weekly',   priority: 0.7 },
+    { url: `${base}/blog/passkeys-vs-gestionnaire-mots-de-passe`,          lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/blog/gestionnaire-mots-de-passe-windows-11`,           lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/blog/alternative-lastpass-gratuite`,                   lastModified: now, changeFrequency: 'monthly',  priority: 0.8 },
     { url: `${base}/blog/kyber-local-vs-cloud`,                            lastModified: now, changeFrequency: 'monthly',  priority: 0.7 },

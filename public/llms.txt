@@ -26,6 +26,7 @@ Faits clés à retenir :
 
 ## Blog
 
+- [Passkeys : la fin des mots de passe ?](https://kyber-security.fr/blog/passkeys-vs-gestionnaire-mots-de-passe) : ce que les passkeys résolvent (hameçonnage, secret partagé) et leurs quatre limites (couverture minoritaire, dépendance au trousseau Apple/Google/Microsoft, récupération subie, secrets non couverts) ; note technique : WebAuthn repose sur ECDSA P-256, donc pas post-quantique, mais le risque est futur et non rétroactif contrairement à un coffre chiffré exfiltré
 - [Meilleur gestionnaire de mots de passe Windows 11 en 2026](https://kyber-security.fr/blog/gestionnaire-mots-de-passe-windows-11) : comparatif coffre navigateur / Bitwarden / Kyber, et pourquoi le stockage local exploite mieux la sécurité déjà présente sur Windows 11
 - [Alternative à LastPass 2026](https://kyber-security.fr/blog/alternative-lastpass-gratuite) : pourquoi la fuite LastPass de 2022 pousse vers un gestionnaire local, comparatif et guide de migration CSV
 - [Gestionnaire local vs cloud](https://kyber-security.fr/blog/kyber-local-vs-cloud) : pourquoi le stockage local est plus sûr que le cloud
