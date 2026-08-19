@@ -619,9 +619,9 @@ export default function Home() {
                   </svg>
                 ),
                 title: 'Générateur de mots de passe',
-                desc: 'Génération cryptographiquement sûre via le CSPRNG du système. Longueur, caractères spéciaux, chiffres : tout est paramétrable. Entropie affichée en temps réel en bits.',
+                desc: 'Génération cryptographiquement sûre via le CSPRNG du système. Longueur, caractères spéciaux, phrases secrètes : tout est paramétrable, avec l\'entropie réelle affichée en bits. Disponible aussi en ligne, sans installation.',
                 tag: 'Intégré',
-                link: null,
+                link: { href: '/generateur-mot-de-passe', label: 'Générer un mot de passe →' },
               },
               {
                 icon: (
@@ -954,35 +954,35 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 reveal reveal-delay-1">
             {[
               {
-                href: '/blog/meilleur-gestionnaire-mots-de-passe-rgpd-france-2026',
-                cat: 'Comparatif',
-                catColor: 'text-green-300 bg-green-950/50 border-green-800',
-                title: 'Meilleur gestionnaire de mots de passe RGPD France 2026',
-                date: '15 juin 2026',
-                read: '10 min',
-              },
-              {
-                href: '/blog/keepass-alternative-post-quantique',
+                href: '/blog/gestionnaire-mots-de-passe-gratuit-2026',
                 cat: 'Comparatif',
                 catColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
-                title: 'KeePass alternative post-quantique 2026 : pourquoi migrer vers Kyber',
-                date: '15 juin 2026',
+                title: 'Gestionnaire de mots de passe gratuit 2026 : lequel choisir vraiment ?',
+                date: '19 août 2026',
                 read: '9 min',
               },
               {
-                href: '/blog/kyber-local-vs-cloud',
-                cat: 'Analyse',
-                catColor: 'text-blue-300 bg-blue-950/50 border-blue-800',
-                title: 'Kyber local vs cloud : lequel vous protège vraiment ?',
-                date: '8 juin 2026',
+                href: '/blog/double-authentification-2fa',
+                cat: 'Guide pratique',
+                catColor: 'text-green-300 bg-green-950/50 border-green-800',
+                title: 'Double authentification (2FA) : le guide complet 2026',
+                date: '19 août 2026',
                 read: '8 min',
               },
               {
-                href: '/blog/ordinateurs-quantiques-mots-de-passe',
-                cat: 'Sécurité',
-                catColor: 'text-red-300 bg-red-950/50 border-red-800',
-                title: 'Faut-il avoir peur des ordinateurs quantiques pour ses mots de passe ?',
-                date: '9 juin 2026',
+                href: '/blog/passkeys-vs-gestionnaire-mots-de-passe',
+                cat: 'Analyse',
+                catColor: 'text-blue-300 bg-blue-950/50 border-blue-800',
+                title: 'Passkeys : la fin des mots de passe ? Ce qu\'elles ne remplacent pas',
+                date: '9 août 2026',
+                read: '9 min',
+              },
+              {
+                href: '/blog/gestionnaire-mots-de-passe-windows-11',
+                cat: 'Comparatif',
+                catColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+                title: 'Meilleur gestionnaire de mots de passe Windows 11 en 2026',
+                date: '3 août 2026',
                 read: '8 min',
               },
             ].map((a) => (

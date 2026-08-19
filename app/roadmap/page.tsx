@@ -59,6 +59,7 @@ const sections: { title: string; features: Feature[] }[] = [
       { title: 'Chiffrement de fichiers et dossiers', desc: 'Format .kyber / chiffrement AES-256-GCM lié à votre coffre.', status: 'done' },
       { title: 'Mises à jour automatiques signées', desc: 'Vérification au démarrage, installation en un clic. Chaque binaire est signé / l\'application refuse toute mise à jour non officielle.', status: 'done' },
       { title: 'Chiffrement de fichiers dans le navigateur', desc: 'Outil web gratuit : chiffrez un fichier en .kyber par mot de passe, 100 % local. Déchiffrable partout avec le mot de passe.', status: 'done' },
+      { title: 'Générateur de mots de passe en ligne', desc: 'Outil web gratuit : mots de passe aléatoires et phrases secrètes françaises, tirage cryptographique dans le navigateur avec entropie réelle affichée.', status: 'done' },
       { title: 'Scanner de champs de connexion', desc: 'Détection automatique et auto-remplissage dans les apps.', status: 'done' },
       { title: 'Analyse de sécurité', desc: 'Détection des mots de passe faibles, réutilisés ou anciens.', status: 'done' },
       { title: 'Migration coffres v1 → v2', desc: 'Mise à niveau des anciens coffres vers le format Kyber v2.', status: 'done' },

@@ -25,6 +25,8 @@ export default function NavFooter() {
           <Link href="/gestionnaire-mots-de-passe-post-quantique" className="hover:text-stone-100 transition-colors">Fonctionnalités</Link>
           <Link href="/chiffrement-kyber1024" className="hover:text-stone-100 transition-colors">Cryptographie</Link>
           <Link href="/comparatif-bitwarden-1password-kyber" className="hover:text-stone-100 transition-colors">Comparatif</Link>
+          <Link href="/generateur-mot-de-passe" className="hover:text-stone-100 transition-colors">Générateur</Link>
+          <Link href="/chiffrer-fichier" className="hover:text-stone-100 transition-colors">Chiffrer un fichier</Link>
           <Link href="/roadmap" className="hover:text-stone-100 transition-colors">Roadmap</Link>
           <Link href="/entreprise" className="hover:text-stone-100 transition-colors">Entreprise</Link>
           <Link href="/a-propos" className="hover:text-stone-100 transition-colors">À propos</Link>

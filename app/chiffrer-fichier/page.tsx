@@ -163,12 +163,20 @@ export default function PageChiffrerFichier() {
               Kyber est aussi un gestionnaire de mots de passe de bureau, 100 % local, avec la même
               chaîne de chiffrement post-quantique. Gratuit jusqu&apos;à 10 mots de passe.
             </p>
-            <Link
-              href="/telechargement"
-              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
-            >
-              Télécharger Kyber →
-            </Link>
+            <div className="flex flex-wrap gap-3 justify-center">
+              <Link
+                href="/telechargement"
+                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+              >
+                Télécharger Kyber →
+              </Link>
+              <Link
+                href="/generateur-mot-de-passe"
+                className="inline-block border border-stone-700 hover:border-stone-600 px-8 py-3.5 rounded-xl font-semibold text-sm text-stone-300 transition-colors"
+              >
+                Générateur de mot de passe
+              </Link>
+            </div>
           </section>
         </div>
       </main>

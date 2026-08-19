@@ -9,6 +9,7 @@ const navLinks = [
   { href: '/chiffrement-kyber1024', label: 'Cryptographie' },
   { href: '/comparatif-bitwarden-1password-kyber', label: 'Comparatif' },
   { href: '/chiffrer-fichier', label: 'Chiffrer un fichier' },
+  { href: '/generateur-mot-de-passe', label: 'Générateur' },
   { href: '/blog', label: 'Blog' },
   { href: '/roadmap', label: 'Roadmap' },
   { href: '/a-propos', label: 'À propos' },
@@ -78,7 +79,7 @@ export default function NavHeader() {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-7 text-sm text-stone-400">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-sm text-stone-400">
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}

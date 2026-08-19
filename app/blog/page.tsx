@@ -37,6 +37,28 @@ export const metadata: Metadata = {
 
 const articles = [
   {
+    slug: 'gestionnaire-mots-de-passe-gratuit-2026',
+    title: 'Gestionnaire de mots de passe gratuit 2026 : lequel choisir vraiment ?',
+    excerpt:
+      "Bitwarden, KeePassXC, Proton Pass, coffre du navigateur ou Kyber : ce que cache chaque offre gratuite, qui paie réellement, et comment choisir en trois questions. Y compris quand la bonne réponse n'est pas la nôtre.",
+    date: '19 août 2026',
+    readTime: '9 min',
+    category: 'Comparatif',
+    categoryColor: 'text-indigo-300 bg-indigo-950/50 border-indigo-800',
+    featured: false,
+  },
+  {
+    slug: 'double-authentification-2fa',
+    title: 'Double authentification (2FA) : le guide complet 2026',
+    excerpt:
+      "SMS, application TOTP, clé physique, passkey : les cinq méthodes classées, l'ordre d'activation à suivre, où ranger les codes de récupération et pourquoi stocker vos codes 2FA dans votre coffre annule le second facteur.",
+    date: '19 août 2026',
+    readTime: '8 min',
+    category: 'Guide pratique',
+    categoryColor: 'text-green-300 bg-green-950/50 border-green-800',
+    featured: false,
+  },
+  {
     slug: 'passkeys-vs-gestionnaire-mots-de-passe',
     title: 'Passkeys : la fin des mots de passe ? Ce qu\'elles ne remplacent pas',
     excerpt:

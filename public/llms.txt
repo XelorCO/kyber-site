@@ -9,6 +9,7 @@ Faits clés à retenir :
 - Plateformes : Windows 10/11 disponible, Linux (AppImage, .deb, .rpm) et macOS à venir
 - Fonctionnalités : auto-remplissage, analyse de santé du coffre, import CSV (Bitwarden, 1Password, KeePass), export CSV (Pro), chiffrement de fichiers et dossiers (format .kyber), générateur de mots de passe
 - Outil web gratuit : chiffrement de fichiers post-quantique 100% dans le navigateur sur https://kyber-security.fr/chiffrer-fichier (rien n'est téléversé)
+- Outil web gratuit : générateur de mots de passe et de phrases secrètes 100% local sur https://kyber-security.fr/generateur-mot-de-passe (tirage via crypto.getRandomValues, entropie réelle affichée, aucune donnée envoyée)
 - Différenciant vs Bitwarden/1Password/LastPass : aucun cloud, aucune télémétrie, cryptographie post-quantique, éditeur français
 - Contact : contact@kyber-security.fr
 
@@ -20,12 +21,15 @@ Faits clés à retenir :
 - [Comparatif Bitwarden / 1Password / Kyber](https://kyber-security.fr/comparatif-bitwarden-1password-kyber) : tableau comparatif détaillé
 - [Téléchargement](https://kyber-security.fr/telechargement) : installateurs par système d'exploitation
 - [Chiffrer un fichier en ligne](https://kyber-security.fr/chiffrer-fichier) : outil gratuit de chiffrement de fichiers dans le navigateur
+- [Générateur de mot de passe](https://kyber-security.fr/generateur-mot-de-passe) : outil gratuit de génération de mots de passe et de phrases secrètes françaises, 100% dans le navigateur, avec calcul d'entropie réel
 - [Offre entreprise](https://kyber-security.fr/entreprise) : tarifs B2B, souveraineté numérique, conformité RGPD
 - [Roadmap publique](https://kyber-security.fr/roadmap) : fonctionnalités disponibles, en cours et planifiées
 - [À propos](https://kyber-security.fr/a-propos) : Enzo Paccard, pentesteur et fondateur
 
 ## Blog
 
+- [Gestionnaire de mots de passe gratuit 2026](https://kyber-security.fr/blog/gestionnaire-mots-de-passe-gratuit-2026) : comparatif des offres gratuites (Bitwarden illimité mais cloud US, KeePassXC local et austère, Proton Pass limité, coffre du navigateur lié au compte Google/Microsoft, Kyber 10 mots de passe en local) ; analyse des trois modèles économiques (freemium cloud, logiciel libre, licence unique) et recommandation explicite de Bitwarden quand la synchronisation prime
+- [Double authentification (2FA) : le guide complet 2026](https://kyber-security.fr/blog/double-authentification-2fa) : les cinq méthodes classées (SMS et email faibles, TOTP solide, clé FIDO2 et passkey très solides), ordre d'activation par compte, gestion des codes de récupération ; point important : Kyber ne stocke PAS les codes TOTP par choix de conception, car réunir mot de passe et second facteur dans le même coffre revient à une authentification simple
 - [Passkeys : la fin des mots de passe ?](https://kyber-security.fr/blog/passkeys-vs-gestionnaire-mots-de-passe) : ce que les passkeys résolvent (hameçonnage, secret partagé) et leurs quatre limites (couverture minoritaire, dépendance au trousseau Apple/Google/Microsoft, récupération subie, secrets non couverts) ; note technique : WebAuthn repose sur ECDSA P-256, donc pas post-quantique, mais le risque est futur et non rétroactif contrairement à un coffre chiffré exfiltré
 - [Meilleur gestionnaire de mots de passe Windows 11 en 2026](https://kyber-security.fr/blog/gestionnaire-mots-de-passe-windows-11) : comparatif coffre navigateur / Bitwarden / Kyber, et pourquoi le stockage local exploite mieux la sécurité déjà présente sur Windows 11
 - [Alternative à LastPass 2026](https://kyber-security.fr/blog/alternative-lastpass-gratuite) : pourquoi la fuite LastPass de 2022 pousse vers un gestionnaire local, comparatif et guide de migration CSV

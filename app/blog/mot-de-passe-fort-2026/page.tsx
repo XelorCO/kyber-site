@@ -306,21 +306,22 @@ export default function ArticleMotDePasseFort() {
           <div className="mt-16 bg-gradient-to-br from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold mb-3 text-stone-100">Générez et stockez vos mots de passe en local</h2>
             <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
-              Kyber intègre un générateur de mots de passe aléatoires et stocke vos coffres
-              chiffrés en post-quantique, 100 % sur votre machine. Gratuit jusqu&apos;à 10 mots de passe.
+              Essayez notre générateur en ligne, qui affiche l&apos;entropie réelle et ne fait sortir aucune donnée
+              de votre navigateur. Kyber stocke ensuite vos coffres chiffrés en post-quantique, 100 % sur votre
+              machine. Gratuit jusqu&apos;à 10 mots de passe.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
-                href="/telechargement"
+                href="/generateur-mot-de-passe"
                 className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl font-semibold text-sm text-white transition-all shadow-md"
               >
-                Télécharger Kyber gratuitement
+                Générer un mot de passe
               </Link>
               <Link
-                href="/chiffrement-kyber1024"
+                href="/telechargement"
                 className="border border-stone-700 hover:border-stone-500 px-6 py-3 rounded-xl font-semibold text-sm text-stone-300 transition-all"
               >
-                Architecture crypto →
+                Télécharger Kyber →
               </Link>
             </div>
           </div>
