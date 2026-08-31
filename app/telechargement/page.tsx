@@ -10,10 +10,10 @@ const downloadJsonLd = {
   applicationCategory: 'SecurityApplication',
   operatingSystem: ['Windows 10', 'Windows 11'],
   downloadUrl: [
-    'https://kyber-security.fr/downloads/Kyber_1.2.0_x64-setup.exe',
-    'https://kyber-security.fr/downloads/Kyber_1.2.0_x64_en-US.msi',
+    'https://kyber-security.fr/downloads/Kyber_1.3.0_x64-setup.exe',
+    'https://kyber-security.fr/downloads/Kyber_1.3.0_x64_en-US.msi',
   ],
-  softwareVersion: '1.2.0',
+  softwareVersion: '1.3.0',
   releaseNotes: 'Mises à jour automatiques signées, chiffrement Kyber1024 (ML-KEM) + AES-256-GCM + Argon2id.',
   url: 'https://kyber-security.fr',
   inLanguage: 'fr-FR',
@@ -77,7 +77,7 @@ export default function PageTelechargement() {
             <p className="text-lg text-stone-400 mb-2">
               Gestionnaire de mots de passe post-quantique. Windows disponible / Linux et macOS à venir.
             </p>
-            <p className="text-sm text-stone-500">Version 1.2.0 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
+            <p className="text-sm text-stone-500">Version 1.3.0 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
           </div>
 
           {/* ── PLATEFORMES ── */}
@@ -95,7 +95,7 @@ export default function PageTelechargement() {
                 <p className="text-stone-500 text-xs mb-4">Windows 10 &amp; 11 / 64 bits</p>
                 <div className="space-y-2">
                   <a
-                    href="/downloads/Kyber_1.2.0_x64-setup.exe"
+                    href="/downloads/Kyber_1.3.0_x64-setup.exe"
                     download
                     className="flex items-center justify-between w-full text-blue-400 hover:text-blue-300 text-sm font-medium border border-blue-800 hover:border-blue-400 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -103,7 +103,7 @@ export default function PageTelechargement() {
                     <span className="text-xs text-stone-500">Installateur NSIS</span>
                   </a>
                   <a
-                    href="/downloads/Kyber_1.2.0_x64_en-US.msi"
+                    href="/downloads/Kyber_1.3.0_x64_en-US.msi"
                     download
                     className="flex items-center justify-between w-full text-stone-400 hover:text-stone-100 text-sm font-medium border border-stone-700 hover:border-stone-700 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -169,7 +169,7 @@ export default function PageTelechargement() {
                 <ol className="space-y-3 text-sm text-stone-300">
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">1.</span>
-                    <span>Téléchargez <strong className="text-stone-100">Kyber_1.2.0_x64-setup.exe</strong></span>
+                    <span>Téléchargez <strong className="text-stone-100">Kyber_1.3.0_x64-setup.exe</strong></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">2.</span>

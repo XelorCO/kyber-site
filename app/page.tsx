@@ -834,7 +834,7 @@ export default function Home() {
                 ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                href: '/downloads/Kyber_1.2.0_x64-setup.exe',
+                href: '/downloads/Kyber_1.3.0_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
                 available: true,
@@ -901,7 +901,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-stone-500 text-xs mt-10">Version 1.2.0 / mises à jour automatiques signées</p>
+          <p className="text-stone-500 text-xs mt-10">Version 1.3.0 / mises à jour automatiques signées</p>
         </div>
       </section>
 
