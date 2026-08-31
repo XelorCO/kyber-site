@@ -60,7 +60,8 @@ export async function POST(req: NextRequest) {
     : offer.description;
 
   const session = await stripe.checkout.sessions.create({
-    payment_method_types: ['card'],
+    // Moyens de paiement pilotés depuis le Dashboard Stripe (PayPal, Link, cartes...).
+    // Ne pas remettre `payment_method_types: ['card']` : cela forcerait la carte seule.
     line_items: [
       {
         price_data: {
@@ -75,7 +76,9 @@ export async function POST(req: NextRequest) {
       },
     ],
     mode: 'payment',
-    allow_promotion_codes: true,
+    // Champ code promo masqué tant qu'aucun code n'est actif (il fait partir les acheteurs
+    // chercher une réduction ailleurs). Repasser à true le jour d'une vraie campagne.
+    allow_promotion_codes: false,
     customer_email: email,
     metadata: { name, email, tier, launch: isLaunch ? 'true' : 'false' },
     success_url: `${baseUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
