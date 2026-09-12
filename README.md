@@ -1,36 +1,31 @@
 # kyber-security.fr / Site officiel de Kyber
 
-Site vitrine + vente de licences du gestionnaire de mots de passe post-quantique Kyber.
-Live : https://kyber-security.fr (Vercel, domaine Ionos).
+Site vitrine + téléchargement de Kyber, gestionnaire de mots de passe post-quantique
+**gratuit et open source** (Apache-2.0). Live : https://kyber-security.fr (Vercel, domaine Ionos).
+
+Le code de l'application : https://github.com/XelorCO/kyber-app
 
 ## Stack
 
 - Next.js (App Router) + TypeScript + Tailwind
-- **Paiement** : Stripe Checkout (prix inline `price_data`, mode LIVE) / webhook `checkout.session.completed`
-- **Licences** : Ed25519 (`lib/license.ts`, clé privée en variable d'env `LICENSE_PRIVATE_KEY`)
-- **Email** : Resend (`lib/email.ts`)
+- **Dons** : Stripe Checkout (`price_data` dynamique, mode LIVE) / webhook `checkout.session.completed`
+- **Email** : Resend (`lib/email.ts`, remerciement après don)
 - **Chiffrement de fichiers web** : `/chiffrer-fichier`, 100% navigateur (`lib/kyberfile.ts`, format KYBP)
 
-## Tarifs (juillet 2026)
+## Modèle économique
 
-| Offre | Prix | Modèle |
-|---|---|---|
-| Gratuit | 0 EUR / 10 mots de passe | / |
-| Pro | 29 EUR (prix de lancement, 39 EUR à la sortie macOS + extension) | Paiement unique, licence v1.x à vie |
-| Famille | 49 EUR / 5 postes | Paiement unique |
-| Équipe | 19 EUR/utilisateur/an, min. 5 postes | Abonnement annuel sans engagement (contact) |
-| Entreprise | Sur devis | / |
+Kyber est gratuit, sans licence ni limite. Le site ne vend rien : le tunnel Stripe
+sert uniquement aux **dons** ponctuels (« offrez un café »), sans contrepartie.
 
-Les montants du checkout sont dans `app/api/create-checkout-session/route.ts`
-(`unit_amount`, en centimes). Le tier (`pro` / `famille`) transite par `metadata`
-et détermine la licence générée par le webhook.
+Le montant transite par `metadata.amount` ; il est borné (2–500 €) dans
+`app/api/create-checkout-session/route.ts`.
 
-## Flux d'achat
+## Flux de don
 
-1. Modale homepage → `POST /api/create-checkout-session` (name, email, tier)
+1. Section « Soutenir » de la homepage (ancre `#soutenir`) → modale → `POST /api/create-checkout-session` (`amount`, `email?`)
 2. Stripe Checkout → paiement → webhook `/api/webhooks/stripe`
-3. Webhook : `generateLicenseKey({name, email, tier})` → `sendLicenseEmail` (Resend)
-4. Le client colle la clé dans l'app : Paramètres → Licence Kyber → Activer
+3. Webhook : si un email est fourni, `sendThankYouEmail({ email, amount })` (Resend). Aucune licence, aucune clé.
+4. Redirection vers `/success` (« Merci pour votre soutien »).
 
 ## Distribution de l'app
 
@@ -40,7 +35,7 @@ et détermine la licence générée par le webhook.
 ## SEO / GEO
 
 - `app/sitemap.ts`, `app/robots.ts`, JSON-LD par page, breadcrumbs sur le blog
-- `public/llms.txt` + `public/llms-full.txt` : documentation pour les assistants IA / à maintenir à chaque changement de prix ou de fonctionnalité
+- `public/llms.txt` + `public/llms-full.txt` : documentation pour les assistants IA / à maintenir à chaque changement de fonctionnalité
 
 ## Directives design (Enzo)
 
@@ -58,4 +53,6 @@ npm run build  # vérification avant push
 ```
 
 Variables d'env requises (Vercel) : `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`,
-`STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `LICENSE_PRIVATE_KEY`, `NEXT_PUBLIC_BASE_URL`, `ADMIN_EMAIL`.
+`STRIPE_WEBHOOK_SECRET`, `RESEND_API_KEY`, `NEXT_PUBLIC_BASE_URL`, `ADMIN_EMAIL`.
+
+`LICENSE_PRIVATE_KEY` n'est plus utilisée (système de licence supprimé) / à retirer de Vercel.

@@ -164,10 +164,10 @@ export default function PageGestionnaire() {
                 Télécharger gratuitement
               </Link>
               <Link
-                href="/#pricing"
+                href="/#soutenir"
                 className="border border-stone-700 hover:border-stone-700 bg-[#151922] hover:bg-stone-900 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-300 shadow-sm"
               >
-                Voir les tarifs →
+                Soutenir le projet →
               </Link>
             </div>
           </div>

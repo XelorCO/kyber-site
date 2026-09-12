@@ -10,17 +10,22 @@ const downloadJsonLd = {
   applicationCategory: 'SecurityApplication',
   operatingSystem: ['Windows 10', 'Windows 11'],
   downloadUrl: [
-    'https://kyber-security.fr/downloads/Kyber_1.3.0_x64-setup.exe',
-    'https://kyber-security.fr/downloads/Kyber_1.3.0_x64_en-US.msi',
+    'https://kyber-security.fr/downloads/Kyber_2.0.0_x64-setup.exe',
+    'https://kyber-security.fr/downloads/Kyber_2.0.0_x64_en-US.msi',
   ],
-  softwareVersion: '1.3.0',
-  releaseNotes: 'Mises à jour automatiques signées, chiffrement Kyber1024 (ML-KEM) + AES-256-GCM + Argon2id.',
+  softwareVersion: '2.0.0',
+  releaseNotes: 'Kyber passe en open source (Apache-2.0) : toutes les fonctionnalités sont gratuites, sans licence ni limite.',
   url: 'https://kyber-security.fr',
   inLanguage: 'fr-FR',
-  offers: [
-    { '@type': 'Offer', price: '0', priceCurrency: 'EUR', name: 'Kyber Gratuit', description: "Jusqu'à 10 mots de passe" },
-    { '@type': 'Offer', price: '29.00', priceCurrency: 'EUR', name: 'Kyber Pro', description: 'Mots de passe illimités, licence perpétuelle' },
-  ],
+  isAccessibleForFree: true,
+  license: 'https://www.apache.org/licenses/LICENSE-2.0',
+  codeRepository: 'https://github.com/XelorCO/kyber-app',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'EUR',
+    description: 'Gratuit et open source. Toutes les fonctionnalités, sans limite.',
+  },
 };
 
 export const metadata: Metadata = {
@@ -43,7 +48,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Télécharger Kyber | Gestionnaire post-quantique gratuit',
-    description: 'Disponible sur Windows 10/11 et Linux. Gratuit jusqu\'à 10 mots de passe. Chiffrement Kyber1024.',
+    description: 'Disponible sur Windows 10/11. Gratuit et open source, sans limite. Chiffrement Kyber1024.',
     url: 'https://kyber-security.fr/telechargement',
     siteName: 'Kyber Security',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Télécharger Kyber Security' }],
@@ -51,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Télécharger Kyber | Gestionnaire post-quantique gratuit',
-    description: 'Windows & Linux. Gratuit jusqu\'à 10 mots de passe. Kyber1024 + AES-256-GCM.',
+    description: 'Windows. Gratuit et open source, sans limite. Kyber1024 + AES-256-GCM.',
     images: ['/opengraph-image'],
   },
 };
@@ -77,7 +82,7 @@ export default function PageTelechargement() {
             <p className="text-lg text-stone-400 mb-2">
               Gestionnaire de mots de passe post-quantique. Windows disponible / Linux et macOS à venir.
             </p>
-            <p className="text-sm text-stone-500">Version 1.3.0 · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
+            <p className="text-sm text-stone-500">Version 2.0.0 · Open source (Apache-2.0) · Mises à jour automatiques signées · Chiffrement Kyber1024 (ML-KEM)</p>
           </div>
 
           {/* ── PLATEFORMES ── */}
@@ -95,7 +100,7 @@ export default function PageTelechargement() {
                 <p className="text-stone-500 text-xs mb-4">Windows 10 &amp; 11 / 64 bits</p>
                 <div className="space-y-2">
                   <a
-                    href="/downloads/Kyber_1.3.0_x64-setup.exe"
+                    href="/downloads/Kyber_2.0.0_x64-setup.exe"
                     download
                     className="flex items-center justify-between w-full text-blue-400 hover:text-blue-300 text-sm font-medium border border-blue-800 hover:border-blue-400 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -103,7 +108,7 @@ export default function PageTelechargement() {
                     <span className="text-xs text-stone-500">Installateur NSIS</span>
                   </a>
                   <a
-                    href="/downloads/Kyber_1.3.0_x64_en-US.msi"
+                    href="/downloads/Kyber_2.0.0_x64_en-US.msi"
                     download
                     className="flex items-center justify-between w-full text-stone-400 hover:text-stone-100 text-sm font-medium border border-stone-700 hover:border-stone-700 px-4 py-2.5 rounded-xl transition-all"
                   >
@@ -169,7 +174,7 @@ export default function PageTelechargement() {
                 <ol className="space-y-3 text-sm text-stone-300">
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">1.</span>
-                    <span>Téléchargez <strong className="text-stone-100">Kyber_1.3.0_x64-setup.exe</strong></span>
+                    <span>Téléchargez <strong className="text-stone-100">Kyber_2.0.0_x64-setup.exe</strong></span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">2.</span>
@@ -193,7 +198,7 @@ export default function PageTelechargement() {
                 <ol className="space-y-3 text-sm text-stone-300">
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">1.</span>
-                    <span>Depuis la version 1.1.0, Kyber vérifie les mises à jour au démarrage et les installe en un clic</span>
+                    <span>Kyber vérifie les mises à jour au démarrage et les installe en un clic</span>
                   </li>
                   <li className="flex gap-3">
                     <span className="text-blue-400 font-mono flex-shrink-0">2.</span>
@@ -227,17 +232,29 @@ export default function PageTelechargement() {
             </div>
           </section>
 
-          {/* ── PASSER PRO ── */}
+          {/* ── SOUTENIR ── */}
           <section className="bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center shadow-sm">
-            <h2 className="text-2xl font-bold mb-3 text-stone-100">Passer à Kyber Pro</h2>
-            <p className="text-stone-300 mb-2">Mots de passe illimités · Export CSV · Support prioritaire</p>
-            <p className="text-blue-400 font-bold text-2xl mb-6">29 € / paiement unique, licence à vie</p>
-            <Link
-              href="/#pricing"
-              className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
-            >
-              Acheter Kyber Pro →
-            </Link>
+            <h2 className="text-2xl font-bold mb-3 text-stone-100">Gratuit et open source</h2>
+            <p className="text-stone-300 mb-6">
+              Toutes les fonctionnalités, sans limite ni compte. Le code est public sous licence Apache-2.0.
+              Si Kyber vous est utile, un don ponctuel aide à financer les audits et le portage Linux / macOS.
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link
+                href="/#soutenir"
+                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
+              >
+                Soutenir le projet
+              </Link>
+              <a
+                href="https://github.com/XelorCO/kyber-app"
+                target="_blank"
+                rel="noopener"
+                className="inline-block border border-stone-700 hover:border-stone-500 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-300"
+              >
+                Voir le code sur GitHub
+              </a>
+            </div>
           </section>
 
         </div>

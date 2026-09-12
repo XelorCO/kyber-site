@@ -1,11 +1,11 @@
 {
-  "version": "1.3.0",
-  "notes": "Rappel de rotation des mots de passe, extension navigateur reservee aux licences payantes, durcissement de la securite et optimisation du coffre.",
-  "pub_date": "2026-08-30T23:30:46Z",
+  "version": "2.0.0",
+  "notes": "Kyber passe en open source (Apache-2.0) : toutes les fonctionnalites sont gratuites, sans licence ni limite. Chiffrement de fichiers ajoute a l'extension navigateur.",
+  "pub_date": "2026-09-11T01:31:14Z",
   "platforms": {
     "windows-x86_64": {
-      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQnBzdTVFeFBQLzhQVEdJeXZ4STlyYkF3R1cyK3ZwTGwzN2xuYnUzcktPOUJKQ2xzUUFrTHJvSXgzUk5saTZQT3Y1NTdWUks3T1ZYbjROUlM2T0tGTkdjZ05nUWNQUGc0PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg4MTMyNjEwCWZpbGU6S3liZXJfMS4zLjBfeDY0LXNldHVwLmV4ZQprNTlpSzREQkpKYWIzMnNYcU81eXdOclhWVlk5Q09BcGw5citMaUZlbkR2ZmlaWUw0cUJOaXk0YTNBeGVONWczcWp0cUxRNWdUZnc4OFpPSlViRzhDdz09Cg==",
-      "url": "https://kyber-security.fr/downloads/Kyber_1.3.0_x64-setup.exe"
+      "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUQnBzdTVFeFBQLzdCeEwxYUtRMmhPUGdMUHZtZTVUVEYrS0ZFM3NGYWE4VXd6RmNSc1F0QnZ0Zm9YTDVmSHpmKzJoYzAzajNyaUlvRUFuVkRTK281RWtKMG1oYlFHbndZPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzg5MDgzMDc0CWZpbGU6S3liZXJfMi4wLjBfeDY0LXNldHVwLmV4ZQpIZHVTMGFITEE4eko4WVRJR3NFM0d5cE5heFZ1WmN5YVJTK2NvbTNncEU1MkZLSXRObU9DOHhlMldXd1hkbVZqWVhNTXVDU0p5SnhzNTdiT0FTSXJEUT09Cg==",
+      "url": "https://kyber-security.fr/downloads/Kyber_2.0.0_x64-setup.exe"
     }
   }
 }

@@ -16,32 +16,18 @@ const jsonLd = {
       name: 'Kyber',
       applicationCategory: 'SecurityApplication',
       operatingSystem: 'Windows 10, Windows 11',
-      description: 'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id.',
+      description: 'Gestionnaire de mots de passe post-quantique français, gratuit et open source. Chiffrement ML-KEM-1024 + AES-256-GCM + Argon2id.',
       url: 'https://kyber-security.fr',
       inLanguage: 'fr-FR',
-      offers: [
-        {
-          '@type': 'Offer',
-          name: 'Kyber Gratuit',
-          price: '0',
-          priceCurrency: 'EUR',
-          description: "Version gratuite / jusqu'à 10 mots de passe",
-        },
-        {
-          '@type': 'Offer',
-          name: 'Kyber Pro',
-          price: '29.00',
-          priceCurrency: 'EUR',
-          description: 'Licence perpétuelle / mots de passe illimités / paiement unique, prix de lancement',
-        },
-        {
-          '@type': 'Offer',
-          name: 'Kyber Famille',
-          price: '49.00',
-          priceCurrency: 'EUR',
-          description: 'Licence perpétuelle / 5 postes / paiement unique',
-        },
-      ],
+      isAccessibleForFree: true,
+      license: 'https://www.apache.org/licenses/LICENSE-2.0',
+      codeRepository: 'https://github.com/XelorCO/kyber-app',
+      offers: {
+        '@type': 'Offer',
+        price: '0',
+        priceCurrency: 'EUR',
+        description: 'Gratuit et open source (Apache-2.0). Toutes les fonctionnalités, sans limite.',
+      },
       featureList: [
         'Chiffrement post-quantique Kyber1024',
         'AES-256-GCM',
@@ -84,7 +70,7 @@ const jsonLd = {
           name: 'Kyber est-il gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Oui, Kyber est gratuit jusqu'à 10 mots de passe. La licence Pro à 29 € (paiement unique, perpétuelle) débloque les mots de passe illimités.",
+            text: "Oui, Kyber est entièrement gratuit et open source (licence Apache-2.0). Toutes les fonctionnalités sont disponibles sans limite, sans compte et sans abonnement. Les dons sont possibles mais facultatifs.",
           },
         },
         {
@@ -116,7 +102,7 @@ export const metadata: Metadata = {
     template: '%s / Kyber',
   },
   description:
-    'Premier gestionnaire de mots de passe post-quantique français. Chiffrement Kyber1024 + AES-256-GCM + Argon2id. Gratuit jusqu\'à 10 mots de passe. Disponible sur Windows.',
+    'Gestionnaire de mots de passe post-quantique français, gratuit et open source (Apache-2.0). Chiffrement Kyber1024 + AES-256-GCM + Argon2id. 100% local. Disponible sur Windows.',
 
   keywords: [
     'gestionnaire mots de passe',
@@ -173,14 +159,14 @@ export const metadata: Metadata = {
     siteName: 'Kyber',
     title: 'Kyber / Gestionnaire de mots de passe post-quantique',
     description:
-      'Premier gestionnaire de mots de passe post-quantique français. Kyber1024 + AES-256-GCM. Gratuit, disponible sur Windows.',
+      'Gestionnaire de mots de passe post-quantique français, gratuit et open source. Kyber1024 + AES-256-GCM. Disponible sur Windows.',
     images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: 'Kyber / Gestionnaire de mots de passe post-quantique' }],
   },
 
   twitter: {
     card: 'summary_large_image',
     title: 'Kyber / Gestionnaire de mots de passe post-quantique',
-    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit jusqu\'à 10 mots de passe.',
+    description: 'Chiffrement Kyber1024 + AES-256-GCM. Gratuit et open source.',
     images: ['/opengraph-image'],
   },
 

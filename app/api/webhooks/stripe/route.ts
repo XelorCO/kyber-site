@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
-import { generateLicenseKey } from '@/lib/license';
-import { sendLicenseEmail } from '@/lib/email';
+import { sendThankYouEmail } from '@/lib/email';
 
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
@@ -33,34 +32,30 @@ export async function POST(req: NextRequest) {
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as Stripe.Checkout.Session;
 
-    // 'no_payment_required' = total à 0 € (code promo 100 %) — session valide sans encaissement
-    if (session.payment_status !== 'paid' && session.payment_status !== 'no_payment_required') {
+    if (session.payment_status !== 'paid') {
       return NextResponse.json({ received: true });
     }
 
     if (processedSessions.has(session.id)) {
-      console.log(`[webhook] Session ${session.id} déjà traitée — ignorée`);
       return NextResponse.json({ received: true });
     }
     processedSessions.add(session.id);
 
-    const name = session.metadata?.name ?? 'Client Kyber';
-    const email = session.metadata?.email ?? session.customer_email ?? '';
+    // Don ponctuel : pas de licence à générer, pas de logiciel à débloquer.
+    // On envoie juste un remerciement quand une adresse est disponible.
+    const email = session.customer_email ?? session.customer_details?.email ?? '';
+    const amount = session.metadata?.amount ?? String(Math.round((session.amount_total ?? 0) / 100));
 
-    if (!email) {
-      console.error('[webhook] Email introuvable dans la session', session.id);
-      return NextResponse.json({ error: 'Email introuvable' }, { status: 400 });
-    }
-
-    const tier = session.metadata?.tier === 'famille' ? 'famille' : 'pro';
-
-    try {
-      const licenseKey = await generateLicenseKey({ name, email, tier });
-      await sendLicenseEmail({ name, email, licenseKey, tier });
-      console.log(`[webhook] Licence envoyée à ${email}`);
-    } catch (err) {
-      console.error('[webhook] Erreur génération/envoi licence:', err);
-      return NextResponse.json({ error: 'Erreur interne' }, { status: 500 });
+    if (email) {
+      try {
+        await sendThankYouEmail({ email, amount });
+        console.log(`[webhook] Remerciement envoyé à ${email} (don ${amount} €)`);
+      } catch (err) {
+        console.error('[webhook] Erreur envoi remerciement:', err);
+        // Non bloquant : le don est encaissé, l'email est un bonus.
+      }
+    } else {
+      console.log(`[webhook] Don anonyme reçu (${amount} €)`);
     }
   }
 

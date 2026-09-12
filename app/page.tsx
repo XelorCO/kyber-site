@@ -164,12 +164,11 @@ function VizVault() {
 // ── Page principale ────────────────────────────────────────────────────────
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
-  const [buyTier, setBuyTier] = useState<'pro' | 'famille'>('pro');
-  const [buyerName, setBuyerName] = useState('');
-  const [buyerEmail, setBuyerEmail] = useState('');
+  const [donationAmount, setDonationAmount] = useState(5);
+  const [donorEmail, setDonorEmail] = useState('');
   const [checkoutLoading, setCheckoutLoading] = useState(false);
+  const [checkoutError, setCheckoutError] = useState('');
   const [activeStep, setActiveStep] = useState(0);
-  const [launchStatus, setLaunchStatus] = useState<{ limit: number; pro: number; famille: number } | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -180,31 +179,30 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    fetch('/api/launch-status')
-      .then((res) => res.json())
-      .then((data) => setLaunchStatus(data))
-      .catch(() => {});
-  }, []);
-
-  const proLaunchActive = !!launchStatus && launchStatus.pro > 0;
-  const familleLaunchActive = !!launchStatus && launchStatus.famille > 0;
-  const proPrice = proLaunchActive ? 15 : 29;
-  const famillePrice = familleLaunchActive ? 25 : 49;
+  const openDonation = (amount: number) => {
+    setDonationAmount(amount);
+    setCheckoutError('');
+    setShowModal(true);
+  };
 
   const handleCheckout = async (e: React.FormEvent) => {
     e.preventDefault();
     setCheckoutLoading(true);
+    setCheckoutError('');
     try {
       const res = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: buyerName, email: buyerEmail, tier: buyTier }),
+        body: JSON.stringify({ amount: donationAmount, email: donorEmail || undefined }),
       });
       const data = await res.json();
       if (data.url) window.location.href = data.url;
-      else setCheckoutLoading(false);
+      else {
+        setCheckoutError(data.error || 'Une erreur est survenue. Réessayez.');
+        setCheckoutLoading(false);
+      }
     } catch {
+      setCheckoutError('Impossible de contacter le service de paiement.');
       setCheckoutLoading(false);
     }
   };
@@ -662,31 +660,32 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── PRICING ── */}
-      <section id="pricing" className="py-24 px-6 bg-stone-800 border-y border-stone-700">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14 reveal">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100">Simple et transparent</h2>
-            <p className="text-stone-400 text-lg">Pas d&apos;abonnement. Une licence, à vie.</p>
+      {/* ── SOUTENIR ── (ancre #pricing conservée : liens externes / anciens partages) */}
+      <span id="pricing" aria-hidden="true" />
+      <section id="soutenir" className="py-24 px-6 bg-stone-800 border-y border-stone-700">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12 reveal">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-stone-100">Gratuit, et open source</h2>
+            <p className="text-stone-400 text-lg">
+              Toutes les fonctionnalités, pour tout le monde. Pas de compte, pas d&apos;abonnement, pas de version bridée.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Free */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Tout est gratuit */}
             <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 flex flex-col reveal reveal-delay-1 shadow-sm">
-              <div className="mb-6">
-                <span className="text-stone-400 text-sm font-medium uppercase tracking-wider">Gratuit</span>
-                <div className="text-5xl font-bold mt-2 text-stone-100">0 €</div>
-                <p className="text-stone-500 text-sm mt-1">Pour tester Kyber</p>
-              </div>
+              <span className="text-green-300 text-sm font-medium uppercase tracking-wider">Le logiciel</span>
+              <div className="text-4xl font-bold mt-2 text-stone-100">0 &euro;</div>
+              <p className="text-stone-500 text-sm mt-1 mb-6">Pour toujours. Licence Apache-2.0.</p>
               <ul className="space-y-3 mb-8 text-sm flex-1">
                 {[
-                  '10 mots de passe',
-                  'Générateur de mots de passe',
-                  'Chiffrement post-quantique (Kyber1024)',
-                  'Chiffrement de fichiers & dossiers',
-                  'Analyse de sécurité',
-                  'Auto-remplissage',
-                  'Import CSV',
+                  'Mots de passe et coffres illimités',
+                  'Chiffrement post-quantique (ML-KEM-1024)',
+                  'Chiffrement de fichiers et dossiers',
+                  'Générateur, analyse de sécurité, auto-remplissage',
+                  'Import / export CSV',
+                  'Extension navigateur',
+                  'Mises à jour automatiques signées',
                 ].map((feat) => (
                   <li key={feat} className="flex items-center gap-3 text-stone-300">
                     <span className="text-green-400 flex-shrink-0">✓</span>
@@ -696,123 +695,43 @@ export default function Home() {
               </ul>
               <a
                 href="/telechargement"
-                className="block text-center border border-stone-700 hover:border-stone-700 hover:bg-stone-900 py-3 rounded-xl text-sm font-medium transition-all text-stone-300"
+                className="block text-center bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 py-3 rounded-xl text-sm font-semibold transition-all text-white shadow-lg shadow-blue-900/40"
               >
-                Télécharger gratuitement
+                Télécharger Kyber
               </a>
             </div>
 
-            {/* Pro */}
-            <div className="relative bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 flex flex-col reveal reveal-delay-2 shadow-md">
-              <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-blue-500 to-indigo-500 text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wider whitespace-nowrap">
-                Recommandé
-              </div>
-              <div className="mb-6">
-                <span className="text-blue-400 text-sm font-medium uppercase tracking-wider">Kyber Pro</span>
-                <div className="flex flex-wrap items-end gap-2 mt-2">
-                  {proLaunchActive ? (
-                    <>
-                      <span className="text-5xl font-bold text-stone-100">15 €</span>
-                      <span className="text-stone-500 text-lg line-through mb-1.5">29 €</span>
-                    </>
-                  ) : (
-                    <span className="text-5xl font-bold text-stone-100">29 €</span>
-                  )}
-                  <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
-                </div>
-                <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 1 utilisateur</p>
-                {proLaunchActive ? (
-                  <div className="mt-3">
-                    <div className="flex items-center justify-between text-xs mb-1.5 gap-2">
-                      <span className="text-blue-300 font-semibold whitespace-nowrap">◆ Offre de lancement</span>
-                      <span className="text-stone-400 whitespace-nowrap">{launchStatus!.pro}/{launchStatus!.limit} places</span>
-                    </div>
-                    <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full transition-all duration-500"
-                        style={{ width: `${(launchStatus!.pro / launchStatus!.limit) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <p className="text-blue-300 text-xs mt-2">Passera à 39 € à la sortie de macOS et de l&apos;extension navigateur</p>
-                )}
-              </div>
-              <ul className="space-y-3 mb-8 text-sm flex-1">
-                {[
-                  'Mots de passe illimités',
-                  'Coffres illimités',
-                  'Toutes les fonctionnalités gratuites',
-                  'Export CSV',
-                  'Mises à jour v1.x incluses',
-                  'Support prioritaire',
-                ].map((feat) => (
-                  <li key={feat} className="flex items-center gap-3 text-stone-300">
-                    <span className="text-blue-400 flex-shrink-0">✓</span>
-                    {feat}
-                  </li>
+            {/* Don */}
+            <div className="bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 flex flex-col reveal reveal-delay-2 shadow-md">
+              <span className="text-blue-300 text-sm font-medium uppercase tracking-wider">Soutenir</span>
+              <div className="text-4xl font-bold mt-2 text-stone-100">Offrez un café</div>
+              <p className="text-stone-400 text-sm mt-1 mb-6">
+                Kyber est développé par une personne, sur son temps libre. Un don ponctuel, sans contrepartie,
+                aide à financer les audits et le portage Linux / macOS.
+              </p>
+              <div className="grid grid-cols-3 gap-3 mb-4">
+                {[3, 5, 10].map((amt) => (
+                  <button
+                    key={amt}
+                    onClick={() => openDonation(amt)}
+                    className="border border-blue-700 hover:bg-blue-950/50 text-blue-200 py-3 rounded-xl text-sm font-semibold transition-all"
+                  >
+                    {amt} &euro;
+                  </button>
                 ))}
-              </ul>
+              </div>
               <button
-                onClick={() => { setBuyTier('pro'); setShowModal(true); }}
+                onClick={() => openDonation(donationAmount)}
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 py-3.5 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-900/40 text-white"
               >
-                Acheter / {proPrice} €
+                Faire un don
               </button>
-            </div>
-
-            {/* Famille */}
-            <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 flex flex-col reveal reveal-delay-3 shadow-sm">
-              <div className="mb-6">
-                <span className="text-indigo-400 text-sm font-medium uppercase tracking-wider">Kyber Famille</span>
-                <div className="flex flex-wrap items-end gap-2 mt-2">
-                  {familleLaunchActive ? (
-                    <>
-                      <span className="text-5xl font-bold text-stone-100">25 €</span>
-                      <span className="text-stone-500 text-lg line-through mb-1.5">49 €</span>
-                    </>
-                  ) : (
-                    <span className="text-5xl font-bold text-stone-100">49 €</span>
-                  )}
-                  <span className="text-stone-400 text-sm mb-1.5">paiement unique</span>
-                </div>
-                <p className="text-stone-400 text-sm mt-1">Licence perpétuelle / 5 postes</p>
-                {familleLaunchActive ? (
-                  <div className="mt-3">
-                    <div className="flex items-center justify-between text-xs mb-1.5 gap-2">
-                      <span className="text-indigo-300 font-semibold whitespace-nowrap">◆ Offre de lancement</span>
-                      <span className="text-stone-400 whitespace-nowrap">{launchStatus!.famille}/{launchStatus!.limit} places</span>
-                    </div>
-                    <div className="h-1.5 bg-stone-700 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full transition-all duration-500"
-                        style={{ width: `${(launchStatus!.famille / launchStatus!.limit) * 100}%` }}
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <p className="text-stone-500 text-xs mt-2">Moins de 10 € par personne, pour toute la famille</p>
-                )}
-              </div>
-              <ul className="space-y-3 mb-8 text-sm flex-1">
-                {[
-                  'Tout Kyber Pro',
-                  '5 postes (famille ou foyer)',
-                  'Une seule clé de licence',
-                  'Mises à jour v1.x incluses',
-                ].map((feat) => (
-                  <li key={feat} className="flex items-center gap-3 text-stone-300">
-                    <span className="text-indigo-400 flex-shrink-0">✓</span>
-                    {feat}
-                  </li>
-                ))}
-              </ul>
-              <button
-                onClick={() => { setBuyTier('famille'); setShowModal(true); }}
-                className="w-full border border-indigo-700 hover:bg-indigo-950/40 py-3.5 rounded-xl text-sm font-semibold transition-all text-indigo-300"
-              >
-                Acheter / {famillePrice} €
-              </button>
+              <p className="text-stone-500 text-xs mt-4 text-center">
+                Le code est ouvert sur{' '}
+                <a href="https://github.com/XelorCO/kyber-app" target="_blank" rel="noopener" className="text-blue-300 hover:text-blue-200 underline">
+                  GitHub
+                </a>. Une contribution vaut aussi un café.
+              </p>
             </div>
           </div>
         </div>
@@ -834,7 +753,7 @@ export default function Home() {
                 ),
                 platform: 'Windows',
                 versions: '10 & 11 (64-bit)',
-                href: '/downloads/Kyber_1.3.0_x64-setup.exe',
+                href: '/downloads/Kyber_2.0.0_x64-setup.exe',
                 label: 'Télécharger .exe',
                 note: 'Installateur NSIS',
                 available: true,
@@ -901,7 +820,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-          <p className="text-stone-500 text-xs mt-10">Version 1.3.0 / mises à jour automatiques signées</p>
+          <p className="text-stone-500 text-xs mt-10">Version 2.0.0 / mises à jour automatiques signées / <a href="https://github.com/XelorCO/kyber-app" target="_blank" rel="noopener" className="text-blue-400 hover:text-blue-300 underline">code source</a></p>
         </div>
       </section>
 
@@ -1025,7 +944,7 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* ── MODAL PAIEMENT ── */}
+      {/* ── MODAL DON ── */}
       {showModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-sm"
@@ -1034,33 +953,54 @@ export default function Home() {
           <div className="bg-[#151922] border border-stone-700 rounded-2xl p-8 max-w-md w-full shadow-2xl">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="font-bold text-xl text-stone-100">{buyTier === 'famille' ? `Kyber Famille / ${famillePrice} €` : `Kyber Pro / ${proPrice} €`}</h3>
-                <p className="text-stone-400 text-sm mt-1">Entrez vos informations pour recevoir votre licence par email</p>
+                <h3 className="font-bold text-xl text-stone-100">Soutenir Kyber</h3>
+                <p className="text-stone-400 text-sm mt-1">Don ponctuel, sans contrepartie. Kyber reste gratuit et open source.</p>
               </div>
               <button onClick={() => setShowModal(false)} className="text-stone-500 hover:text-stone-400 text-xl leading-none ml-4 mt-0.5">✕</button>
             </div>
 
             <form onSubmit={handleCheckout} className="space-y-4">
               <div>
-                <label className="text-sm text-stone-400 mb-1.5 block">Prénom et Nom *</label>
-                <input required value={buyerName} onChange={(e) => setBuyerName(e.target.value)} placeholder="Prénom, Nom"
-                  className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100 placeholder:text-stone-500" />
+                <label className="text-sm text-stone-400 mb-1.5 block">Montant</label>
+                <div className="grid grid-cols-4 gap-2 mb-3">
+                  {[3, 5, 10, 20].map((amt) => (
+                    <button
+                      key={amt}
+                      type="button"
+                      onClick={() => setDonationAmount(amt)}
+                      className={`py-2.5 rounded-lg text-sm font-semibold transition-all border ${
+                        donationAmount === amt
+                          ? 'bg-gradient-to-r from-blue-500 to-indigo-500 border-transparent text-white'
+                          : 'border-stone-700 text-stone-300 hover:border-stone-500'
+                      }`}
+                    >
+                      {amt} €
+                    </button>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2">
+                  <input
+                    type="number" min={2} max={500} value={donationAmount}
+                    onChange={(e) => setDonationAmount(Math.max(2, Math.min(500, Number(e.target.value) || 0)))}
+                    className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100" />
+                  <span className="text-stone-400 text-sm">€</span>
+                </div>
               </div>
               <div>
-                <label className="text-sm text-stone-400 mb-1.5 block">Email * (pour recevoir la licence)</label>
-                <input required type="email" value={buyerEmail} onChange={(e) => setBuyerEmail(e.target.value)} placeholder="vous@exemple.fr"
+                <label className="text-sm text-stone-400 mb-1.5 block">Email (facultatif, pour le reçu)</label>
+                <input type="email" value={donorEmail} onChange={(e) => setDonorEmail(e.target.value)} placeholder="vous@exemple.fr"
                   className="w-full bg-stone-900 border border-stone-700 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-blue-400 transition-colors text-stone-100 placeholder:text-stone-500" />
               </div>
-              <div className="bg-blue-950/50 border border-blue-800 rounded-lg p-3 text-xs text-blue-300">
-                Votre clé de licence sera envoyée à cet email immédiatement après le paiement.
-              </div>
+              {checkoutError && (
+                <div className="bg-red-950/50 border border-red-800 rounded-lg p-3 text-xs text-red-300">{checkoutError}</div>
+              )}
               <button type="submit" disabled={checkoutLoading}
                 className="w-full bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 disabled:opacity-60 py-3.5 rounded-xl font-semibold transition-all text-sm text-white">
-                {checkoutLoading ? 'Redirection vers Stripe…' : 'Continuer vers le paiement →'}
+                {checkoutLoading ? 'Redirection vers Stripe…' : `Donner ${donationAmount} € →`}
               </button>
               <div className="flex items-center justify-center gap-2 text-xs text-stone-500">
                 <svg xmlns="http://www.w3.org/2000/svg" className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                <span>Paiement sécurisé via Stripe · Visa, Mastercard, CB</span>
+                <span>Paiement sécurisé via Stripe</span>
               </div>
             </form>
           </div>

@@ -55,8 +55,8 @@ export default function EntrepriseClient() {
                   price: '29 €',
                   sub: 'paiement unique / licence à vie',
                   features: ['1 utilisateur', 'Mots de passe illimités', 'Export CSV', 'Mises à jour à vie', 'Support email'],
-                  cta: 'Acheter',
-                  href: '/#pricing',
+                  cta: 'Télécharger',
+                  href: '/telechargement',
                   highlight: false,
                 },
                 {
