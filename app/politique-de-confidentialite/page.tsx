@@ -14,7 +14,7 @@ export default function PolitiqueConfidentialite() {
         <div className="max-w-3xl mx-auto px-6 py-8">
 
           <h1 className="text-4xl font-bold mb-2 text-stone-100">Politique de confidentialité</h1>
-          <p className="text-stone-500 text-sm mb-12">Dernière mise à jour : juin 2026</p>
+          <p className="text-stone-500 text-sm mb-12">Dernière mise à jour : septembre 2026</p>
 
           <div className="space-y-10 text-stone-300 leading-relaxed">
 
@@ -32,8 +32,6 @@ export default function PolitiqueConfidentialite() {
               <h2 className="text-xl font-semibold text-stone-100 mb-3">2. Données collectées</h2>
               <p className="mb-3">Nous collectons uniquement les données strictement nécessaires :</p>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li><strong className="text-stone-100">Adresse email (facultative)</strong> / uniquement si vous la renseignez lors d&apos;un don, pour vous envoyer un email de remerciement.</li>
-                <li><strong className="text-stone-100">Données de paiement</strong> / traitées exclusivement par <strong className="text-stone-100">Stripe</strong> (PCI-DSS certifié). Nous n&apos;avons jamais accès à vos coordonnées bancaires.</li>
                 <li><strong className="text-stone-100">Formulaire entreprise</strong> / nom, société, email et message, pour répondre à votre demande.</li>
               </ul>
               <p className="mt-3">
@@ -45,7 +43,6 @@ export default function PolitiqueConfidentialite() {
             <section>
               <h2 className="text-xl font-semibold text-stone-100 mb-3">3. Finalités du traitement</h2>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li>Envoi d&apos;un email de remerciement après un don (si email fourni)</li>
                 <li>Traitement des demandes entreprise</li>
                 <li>Support client</li>
               </ul>
@@ -54,8 +51,6 @@ export default function PolitiqueConfidentialite() {
             <section>
               <h2 className="text-xl font-semibold text-stone-100 mb-3">4. Sous-traitants</h2>
               <div className="space-y-2">
-                <p><strong className="text-stone-100">Stripe</strong> / traitement des paiements (États-Unis / UE). <a href="https://stripe.com/fr/privacy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Stripe</a></p>
-                <p><strong className="text-stone-100">Resend</strong> / envoi d&apos;emails transactionnels. <a href="https://resend.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Resend</a></p>
                 <p><strong className="text-stone-100">Vercel</strong> / hébergement du site. <a href="https://vercel.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Vercel</a></p>
               </div>
             </section>
@@ -63,9 +58,8 @@ export default function PolitiqueConfidentialite() {
             <section>
               <h2 className="text-xl font-semibold text-stone-100 mb-3">5. Durée de conservation</h2>
               <p>
-                Les données collectées lors d&apos;un don (email si fourni) sont conservées pour une durée maximale de{' '}
-                <strong className="text-stone-100">3 ans</strong>, conformément aux obligations légales en matière
-                de traçabilité des transactions.
+                Les données du formulaire entreprise (email, message) sont conservées pour une durée maximale de{' '}
+                <strong className="text-stone-100">3 ans</strong> à compter de la dernière interaction, puis supprimées.
               </p>
             </section>
 

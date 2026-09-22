@@ -74,7 +74,7 @@ const products = [
     local: true,
     pqc: true,
     openSource: true,
-    prix: '0€ / gratuit',
+    prix: 'Gratuit',
     rgpd: 'Totale',
     incidents: 'Aucun',
     argon2: true,

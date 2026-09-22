@@ -4,7 +4,7 @@ import EntrepriseClient from './EntrepriseClient';
 export const metadata: Metadata = {
   title: { absolute: 'Kyber Enterprise | Gestionnaire de mots de passe pour équipes' },
   description:
-    'Déployez Kyber dans votre équipe : licences multi-utilisateurs, conformité RGPD native, tarifs dégressifs. Zéro serveur centralisé / sécurité post-quantique pour les entreprises françaises.',
+    'Déployez Kyber dans votre équipe : logiciel gratuit et open source, conformité RGPD native. Zéro serveur centralisé / sécurité post-quantique pour les entreprises françaises.',
   keywords: [
     'kyber entreprise',
     'gestionnaire mots de passe entreprise',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Kyber Enterprise | Gestionnaire de mots de passe pour équipes',
-    description: 'Licences multi-utilisateurs, conformité RGPD native, tarifs dégressifs. Zéro serveur centralisé.',
+    description: 'Logiciel gratuit et open source, conformité RGPD native. Zéro serveur centralisé.',
     url: 'https://kyber-security.fr/entreprise',
     siteName: 'Kyber Security',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
@@ -37,7 +37,7 @@ const jsonLd = {
           name: 'Comment fonctionne le déploiement dans une équipe ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Chaque collaborateur installe Kyber sur son poste. Il crée son propre coffre protégé par sa passphrase personnelle. La licence est activée depuis l'application en entrant la clé reçue par email. Aucune infrastructure centralisée requise.",
+            text: "Chaque collaborateur installe Kyber sur son poste et crée son propre coffre protégé par sa passphrase personnelle. Le logiciel est gratuit / aucune licence à activer, aucune infrastructure centralisée requise.",
           },
         },
         {
@@ -61,7 +61,7 @@ const jsonLd = {
           name: 'Quelle est votre politique de mise à jour ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Les licences Pro incluent toutes les mises à jour de la branche v1.x. Les nouvelles fonctionnalités majeures sont déployées progressivement. Pas d'abonnement caché / vous payez une fois.",
+            text: "Kyber est open source et ses mises à jour sont gratuites. Les nouvelles fonctionnalités sont déployées progressivement. Pas d'abonnement, pas de surprise.",
           },
         },
         {
@@ -69,7 +69,7 @@ const jsonLd = {
           name: 'Proposez-vous une facturation entreprise (bon de commande, TVA) ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Oui, pour les commandes d'au moins 5 licences, nous émettons une facture avec TVA et pouvons accepter les bons de commande.",
+            text: "Oui, pour les déploiements en entreprise nous pouvons émettre une facture avec TVA pour une prestation d'accompagnement. Contactez-nous à contact@kyber-security.fr.",
           },
         },
       ],

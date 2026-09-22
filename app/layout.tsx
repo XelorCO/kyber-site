@@ -70,7 +70,7 @@ const jsonLd = {
           name: 'Kyber est-il gratuit ?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: "Oui, Kyber est entièrement gratuit et open source (licence Apache-2.0). Toutes les fonctionnalités sont disponibles sans limite, sans compte et sans abonnement. Les dons sont possibles mais facultatifs.",
+            text: "Oui, Kyber est entièrement gratuit et open source (licence Apache-2.0). Toutes les fonctionnalités sont disponibles sans limite, sans compte et sans abonnement.",
           },
         },
         {

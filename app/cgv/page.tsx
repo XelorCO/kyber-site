@@ -41,21 +41,7 @@ export default function CGV() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-stone-100 mb-3">3. Dons</h2>
-              <p className="mb-3">
-                Si vous souhaitez soutenir le projet, vous pouvez effectuer un <strong className="text-stone-100">don libre</strong> via
-                la page d&apos;accueil du site (section &laquo; Soutenir le projet &raquo;). Le paiement est traité par{' '}
-                <strong className="text-stone-100">Stripe</strong>.
-              </p>
-              <p>
-                Les dons sont <strong className="text-stone-100">volontaires, sans contrepartie et non remboursables</strong>.
-                Ils ne donnent accès à aucun contenu supplémentaire et ne constituent pas un achat de licence.
-                Un email de remerciement est envoyé automatiquement à l&apos;adresse renseignée.
-              </p>
-            </section>
-
-            <section>
-              <h2 className="text-xl font-semibold text-stone-100 mb-3">4. Responsabilité</h2>
+              <h2 className="text-xl font-semibold text-stone-100 mb-3">3. Responsabilité</h2>
               <p className="mb-3">
                 Le logiciel est fourni <strong className="text-stone-100">&laquo; tel quel &raquo;</strong>, sans garantie
                 d&apos;aucune sorte, expresse ou implicite. Kyber Security ne saurait être tenu responsable d&apos;une
@@ -69,7 +55,7 @@ export default function CGV() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-stone-100 mb-3">5. Données personnelles</h2>
+              <h2 className="text-xl font-semibold text-stone-100 mb-3">4. Données personnelles</h2>
               <p>
                 Le traitement des données personnelles est détaillé dans notre{' '}
                 <a href="/politique-de-confidentialite" className="text-blue-400 hover:text-blue-300 transition-colors">
@@ -79,7 +65,7 @@ export default function CGV() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-stone-100 mb-3">6. Droit applicable</h2>
+              <h2 className="text-xl font-semibold text-stone-100 mb-3">5. Droit applicable</h2>
               <p>
                 Les présentes conditions sont soumises au <strong className="text-stone-100">droit français</strong>.
                 En cas de litige, une solution amiable sera recherchée en priorité. Le client peut également
@@ -91,7 +77,7 @@ export default function CGV() {
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-stone-100 mb-3">7. Contact</h2>
+              <h2 className="text-xl font-semibold text-stone-100 mb-3">6. Contact</h2>
               <p>
                 Pour toute question :{' '}
                 <a href="mailto:contact@kyber-security.fr" className="text-blue-400 hover:text-blue-300 transition-colors">

@@ -64,7 +64,7 @@ const sections: { title: string; features: Feature[] }[] = [
       { title: 'Analyse de sécurité', desc: 'Détection des mots de passe faibles, réutilisés ou anciens.', status: 'done' },
       { title: 'Migration coffres v1 → v2', desc: 'Mise à niveau des anciens coffres vers le format Kyber v2.', status: 'done' },
       { title: 'Windows 10/11 (x64)', desc: 'Installateur NSIS + MSI.', status: 'done' },
-      { title: 'Licence Pro Ed25519', desc: 'Système de licences cryptographiques hors-ligne.', status: 'done' },
+      { title: 'Open source Apache-2.0', desc: 'Code source publié sur GitHub sous licence Apache-2.0. Toutes les fonctionnalités gratuites, sans limite.', status: 'done' },
     ],
   },
   {

@@ -574,7 +574,7 @@ export default function Home() {
                 ),
                 title: 'Chiffrement de fichiers',
                 desc: 'Chiffrez n\'importe quel fichier ou dossier entier avec le même algorithme Kyber1024 + AES-256-GCM. Essayez gratuitement dans votre navigateur : 100 % local, sans inscription.',
-                tag: 'Pro',
+                tag: 'Gratuit',
                 link: { href: '/chiffrer-fichier', label: 'Essayer dans le navigateur →' },
               },
               {
@@ -762,8 +762,8 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center reveal">
           <h2 className="text-3xl font-bold mb-4 text-stone-100">Solution entreprise</h2>
           <p className="text-stone-400 mb-8 max-w-xl mx-auto leading-relaxed">
-            Déployez Kyber dans votre équipe avec des tarifs dégressifs, une facturation entreprise,
-            et une conformité RGPD garantie par architecture. Aucun serveur centralisé.
+            Déployez Kyber dans votre équipe : logiciel gratuit et open source, conformité RGPD garantie
+            par architecture, zéro serveur centralisé.
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <a

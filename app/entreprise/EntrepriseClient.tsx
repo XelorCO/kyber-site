@@ -41,13 +41,13 @@ export default function EntrepriseClient() {
             </h1>
             <p className="text-lg text-stone-400 max-w-2xl mx-auto leading-relaxed">
               Déployez un gestionnaire de mots de passe post-quantique 100% local dans votre équipe.
-              Aucune donnée sur un serveur tiers. Conformité RGPD native. Tarifs dégressifs.
+              Aucune donnée sur un serveur tiers. Conformité RGPD native. Logiciel gratuit et open source.
             </p>
           </section>
 
           {/* ── GRILLE TARIFAIRE ── */}
           <section className="mb-16">
-            <h2 className="text-2xl font-bold mb-8 text-center text-stone-100">Tarifs indicatifs</h2>
+            <h2 className="text-2xl font-bold mb-8 text-center text-stone-100">Logiciel et accompagnement</h2>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
