@@ -32,20 +32,20 @@ export default function PolitiqueConfidentialite() {
               <h2 className="text-xl font-semibold text-stone-100 mb-3">2. Données collectées</h2>
               <p className="mb-3">Nous collectons uniquement les données strictement nécessaires :</p>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li><strong className="text-stone-100">Nom et adresse email</strong> / lors de l'achat d'une licence, pour vous envoyer votre clé d'activation.</li>
-                <li><strong className="text-stone-100">Données de paiement</strong> / traitées exclusivement par <strong className="text-stone-100">Stripe</strong> (PCI-DSS certifié). Nous n'avons jamais accès à vos coordonnées bancaires.</li>
+                <li><strong className="text-stone-100">Adresse email (facultative)</strong> / uniquement si vous la renseignez lors d&apos;un don, pour vous envoyer un email de remerciement.</li>
+                <li><strong className="text-stone-100">Données de paiement</strong> / traitées exclusivement par <strong className="text-stone-100">Stripe</strong> (PCI-DSS certifié). Nous n&apos;avons jamais accès à vos coordonnées bancaires.</li>
                 <li><strong className="text-stone-100">Formulaire entreprise</strong> / nom, société, email et message, pour répondre à votre demande.</li>
               </ul>
               <p className="mt-3">
-                L'application <strong className="text-stone-100">Kyber</strong> (logiciel bureau) fonctionne entièrement en local.
-                Aucune donnée de votre coffre-fort n'est transmise à nos serveurs.
+                L&apos;application <strong className="text-stone-100">Kyber</strong> (logiciel bureau) fonctionne entièrement en local.
+                Aucune donnée de votre coffre-fort n&apos;est transmise à nos serveurs.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-semibold text-stone-100 mb-3">3. Finalités du traitement</h2>
               <ul className="list-disc list-inside space-y-2 ml-2">
-                <li>Envoi de la clé de licence après achat</li>
+                <li>Envoi d&apos;un email de remerciement après un don (si email fourni)</li>
                 <li>Traitement des demandes entreprise</li>
                 <li>Support client</li>
               </ul>
@@ -55,7 +55,7 @@ export default function PolitiqueConfidentialite() {
               <h2 className="text-xl font-semibold text-stone-100 mb-3">4. Sous-traitants</h2>
               <div className="space-y-2">
                 <p><strong className="text-stone-100">Stripe</strong> / traitement des paiements (États-Unis / UE). <a href="https://stripe.com/fr/privacy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Stripe</a></p>
-                <p><strong className="text-stone-100">Resend</strong> / envoi d'emails transactionnels. <a href="https://resend.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Resend</a></p>
+                <p><strong className="text-stone-100">Resend</strong> / envoi d&apos;emails transactionnels. <a href="https://resend.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Resend</a></p>
                 <p><strong className="text-stone-100">Vercel</strong> / hébergement du site. <a href="https://vercel.com/legal/privacy-policy" className="text-blue-400 hover:text-blue-300 transition-colors" target="_blank" rel="noopener">Politique de confidentialité Vercel</a></p>
               </div>
             </section>
@@ -63,9 +63,9 @@ export default function PolitiqueConfidentialite() {
             <section>
               <h2 className="text-xl font-semibold text-stone-100 mb-3">5. Durée de conservation</h2>
               <p>
-                Vos données (nom, email) sont conservées pour la durée nécessaire à la gestion de votre licence,
-                soit une durée maximale de <strong className="text-stone-100">5 ans</strong> à compter de votre achat,
-                conformément aux obligations légales en matière de facturation.
+                Les données collectées lors d&apos;un don (email si fourni) sont conservées pour une durée maximale de{' '}
+                <strong className="text-stone-100">3 ans</strong>, conformément aux obligations légales en matière
+                de traçabilité des transactions.
               </p>
             </section>
 

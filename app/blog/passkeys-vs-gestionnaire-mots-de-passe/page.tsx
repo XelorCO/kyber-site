@@ -372,7 +372,7 @@ export default function ArticlePasskeys() {
           <div className="mt-16 bg-gradient-to-br from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center">
             <h2 className="text-xl font-bold mb-3 text-stone-100">Gardez la main sur vos secrets</h2>
             <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
-              Gratuit jusqu&apos;à 10 mots de passe. Aucun compte requis. Le coffre reste sur votre disque.
+              100 % gratuit et open source. Aucun compte requis. Le coffre reste sur votre disque.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

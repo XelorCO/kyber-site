@@ -51,19 +51,19 @@ export default function EntrepriseClient() {
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 {
-                  name: 'Pro individuel',
-                  price: '29 €',
-                  sub: 'paiement unique / licence à vie',
-                  features: ['1 utilisateur', 'Mots de passe illimités', 'Export CSV', 'Mises à jour à vie', 'Support email'],
+                  name: 'Logiciel',
+                  price: 'Gratuit',
+                  sub: 'open source / Apache-2.0',
+                  features: ['Mots de passe illimités', 'Export CSV', 'Chiffrement de fichiers', 'Extension navigateur', 'Mises à jour incluses'],
                   cta: 'Télécharger',
                   href: '/telechargement',
                   highlight: false,
                 },
                 {
-                  name: 'Équipe',
-                  price: '19 €',
-                  sub: 'par utilisateur / an, minimum 5 postes',
-                  features: ['Abonnement annuel sans engagement', 'Multi-utilisateurs', 'Tarifs dégressifs dès 20 postes', 'Support prioritaire', 'Facturation entreprise (TVA, bon de commande)'],
+                  name: 'Accompagnement Équipe',
+                  price: 'Sur devis',
+                  sub: 'déploiement & mise en conformité',
+                  features: ['Déploiement sur 5 à 50 postes', 'Dossier conformité RGPD (art. 32)', 'Formation des collaborateurs', 'Support prioritaire 1 an', 'Facturation entreprise (TVA, bon de commande)'],
                   cta: 'Nous contacter',
                   href: '#contact',
                   highlight: true,
@@ -72,7 +72,7 @@ export default function EntrepriseClient() {
                   name: 'Entreprise',
                   price: 'Sur devis',
                   sub: 'contrat cadre',
-                  features: ['Licences illimitées', 'Intégration AD / LDAP (roadmap)', 'SLA & contrat', 'Formation incluse', 'Déploiement assisté'],
+                  features: ['Volume illimité', 'Intégration AD / LDAP (roadmap)', 'SLA & contrat', 'Formation incluse', 'Déploiement assisté'],
                   cta: 'Prendre RDV',
                   href: '#contact',
                   highlight: false,
@@ -151,8 +151,8 @@ export default function EntrepriseClient() {
                 },
                 {
                   icon: '⬡',
-                  title: 'Activation hors-ligne',
-                  desc: "Les licences sont activées localement par signature cryptographique Ed25519 / aucune connexion à un serveur de licences requise.",
+                  title: 'Open source / Apache-2.0',
+                  desc: "Le code source est publié sur GitHub. Auditez vous-même les algorithmes, vérifiez l'absence de portes dérobées / transparence totale.",
                   color: 'bg-indigo-950/50 border-indigo-800',
                 },
                 {
@@ -169,8 +169,8 @@ export default function EntrepriseClient() {
                 },
                 {
                   icon: '↻',
-                  title: 'Mises à jour perpétuelles',
-                  desc: "Votre licence inclut toutes les mises à jour de la branche v1.x / pas d'abonnement annuel / pas de surprise sur la facture.",
+                  title: 'Mises à jour gratuites',
+                  desc: "Kyber est gratuit et ses mises à jour aussi / pas d'abonnement, pas de surprise sur la facture. Le logiciel reste le vôtre.",
                   color: 'bg-violet-950/50 border-violet-800',
                 },
               ].map((a) => (
@@ -268,7 +268,7 @@ export default function EntrepriseClient() {
               {[
                 {
                   q: 'Comment fonctionne le déploiement dans une équipe ?',
-                  a: "Chaque collaborateur installe Kyber sur son poste. Il crée son propre coffre protégé par sa passphrase personnelle. La licence est activée depuis l'application en entrant la clé reçue par email. Aucune infrastructure centralisée requise.",
+                  a: "Chaque collaborateur installe Kyber sur son poste et crée son propre coffre protégé par sa passphrase personnelle. Le logiciel est gratuit / aucune licence à activer, aucune infrastructure centralisée requise.",
                 },
                 {
                   q: 'Peut-on partager des mots de passe entre collègues ?',
@@ -280,11 +280,11 @@ export default function EntrepriseClient() {
                 },
                 {
                   q: 'Quelle est votre politique de mise à jour ?',
-                  a: "Les licences Pro incluent toutes les mises à jour de la branche v1.x. Les nouvelles fonctionnalités majeures sont déployées progressivement. Pas d'abonnement caché / vous payez une fois.",
+                  a: "Kyber est open source et ses mises à jour sont gratuites. Les nouvelles fonctionnalités sont déployées progressivement. Pas d'abonnement, pas de surprise / vous téléchargez quand vous voulez.",
                 },
                 {
                   q: 'Proposez-vous une facturation entreprise (bon de commande, TVA) ?',
-                  a: "Oui, pour les commandes d'au moins 5 licences, nous émettons une facture avec TVA et pouvons accepter les bons de commande. Contactez-nous via le formulaire ci-dessus.",
+                  a: "Oui, pour les prestations d'accompagnement, nous émettons une facture avec TVA et pouvons accepter les bons de commande. Contactez-nous via le formulaire ci-dessus.",
                 },
               ].map((faq) => (
                 <details key={faq.q} className="bg-[#151922] border border-stone-800 rounded-xl px-6 py-4 shadow-sm group">

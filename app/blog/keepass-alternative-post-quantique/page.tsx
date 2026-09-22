@@ -239,8 +239,8 @@ export default function ArticleKeePass() {
                   },
                   {
                     step: '5',
-                    title: 'Passer Pro (optionnel)',
-                    desc: "Si vous avez plus de 10 mots de passe, la version Kyber Pro (29 € licence à vie) lève la limite. L'import fonctionne même en gratuit / vous verrez juste un avertissement si vous dépassez 10.",
+                    title: "C'est tout",
+                    desc: "Kyber est gratuit et open source / aucune limite de mots de passe, aucune licence à acheter. Si vous voulez soutenir le projet, un bouton de don est disponible sur la page d'accueil.",
                   },
                 ].map((item) => (
                   <div key={item.step} className="flex gap-4 bg-[#151922] border border-stone-700 rounded-xl px-5 py-4 shadow-sm">

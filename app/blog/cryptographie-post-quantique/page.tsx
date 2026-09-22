@@ -366,7 +366,7 @@ export default function ArticlePQC() {
 
           <div className="mt-12 pt-8 border-t border-stone-700">
             <p className="text-stone-400 text-sm mb-6">
-              Prêt à protéger vos mots de passe avec une cryptographie post-quantique réelle ? Kyber est gratuit jusqu&apos;à 10 mots de passe.
+              Prêt à protéger vos mots de passe avec une cryptographie post-quantique réelle ? Kyber est 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

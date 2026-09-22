@@ -81,7 +81,7 @@ const faq = [
   },
   {
     q: 'Comment conserver le mot de passe généré ?',
-    a: "Dans un gestionnaire de mots de passe. Kyber stocke le vôtre dans un fichier chiffré sur votre disque, avec Argon2id, une encapsulation post-quantique ML-KEM-1024 et AES-256-GCM, sans compte ni synchronisation cloud imposée. La version gratuite couvre 10 mots de passe.",
+    a: "Dans un gestionnaire de mots de passe. Kyber stocke le vôtre dans un fichier chiffré sur votre disque, avec Argon2id, une encapsulation post-quantique ML-KEM-1024 et AES-256-GCM, sans compte ni synchronisation cloud imposée. C&apos;est 100 % gratuit et open source.",
   },
 ];
 
@@ -261,7 +261,7 @@ export default function PageGenerateurMotDePasse() {
             <p className="text-stone-400 mb-6 max-w-xl mx-auto">
               Générer est facile, retenir ne l&apos;est pas. Kyber garde vos mots de passe dans un coffre chiffré
               stocké sur votre disque / pas sur nos serveurs, puisque nous n&apos;en avons pas. Gratuit jusqu&apos;à
-              10 mots de passe, sans compte.
+              100 % gratuit et open source, sans compte.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

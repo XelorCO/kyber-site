@@ -240,7 +240,7 @@ export default function ArticleFuiteDonnees() {
             <h2 className="text-xl font-bold mb-3 text-stone-100">Ne laissez plus une fuite devenir une catastrophe</h2>
             <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
               Kyber génère des mots de passe uniques et les stocke chiffrés en post-quantique,
-              100 % sur votre machine. Gratuit jusqu&apos;à 10 mots de passe.
+              100 % sur votre machine. 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

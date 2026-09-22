@@ -308,7 +308,7 @@ export default function ArticleMotDePasseFort() {
             <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
               Essayez notre générateur en ligne, qui affiche l&apos;entropie réelle et ne fait sortir aucune donnée
               de votre navigateur. Kyber stocke ensuite vos coffres chiffrés en post-quantique, 100 % sur votre
-              machine. Gratuit jusqu&apos;à 10 mots de passe.
+              machine. 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

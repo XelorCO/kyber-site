@@ -331,7 +331,7 @@ export default function ArticleKyberLocalCloud() {
           {/* ── CTA ARTICLE ── */}
           <div className="mt-12 pt-8 border-t border-stone-700">
             <p className="text-stone-400 text-sm mb-6">
-              Vous voulez passer au chiffrement post-quantique local ? Kyber est gratuit jusqu&apos;à 10 mots de passe.
+              Vous voulez passer au chiffrement post-quantique local ? Kyber est 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

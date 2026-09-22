@@ -5,19 +5,10 @@ export default function SuccessPage() {
     <div className="min-h-screen bg-[#0e1015] text-stone-100 flex items-center justify-center px-6">
       <div className="text-center max-w-lg">
         <div className="text-7xl mb-8">✓</div>
-        <h1 className="text-4xl font-bold mb-4 text-stone-100">Merci pour votre soutien</h1>
+        <h1 className="text-4xl font-bold mb-4 text-stone-100">Paiement reçu</h1>
         <p className="text-stone-400 text-lg mb-8">
-          Votre don a bien été reçu. Kyber est et restera gratuit et open source ;
-          votre contribution finance le temps passé dessus.
+          Kyber est 100 % gratuit et open source. Si un email a été renseigné, un message de confirmation vous a été envoyé.
         </p>
-
-        <div className="bg-[#151922] border border-stone-700 rounded-2xl p-6 text-left mb-8 shadow-sm">
-          <p className="text-stone-400 text-sm leading-relaxed">
-            Aucune action de votre part : il n&apos;y a pas de licence à activer, toutes les
-            fonctionnalités sont déjà débloquées dans l&apos;application. Si vous avez indiqué
-            une adresse email, un reçu vous a été envoyé.
-          </p>
-        </div>
 
         <div className="flex flex-wrap gap-4 justify-center mb-8">
           <a href="/telechargement" className="bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-6 py-3 rounded-xl text-sm font-semibold text-white transition-all">

@@ -342,7 +342,7 @@ export default function ArticleDoubleAuthentification() {
             <h2 className="text-xl font-bold mb-3 text-stone-100">Le premier facteur, lui, mérite un vrai coffre</h2>
             <p className="text-stone-400 text-sm mb-6 max-w-md mx-auto">
               Kyber garde vos mots de passe chiffrés sur votre disque, sans compte ni cloud. Gratuit jusqu&apos;à
-              10 mots de passe.
+              100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

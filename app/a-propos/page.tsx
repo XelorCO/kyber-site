@@ -170,9 +170,8 @@ export default function PageAPropos() {
               ))}
             </div>
             <p className="mt-4 text-sm text-stone-400">
-              Le code source sera publié sur GitHub avec une licence{' '}
-              <strong className="text-stone-300">Business Source License 1.1</strong> / auditable par la communauté cyber,
-              utilisable librement à titre personnel, sans possibilité de revente commerciale sans accord.
+              Le code source est disponible sur GitHub sous licence{' '}
+              <strong className="text-stone-300">Apache-2.0</strong> / auditable, modifiable et redistribuable librement.
             </p>
           </section>
 
@@ -227,7 +226,7 @@ export default function PageAPropos() {
           {/* ── CTA ── */}
           <section className="text-center py-8">
             <h2 className="text-xl font-bold mb-3 text-stone-100">Essayez Kyber gratuitement</h2>
-            <p className="text-stone-400 text-sm mb-6">10 mots de passe, chiffrement Kyber1024 complet, aucune CB requise.</p>
+            <p className="text-stone-400 text-sm mb-6">100 % gratuit, open source, chiffrement Kyber1024 complet. Aucun compte requis.</p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link
                 href="/telechargement"

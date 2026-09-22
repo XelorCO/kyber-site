@@ -73,8 +73,8 @@ const products = [
     badgeColor: 'bg-blue-900/40 text-blue-300 border-blue-800',
     local: true,
     pqc: true,
-    openSource: false,
-    prix: '0€ / 29 € unique',
+    openSource: true,
+    prix: '0€ / gratuit',
     rgpd: 'Totale',
     incidents: 'Aucun',
     argon2: true,
@@ -325,8 +325,8 @@ export default function PageComparatif() {
                   Kyber combine les avantages de KeePass (stockage 100% local, souveraineté totale) avec
                   la cryptographie de 2024 (Kyber1024 + AES-256-GCM + Argon2id). Le coffre existe
                   uniquement sur votre disque / aucune brèche dans nos serveurs ne peut compromettre vos
-                  mots de passe (il n&apos;y a pas de serveur de coffres). Avec une licence Pro à 29 € paiement
-                  unique, c&apos;est aussi le choix le plus économique sur 3 ans.
+                  mots de passe (il n&apos;y a pas de serveur de coffres). 100 % gratuit, open source,
+                  le choix le plus économique sur 3 ans.
                 </p>
                 <div className="mt-4">
                   <Link
@@ -345,7 +345,7 @@ export default function PageComparatif() {
           <section className="text-center py-8 border-t border-stone-700">
             <h2 className="text-2xl font-bold mb-4 text-stone-100">Essayer Kyber gratuitement</h2>
             <p className="text-stone-400 mb-8 max-w-md mx-auto">
-              Gratuit jusqu&apos;à 10 mots de passe. Migration depuis Bitwarden ou 1Password en 1 minute via import CSV.
+              100 % gratuit et open source. Migration depuis Bitwarden ou 1Password en 1 minute via import CSV.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

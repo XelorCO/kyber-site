@@ -6,7 +6,7 @@ import NavFooter from '@/components/NavFooter';
 export const metadata: Metadata = {
   title: { absolute: 'Alternative à LastPass 2026 : gratuite, locale et sans abonnement' },
   description:
-    "Vous cherchez une alternative à LastPass après la fuite de 2022 ou la hausse des prix ? Découvrez Kyber : gestionnaire de mots de passe 100% local, gratuit jusqu'à 10 mots de passe, sans abonnement.",
+    "Vous cherchez une alternative à LastPass après la fuite de 2022 ou la hausse des prix ? Découvrez Kyber : gestionnaire de mots de passe 100% local, gratuit et open source, sans abonnement.",
   keywords: [
     'alternative lastpass gratuite',
     'alternative lastpass 2026',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Alternative à LastPass 2026 : gratuite, locale et sans abonnement',
-    description: "LastPass a été piraté en 2022 et augmente ses prix chaque année. Voici une alternative locale, gratuite jusqu'à 10 mots de passe, sans abonnement.",
+    description: "LastPass a été piraté en 2022 et augmente ses prix chaque année. Voici une alternative locale, gratuite et open source, sans abonnement.",
     url: 'https://kyber-security.fr/blog/alternative-lastpass-gratuite',
     siteName: 'Kyber Security',
     images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
@@ -72,7 +72,7 @@ const faqLd = {
     {
       '@type': 'Question',
       name: 'Une alternative locale comme Kyber est-elle vraiment gratuite ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Kyber est gratuit jusqu\'à 10 mots de passe, sans limite de temps et sans carte bancaire requise. La version Pro (29 € en paiement unique, pas d\'abonnement) lève cette limite.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Kyber est 100 % gratuit et open source. Aucune limite de mots de passe, aucune licence à acheter, aucune carte bancaire requise.' },
     },
     {
       '@type': 'Question',

@@ -350,7 +350,7 @@ export default function ArticleQCMotsDePasse() {
 
           <div className="mt-12 pt-8 border-t border-stone-700">
             <p className="text-stone-400 text-sm mb-6">
-              Passez au chiffrement post-quantique local dès aujourd&apos;hui. Gratuit jusqu&apos;à 10 mots de passe.
+              Passez au chiffrement post-quantique local dès aujourd&apos;hui. 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

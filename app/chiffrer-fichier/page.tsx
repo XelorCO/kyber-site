@@ -161,7 +161,7 @@ export default function PageChiffrerFichier() {
             <h2 className="text-2xl font-bold mb-3 text-stone-100">Et pour vos mots de passe ?</h2>
             <p className="text-stone-400 mb-6 max-w-xl mx-auto">
               Kyber est aussi un gestionnaire de mots de passe de bureau, 100 % local, avec la même
-              chaîne de chiffrement post-quantique. Gratuit jusqu&apos;à 10 mots de passe.
+              chaîne de chiffrement post-quantique. 100 % gratuit et open source.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <Link

@@ -232,27 +232,20 @@ export default function PageTelechargement() {
             </div>
           </section>
 
-          {/* ── SOUTENIR ── */}
+          {/* ── OPEN SOURCE ── */}
           <section className="bg-gradient-to-b from-blue-950/40 to-indigo-950/40 border border-blue-800 rounded-2xl p-8 text-center shadow-sm">
             <h2 className="text-2xl font-bold mb-3 text-stone-100">Gratuit et open source</h2>
             <p className="text-stone-300 mb-6">
               Toutes les fonctionnalités, sans limite ni compte. Le code est public sous licence Apache-2.0.
-              Si Kyber vous est utile, un don ponctuel aide à financer les audits et le portage Linux / macOS.
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                href="/#soutenir"
-                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
-              >
-                Soutenir le projet
-              </Link>
               <a
                 href="https://github.com/XelorCO/kyber-app"
                 target="_blank"
                 rel="noopener"
-                className="inline-block border border-stone-700 hover:border-stone-500 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-stone-300"
+                className="inline-block bg-gradient-to-r from-blue-500 to-indigo-500 hover:opacity-90 px-8 py-3.5 rounded-xl font-semibold transition-all text-sm text-white shadow-md"
               >
-                Voir le code sur GitHub
+                Code source sur GitHub
               </a>
             </div>
           </section>
